@@ -1,1 +1,1 @@
-This is  the code of disaster monitoring.
+This is  the code of disaster monitoring
