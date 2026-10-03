@@ -1,0 +1,85 @@
+task: seg
+num_classes: 2
+ignore_index: 255
+seed: 42
+model:
+  name: galileo
+  kwargs:
+    # Landslide4Sense: 12 Sentinel-2 bands, then ALOS PALSAR slope and DEM.
+    # All 14 channels are routed into Galileo's pretrained S2/SRTM groups.
+    in_channels: 14
+    num_classes: 2
+    backbone: galileo-nano
+    checkpoint_path: /root/workcsc/AnyDisasterMapping/pretrained_weight/Galileo_nano_encoder.pt
+    patch_size: 8
+    month: 6
+    s2_channel_indices:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    s2_band_names:
+    - B1
+    - B2
+    - B3
+    - B4
+    - B5
+    - B6
+    - B7
+    - B8
+    - B8A
+    - B9
+    - B11
+    - B12
+    # 非 Sentinel-2 通道也会输入 Galileo：
+    # input[12] = ALOS PALSAR slope  -> Galileo SRTM slope
+    # input[13] = DEM                -> Galileo SRTM elevation
+    topographic_channel_indices:
+    - 12  # ALOS PALSAR slope
+    - 13  # DEM
+    decoder_channels: 256
+    head_channels: 256
+    freeze_backbone: false
+dataset:
+  name: l4s
+  train:
+    dataset_path: /root/workcsc/datasets/1landslide4sense
+    data_list_path: /root/workcsc/AnyDisasterMapping/scripts/data_prep/landslide/Landslide4Sense/train.txt
+    crop_size: null
+    split: train
+  val:
+    dataset_path: /root/workcsc/datasets/1landslide4sense
+    data_list_path: /root/workcsc/AnyDisasterMapping/scripts/data_prep/landslide/Landslide4Sense/val.txt
+    crop_size: null
+    split: val
+  test:
+    dataset_path: /root/workcsc/datasets/1landslide4sense
+    data_list_path: /root/workcsc/AnyDisasterMapping/scripts/data_prep/landslide/Landslide4Sense/test.txt
+    crop_size: null
+    split: test
+augmentation:
+  train: {}
+  val: {}
+optimizer:
+  name: AdamW
+  learning_rate: 5.0e-05
+  weight_decay: 0.0001
+scheduler:
+  name: StepLR
+  step_size: 2000
+  gamma: 0.8
+training:
+  num_epochs: 150
+  train_batch_size: 32
+  eval_batch_size: 32
+  num_workers: 16
+  eval_interval: 300
+output_dir: /root/workcsc/AnyDisasterMapping/output/Landslide4Sense/seg_galileo_nano

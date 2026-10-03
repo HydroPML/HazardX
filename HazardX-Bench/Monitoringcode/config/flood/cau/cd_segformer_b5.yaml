@@ -1,0 +1,98 @@
+task: cd
+num_classes: 2
+ignore_index: 255
+seed: 42
+model:
+  name: segformer
+  kwargs:
+    backbone: mit_b5
+    pretrained_weight: /root/autodl-tmp/pretrained_weight/segformer_mit-b5_512x512_160k_ade20k_20210726_145235-94cedf59.pth
+    in_channels: 8
+    num_classes: 2
+dataset:
+  name: cau_flood
+  train:
+    dataset_path: /root/autodl-tmp/CAU_Flood
+    data_list_path: /root/autodl-tmp/CAU_Flood/train.txt
+    split: train
+  val:
+    dataset_path: /root/autodl-tmp/CAU_Flood
+    data_list_path: /root/autodl-tmp/CAU_Flood/validation.txt
+    split: val
+  test:
+    dataset_path: /root/autodl-tmp/CAU_Flood
+    data_list_path: /root/autodl-tmp/CAU_Flood/test.txt
+    split: test
+augmentation:
+  train:
+    HorizontalFlip:
+      p: 0.5
+    VerticalFlip:
+      p: 0.5
+    RandomRotate90:
+      p: 1.0
+    RandomCrop:
+      height: 256
+      width: 256
+    Normalize:
+      pre:
+        mean: &id001
+        - 0.485
+        - 0.456
+        - 0.406
+        - 0.45
+        std: &id002
+        - 0.229
+        - 0.224
+        - 0.225
+        - 0.22
+        max_pixel_value: 255.0
+      post:
+        mean:
+        - 0.5
+        - 0.5
+        - 0.5
+        - 0.5
+        std:
+        - 0.25
+        - 0.25
+        - 0.25
+        - 0.25
+        max_pixel_value: 255.0
+  val:
+    Normalize:
+      pre:
+        mean: *id001
+        std: *id002
+        max_pixel_value: 255.0
+      post:
+        mean:
+        - 0.5
+        - 0.5
+        - 0.5
+        - 0.5
+        std:
+        - 0.25
+        - 0.25
+        - 0.25
+        - 0.25
+        max_pixel_value: 255.0
+optimizer:
+  name: AdamW
+  learning_rate: 0.0001
+  weight_decay: 0.005
+scheduler:
+  name: CosineAnnealingLR
+  step_mode: epoch
+  kwargs:
+    T_max: 100
+loss:
+  use_lovasz: false
+  lovasz_weight: 0.75
+training:
+  num_epochs: 100
+  train_batch_size: 8
+  eval_batch_size: 8
+  num_workers: 8
+  metric_for_best_model: mIoU
+output_dir: /root/autodl-tmp/output/cau/cd_segformer_b5

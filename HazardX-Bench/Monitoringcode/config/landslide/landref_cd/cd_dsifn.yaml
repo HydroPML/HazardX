@@ -1,0 +1,163 @@
+task: cd
+num_classes: 2
+ignore_index: 255
+seed: 42
+model:
+  name: dsifn
+  kwargs:
+    vgg_pretrained: true
+    siamese_mode: pseudo
+    in_dim: 18
+    num_classes: 2
+dataset:
+  name: landref_cd
+  input:
+    pre_features:
+    - PRE1_B02
+    - PRE1_B03
+    - PRE1_B04
+    - PRE1_B05
+    - PRE1_B06
+    - PRE1_B07
+    - PRE1_B08
+    - PRE1_B8A
+    - PRE1_B11
+    - PRE1_B12
+    - PRE1_gVV
+    - PRE1_gVH
+    - PRE1_COHVV
+    - PRE1_ALPHA
+    - PRE1_ANISOTROPY
+    - PRE1_ENTROPY
+    - None_DEM
+    - None_SLOPE
+    post_features:
+    - POST1_B02
+    - POST1_B03
+    - POST1_B04
+    - POST1_B05
+    - POST1_B06
+    - POST1_B07
+    - POST1_B08
+    - POST1_B8A
+    - POST1_B11
+    - POST1_B12
+    - POST1_gVV
+    - POST1_gVH
+    - POST1_COHVV
+    - POST1_ALPHA
+    - POST1_ANISOTROPY
+    - POST1_ENTROPY
+    - None_DEM
+    - None_SLOPE
+    scales:
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 1
+    - 1
+    - 1
+    - 90
+    - 1
+    - 1
+    - 5000
+    - 90
+    mask_key: None_MASK
+    clip_min:
+    - 0.0
+    - 0.0
+    - 0.0
+    - 0.0
+    - 0.0
+    - 0.0
+    - 0.0
+    - 0.0
+    - 0.0
+    - 0.0
+    - 0.0
+    - 0.0
+    - 0.0
+    - 0.0
+    - 0.0
+    - 0.0
+    - 0.0
+    - 0.0
+    clip_max:
+    - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
+  train:
+    dataset_path: /root/workcsc/datasets/3LANDREF/s1s2_landslide_reference_data/reference_data
+    h5_path: train_n3_s1s2.h5
+    split: train
+  val:
+    dataset_path: /root/workcsc/datasets/3LANDREF/s1s2_landslide_reference_data/reference_data
+    h5_path: val_n3_s1s2.h5
+    split: val
+  test:
+    dataset_path: /root/workcsc/datasets/3LANDREF/s1s2_landslide_reference_data/reference_data
+    h5_path: testind_n3_s1s2.h5
+    split: test
+augmentation:
+  train:
+    PadIfNeeded:
+      min_height: 128
+      min_width: 128
+      border_mode: 0
+      value: 0
+      p: 1.0
+    RandomCrop:
+      height: 128
+      width: 128
+    HorizontalFlip:
+      p: 0.5
+    VerticalFlip:
+      p: 0.5
+    RandomRotate90:
+      p: 1.0
+  val: {}
+optimizer:
+  name: AdamW
+  learning_rate: 0.0001
+  enc_lr_weight: 0.1
+scheduler:
+  name: WarmUpPolyLR
+  kwargs:
+    lr_power: 0.9
+  step_mode: iteration
+loss:
+  use_dice: true
+  dice_weight: 1.0
+training:
+  num_epochs: 150
+  train_batch_size: 16
+  eval_batch_size: 16
+  num_workers: 8
+  eval_interval: 300
+  metric_for_best_model: IoU_1
+output_dir: /root/workcsc/AnyDisasterMapping/output/LANDREF_CD/dsifn
+inference:
+  sliding_kernel: 128
+  sliding_stride: 64

@@ -1,0 +1,104 @@
+task: seg
+num_classes: 2
+ignore_index: 255
+seed: 42
+model:
+  name: swinupernet
+  kwargs:
+    in_channels: 4
+    num_classes: 2
+    backbone: swin_tiny
+    img_size: 256
+dataset:
+  name: floodplanet
+  train:
+    dataset_path: data/flood/FloodPlanet
+    data_list_path: data/flood/FloodPlanet/train.txt
+    split: train
+    sensor: PS
+    channels:
+    - 0
+    - 1
+    - 2
+    - 3
+    scale: 10000.0
+  val:
+    dataset_path: data/flood/FloodPlanet
+    data_list_path: data/flood/FloodPlanet/validation.txt
+    split: val
+    sensor: PS
+    channels:
+    - 0
+    - 1
+    - 2
+    - 3
+    scale: 10000.0
+  test:
+    dataset_path: data/flood/FloodPlanet
+    data_list_path: data/flood/FloodPlanet/test.txt
+    split: test
+    sensor: PS
+    channels:
+    - 0
+    - 1
+    - 2
+    - 3
+    scale: 10000.0
+augmentation:
+  train:
+    HorizontalFlip:
+      p: 0.5
+    VerticalFlip:
+      p: 0.5
+    RandomRotate90:
+      p: 1.0
+    RandomCrop:
+      height: 256
+      width: 256
+    Normalize:
+      mean:
+      - 0.5
+      - 0.5
+      - 0.5
+      - 0.5
+      std:
+      - 0.5
+      - 0.5
+      - 0.5
+      - 0.5
+      max_pixel_value: 1.0
+  val:
+    CenterCrop:
+      height: 256
+      width: 256
+    Normalize:
+      mean:
+      - 0.5
+      - 0.5
+      - 0.5
+      - 0.5
+      std:
+      - 0.5
+      - 0.5
+      - 0.5
+      - 0.5
+      max_pixel_value: 1.0
+optimizer:
+  name: AdamW
+  learning_rate: 0.0001
+  weight_decay: 0.005
+scheduler:
+  name: CosineAnnealingLR
+  step_mode: epoch
+  kwargs:
+    T_max: 100
+loss:
+  use_lovasz: false
+  lovasz_weight: 0.75
+training:
+  num_epochs: 100
+  train_batch_size: 16
+  eval_batch_size: 1
+  num_workers: 4
+  metric_for_best_model: mIoU
+output_dir: ./results/flood/floodplanet/seg_swinupernet_tiny
