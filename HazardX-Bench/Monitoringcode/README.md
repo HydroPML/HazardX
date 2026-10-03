@@ -1,24 +1,7 @@
 <div align="center">
-<h1 align="center">🌍Any Disaster Mapping</h1>
+<h1 align="center">HazardX</h1>
 
-<h3>Earth Observation for Disaster Mapping: Benchmarks, Methods, Challenges and Future Perspectives</h3>
-
-[Hongruixuan Chen](https://scholar.google.com/citations?user=XOk4Cf0AAAAJ)<sup>1,†</sup>, [Jian Song](https://scholar.google.com/citations?user=fx-27bQAAAAJ)<sup>1,†</sup>, [Weihao Xuan](https://scholar.google.com/citations?user=7e0W-2AAAAAJ)<sup>2,1,†</sup>, [Junjue Wang](https://scholar.google.com/citations?user=H58gKSAAAAAJ)<sup>2,†</sup>, [Heli Qi](https://scholar.google.com/citations?user=CH-rTXsAAAAJ)<sup>1</sup>, [Zeqi Zhou](https://scholar.google.com/citations?user=pqG03s0AAAAJ)<sup>3</sup>, [Pengyu Dai](https://scholar.google.com/citations?user=bxKhSZgAAAAJ)<sup>1,2</sup> <br> [Olivier Dietrich](https://scholar.google.com/citations?user=st6IqcsAAAAJ)<sup>4</sup>, [Erika Gutierrez](https://www.google.com/search?q=Erika+Gutierrez&oq=Erika+Gutierrez&gs_lcrp=EgRlZGdlKgYIABBFGDsyBggAEEUYOzIGCAEQABgeMgYIAhAAGB4yBggDEAAYHjIGCAQQABgeMgYIBRAAGB4yBggGEAAYHjIGCAcQRRg8MgcICBDrBxhA0gEHMjkxajBqNKgCALACAA&sourceid=chrome&ie=UTF-8)<sup>5</sup>, [Lars Bromly](https://www.google.com/search?q=Lars+Bromly&oq=Lars+Bromly&gs_lcrp=EgRlZGdlKgYIABBFGDsyBggAEEUYOzIJCAEQABgNGIAEMggIAhAAGA0YHjIKCAMQABiABBiiBDIHCAQQABjvBTIHCAUQABjvBTIKCAYQABiABBiiBDIGCAcQRRg70gEHMjQ0ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8)<sup>5</sup>, [Edoardo Nemni](https://scholar.google.com/citations?user=eUo-LuAAAAAJ)<sup>6</sup>, [Yafei Ou](https://scholar.google.com/citations?user=2SyrQ1oAAAAJ)<sup>1</sup>, [Jie Zhao](https://scholar.google.com/citations?user=snOLm2MAAAAJ)<sup>7</sup>, [Zhuo Zheng](https://scholar.google.com/citations?user=CREpn_AAAAAJ)<sup>8</sup>, [Yonghao Xu](https://scholar.google.com/citations?user=sQs2ztAAAAAJ)<sup>9</sup> <br> [Ronny Hänsch](https://scholar.google.com/citations?user=mUlpUlUAAAAJ)<sup>10</sup>, [Wenzhe Jiao](https://scholar.google.com/citations?user=1v9ooFUAAAAJ)<sup>11</sup>, [Marco Chini](https://www.researchgate.net/profile/Marco-Chini)<sup>12</sup>, [Claudio Persello](https://scholar.google.com/citations?user=CI3bxVMAAAAJ)<sup>13</sup>, [Junshi Xia](https://scholar.google.com/citations?user=n1aKdTkAAAAJ)<sup>1</sup>, [Shijian Lu](https://scholar.google.com/citations?user=uYmK-A0AAAAJ)<sup>14</sup>, [Lixin Wang](https://scholar.google.com/citations?user=pQPtUesAAAAJ)<sup>15</sup>, [Zhe Zhu](https://scholar.google.com/citations?user=9ODFYW4AAAAJ)<sup>16</sup> <br>
-[Evan Shelhamer](https://scholar.google.com/citations?user=-ltRSM0AAAAJ&hl=zh-CN)<sup>17</sup>, [Jocelyn Chanussot](https://scholar.google.com/citations?user=6owK2OQAAAAJ)<sup>18</sup>, [Konrad Schindler](https://scholar.google.com/citations?user=FZuNgqIAAAAJ)<sup>4</sup>, [Naoto Yokoya](https://scholar.google.com/citations?user=DJ2KOn8AAAAJ)<sup>2,1</sup>
-
-<sup>†</sup>Equal contribution
-<br>
-<sup>1 </sup>RIKEN AIP, <sup>2 </sup>The University of Tokyo, <sup>3 </sup>Brown University, <sup>4 </sup>ETH Zurich, <sup>5 </sup>United Nations Satellite Centre
-<br>
-<sup>6 </sup>Barcelona School of Economics, <sup>7 </sup>Technical University of Munich, <sup>8 </sup>Stanford University, <sup>9 </sup>Linköping University 
-<br>
-<sup>10 </sup>German Aerospace Center (DLR), <sup>11 </sup>Texas A&amp;M University, <sup>12 </sup>Luxembourg Institute of Science and Technology
-<br>
-<sup>13 </sup>University of Twente, <sup>14 </sup>Nanyang Technological University, <sup>15 </sup>Indiana University Indianapolis
-<br>
-<sup>16 </sup>University of Connecticut, <sup>17 </sup>The University of British Columbia, <sup>18 </sup>Université Grenoble Alpes
-
-[**Paper**](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6725082) | [**Installation**](#installation) | [**Dataset Preparation**](#dataset-preparation) | [**Pretrained Weights**](#pretrained-weights) | [**Quick Start**](#quick-start) | [**Repo Layout**](#repository-layout) 
+<h3>Multimodal FoundationModels for Natural Hazard Monitoring and Forecasting: Methods, Benchmarks, and Perspectives</h3>
 
 </div>
 
@@ -33,22 +16,6 @@
 - [Dataset Preparation](#dataset-preparation)
 - [Architecture And Extension](#architecture-and-extension) -->
 
-## 🔭Overview
-*Any Disaster Mapping* is the official repository for our [review paper in EO-based disaster mapping](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6725082).
-
-One of our key motivations is that current disaster mapping research is highly fragmented: benchmarks, tasks, and model implementations are often inconsistent across papers, making fair evaluation, reproduction, and further development unnecessarily difficult.
-
-This repo unifies widely used disaster mapping benchmarks and representative deep learning models across major research directions, and provides a consistent training and evaluation pipeline for:
-- Infrastructure damage
-- Flood mapping
-- Landslide segmentation
-- Wildfire analysis
-
-It is designed to help researchers:
-- Reproduce the results reported in our paper
-- Evaluate models under a unified protocol
-- Use strong baselines out of the box
-- Build and test their own improvements with minimal engineering overhead
 
 ## 🛠️Installation
 
