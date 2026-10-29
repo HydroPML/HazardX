@@ -35,13 +35,12 @@ Some models require optional extras:
   cd src/models/ChangeMamba/kernels/selective_scan
   pip install . --no-build-isolation
   ```
-- Local pretrained checkpoints under `pretrained_weight/` for model families such as SegFormer, HRNet, SAM/SAM2, DINOv3, HyperSigma, SkySense, SpectralGPT, and ChangeMamba. See [Pretrained Weights](#pretrained-weights) below.
+- Local pretrained checkpoints under `pretrained_weight/` for model families such as SegFormer, SAM2, DINOv3, SkySense++, SpectralGPT, and ChangeMamba. See [Pretrained Weights](#pretrained-weights) below.
 
 ## 🧪Dataset Preparation
 
 Dataset preparation guides are organized by disaster domain:
 
-- Infrastructure damage: [scripts/data_prep/infra_damage/README.md](scripts/data_prep/infra_damage/README.md)
 - Flood: [scripts/data_prep/flood/README.md](scripts/data_prep/flood/README.md)
 - Landslide: [scripts/data_prep/landslide/README.md](scripts/data_prep/landslide/README.md)
 - Wildfire: [scripts/data_prep/wildfire/README.md](scripts/data_prep/wildfire/README.md)
@@ -85,12 +84,6 @@ huggingface-cli download UTokyo-Yokoya-Lab/AnyDisaster-Pretrained_Weight \
   - `dinov3_vitl16_pretrain_lvd1689m-8aa4cbdd.pth` (ViT-L/16, LVD-1689M)
   - `dinov3_vitl16_pretrain_sat493m-eadcf0ff.pth` (ViT-L/16, SAT-493M)
 
-- SAM v1
-  Source: https://github.com/facebookresearch/segment-anything
-  Download and save as:
-  - `sam_vit_b_01ec64.pth` (SAM ViT-B)
-  - `sam_vit_l_0b3195.pth` (SAM ViT-L)
-
 - SAM 2.1
   Source: https://github.com/facebookresearch/sam2
   Download and save as:
@@ -107,12 +100,7 @@ huggingface-cli download UTokyo-Yokoya-Lab/AnyDisaster-Pretrained_Weight \
   - `mit_b4.pth`
   - `mit_b5.pth`
 
-- HyperSIGMA spatial backbone
-  Source: https://huggingface.co/WHU-Sigma/HyperSIGMA
-  Download the upstream file, rename, and save as:
-  - `HSI_spatial_checkpoint-1600.pth`
-
-- SkySense backbone
+- SkySense++ backbone
   Source:
   - https://github.com/Jack-bo1220/SkySense
   - https://www.notion.so/SkySense-Checkpoints-a7fcff6ce29a4647a08c7fe416910509
@@ -138,9 +126,7 @@ pretrained_weight/
 ├── pretrain-vit-base-e199.pth
 ├── sam2.1_hiera_base_plus.pt
 ├── sam2.1_hiera_small.pt
-├── sam_vit_b_01ec64.pth
-├── sam_vit_l_0b3195.pth
-├── skysense_model_backbone_hr.pth
+├── skysense++_model_backbone_hr.pth
 ├── spec-vit-base-ultra-checkpoint-1599.pth
 ├── SpectralGPT+.pth
 └── vssm_tiny_0230_ckpt_epoch_262.pth
@@ -155,7 +141,7 @@ Minimal training and evaluation commands.
 Train with a YAML config:
 
 ```bash
-python train.py --config configs/infra/xbd/unet.yaml
+python train.py --config configs/flood/cau/unet.yaml
 ```
 
 ### Evaluate
@@ -163,7 +149,7 @@ python train.py --config configs/infra/xbd/unet.yaml
 Evaluate an experiment directory:
 
 ```bash
-python test.py --exp_path results/xbd/unet
+python test.py --exp_path results/cau/unet
 ```
 
 ## 🗂️Repository Layout
@@ -185,26 +171,6 @@ Internal runtime design and extension entry points.
 
 - Architecture overview: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
 - Extension guide: [docs/EXTENSION_GUIDE.md](docs/EXTENSION_GUIDE.md)
-
-## 📜Reference
-If this code repo contributes to your research, please kindly consider citing our paper and give this repo ⭐️ :)
-```
-@misc{chen2026earthobservationdisastermapping,
-  author       = {Chen, Hongruixuan and Song, Jian and Xuan, Weihao and Wang, Junjue
-                  and Qi, Heli and Zhou, Zeqi and Dai, Pengyu and Dietrich, Olivier
-                  and Gutierrez, Erika and Bromly, Lars and Nemni, Edoardo and Ou, Yafei
-                  and Zhao, Jie and Zheng, Zhuo and Xu, Yonghao and H{\"a}nsch, Ronny
-                  and Jiao, Wenzhe and Chini, Marco and Persello, Claudio and Xia, Junshi
-                  and Lu, Shijian and Wang, Lixin and Zhu, Zhe and Shelhamer, Evan
-                  and Chanussot, Jocelyn and Schindler, Konrad and Yokoya, Naoto},
-  title        = {Earth Observation for Disaster Mapping: Benchmarks, Methods, Challenges and Future Perspectives},
-  year         = {2026},
-  month        = {may},
-  note         = {SSRN preprint},
-  doi          = {10.2139/ssrn.6725082},
-  url          = {https://ssrn.com/abstract=6725082}
-}
-```
 
 
 ## 🙋Q & A
