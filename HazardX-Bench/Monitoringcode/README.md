@@ -171,10 +171,3 @@ Internal runtime design and extension entry points.
 
 - Architecture overview: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
 - Extension guide: [docs/EXTENSION_GUIDE.md](docs/EXTENSION_GUIDE.md)
-
-
-<<<<<<< HEAD
-## 🙋Q & A
-For any questions, please feel free to leave it in the issue section or send inquiry email to qschrx@gmail.com.
-=======
->>>>>>> 21cca5e243c34cec5afebcb8298e260e3ff21d74
