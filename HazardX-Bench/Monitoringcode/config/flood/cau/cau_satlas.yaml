@@ -1,0 +1,62 @@
+task: cd
+num_classes: 2
+ignore_index: 255
+seed: 42
+
+dataset:
+  type: cau_flood
+  root: /root/autodl-tmp/CAU_Flood
+  label_map: {0: 0, 1: 1}
+  augment_train: true
+  pre_mean: [0.485, 0.456, 0.406, 0.45]
+  pre_std: [0.229, 0.224, 0.225, 0.22]
+  post_mean: [0.5, 0.5, 0.5, 0.5]
+  post_std: [0.25, 0.25, 0.25, 0.25]
+  splits:
+    train: {data_list_path: train.txt}
+    val: {data_list_path: validation.txt}
+    test: {data_list_path: test.txt}
+
+input_adapter:
+  early_fusion: true
+  input_channels: 8
+  bands: [0, 1, 2, 3, 4, 5, 6, 7]
+
+model:
+  name: satlas
+  kwargs:
+    classes: 2
+    variant: tiny
+    pretrained: true
+    pretrained_checkpoint_path: null
+    freeze_encoder: false
+    in_channels: 8
+    # CAU PRE is R,G,B,NIR and POST is SAR repeated to four channels.
+    # Initialize native Satlas bands from optical channels; the trainable
+    # projection can subsequently learn from all optical and SAR channels.
+    projection_indices: [0, 1, 2, 3, 3, 3, 3, 3, 3]
+
+optimizer:
+  name: AdamW
+  encoder_learning_rate: 1.0e-05
+  input_projection_learning_rate: 1.0e-03
+  learning_rate: 1.0e-04
+  weight_decay: 0.005
+scheduler:
+  name: CosineAnnealingLR
+  step_mode: epoch
+  T_max: 100
+loss:
+  class_weights: [1.0, 4.0]
+  dice_weight: 1.0
+  dice_classes: [1]
+training:
+  num_epochs: 100
+  train_batch_size: 8
+  eval_batch_size: 8
+  num_workers: 8
+  eval_interval: 300
+  log_interval: 50
+  metric_for_best_model: IoU_1
+resume: null
+output_dir: /root/autodl-tmp/output/cau/cau_satlas_tiny

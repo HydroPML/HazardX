@@ -1,0 +1,75 @@
+dataset:
+  root: /root/workcsc/datasets/1landslide4sense
+  channels_last: true
+  label_map:
+    0: 0
+    1: 1
+  splits:
+    train:
+      image_dir: TrainData/img
+      mask_dir: TrainData/mask
+      image_glob: 'image_*.h5'
+      image_key: img
+      mask_key: mask
+    val:
+      image_dir: ValidData/img
+      mask_dir: ValidData/mask
+      image_glob: 'image_*.h5'
+      image_key: img
+      mask_key: mask
+    test:
+      image_dir: TestData/img
+      mask_dir: TestData/mask
+      image_glob: 'image_*.h5'
+      image_key: img
+      mask_key: mask
+input_adapter:
+  # B02,B03,B04,B08,B05,B06,B07,B8A,B11,B12,B01,B09,DEM; B08 proxies missing B8A.
+  bands: [1, 2, 3, 7, 4, 5, 6, 7, 10, 11, 0, 8, 13]
+  # Landslide4Sense stores processed floats, not physical Sentinel-2 DN.
+  # These are the official L4S statistics reordered to match `bands` above.
+  source_means: [-0.3074, -0.1277, -0.0625, 0.0802, 0.0439, 0.0803, 0.0644, 0.0802, 0.0823, 0.0516, -0.4914, 0.3000, 0.7819]
+  source_stds: [0.8775, 0.8860, 0.8869, 0.8491, 0.8857, 0.8418, 0.8354, 0.8491, 0.8848, 0.9232, 0.9325, 0.9061, 1.2913]
+  reflectance_multiplier: 1.0
+  dem_multiplier: 1.0
+output_dir: /root/workcsc/diasterother/outputs/olmoearth_nano_aligned
+model:
+  name: olmoearth
+  # Replace timestamp with the L4S acquisition date if it is available.
+  # OLMO format is [day, zero-based month, year].
+  # null: TorchGeo automatically downloads the matching official OLMO-Earth weights.
+  kwargs:
+    classes: 2
+    size: nano
+    patch_size: 4
+    timestamp: [15, 5, 2020]
+    pretrained: true
+    pretrained_checkpoint_path: null
+    freeze_encoder: false
+    decoder_channels: 256
+    decoder_pool_scales: [1, 2, 3, 6]
+optimizer:
+  name: AdamW
+  # The pretrained encoder needs a small LR, while the randomly initialized
+  # segmentation decoder must learn substantially faster.
+  encoder_learning_rate: 5.0e-05
+  learning_rate: 1.0e-03
+  weight_decay: 0.0001
+scheduler:
+  name: StepLR
+  step_size: 2000
+  gamma: 0.8
+loss:
+  # Use a moderate weight after fixing the input distribution. Full inverse
+  # frequency weighting makes the constant all-foreground solution too easy.
+  class_weights: [1.0, 6.5]
+  dice_weight: 1.0
+  dice_classes: [1]
+training:
+  num_epochs: 150
+  train_batch_size: 16
+  eval_batch_size: 16
+  num_workers: 16
+  eval_interval: 300
+  log_interval: 50
+resume: null  # /absolute/path/to/latest.pt to continue interrupted fine-tuning

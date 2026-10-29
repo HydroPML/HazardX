@@ -1,0 +1,56 @@
+dataset:
+  root: /root/workcsc/datasets/1landslide4sense
+  channels_last: true
+  label_map:
+    0: 0
+    1: 1
+  splits:
+    train:
+      image_dir: TrainData/img
+      mask_dir: TrainData/mask
+      image_glob: 'image_*.h5'
+      image_key: img
+      mask_key: mask
+    val:
+      image_dir: ValidData/img
+      mask_dir: ValidData/mask
+      image_glob: 'image_*.h5'
+      image_key: img
+      mask_key: mask
+    test:
+      image_dir: TestData/img
+      mask_dir: TestData/mask
+      image_glob: 'image_*.h5'
+      image_key: img
+      mask_key: mask
+input_adapter:
+  # L4S B01..B12,slope,DEM -> Satlas B04,B03,B02,B05,B06,B07,B08,B11,B12.
+  bands: [3, 2, 1, 4, 5, 6, 7, 10, 11]
+  reflectance_multiplier: 1.0
+output_dir: outputs/satlas_tiny
+model:
+  name: satlas
+  # null: TorchGeo automatically downloads the official Satlas weights once.
+  # A local *.pth path avoids the download and takes precedence over pretrained.
+  kwargs:
+    classes: 2
+    variant: tiny
+    pretrained: true
+    pretrained_checkpoint_path: null
+    freeze_encoder: false
+optimizer:
+  name: AdamW
+  learning_rate: 5.0e-05
+  weight_decay: 0.0001
+scheduler:
+  name: StepLR
+  step_size: 2000
+  gamma: 0.8
+training:
+  num_epochs: 150
+  train_batch_size: 32
+  eval_batch_size: 32
+  num_workers: 16
+  eval_interval: 300
+  log_interval: 50
+resume: null  # /absolute/path/to/latest.pt to continue interrupted fine-tuning

@@ -1,0 +1,73 @@
+task: cd
+num_classes: 2
+ignore_index: 255
+seed: 42
+
+dataset:
+  type: cau_flood
+  root: /root/autodl-tmp/CAU_Flood
+  label_map: {0: 0, 1: 1}
+  augment_train: true
+  pre_mean: [0.485, 0.456, 0.406, 0.45]
+  pre_std: [0.229, 0.224, 0.225, 0.22]
+  post_mean: [0.5, 0.5, 0.5, 0.5]
+  post_std: [0.25, 0.25, 0.25, 0.25]
+  splits:
+    train: {data_list_path: train.txt}
+    val: {data_list_path: validation.txt}
+    test: {data_list_path: test.txt}
+
+input_adapter:
+  early_fusion: true
+  input_channels: 8
+  bands: [0, 1, 2, 3, 4, 5, 6, 7]
+
+model:
+  name: olmoearth
+  kwargs:
+    classes: 2
+    size: nano
+    patch_size: 8
+    # CAU does not provide acquisition dates; OLMOEarth requires one timestamp.
+    timestamp: [15, 5, 2020]
+    pretrained: true
+    pretrained_checkpoint_path: null
+    freeze_encoder: false
+    decoder_channels: 256
+    decoder_pool_scales: [1, 2, 3, 6]
+    in_channels: 8
+    # OLMO order is B02,B03,B04,B08,B05,B06,B07,B8A,B11,B12,B01,B09,DEM.
+    # CAU PRE supplies B,G,R,NIR only; unavailable optical bands use NIR/B
+    # proxies. Initialize the OLMOEarth terrain modality from CAU's post-event
+    # SAR channel so flood evidence is present from the first optimization step.
+    projection_indices: [2, 1, 0, 3, 3, 3, 3, 3, 3, 3, 2, 3, 4]
+
+optimizer:
+  name: AdamW
+  encoder_learning_rate: 1.0e-05
+  # The 8->13 optical/SAR adapter starts mostly from proxy mappings and must
+  # adapt much faster than the pretrained encoder.
+  input_projection_learning_rate: 1.0e-03
+  learning_rate: 1.0e-04
+  weight_decay: 0.005
+scheduler:
+  name: CosineAnnealingLR
+  step_mode: epoch
+  T_max: 100
+loss:
+  # Train foreground is 5.80% of pixels (background:foreground = 16.25:1).
+  # A tempered sqrt-frequency weight avoids the all-background optimum
+  # without the instability of the full inverse-frequency ratio.
+  class_weights: [1.0, 4.0]
+  dice_weight: 1.0
+  dice_classes: [1]
+training:
+  num_epochs: 100
+  train_batch_size: 4
+  eval_batch_size: 4
+  num_workers: 4
+  eval_interval: 300
+  log_interval: 50
+  metric_for_best_model: IoU_1
+resume: null
+output_dir: /root/autodl-tmp/output/cau/cau_olmoearth_nano

@@ -1,0 +1,65 @@
+task: cd
+num_classes: 2
+ignore_index: 255
+seed: 42
+
+dataset:
+  type: floga_npy
+  root: /root/workcsc/datasets/wildfire/floga
+  label_map: {0: 0, 1: 1, 2: 255}
+  augment_train: true
+  splits:
+    train: {data_list_path: patch256/train.txt, patch_size: 256}
+    val: {data_list_path: patch256/val.txt, patch_size: 256}
+    test: {data_list_path: patch256/test.txt, patch_size: 256}
+
+input_adapter:
+  early_fusion: true
+  input_channels: 18
+  bands: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+
+model:
+  name: olmoearth
+  kwargs:
+    classes: 2
+    size: nano
+    # 256x256 inputs produce 4096 tokens at patch size 4; the explicit
+    # attention mask exceeds 48 GiB during training. Size 8 reduces the
+    # attention matrix by 16x and is supported by the pretrained encoder.
+    patch_size: 8
+    # OLMO format: [day, zero-based month, year]. FLOGA has no per-patch date metadata.
+    timestamp: [15, 5, 2020]
+    pretrained: true
+    pretrained_checkpoint_path: null
+    freeze_encoder: false
+    decoder_channels: 256
+    decoder_pool_scales: [1, 2, 3, 6]
+    in_channels: 18
+    # Native order: B02,B03,B04,B08,B05,B06,B07,B8A,B11,B12,B01,B09,DEM.
+    # FLOGA lacks B8A/B01/B09/DEM: B08/B02/B11 are explicit optical proxies;
+    # -1 keeps the missing DEM channel identically zero at initialization.
+    projection_indices: [9, 10, 11, 15, 12, 13, 14, 15, 16, 17, 9, 16, -1]
+
+optimizer:
+  name: AdamW
+  encoder_learning_rate: 1.0e-05
+  learning_rate: 1.0e-04
+  weight_decay: 0.01
+scheduler:
+  name: WarmUpPolyLR
+  lr_power: 0.9
+  step_mode: iteration
+loss:
+  class_weights: [1.0, 1.0]
+  dice_weight: 1.0
+  dice_classes: [1]
+training:
+  num_epochs: 100
+  train_batch_size: 4
+  eval_batch_size: 4
+  num_workers: 8
+  eval_interval: 300
+  log_interval: 50
+  metric_for_best_model: IoU_1
+resume: null
+output_dir: /root/workcsc/diasterother/outputs/floga_olmoearth_nano
