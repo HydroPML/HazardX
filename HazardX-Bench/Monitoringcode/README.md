@@ -113,9 +113,15 @@ After completing all downloads, `pretrained_weight/` should contain:
 
 ```text
 pretrained_weight/
+├── clay-v1.5.ckpt
 ├── dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth
 ├── dinov3_vitl16_pretrain_lvd1689m-8aa4cbdd.pth
 ├── dinov3_vitl16_pretrain_sat493m-eadcf0ff.pth
+├── dofav2_vit_base_e150.pth
+├── dofav2_vit_large_e150.pth
+├── Galileo_nano_encoder.pt
+├── Prithvi_EO_V2_300M
+├── TerraMind_v1_base
 ├── HSI_spatial_checkpoint-1600.pth
 ├── mit_b0.pth
 ├── mit_b1.pth
@@ -126,7 +132,7 @@ pretrained_weight/
 ├── pretrain-vit-base-e199.pth
 ├── sam2.1_hiera_base_plus.pt
 ├── sam2.1_hiera_small.pt
-├── skysense++_model_backbone_hr.pth
+├── skysensepp_model_backbone_hr.pth
 ├── spec-vit-base-ultra-checkpoint-1599.pth
 ├── SpectralGPT+.pth
 └── vssm_tiny_0230_ckpt_epoch_262.pth
