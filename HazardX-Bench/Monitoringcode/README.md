@@ -1,9 +1,3 @@
-<div align="center">
-<h1 align="center">HazardX</h1>
-
-<h3>Multimodal FoundationModels for Natural Hazard Monitoring and Forecasting: Methods, Benchmarks, and Perspectives</h3>
-
-</div>
 
 <!-- 
 ## Contents
