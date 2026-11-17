@@ -1,16 +1,19 @@
 
-<table>
-  <tr>
-    <td align="center" valign="middle" width="230">
-      <img src="Figs/HazardX%20scientific%20orbit%20emblem.png"
-           alt="HazardX Logo"
-           width="200">
-    </td>
-    <td align="left" valign="middle">
-      <h3>Multimodal Foundation Models for Natural Hazard Monitoring and Forecasting</h3>
-    </td>
-  </tr>
-</table>
+
+<div>
+  <img src="Figs/HazardX%20scientific%20orbit%20emblem.png"
+       alt="HazardX Logo"
+       align="left"
+       width="230">
+
+  <br><br>
+
+  <h1>HazardX</h1>
+  <h3>Multimodal Foundation Models for Natural Hazard Monitoring and Forecasting</h3>
+
+  <br clear="all">
+</div>
+
 
 
 # HazardX-Bench for natural hazard monitoring
