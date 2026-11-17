@@ -1,5 +1,6 @@
 
 
+
 <div>
   <img src="Figs/HazardX%20scientific%20orbit%20emblem.png"
        alt="HazardX Logo"
@@ -8,10 +9,11 @@
 
   <br><br><br>
 
-  <h2>Multimodal Foundation Models for Natural Hazard Monitoring and Forecasting</h2>
+  <h3>Multimodal Foundation Models for Natural Hazard Monitoring and Forecasting</h3>
 
   <br clear="all">
 </div>
+
 
 
 
