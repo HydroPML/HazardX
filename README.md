@@ -179,4 +179,11 @@ Within `Monitoringcode/`:
 - [Extension guide](HazardX-Bench/Monitoringcode/docs/EXTENSION_GUIDE.md)
 
 # HazardX-Bench for natural hazard forecasting
+<p align="center">
+  <img src="Figs/forecasting.jpg" alt="HazardX Forecasting" width="100%">
+</p>
+
+
+
+
 
