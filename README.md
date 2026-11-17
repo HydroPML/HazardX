@@ -41,9 +41,9 @@ Some models require optional extras:
 
 Dataset preparation guides are organized by disaster domain:
 
-- Flood: [scripts/data_prep/flood/README.md](scripts/data_prep/flood/README.md)
-- Landslide: [scripts/data_prep/landslide/README.md](scripts/data_prep/landslide/README.md)
-- Wildfire: [scripts/data_prep/wildfire/README.md](scripts/data_prep/wildfire/README.md)
+- Flood: [HazardX-Bench/Monitoringcode/scripts/data_prep/flood/README.md](scripts/data_prep/flood/README.md)
+- Landslide: [HazardX-Bench/Monitoringcode/scripts/data_prep/landslide/README.md](scripts/data_prep/landslide/README.md)
+- Wildfire: [HazardX-Bench/Monitoringcode/scripts/data_prep/wildfire/README.md](scripts/data_prep/wildfire/README.md)
 
 
 ## 📦Pretrained Weights
