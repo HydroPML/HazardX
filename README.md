@@ -1,8 +1,9 @@
 <p align="center">
-  <img src="Figs/fig11_GRSM.png"
-       alt="HazardX Framework Overview"
+  <img src="Figs/HazardX%20Multimodal%20Hazard%20Monitoring%20Banner.png"
+       alt="Multimodal Foundation Models for Natural Hazard Monitoring and Forecasting"
        width="100%">
 </p>
+
 
 
 
@@ -17,6 +18,7 @@ HazardX focuses on floods, landslides, and wildfires, while the other hazards il
 
 
 # HazardX-Bench for natural hazard monitoring
+![HazardX Visualization](Figs/visualization.png)
 
 The currently released monitoring implementation is located in [`HazardX-Bench/Monitoringcode/`](HazardX-Bench/Monitoringcode/).
 
