@@ -14,6 +14,12 @@
   <br clear="all">
 </div>
 
+<p align="center">
+  <img src="Figs/fig11_GRSM.png"
+       alt="HazardX Framework Overview"
+       width="100%">
+</p>
+
 
 
 
