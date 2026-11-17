@@ -3,11 +3,9 @@
 <h3>Multimodal Foundation Models for Natural Hazard Monitoring and Forecasting: Methods, Benchmarks, and Perspectives</h3>
 </div>
 
-## Overview
+# HazardX-Bench for natural hazard monitoring
 
-HazardX-Bench provides reproducible resources for natural hazard monitoring and forecasting. The currently released monitoring implementation is located in [`HazardX-Bench/Monitoringcode/`](HazardX-Bench/Monitoringcode/).
-
-The instructions below refer to **Monitoringcode**. Run the commands from that directory unless otherwise indicated.
+The currently released monitoring implementation is located in [`HazardX-Bench/Monitoringcode/`](HazardX-Bench/Monitoringcode/).
 
 ## 🛠️ Installation
 
