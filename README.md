@@ -7,7 +7,6 @@
            width="200">
     </td>
     <td align="left" valign="middle">
-      <h1>HazardX</h1>
       <h3>Multimodal Foundation Models for Natural Hazard Monitoring and Forecasting</h3>
     </td>
   </tr>
