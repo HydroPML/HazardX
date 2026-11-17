@@ -177,3 +177,6 @@ Within `Monitoringcode/`:
 
 - [Architecture overview](HazardX-Bench/Monitoringcode/docs/ARCHITECTURE.md)
 - [Extension guide](HazardX-Bench/Monitoringcode/docs/EXTENSION_GUIDE.md)
+
+# HazardX-Bench for natural hazard forecasting
+
