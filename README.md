@@ -1,4 +1,3 @@
-
 <div>
   <img src="Figs/HazardX%20logo%20on%20transparent%20background.png"
        alt="HazardX Logo"
@@ -7,12 +6,19 @@
 
   <br>
 
-  <h1>Multimodal Foundation Models for Natural Hazard Monitoring and Forecasting</h1>
+  <div id="user-content-toc">
+    <ul>
+      <summary>
+        <h1>Multimodal Foundation Models for Natural Hazard Monitoring and Forecasting</h1>
+      </summary>
+    </ul>
+  </div>
 
   <br clear="all">
 </div>
 
 
+# HazardX
 <p align="center">
   <img src="Figs/fig11_GRSM.png"
        alt="HazardX Framework Overview"
