@@ -1,7 +1,18 @@
-<div align="center">
-<h1 align="center">HazardX</h1>
-<h3>Multimodal Foundation Models for Natural Hazard Monitoring and Forecasting: Methods, Benchmarks, and Perspectives</h3>
-</div>
+
+<table>
+  <tr>
+    <td align="center" valign="middle" width="230">
+      <img src="Figs/HazardX%20scientific%20orbit%20emblem.png"
+           alt="HazardX Logo"
+           width="200">
+    </td>
+    <td align="left" valign="middle">
+      <h1>HazardX</h1>
+      <h3>Multimodal Foundation Models for Natural Hazard Monitoring and Forecasting</h3>
+    </td>
+  </tr>
+</table>
+
 
 # HazardX-Bench for natural hazard monitoring
 
