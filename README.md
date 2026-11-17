@@ -1,56 +1,46 @@
 <div align="center">
 <h1 align="center">HazardX</h1>
-
 <h3>Multimodal Foundation Models for Natural Hazard Monitoring and Forecasting: Methods, Benchmarks, and Perspectives</h3>
-
 </div>
 
-<!-- 
-## Contents
+## Overview
 
-- [Overview](#overview)
-- [Installation](#installation)
-- [Pretrained Weights](#pretrained-weights)
-- [Quick Start](#quick-start)
-- [Repository Layout](#repository-layout)
-- [Dataset Preparation](#dataset-preparation)
-- [Architecture And Extension](#architecture-and-extension) -->
+HazardX-Bench provides reproducible resources for natural hazard monitoring and forecasting. The currently released monitoring implementation is located in [`HazardX-Bench/Monitoringcode/`](HazardX-Bench/Monitoringcode/).
 
+The instructions below refer to **Monitoringcode**. Run the commands from that directory unless otherwise indicated.
 
-## 🛠️Installation
-
-Base environment and optional model-specific extras.
+## 🛠️ Installation
 
 ```bash
-# NOTE: --index-url should match the version of your local CUDA toolkit for compiling ChangeMamba kernels (cu126 is just an example)
+git clone https://github.com/HydroPML/HazardX.git
+cd HazardX/HazardX-Bench/Monitoringcode
+# Choose a PyTorch build matching your hardware and CUDA environment (cu126 is only an example).
 pip install torch torchvision xformers --index-url https://download.pytorch.org/whl/cu126
-pip install -e .
+# Install the additional dependencies required by your chosen model.
 ```
 
-Some models require optional extras:
+Some models require optional extras. For ChangeMamba's selective scan kernel:
 
-- ChangeMamba selective scan kernel:
-  ```bash
-  # run `conda install -c conda-forge gcc=13 gxx=13 -y` if you meet GCC issues
-  cd src/models/ChangeMamba/kernels/selective_scan
-  pip install . --no-build-isolation
-  ```
-- Local pretrained checkpoints under `pretrained_weight/` for model families such as SegFormer, SAM2, DINOv3, SkySense++, SpectralGPT, and ChangeMamba. See [Pretrained Weights](#pretrained-weights) below.
+```bash
+# If you encounter GCC issues, consider: conda install -c conda-forge gcc=13 gxx=13 -y
+cd src/models/ChangeMamba/kernels/selective_scan
+pip install . --no-build-isolation
+cd ../../../..
+```
 
-## 🧪Dataset Preparation
+Some models also require local upstream weights in `pretrained_weight/` (details below).
+
+## 🧪 Dataset Preparation
 
 Dataset preparation guides are organized by disaster domain:
 
-- Flood: [HazardX-Bench/Monitoringcode/scripts/data_prep/flood/README.md](scripts/data_prep/flood/README.md)
-- Landslide: [HazardX-Bench/Monitoringcode/scripts/data_prep/landslide/README.md](scripts/data_prep/landslide/README.md)
-- Wildfire: [HazardX-Bench/Monitoringcode/scripts/data_prep/wildfire/README.md](scripts/data_prep/wildfire/README.md)
+- Flood: [scripts/data_prep/flood/README.md](HazardX-Bench/Monitoringcode/scripts/data_prep/flood/README.md)
+- Landslide: [scripts/data_prep/landslide/README.md](HazardX-Bench/Monitoringcode/scripts/data_prep/landslide/README.md)
+- Wildfire: [scripts/data_prep/wildfire/README.md](HazardX-Bench/Monitoringcode/scripts/data_prep/wildfire/README.md)
 
+## 📦 Pretrained Weights
 
-## 📦Pretrained Weights
-
- Recommended local checkpoint layout for the supported model zoo.
-
-Create the local checkpoint directory first:
+Create the local weights directory inside `HazardX-Bench/Monitoringcode/`:
 
 ```bash
 mkdir -p pretrained_weight
@@ -72,44 +62,26 @@ wget -O pretrained_weight/spec-vit-base-ultra-checkpoint-1599.pth \
   https://huggingface.co/WHU-Sigma/HyperSIGMA/resolve/main/spec-vit-base-ultra-checkpoint-1599.pth
 
 huggingface-cli download UTokyo-Yokoya-Lab/AnyDisaster-Pretrained_Weight \
-  vssm_tiny_0230_ckpt_epoch_262.pth --local-dir pretrained_weight --local-dir-use-symlinks False
+  vssm_tiny_0230_ckpt_epoch_262.pth --local-dir pretrained_weight
 ```
 
 ### Additional Upstream Checkpoints
 
-- DINOv3
-  Source: https://ai.meta.com/resources/models-and-libraries/dinov3-downloads/
-  Download and save as:
+- **DINOv3:** https://ai.meta.com/resources/models-and-libraries/dinov3-downloads/
   - `dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth` (ViT-B/16, LVD-1689M)
   - `dinov3_vitl16_pretrain_lvd1689m-8aa4cbdd.pth` (ViT-L/16, LVD-1689M)
   - `dinov3_vitl16_pretrain_sat493m-eadcf0ff.pth` (ViT-L/16, SAT-493M)
+- **SAM 2.1:** https://github.com/facebookresearch/sam2
+  - `sam2.1_hiera_small.pt`
+  - `sam2.1_hiera_base_plus.pt`
+- **SegFormer MiT:** https://github.com/NVlabs/SegFormer
+  - `mit_b0.pth`, `mit_b1.pth`, `mit_b2.pth`, `mit_b3.pth`, `mit_b4.pth`, `mit_b5.pth`
+- **SkySense++ backbone:** [repository](https://github.com/Jack-bo1220/SkySense) and [checkpoints](https://www.notion.so/SkySense-Checkpoints-a7fcff6ce29a4647a08c7fe416910509)
+  - Select the `hr` (high-resolution RGB / RGBNIR) variant, not the `s2` Sentinel-2 variant.
+  - Save as `skysense_model_backbone_hr.pth` (confirm the filename expected by the chosen config).
+  - For commercial use, contact the authors (`yansheng.li@whu.edu.cn`).
 
-- SAM 2.1
-  Source: https://github.com/facebookresearch/sam2
-  Download and save as:
-  - `sam2.1_hiera_small.pt` (SAM 2.1 Hiera-Small)
-  - `sam2.1_hiera_base_plus.pt` (SAM 2.1 Hiera-Base+)
-
-- SegFormer MiT encoders
-  Source: https://github.com/NVlabs/SegFormer
-  Download and save as:
-  - `mit_b0.pth`
-  - `mit_b1.pth`
-  - `mit_b2.pth`
-  - `mit_b3.pth`
-  - `mit_b4.pth`
-  - `mit_b5.pth`
-
-- SkySense++ backbone
-  Source:
-  - https://github.com/Jack-bo1220/SkySense
-  - https://www.notion.so/SkySense-Checkpoints-a7fcff6ce29a4647a08c7fe416910509
-  Select the `hr` (high-resolution RGB / RGBNIR) variant, not the `s2` Sentinel-2 variant.
-  Save as:
-  - `skysense_model_backbone_hr.pth`
-  For commercial use, contact the authors (`yansheng.li@whu.edu.cn`).
-
-After completing all downloads, `pretrained_weight/` should contain:
+Depending on the selected model, your `pretrained_weight/` directory may include:
 
 ```text
 pretrained_weight/
@@ -120,8 +92,8 @@ pretrained_weight/
 ├── dofav2_vit_base_e150.pth
 ├── dofav2_vit_large_e150.pth
 ├── Galileo_nano_encoder.pt
-├── Prithvi_EO_V2_300M
-├── TerraMind_v1_base
+├── Prithvi_EO_V2_300M/
+├── TerraMind_v1_base/
 ├── HSI_spatial_checkpoint-1600.pth
 ├── mit_b0.pth
 ├── mit_b1.pth
@@ -138,42 +110,54 @@ pretrained_weight/
 └── vssm_tiny_0230_ckpt_epoch_262.pth
 ```
 
+For upstream checkpoints not directly linked above, consult the corresponding model's official repository or documentation. Comply with the license for each model and dataset.
+
 ## 🚀 Quick Start
 
-Minimal training and evaluation commands.
+From `HazardX-Bench/Monitoringcode/`, after preparing the dataset and any required weights:
 
 ### Train
 
-Train with a YAML config:
-
 ```bash
-python train.py --config configs/flood/cau/unet.yaml
+python train.py --config config/flood/cau/seg_unet.yaml
 ```
 
 ### Evaluate
 
-Evaluate an experiment directory:
-
 ```bash
-python test.py --exp_path results/cau/unet
+python test.py --exp_path results/flood/cau/seg_unet
 ```
 
-## 🗂️Repository Layout
+## 🗂️ Repository Layout
 
- Main directories and what they are responsible for:
+```text
+HazardX/
+├── README.md
+└── HazardX-Bench/
+    └── Monitoringcode/
+        ├── README.md
+        ├── config/
+        ├── docs/
+        ├── scripts/data_prep/
+        ├── src/core/
+        ├── src/datasets/
+        ├── src/models/
+        ├── src/tasks/
+        ├── train.py
+        └── test.py
+```
 
-- `src/core/`: trainer, config loader, registry, augmentation, metrics
-- `src/tasks/`: task handlers for segmentation, change detection, and semantic change detection
+Within `Monitoringcode/`:
+
+- `src/core/`: trainer, config loader, registry, augmentation and metrics
+- `src/tasks/`: segmentation, change detection and semantic change detection task handlers
 - `src/datasets/`: dataset adapters and runtime data contracts
-- `src/models/`: model wrappers and vendored third-party implementations
-- `configs/`: experiment configs grouped by domain and dataset
-- `scripts/data_prep/`: dataset preparation guides and helper scripts
-- `docs/`: architecture notes and extension guidance
+- `src/models/`: model wrappers and third-party implementations
+- `config/`: experiment configurations grouped by domain and dataset
+- `scripts/data_prep/`: dataset preparation instructions and utilities
+- `docs/`: architecture and extension guidance
 
+## 🏗️ Architecture and Extension
 
-## 🏗️Architecture And Extension
-
-Internal runtime design and extension entry points.
-
-- Architecture overview: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
-- Extension guide: [docs/EXTENSION_GUIDE.md](docs/EXTENSION_GUIDE.md)
+- [Architecture overview](HazardX-Bench/Monitoringcode/docs/ARCHITECTURE.md)
+- [Extension guide](HazardX-Bench/Monitoringcode/docs/EXTENSION_GUIDE.md)
