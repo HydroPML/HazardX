@@ -1,21 +1,17 @@
+
 <div>
   <img src="Figs/HazardX%20logo%20on%20transparent%20background.png"
        alt="HazardX Logo"
        align="left"
-       width="230">
+       width="160">
 
   <br>
 
-  <div id="user-content-toc">
-    <ul>
-      <summary>
-        <h1>Multimodal Foundation Models for Natural Hazard Monitoring and Forecasting</h1>
-      </summary>
-    </ul>
-  </div>
+  <h3>Multimodal Foundation Models for Natural Hazard Monitoring and Forecasting</h3>
 
   <br clear="all">
 </div>
+
 
 
 # HazardX
@@ -24,7 +20,7 @@
        alt="HazardX Framework Overview"
        width="100%">
 </p>
-
+HazardX focuses on floods, landslides, and wildfires, while the other hazards illustrate potential future extensions.
 
 
 
