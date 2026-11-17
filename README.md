@@ -7,7 +7,7 @@
 
   <br>
 
-  <h3>Multimodal Foundation Models for Natural Hazard Monitoring and Forecasting</h3>
+  <h1>Multimodal Foundation Models for Natural Hazard Monitoring and Forecasting</h1>
 
   <br clear="all">
 </div>
