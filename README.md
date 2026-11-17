@@ -19,7 +19,7 @@ HazardX focuses on floods, landslides, and wildfires, while the other hazards il
 
 # HazardX-Bench for natural hazard monitoring
 <p align="center">
-  <img src="https://raw.githubusercontent.com/HydroPML/HazardX/main/Figs/visualization.png" width="95%" alt="HazardX Visualization">
+  <img src="https://raw.githubusercontent.com/HydroPML/HazardX/main/Figs/visualization.pdf" width="95%" alt="HazardX Visualization">
 </p>
 
 The currently released monitoring implementation is located in [`HazardX-Bench/Monitoringcode/`](HazardX-Bench/Monitoringcode/).
