@@ -6,10 +6,9 @@
        align="left"
        width="230">
 
-  <br><br>
+  <br><br><br>
 
-  <h1>HazardX</h1>
-  <h3>Multimodal Foundation Models for Natural Hazard Monitoring and Forecasting</h3>
+  <h2>Multimodal Foundation Models for Natural Hazard Monitoring and Forecasting</h2>
 
   <br clear="all">
 </div>
