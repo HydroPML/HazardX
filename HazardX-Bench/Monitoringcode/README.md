@@ -1,4 +1,4 @@
-<div align="center">
+<img width="1254" height="1254" alt="image" src="https://github.com/user-attachments/assets/3388c770-de91-4816-bd84-3b5e27c21956" /><div align="center">
 <h1 align="center">🌍 HazardX-Bench: Monitoring</h1>
 
   
