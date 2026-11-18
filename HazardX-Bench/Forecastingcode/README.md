@@ -1,4 +1,3 @@
-<img width="1254" height="1254" alt="image" src="https://github.com/user-attachments/assets/622e7244-f8b0-4580-8778-912e7baee124" />
 <h1 align="center">🌍 HazardX-Bench: Forecasting</h1>
 
 ## 🔭Overview
