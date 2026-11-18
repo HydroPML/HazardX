@@ -29,7 +29,6 @@ Download datasets from their official sources:
 | LandslideCast | [Official project](https://github.com/HydroPML/Landslidecast), [paper](https://doi.org/10.1029/2023EA003417) | Canonical `2d_t10.h5` with scenarios `x1` through `x12000` |
 | WildfireSpreadTS | [Official dataset](https://zenodo.org/records/8006177), [official code](https://github.com/SebastianGer/WildfireSpreadTS) | Official daily TIFFs or the original lossless HDF5 conversion |
 
-See the [preparation guide](scripts/data_prep/README.md) for layouts, channels, splits, and conversion commands. Public access to the canonical LandslideCast HDF5 and FloodCastBench raw-to-trajectory conversion remains unverified; the guide documents these dependencies.
 
 | Dataset | Physical model input (excluding batch and positional encodings) | Prediction protocol |
 | --- | --- | --- |
@@ -38,15 +37,11 @@ See the [preparation guide](scripts/data_prep/README.md) for layouts, channels, 
 | LandslideCast | Three static/initial 200 × 200 fields; architecture-specific nine temporal positions | Eight future depth/velocity frames at 10–80 s; GPhyT uses its original Euler adapter |
 | WildfireSpreadTS | `5 × 40 × 128 × 128` | Next-day fire segmentation from five daily observations |
 
-LandslideCast's temporal positions are conditioning positions, not nine observed
-future states. The original GPhyT adapter also reads the initial velocity from
-the same scenario; the other models retain their original static-field inputs.
-See the selected YAML and model adapter for the exact tensor interface.
+See the [preparation guide](scripts/data_prep/README.md) for layouts, channels, splits, and conversion commands.
 
 ## Pretrained Weights
 
-Pretrained initialization weights are **not** included or uploaded. Download
-only the weights required by the chosen model from their official publishers:
+Place the required initialization weights in `pretrained/`. These files are needed for both training and evaluation of the corresponding pretrained models.
 
 | Model | Official pretrained file | Local filename under `pretrained/` |
 | --- | --- | --- |
@@ -57,30 +52,19 @@ only the weights required by the chosen model from their official publishers:
 | VideoMAEv2 | [vit_b_k710_dl_from_giant.pth](https://huggingface.co/OpenGVLab/VideoMAE2/blob/main/distill/vit_b_k710_dl_from_giant.pth) | `vit_b_k710_dl_from_giant.pth` |
 | Prithvi-EO-2.0 300M | [Prithvi_EO_V2_300M.pt](https://huggingface.co/ibm-nasa-geospatial/Prithvi-EO-2.0-300M/blob/main/Prithvi_EO_V2_300M.pt) | `Prithvi_EO_V2_300M.pt` |
 
-U-Net, ConvLSTM, FNO, EarthFormer, and U-TAE use the original scratch
-initializations in these experiments. The retained PT–FT constructors initialize
-their backbone before loading the full benchmark state, so evaluation also
-requires the corresponding official initialization file. Exact upstream
-revisions and weight hashes are in [third-party provenance](docs/third_party.md).
+U-Net, ConvLSTM, FNO, EarthFormer, and U-TAE are trained from scratch.
 
-The optional helper downloads only the chosen official initialization at its
-audited repository revision and checks its SHA256:
+Alternatively, use the download helper, which verifies the file hash. Prithvi also requires its companion source and configuration:
 
 ```bash
 python scripts/download_pretrained.py --model prithvi
-```
-
-For Prithvi, also place its audited official source/config next to the weight
-file. These two small companion files are included as source, not weights:
-
-```bash
 python scripts/setup_prithvi.py --pretrained-root pretrained
 ```
 
 ## Quick Start
 
-Run commands from this directory. Paths in YAMLs are relative to this release;
-CLI path overrides allow another data, DEM, initialization, or output location.
+Run commands from this directory. Change `--config` and data paths to select another experiment.
+
 
 ### Download benchmark checkpoints
 
@@ -110,23 +94,11 @@ CUDA_VISIBLE_DEVICES=0 python test.py \
   --output-dir outputs/eval_floodsim_unet
 ```
 
-The same command supports every dataset/model by changing `--config` and data
-paths. `test.py` loads the selected weights and normalization, enters eval mode,
-and runs the original evaluator without creating an optimizer. Wildfire's
-decision threshold comes from the saved validation selection, never the test
-labels. The original AP tie handling is retained.
+For a limited check, add `--max-batches 1` and, for flood datasets, `--max-steps 1`. Limited runs do not reproduce full-test metrics. FloodCastBench uses within-source testing by default; add `--protocol mozambique` for the original Mozambique protocol.
 
-For a quick evaluation limit, add `--max-batches 1`; for flood datasets also add
-`--max-steps 1`. A limited run does not reproduce full-test metrics. FloodCast's
-default is within-source testing; `--protocol mozambique` runs the original
-one-/two-day trajectory regrouping from Mozambique/576. Mozambique/1728 is
-excluded by that published protocol, as documented in
-[reproducibility details](docs/reproducibility.md).
+### Training
 
-### Training and resume
-
-The YAML's `distributed.world_size` is part of the original training recipe.
-For example, FloodSimBench U-Net uses two ranks:
+Use the GPU count specified by `distributed.world_size` in the YAML. For example, FloodSimBench U-Net uses two GPUs:
 
 ```bash
 CUDA_VISIBLE_DEVICES=0,1 torchrun \
@@ -136,13 +108,11 @@ CUDA_VISIBLE_DEVICES=0,1 torchrun \
   --data-root /path/to/FloodSimBench --output-dir outputs/train_floodsim_unet
 ```
 
-Resume an interrupted run with `--resume /path/to/last.pt`. The published
-`best.pth` is the selected best-validation snapshot; it is not the final
-interrupted-run cursor. Exact per-model training commands and rank counts are
-in [training commands](docs/train_commands.md). Use an independent master port
-for each simultaneously running group. Training is never launched by `test.py`.
+Resume with `--resume /path/to/last.pt`; `best.pth` is the best-validation snapshot. See [per-model training commands](docs/train_commands.md) for GPU counts and settings. Use different master ports for concurrent runs.
 
 ### Small-batch check
+
+Check checkpoint inference, native metrics, and one temporary training step:
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 python scripts/smoke_test.py \
@@ -150,10 +120,7 @@ CUDA_VISIBLE_DEVICES=0 python scripts/smoke_test.py \
   --output-dir outputs/smoke_landslide_unet
 ```
 
-This reads real data, checks a checkpoint forward and native batch metrics,
-then executes one temporary training step. Modified weights are discarded.
-[The release validation report](docs/validation_report.md) records all 36
-original/release comparisons and the limits of this check.
+Modified weights are discarded. See the [validation report](docs/validation_report.md) for coverage and limitations.
 
 ## Repository Layout
 
@@ -179,29 +146,8 @@ Forecastingcode/
 
 ## Reproducibility
 
-The first formal seed is **42** for FloodCastBench, **1** for FloodSimBench,
-and **0** for LandslideCast and WildfireSpreadTS. Wildfire's Prithvi selection
-uses the **second experiment, seed 1**, as requested. Selection was checked
-against the actual checkpoint metadata and saved result files.
-
-[The experiment catalog](results/catalog.json) preserves all saved metrics,
-selected checkpoint epochs, and configurations. [The manifest](checkpoints/manifest.json)
-connects each selected experiment to its uploaded checkpoint. Original numerical
-source hashes are retained in `docs/native_source_manifest.json`. No full
-retraining or full-test reevaluation was performed during release preparation;
-the archived final metrics remain separate from small-batch validation metrics.
-
-The [selected-experiment table](docs/selected_experiments.md) lists each model's
-actual seed, best-checkpoint epoch, and original main test metrics. Public Drive
-download hashes and folder audits are included with the release evidence.
+See the [selected experiments](docs/selected_experiments.md) for seeds, checkpoint epochs, and metrics; the [experiment catalog](results/catalog.json) for saved configurations; and [third-party provenance](docs/third_party.md) for source revisions and weight hashes. Protocol details are in the [reproducibility guide](docs/reproducibility.md).
 
 ## Licensing
 
-See [licensing and attribution](docs/licensing.md). Dataset, backbone source,
-pretrained initialization, and trained benchmark checkpoint permissions are
-separate. Existing license notices are preserved. A repository-wide code or
-benchmark-weight license was not found in the audited project, and no new
-license is invented here. DPOT/Poseidon source redistribution permissions and
-the canonical LandslideCast data access must be resolved by the maintainers
-before an unrestricted public release. Poseidon pretrained weights carry a
-noncommercial restriction. This archive does not override upstream terms.
+
