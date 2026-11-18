@@ -19,8 +19,8 @@ MODALITY_MAP = {
     "opt": "PRE",
     "vv": "POST",
 }
-DEFAULT_INPUT_ROOT = Path("data/flood/CAU_Flood/raw")
-DEFAULT_OUTPUT_DIR = Path("data/flood/CAU_Flood")
+DEFAULT_INPUT_ROOT = Path("/root/autodl-tmp/datasetcsc/flood/CAU_Flood/raw")
+DEFAULT_OUTPUT_DIR = Path("/root/autodl-tmp/datasetcsc/flood/CAU_Flood")
 
 
 class DatasetError(RuntimeError):
@@ -125,7 +125,7 @@ def split_train_validation(
     rng.shuffle(names)
 
     total = len(names)
-    if total <= 1:
+    if total <= 1 or val_ratio == 0:
         return names, []
 
     tentative_val = max(1, int(round(total * val_ratio)))
@@ -222,6 +222,15 @@ def main() -> int:
         split_samples[split_name] = collect_samples(split_path)
         sample_count = len(next(iter(split_samples[split_name].values()), []))
         print(f"  Found {sample_count} samples.")
+
+    # Reject overlapping original splits before copying any files.
+    train_ids = {p.stem for p in split_samples["train"]["flood_vv"]}
+    test_ids = {p.stem for p in split_samples["test"]["flood_vv"]}
+    overlap = train_ids & test_ids
+    if overlap:
+        raise DatasetError(f"Train/test sample IDs overlap: {sorted(overlap)[:10]}")
+    if not 0 <= args.val_ratio < 1:
+        raise DatasetError("Validation ratio must satisfy 0 <= ratio < 1.")
 
     # Prepare destination directories.
     print("Creating output directories...")

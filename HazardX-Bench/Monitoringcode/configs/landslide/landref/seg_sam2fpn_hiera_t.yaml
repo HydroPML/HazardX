@@ -1,0 +1,97 @@
+task: seg
+num_classes: 2
+ignore_index: 255
+seed: 42
+model:
+  name: sam2fpn
+  kwargs:
+    in_channels: 22
+    num_classes: 2
+    config_file: /root/workcsc/HazardX/src/models/sam2/configs/sam2.1_hiera_t.yaml
+    checkpoint: /root/autodl-tmp/pretrained_weight/sam2.1_hiera_tiny.pt
+    decoder_type: fpn
+    patch_embed_init: copy_ch0
+dataset:
+  name: landref
+  input:
+    features:
+    - PRE1_B02
+    - PRE1_B03
+    - PRE1_B04
+    - PRE1_B05
+    - PRE1_B06
+    - PRE1_B07
+    - PRE1_B08
+    - PRE1_B8A
+    - PRE1_B11
+    - PRE1_B12
+    - POST1_B02
+    - POST1_B03
+    - POST1_B04
+    - POST1_B05
+    - POST1_B06
+    - POST1_B07
+    - POST1_B08
+    - POST1_B8A
+    - POST1_B11
+    - POST1_B12
+    - None_DEM
+    - None_SLOPE
+    scales:
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 5000
+    - 90
+    mask_key: None_MASK
+  train:
+    dataset_path: /root/autodl-tmp/datasetcsc/landslide/LANDREF/reference_data
+    h5_path: train_n3_s1s2.h5
+    split: train
+  val:
+    dataset_path: /root/autodl-tmp/datasetcsc/landslide/LANDREF/reference_data
+    h5_path: val_n3_s1s2.h5
+    split: val
+  test:
+    dataset_path: /root/autodl-tmp/datasetcsc/landslide/LANDREF/reference_data
+    h5_path: testind_n3_s1s2.h5
+    split: test
+augmentation:
+  train:
+    HorizontalFlip:
+      p: 0.5
+    VerticalFlip:
+      p: 0.5
+  val: {}
+optimizer:
+  name: AdamW
+  learning_rate: 0.0005
+  weight_decay: 0.0001
+scheduler:
+  name: StepLR
+  step_size: 2000
+  gamma: 0.8
+training:
+  num_epochs: 150
+  train_batch_size: 16
+  eval_batch_size: 16
+  num_workers: 4
+  eval_interval: 300
+output_dir: /root/autodl-tmp/output/LANDREF/seg_sam2fpn_hiera_t

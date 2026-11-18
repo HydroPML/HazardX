@@ -1,0 +1,8 @@
+torch==2.5.1+cu118
+torchvision==0.20.1+cu118
+numpy==1.26.4
+setuptools<81
+opencv-python==4.10.0.84
+opencv-python-headless==4.10.0.84
+timm==1.0.22
+peft==0.17.1

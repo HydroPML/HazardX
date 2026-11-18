@@ -425,9 +425,9 @@ def sample_patches(neg_ratio, d, random_seed):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Create analysis-ready dataset from FLOGA imagery.')
 
-    parser.add_argument('--floga_path', type=str, required=True,
+    parser.add_argument('--floga_path', type=str, default='/root/autodl-tmp/datasetcsc/wildfire/floga/raw_h5',
                         help='The path containing the FLOGA HDF files.')
-    parser.add_argument('--out_path', type=str, required=True,
+    parser.add_argument('--out_path', type=str, default='/root/autodl-tmp/datasetcsc/wildfire/floga/converted_data_256',
                         help='The path to save the dataset into. Default: "data/datasets/"')
     parser.add_argument('--out_format', type=str, choices=['numpy', 'torch'], default='numpy', required=False,
                         help='The output format, can be either "numpy" or "torch". Default "numpy".')

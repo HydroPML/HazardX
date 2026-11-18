@@ -1,0 +1,115 @@
+task: seg
+num_classes: 2
+ignore_index: 255
+seed: 42
+model:
+  name: galileo
+  kwargs:
+    in_channels: 14
+    num_classes: 2
+    backbone: galileo-nano
+    checkpoint_path: /root/autodl-tmp/pretrained_weight/Galileo_nano_encoder.pt
+    patch_size: 8
+    month: 6
+    s2_channel_indices:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    s2_band_names:
+    - B1
+    - B2
+    - B3
+    - B4
+    - B5
+    - B6
+    - B7
+    - B8
+    - B8A
+    - B9
+    - B11
+    - B12
+    topographic_channel_indices:
+    - 12
+    - 13
+    decoder_channels: 256
+    head_channels: 256
+    freeze_backbone: false
+dataset:
+  name: landref
+  input:
+    features:
+    - CONST_ZERO
+    - POST1_B02
+    - POST1_B03
+    - POST1_B04
+    - POST1_B05
+    - POST1_B06
+    - POST1_B07
+    - POST1_B08
+    - POST1_B8A
+    - CONST_ZERO
+    - POST1_B11
+    - POST1_B12
+    - None_SLOPE
+    - None_DEM
+    scales:
+    - 1
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 1
+    - 10000
+    - 10000
+    - 90
+    - 5000
+    mask_key: None_MASK
+  train:
+    dataset_path: /root/autodl-tmp/datasetcsc/landslide/LANDREF/reference_data
+    h5_path: train_n3_s1s2.h5
+    split: train
+  val:
+    dataset_path: /root/autodl-tmp/datasetcsc/landslide/LANDREF/reference_data
+    h5_path: val_n3_s1s2.h5
+    split: val
+  test:
+    dataset_path: /root/autodl-tmp/datasetcsc/landslide/LANDREF/reference_data
+    h5_path: testind_n3_s1s2.h5
+    split: test
+augmentation:
+  train:
+    HorizontalFlip:
+      p: 0.5
+    VerticalFlip:
+      p: 0.5
+  val: {}
+optimizer:
+  name: AdamW
+  learning_rate: 5.0e-05
+  weight_decay: 0.0001
+scheduler:
+  name: StepLR
+  step_size: 2000
+  gamma: 0.8
+training:
+  num_epochs: 150
+  train_batch_size: 16
+  eval_batch_size: 16
+  num_workers: 4
+  eval_interval: 300
+output_dir: /root/autodl-tmp/output/LANDREF/seg_galileo_nano
+compatibility_note: Uses real post-event S2 B2-B8A/B11/B12 and slope/DEM; unavailable
+  B1 and B9 are zero-filled.

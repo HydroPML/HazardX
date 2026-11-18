@@ -117,7 +117,9 @@ class Trainer:
         # Append a seed suffix to output_dir for non-default seeds.
         if seed != 42:
             out = config.get("output_dir", "./results")
-            config._data["output_dir"] = f"{out}_seed{seed}"
+            # Saved experiment configs already contain the seed suffix during testing.
+            suffix = f"_seed{seed}"
+            config._data["output_dir"] = out if str(out).endswith(suffix) else f"{out}{suffix}"
 
         self.logger = _setup_logger("trainer", config.get("output_dir"))
 

@@ -52,6 +52,21 @@ def _save_and_print(metrics, save_path, label=""):
             print(f"    {k}: {v:.4f}")
 
 
+def _save_model_info(trainer, exp_path):
+    """Record exact model parameter counts for result tables (excluding buffers)."""
+    info = {
+        "seed": trainer.config.get("seed", 42),
+        "model": trainer.config.get("model", {}),
+        "total_params": sum(p.numel() for p in trainer.model.parameters()),
+        "trainable_params": sum(p.numel() for p in trainer.model.parameters() if p.requires_grad),
+    }
+    path = os.path.join(exp_path, "model_info.json")
+    temporary = f"{path}.{os.getpid()}.tmp"
+    with open(temporary, "w") as handle:
+        json.dump(info, handle, indent=2)
+    os.replace(temporary, path)
+
+
 def _is_fresh(metrics_path, ckpt_path):
     """Return True if metrics_path exists and is newer than ckpt_path."""
     if not os.path.isfile(metrics_path):
@@ -81,7 +96,16 @@ def main():
                              "matrix accumulation across all evaluated splits.")
     parser.add_argument("--force", action="store_true",
                         help="Force re-run even if test_metrics.json is newer than checkpoint")
+    parser.add_argument("--bootstrap", type=int, default=0,
+                        help="Tile bootstrap repetitions, e.g. 10000 (0 disables)")
+    parser.add_argument("--bootstrap-seed", type=int, default=2026)
+    parser.add_argument("--bootstrap-output-dir", default=None,
+                        help="Bootstrap destination (default: output/bootstrap_results/<dataset>/<experiment>)")
     args = parser.parse_args()
+    if args.bootstrap and args.bootstrap < 2:
+        parser.error("--bootstrap must be >= 2")
+    if args.bootstrap and args.test_splits and len(args.test_splits) > 1:
+        parser.error("Bootstrap currently supports one test split per invocation")
     
     # [新增] 确保 exp_path 存在，并设置日志文件路径
     os.makedirs(args.exp_path, exist_ok=True)
@@ -127,6 +151,7 @@ def main():
 
         import numpy as np
         trainer = Trainer(config)
+        _save_model_info(trainer, args.exp_path)
 
         # Check if any split is stale — if so, force re-eval ALL splits
         # because we can't restore confusion matrices from saved scalar JSONs.
@@ -197,20 +222,31 @@ def main():
         metrics_path = os.path.join(args.exp_path, "test_metrics.json")
 
         # Skip check
-        if not args.force and _is_fresh(metrics_path, ckpt_path):
+        if not args.force and not args.bootstrap and _is_fresh(metrics_path, ckpt_path):
             print(f"[SKIP] {metrics_path} is fresh (newer than {args.checkpoint}). "
                   f"Use --force to re-run.")
             return
 
         trainer = Trainer(config)
+        _save_model_info(trainer, args.exp_path)
 
         if args.test_splits:
             ds_cfg = config._data.get("dataset", {})
             test_cfg = ds_cfg.get("test", {})
             test_cfg["data_list_path"] = args.test_splits[0]
 
+        trainer.task_handler.metrics_mgr.collect_tile_cms = bool(args.bootstrap)
         metrics = trainer.evaluate("test")
         _save_and_print(metrics, metrics_path)
+        if args.bootstrap:
+            from src.core.bootstrap import save_bootstrap
+            experiment_path = os.path.abspath(args.exp_path)
+            bootstrap_dir = args.bootstrap_output_dir or os.path.join(
+                os.path.dirname(os.path.abspath(__file__)), "output", "bootstrap_results",
+                os.path.basename(os.path.dirname(experiment_path)),
+                os.path.basename(experiment_path))
+            save_bootstrap(trainer.task_handler.metrics_mgr.tile_cms,
+                           bootstrap_dir, args.bootstrap, args.bootstrap_seed)
 
 
 if __name__ == "__main__":

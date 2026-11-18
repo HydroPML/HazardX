@@ -1,3 +1,11 @@
+<div align="center">
+<h1 align="center">🌍 HazardX</h1>
+
+<h3>Multimodal Foundation Models for Natural Hazard Monitoring and Forecasting:<br>Methods, Benchmarks, and Perspectives</h3>
+
+[**Installation**](#installation) | [**Dataset Preparation**](#dataset-preparation) | [**Pretrained Weights**](#pretrained-weights) | [**Quick Start**](#quick-start) | [**Repo Layout**](#repository-layout)
+
+</div>
 
 <!-- 
 ## Contents
@@ -10,6 +18,21 @@
 - [Dataset Preparation](#dataset-preparation)
 - [Architecture And Extension](#architecture-and-extension) -->
 
+## 🔭Overview
+*HazardX* is the official repository for our review paper, *Multimodal Foundation Models for Natural Hazard Monitoring and Forecasting: Methods, Benchmarks, and Perspectives*.
+
+One of our key motivations is that current disaster mapping research is highly fragmented: benchmarks, tasks, and model implementations are often inconsistent across papers, making fair evaluation, reproduction, and further development unnecessarily difficult.
+
+This repo unifies widely used disaster mapping benchmarks and representative deep learning models across major research directions, and provides a consistent training and evaluation pipeline for:
+- Flood mapping
+- Landslide segmentation
+- Wildfire analysis
+
+It is designed to help researchers:
+- Reproduce the results reported in our paper
+- Evaluate models under a unified protocol
+- Use strong baselines out of the box
+- Build and test their own improvements with minimal engineering overhead
 
 ## 🛠️Installation
 
@@ -29,7 +52,7 @@ Some models require optional extras:
   cd src/models/ChangeMamba/kernels/selective_scan
   pip install . --no-build-isolation
   ```
-- Local pretrained checkpoints under `pretrained_weight/` for model families such as SegFormer, SAM2, DINOv3, SkySense++, SpectralGPT, and ChangeMamba. See [Pretrained Weights](#pretrained-weights) below.
+- Local pretrained checkpoints under `pretrained_weight/` for model families such as SegFormer, HRNet, SAM/SAM2, DINOv3, HyperSigma, SkySense, SpectralGPT, and ChangeMamba. See [Pretrained Weights](#pretrained-weights) below.
 
 ## 🧪Dataset Preparation
 
@@ -42,71 +65,31 @@ Dataset preparation guides are organized by disaster domain:
 
 ## 📦Pretrained Weights
 
- Recommended local checkpoint layout for the supported model zoo.
+All pretrained checkpoints used by this project are stored in:
 
-Create the local checkpoint directory first:
+```text
+/root/workcsc/HazardX_Monitoring/pretrained_weight
+```
+
+The YAML files under `configs/` use this directory directly. Before starting an experiment, verify that the required checkpoint exists:
 
 ```bash
-mkdir -p pretrained_weight
+ls -lh /root/workcsc/HazardX_Monitoring/pretrained_weight
+```
+
+If the directory has not been created yet:
+
+```bash
+mkdir -p /root/workcsc/HazardX_Monitoring/pretrained_weight
 ```
 
 ### Direct Downloads
 
-```bash
-# pretrain-vit-base-e199.pth
-wget -O pretrained_weight/pretrain-vit-base-e199.pth \
-  https://zenodo.org/records/7338613/files/pretrain-vit-base-e199.pth
-
-# SpectralGPT+.pth
-wget -O "pretrained_weight/SpectralGPT+.pth" \
-  "https://zenodo.org/records/8412455/files/SpectralGPT+.pth?download=1"
-
-# spec-vit-base-ultra-checkpoint-1599.pth
-wget -O pretrained_weight/spec-vit-base-ultra-checkpoint-1599.pth \
-  https://huggingface.co/WHU-Sigma/HyperSIGMA/resolve/main/spec-vit-base-ultra-checkpoint-1599.pth
-
-huggingface-cli download UTokyo-Yokoya-Lab/AnyDisaster-Pretrained_Weight \
-  vssm_tiny_0230_ckpt_epoch_262.pth --local-dir pretrained_weight --local-dir-use-symlinks False
-```
-
-### Additional Upstream Checkpoints
-
-- DINOv3
-  Source: https://ai.meta.com/resources/models-and-libraries/dinov3-downloads/
-  Download and save as:
-  - `dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth` (ViT-B/16, LVD-1689M)
-  - `dinov3_vitl16_pretrain_lvd1689m-8aa4cbdd.pth` (ViT-L/16, LVD-1689M)
-  - `dinov3_vitl16_pretrain_sat493m-eadcf0ff.pth` (ViT-L/16, SAT-493M)
-
-- SAM 2.1
-  Source: https://github.com/facebookresearch/sam2
-  Download and save as:
-  - `sam2.1_hiera_small.pt` (SAM 2.1 Hiera-Small)
-  - `sam2.1_hiera_base_plus.pt` (SAM 2.1 Hiera-Base+)
-
-- SegFormer MiT encoders
-  Source: https://github.com/NVlabs/SegFormer
-  Download and save as:
-  - `mit_b0.pth`
-  - `mit_b1.pth`
-  - `mit_b2.pth`
-  - `mit_b3.pth`
-  - `mit_b4.pth`
-  - `mit_b5.pth`
-
-- SkySense++ backbone
-  Source:
-  - https://github.com/Jack-bo1220/SkySense
-  - https://www.notion.so/SkySense-Checkpoints-a7fcff6ce29a4647a08c7fe416910509
-  Select the `hr` (high-resolution RGB / RGBNIR) variant, not the `s2` Sentinel-2 variant.
-  Save as:
-  - `skysense_model_backbone_hr.pth`
-  For commercial use, contact the authors (`yansheng.li@whu.edu.cn`).
-
-After completing all downloads, `pretrained_weight/` should contain:
+The current checkpoint directory contains:
 
 ```text
-pretrained_weight/
+/root/workcsc/HazardX_Monitoring/pretrained_weight/
+├── AnySat.pth
 ├── clay-v1.5.ckpt
 ├── dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth
 ├── dinov3_vitl16_pretrain_lvd1689m-8aa4cbdd.pth
@@ -114,43 +97,53 @@ pretrained_weight/
 ├── dofav2_vit_base_e150.pth
 ├── dofav2_vit_large_e150.pth
 ├── Galileo_nano_encoder.pt
-├── Prithvi_EO_V2_300M
-├── TerraMind_v1_base
-├── HSI_spatial_checkpoint-1600.pth
-├── mit_b0.pth
-├── mit_b1.pth
-├── mit_b2.pth
-├── mit_b3.pth
-├── mit_b4.pth
-├── mit_b5.pth
+├── Prithvi_EO_V2_300M.pt
 ├── pretrain-vit-base-e199.pth
 ├── sam2.1_hiera_base_plus.pt
+├── sam2.1_hiera_large.pt
 ├── sam2.1_hiera_small.pt
-├── skysensepp_model_backbone_hr.pth
-├── spec-vit-base-ultra-checkpoint-1599.pth
+├── sam2.1_hiera_tiny.pt
+├── segformer_mit-b0_512x512_160k_ade20k_20210726_101530-8ffa8fda.pth
+├── segformer_mit-b1_512x512_160k_ade20k_20210726_112106-d70e859d.pth
+├── segformer_mit-b2_512x512_160k_ade20k_20210726_112103-cbd414ac.pth
+├── segformer_mit-b3_512x512_160k_ade20k_20210726_081410-962b98d2.pth
+├── segformer_mit-b4_512x512_160k_ade20k_20210728_183055-7f509d7d.pth
+├── segformer_mit-b5_512x512_160k_ade20k_20210726_145235-94cedf59.pth
+├── skysense_model_backbone_hr.pth
+├── skysensepp_release_hr.pth
 ├── SpectralGPT+.pth
+├── TerraMind_v1_base.pt
 └── vssm_tiny_0230_ckpt_epoch_262.pth
 ```
 
 ## 🚀 Quick Start
 
-Minimal training and evaluation commands.
+The runnable batch scripts are stored in:
 
-### Train
-
-Train with a YAML config:
-
-```bash
-python train.py --config configs/flood/cau/unet.yaml
+```text
+/root/workcsc/HazardX_Monitoring/shfile
 ```
 
-### Evaluate
-
-Evaluate an experiment directory:
+Run all LANDREF change-detection models sequentially on GPU 0 with seeds 43 and 44. Each completed model is evaluated automatically, and the result tables are updated after testing:
 
 ```bash
-python test.py --exp_path results/cau/unet
+cd /root/workcsc/HazardX_Monitoring
+bash shfile/train_landref_cd_two_seeds.sh
 ```
+
+Preview all commands without starting training:
+
+```bash
+DRY_RUN=1 bash shfile/train_landref_cd_two_seeds.sh
+```
+
+Run the Landslide4Sense experiments:
+
+```bash
+bash shfile/train_landslide4sensen_two_seeds.sh
+```
+
+LANDREF checkpoints and test metrics are written to `output/landref/`. The Excel and TSV summary tables are written to `output/tables/`.
 
 ## 🗂️Repository Layout
 
@@ -161,6 +154,8 @@ python test.py --exp_path results/cau/unet
 - `src/datasets/`: dataset adapters and runtime data contracts
 - `src/models/`: model wrappers and vendored third-party implementations
 - `configs/`: experiment configs grouped by domain and dataset
+- `pretrained_weight/`: local pretrained checkpoints
+- `shfile/`: executable batch-training scripts
 - `scripts/data_prep/`: dataset preparation guides and helper scripts
 - `docs/`: architecture notes and extension guidance
 
@@ -171,3 +166,6 @@ Internal runtime design and extension entry points.
 
 - Architecture overview: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
 - Extension guide: [docs/EXTENSION_GUIDE.md](docs/EXTENSION_GUIDE.md)
+
+## 🙋Q & A
+For questions, please open an issue in this repository.

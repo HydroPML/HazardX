@@ -18,7 +18,7 @@ def clamp_and_scale(sen2_value, a_max=10000):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--src_dir", type=str, default="./data")
+    parser.add_argument("--src_dir", type=str, default="/root/autodl-tmp/datasetcsc/wildfire")
     parser.add_argument("--tgt_dir", type=str, default=None)
     parser.add_argument("--patch_size", type=int, default=256)
     args = parser.parse_args()

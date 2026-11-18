@@ -1,226 +1,79 @@
-# Data Setup
-## Flood
+# Flood Dataset Preparation
 
-Run the commands below from the repository root. All commands use the default arguments of the scripts in `scripts/data_prep/flood`.
-For the Python download helpers, install dependencies first: `pip install -e .`.
+This directory contains preparation guides for **FloodPlanet** and **CAU-Flood**. Run all commands from the HazardX project root. The preprocessing scripts use only the Python standard library; no model installation or weight downloads are required in advance.
 
-The first directory tree shown for each dataset is an intermediate extracted layout. After `reorganize` finishes successfully, those extracted raw folders can be removed to reclaim disk space.
+## FloodPlanet
 
-Config-expected runtime paths:
-- CAU_Flood: `data/flood/CAU_Flood/{train,validation,test}.txt`
-- KuroSiwo: `data/flood/kurosiwo/{train,validation,test}.txt`
-- UrbanSARFloods: `data/flood/UrbanSARFloods/{train,validation,test_jubba,test_nova,test_weihui}.txt`
+Keep the original dataset layout; no TIFF conversion is required:
 
-### CAU_Flood
+```text
+<FLOODPLANET_ROOT>/
+└── CSDAP_complete/
+    ├── <region_a>/
+    │   ├── PS/<id>.tif
+    │   └── labels/<id>.tif
+    └── <region_b>/
+        ├── PS/<id>.tif
+        └── labels/<id>.tif
+```
+
+Images and labels must have matching names within the same region. The default sensor is four-channel PlanetScope (PS). If train/validation/test lists are provided by an experiment or by the dataset authors, use them directly instead of creating new splits.
+
+To create custom random splits, run:
+
 ```bash
-mkdir -p ./data/flood/CAU_Flood/raw
-# manually download train.tar.gz and test.tar.gz from https://pan.baidu.com/s/1i5yxdfwjP-oTyiRmq6FZHQ
-# password: rnx6
-# put both archives in ./data/flood/CAU_Flood/raw/
-
-tar -xzf ./data/flood/CAU_Flood/raw/train.tar.gz -C ./data/flood/CAU_Flood/raw
-tar -xzf ./data/flood/CAU_Flood/raw/test.tar.gz -C ./data/flood/CAU_Flood/raw
-python ./scripts/data_prep/flood/reorganize_cau_flood.py
-
-# optional cleanup after successful conversion
-rm -rf ./data/flood/CAU_Flood/raw/train ./data/flood/CAU_Flood/raw/test
-rm -f ./data/flood/CAU_Flood/raw/train.tar.gz ./data/flood/CAU_Flood/raw/test.tar.gz
+python scripts/data_prep/flood/prepare_segmentation_splits.py \
+  /root/autodl-tmp/datasetcsc/flood/FloodPlanet \
+  --sensor PS --train-ratio 0.7 --val-ratio 0.15 --seed 42
 ```
 
-Expected directory structure after extraction:
+The script writes `train.txt`, `validation.txt`, and `test.txt` to the dataset root. Each line contains a sample ID without a file extension. Running the script again overwrites these three lists but does not modify the source images. The test ratio is the remaining fraction, 15% by default.
+
+The script raises an error for missing labels, duplicate IDs across regions, invalid ratios, or empty splits caused by too few samples. It checks file pairing only; it does not inspect pixel values inside TIFF files.
+
+The default split is random at the sample level and does not guarantee region-level independence. For cross-region generalization evaluation, provide region-independent split lists. Because the loader selects samples by filename stem, IDs must be unique across regions.
+
+In the relevant `configs/flood/floodplanet/*.yaml` files, set `dataset_path` for train/val/test to the actual dataset root and set `data_list_path` to the three lists above. Keep `sensor: PS` and `channels: [0, 1, 2, 3]` consistent with the data. The current configuration uses `scale: 10000.0`; adjust it if the source data has already been scaled to avoid scaling twice.
+
+The loader maps labels as follows: raw `0` → ignore value `255`, `1` → non-flood `0`, and `2` → flood `1`. No pre-binarization is required.
+
+## CAU-Flood
+
+After extraction, prepare the following layout. Filenames must match across the three directories in each split:
+
 ```text
-data/
-|___flood
-|   |___CAU_Flood
-|       |___raw
-|       |   |___train
-|       |   |   |___flood_vv
-|       |   |   |   |___*.png
-|       |   |   |___opt
-|       |   |   |   |___*.png
-|       |   |   |___vv
-|       |   |       |___*.png
-|       |   |___test
-|       |   |   |___flood_vv
-|       |   |   |   |___*.png
-|       |   |   |___opt
-|       |   |   |   |___*.png
-|       |   |   |___vv
-|       |   |       |___*.png
-|       |   |___train.tar.gz
-|       |   |___test.tar.gz
+<CAU_RAW>/
+├── train/
+│   ├── flood_vv/<id>.png
+│   ├── opt/<id>.png
+│   └── vv/<id>.png
+└── test/
+    ├── flood_vv/<id>.png
+    ├── opt/<id>.png
+    └── vv/<id>.png
 ```
 
-After reorganization, `./data/flood/CAU_Flood/raw/train` and `./data/flood/CAU_Flood/raw/test` can be removed if you do not need to rerun the conversion.
-
-Expected directory structure after reorganization:
-```text
-data/
-|___flood
-|   |___CAU_Flood
-|       |___PRE
-|       |   |___*.png
-|       |___POST
-|       |   |___*.png
-|       |___GT
-|       |   |___*.png
-|       |___train.txt
-|       |___validation.txt
-|       |___test.txt
-```
-
-### KuroSiwo
 ```bash
-mkdir -p ./data/flood/kurosiwo/raw/configs/train ./data/flood/kurosiwo/raw/pickle
-bash ./scripts/data_prep/flood/download_kurosiwo.sh
-# put data_config.json in ./data/flood/kurosiwo/raw/configs/train/
-# put train_pickle and test_pickle in ./data/flood/kurosiwo/raw/pickle/
-python ./scripts/data_prep/flood/reorganize_kurosiwo.py
-
-# optional cleanup after successful conversion
-rm -rf ./data/flood/kurosiwo/raw/data
+python scripts/data_prep/flood/reorganize_cau_flood.py \
+  --input-root /root/autodl-tmp/datasetcsc/flood/CAU_Flood/raw \
+  --output-dir /root/autodl-tmp/datasetcsc/flood/CAU_Flood \
+  --val-ratio 0.1 --seed 42
 ```
 
-Expected directory structure before reorganization:
+The default paths are `/root/autodl-tmp/datasetcsc/flood/CAU_Flood/raw` and `/root/autodl-tmp/datasetcsc/flood/CAU_Flood`. The script copies the files and generates:
+
 ```text
-data/flood/kurosiwo/
-|___raw
-|   |___configs
-|   |   |___train
-|   |       |___data_config.json
-|   |___pickle
-|   |   |___train_pickle
-|   |   |___test_pickle
-|   |___data
-|   |   |___catalogue.gpkg
-|   |   |___<scene_a>
-|   |   |   |___MS1_IVV.tif
-|   |   |   |___MS1_IVH.tif
-|   |   |   |___SL1_IVV.tif
-|   |   |   |___SL1_IVH.tif
-|   |   |   |___SL2_IVV.tif
-|   |   |   |___SL2_IVH.tif
-|   |   |   |___MK0_DEM.tif
-|   |   |   |___MK0_SLOPE.tif
-|   |   |   |___MK0_MNA.tif
-|   |   |   |___MK0_MLU.tif
-|   |   |___<scene_b>
-|   |       |___...
+<CAU_ROOT>/
+├── PRE/*.png     # from opt
+├── POST/*.png    # from vv
+├── GT/*.png      # from flood_vv
+├── train.txt
+├── validation.txt
+└── test.txt
 ```
 
-After reorganization, the extracted scene folders under `./data/flood/kurosiwo/raw/data/` can be removed if you do not need to rerun the conversion.
+The original test set is preserved; only the original training set is split to create validation data. Use `--val-ratio 0` to disable validation splitting; if you do so, configure training accordingly to handle an empty validation split. The output `PRE`, `POST`, and `GT` directories must be empty before running the script to prevent stale files from being mixed in. Overlapping sample IDs between the original train and test sets cause an error before copying. The original data is never moved or deleted.
 
-Expected directory structure after reorganization:
-```text
-data/flood/kurosiwo/
-|___pre1_vv
-|   |___*.tif
-|___pre1_vh
-|   |___*.tif
-|___pre2_vv
-|   |___*.tif
-|___pre2_vh
-|   |___*.tif
-|___post_vv
-|   |___*.tif
-|___post_vh
-|   |___*.tif
-|___DEM
-|   |___*.tif
-|___SLOPE
-|   |___*.tif
-|___MASK_NODATA
-|   |___*.tif
-|___GT
-|   |___*.tif
-|___train.txt
-|___validation.txt
-|___test.txt
-|___raw
-|   |___configs
-|   |   |___train
-|   |       |___data_config.json
-|   |___pickle
-|   |   |___train_pickle
-|   |   |___test_pickle
-|   |___data
-|   |   |___catalogue.gpkg
-|   |   |___<scene_a>
-|   |   |   |___MS1_IVV.tif
-|   |   |   |___MS1_IVH.tif
-|   |   |   |___SL1_IVV.tif
-|   |   |   |___SL1_IVH.tif
-|   |   |   |___SL2_IVV.tif
-|   |   |   |___SL2_IVH.tif
-|   |   |   |___MK0_DEM.tif
-|   |   |   |___MK0_SLOPE.tif
-|   |   |   |___MK0_MNA.tif
-|   |   |   |___MK0_MLU.tif
-|   |   |___<scene_b>
-|   |       |___...
-```
+In the relevant `configs/flood/cau/*.yaml` files, set `dataset_path` for train/val/test to `<CAU_ROOT>` and set `data_list_path` to the corresponding lists. The CAU-Flood loader supports this PNG directory layout for segmentation and change detection. Ensure that model input channels and normalization match the actual optical/SAR data and the configured input mode.
 
-### UrbanSARFloods
-```bash
-mkdir -p ./data/flood/UrbanSARFloods/raw
-python ./scripts/data_prep/flood/download_urbansar_floods.py
-
-tar -xzf ./data/flood/UrbanSARFloods/raw/urban_sar_floods.tar.gz -C ./data/flood/UrbanSARFloods/raw
-python ./scripts/data_prep/flood/reorganize_urbansar_floods.py
-
-# optional cleanup after successful conversion
-rm -rf ./data/flood/UrbanSARFloods/raw/testing_case_orig ./data/flood/UrbanSARFloods/raw/testing_case_256 ./data/flood/UrbanSARFloods/raw/urban_sar_floods
-rm -f ./data/flood/UrbanSARFloods/raw/urban_sar_floods.tar.gz
-```
-
-Expected directory structure after extraction:
-```text
-data/
-|___flood
-|   |___UrbanSARFloods
-|       |___raw
-|       |   |___testing_case_orig
-|       |   |   |___20210727_Weihui
-|       |   |   |   |___*_GT.tif
-|       |   |   |   |___*_SAR.tif
-|       |   |   |___20230609_NovaKakhovka
-|       |   |   |   |___*_GT.tif
-|       |   |   |   |___*_SAR.tif
-|       |   |   |___20231201_Jubba_1
-|       |   |   |   |___*_GT.tif
-|       |   |   |   |___*_SAR.tif
-|       |   |   |___20231201_Jubba_2
-|       |   |       |___*_GT.tif
-|       |   |       |___*_SAR.tif
-|       |   |___testing_case_256
-|       |   |   |___...
-|       |   |___urban_sar_floods
-|       |   |   |___Train_dataset.txt
-|       |   |   |___Valid_dataset.txt
-|       |   |   |___<subset_a>
-|       |   |   |   |___GT
-|       |   |   |   |   |___*_GT.tif
-|       |   |   |   |___SAR
-|       |   |   |       |___*_SAR.tif
-|       |   |   |___<subset_b>
-|       |   |   |   |___...
-|       |   |___urban_sar_floods.tar.gz
-```
-
-After reorganization, the extracted folders under `./data/flood/UrbanSARFloods/raw/` can be removed if you do not need to rerun the conversion.
-
-Expected directory structure after reorganization:
-```text
-data/
-|___flood
-|   |___UrbanSARFloods
-|       |___SAR
-|       |   |___*.tif
-|       |___GT
-|       |   |___*.tif
-|       |___train.txt
-|       |___validation.txt
-|       |___test_weihui.txt
-|       |___test_nova.txt
-|       |___test_jubba.txt
-```
+For the unified data layout and preparation order, see the top-level [README](../README.md).

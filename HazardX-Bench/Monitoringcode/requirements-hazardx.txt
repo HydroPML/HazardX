@@ -1,0 +1,43 @@
+# Install after activating hazardx; compiled CUDA extensions are built separately.
+--index-url https://pypi.org/simple
+--extra-index-url https://download.pytorch.org/whl/cu118
+-c constraints-hazardx.txt
+torch==2.5.1+cu118
+torchvision==0.20.1+cu118
+numpy==1.26.4
+albumentations==1.4.24
+pyyaml
+tqdm
+imageio
+tifffile
+imagecodecs
+scikit-image
+matplotlib
+rasterio
+termcolor
+prettytable
+safetensors
+yacs
+h5py
+hdf5plugin
+scikit-learn
+einops
+fvcore
+tensorboardX
+transformers==4.57.0
+hydra-core
+pandas
+Pillow
+huggingface_hub>=0.34,<1
+opencv-python-headless==4.10.0.84
+shapely
+mmsegmentation==0.30.0
+mmcls==0.25.0
+mmcv-full==1.7.2
+ninja
+setuptools<81
+wheel
+packaging
+timm==1.0.22
+peft==0.17.1
+openpyxl

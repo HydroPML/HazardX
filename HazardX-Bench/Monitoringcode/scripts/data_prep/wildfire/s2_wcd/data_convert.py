@@ -58,7 +58,7 @@ def convert_sen2(src_dir, tgt_dir):
 
     Usage:
         python scripts/data_prep/wildfire/s2_wcd/data_convert.py \\
-            --src_dir ./data/wildfire/raw --tgt_dir ./data/wildfire --mode sen2
+            --src_dir /root/autodl-tmp/datasetcsc/wildfire/raw --tgt_dir /root/autodl-tmp/datasetcsc/wildfire --mode sen2
 
     Args:
         src_dir: raw data root directory (contains the S2-WCD/ subdirectory).
@@ -118,8 +118,8 @@ def convert_sen2(src_dir, tgt_dir):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--src_dir", type=str, default="./data")
-    parser.add_argument("--tgt_dir", type=str, default=None)
+    parser.add_argument("--src_dir", type=str, default="/root/autodl-tmp/datasetcsc/wildfire/raw")
+    parser.add_argument("--tgt_dir", type=str, default="/root/autodl-tmp/datasetcsc/wildfire")
     parser.add_argument("--mode", type=str, default="all",
                         choices=["rgb", "sen2", "all"],
                         help='Conversion mode: "rgb", "sen2" (13-band), or "all" (both, default).')

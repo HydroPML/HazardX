@@ -1,0 +1,55 @@
+task: seg
+num_classes: 2
+ignore_index: 255
+seed: 42
+
+dataset:
+  type: floodplanet_tiff
+  root: /root/workcsc/datasets/flood/FloadPlanet
+  label_map: {0: 255, 1: 0, 2: 1}
+  augment_train: true
+  splits:
+    train: {data_list_path: train.txt, channels: [0, 1, 2, 3], scale: 255.0, crop_size: 128}
+    val: {data_list_path: validation.txt, channels: [0, 1, 2, 3], scale: 255.0, patch_size: 128, tile_eval: true}
+    test: {data_list_path: test.txt, channels: [0, 1, 2, 3], scale: 255.0, patch_size: 128, tile_eval: true}
+
+input_adapter:
+  early_fusion: true
+  input_channels: 4
+  bands: [0, 1, 2, 3]
+
+model:
+  name: olmoearth
+  kwargs:
+    classes: 2
+    size: nano
+    patch_size: 8
+    timestamp: [15, 5, 2020]
+    pretrained: true
+    pretrained_checkpoint_path: null
+    freeze_encoder: false
+    decoder_channels: 256
+    decoder_pool_scales: [1, 2, 3, 6]
+    in_channels: 4
+    # OLMO order: B02,B03,B04,B08,B05,B06,B07,B8A,B11,B12,B01,B09,DEM.
+    # PS supplies B,G,R,NIR; unavailable modalities start as zero.
+    projection_indices: [0, 1, 2, 3, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+
+optimizer:
+  name: AdamW
+  encoder_learning_rate: 1.0e-05
+  learning_rate: 1.0e-04
+  weight_decay: 0.01
+scheduler: {name: WarmUpPolyLR, lr_power: 0.9, step_mode: iteration}
+loss: {class_weights: [1.0, 1.19], dice_weight: 0.0}
+training:
+  num_epochs: 100
+  train_batch_size: 8
+  eval_batch_size: 8
+  num_workers: 8
+  # 269 training images / batch 8 ~= 34 iterations; validate every 5 epochs.
+  eval_interval: 170
+  log_interval: 50
+  metric_for_best_model: IoU_1
+resume: null
+output_dir: /root/workcsc/diasterother/outputs/floodplanet_olmoearth_nano

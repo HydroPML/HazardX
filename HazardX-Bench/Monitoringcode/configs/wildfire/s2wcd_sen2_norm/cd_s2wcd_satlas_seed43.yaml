@@ -1,0 +1,56 @@
+task: cd
+num_classes: 2
+ignore_index: 255
+seed: 43
+
+dataset:
+  type: s2wcd_npy
+  root: /root/workcsc/datasets/wildfire/s2_wcd
+  label_map: {0: 0, 1: 1}
+  augment_train: true
+  splits:
+    train: {data_list_path: train.txt, patch_size: 256, tile_eval: false}
+    val: {data_list_path: val.txt, patch_size: 256, tile_eval: true}
+    test: {data_list_path: test.txt, patch_size: 256, tile_eval: true}
+
+input_adapter:
+  early_fusion: true
+  input_channels: 26
+  bands: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
+
+model:
+  name: satlas
+  kwargs:
+    classes: 2
+    variant: tiny
+    pretrained: true
+    pretrained_checkpoint_path: null
+    freeze_encoder: false
+    in_channels: 26
+    # Satlas order: B04,B03,B02,B05,B06,B07,B08,B11,B12.
+    # Initialize from the post-event date while retaining all 26 trainable inputs.
+    projection_indices: [16, 15, 14, 17, 18, 19, 20, 24, 25]
+
+optimizer:
+  name: AdamW
+  encoder_learning_rate: 1.0e-05
+  learning_rate: 1.0e-04
+  weight_decay: 0.01
+scheduler:
+  name: WarmUpPolyLR
+  lr_power: 0.9
+  step_mode: iteration
+loss:
+  class_weights: [1.0, 1.68]
+  dice_weight: 0.0
+training:
+  num_epochs: 100
+  train_batch_size: 8
+  eval_batch_size: 4
+  num_workers: 8
+  eval_interval: 100
+  log_interval: 20
+  # IoU_1 alone rewards an all-positive prediction on this dataset.
+  metric_for_best_model: mIoU
+resume: null
+output_dir: /root/workcsc/diasterother/outputs/s2wcd_satlas_tiny_seed43
