@@ -1,0 +1,34 @@
+{
+  "dataset": "FloodCastBench",
+  "model": "ConvLSTM-Scratch",
+  "model_slug": "convlstm",
+  "seed": 42,
+  "filename": "best.pth",
+  "original_filename": "best_validation.pt",
+  "checkpoint": "checkpoints/FloodCastBench/convlstm/best.pth",
+  "format": "byte_parts",
+  "bytes": 139516818,
+  "sha256": "f588337d86dcd67d3889b79ad6d7e627e48e3b869842681ddd162dc5fdb5b482",
+  "config": "config/FloodCastBench/convlstm.yaml",
+  "config_url": "https://drive.google.com/file/d/1-e8KTxSnnGlOqN2EgNNty9DIYlTIf_AJ/view?usp=drivesdk",
+  "metrics_url": "https://drive.google.com/file/d/1bjtokbT0XjGnvqQCxYumY37t8LNl3rHW/view?usp=drivesdk",
+  "drive_folder_url": "https://drive.google.com/drive/folders/1tzrXWYkSCEmelmHrBafZpibkCUroOYhA",
+  "parts": [
+    {
+      "name": "best.pth.part0001",
+      "bytes": 94371840,
+      "sha256": "9834144917e5297a9c79e55ad3e5db45976d5adbeb764a63cf338f33845295b3",
+      "id": "1Hdcd5ANwRsDcJTysRAbiYNohETPl15rE",
+      "url": "https://drive.google.com/file/d/1Hdcd5ANwRsDcJTysRAbiYNohETPl15rE/view?usp=drivesdk",
+      "size_and_parent_verified": true
+    },
+    {
+      "name": "best.pth.part0002",
+      "bytes": 45144978,
+      "sha256": "76e01ab318ae389e4df343352cd68f55246fd03a783e3f07b6fb9d38225d3a47",
+      "id": "1-6Q6kZMo8PLWo9e0PUYhhNmCq2j_HMT8",
+      "url": "https://drive.google.com/file/d/1-6Q6kZMo8PLWo9e0PUYhhNmCq2j_HMT8/view?usp=drivesdk",
+      "size_and_parent_verified": true
+    }
+  ]
+}

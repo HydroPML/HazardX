@@ -1,0 +1,42 @@
+{
+  "dataset": "FloodCastBench",
+  "model": "Poseidon-T-PT-FT",
+  "model_slug": "poseidon",
+  "seed": 42,
+  "filename": "best.pth",
+  "original_filename": "best_validation.pt",
+  "checkpoint": "checkpoints/FloodCastBench/poseidon/best.pth",
+  "format": "byte_parts",
+  "bytes": 250420020,
+  "sha256": "dc3b84c343fa3eaaf4026096541348dbc67ec993832ad9b5d45512d074428d19",
+  "config": "config/FloodCastBench/poseidon.yaml",
+  "config_url": "https://drive.google.com/file/d/1Vsxk9sRGS0SvxAP8aPmmRBhgwNLw6wvV/view?usp=drivesdk",
+  "metrics_url": "https://drive.google.com/file/d/16I3iyHXCl16q6FoObWG5AuFyuTKkh6aD/view?usp=drivesdk",
+  "drive_folder_url": "https://drive.google.com/drive/folders/1QkCDI-2oMp2wWpExiK3kv83O_FDgnlqw",
+  "parts": [
+    {
+      "name": "best.pth.part0001",
+      "bytes": 94371840,
+      "sha256": "164fbd8b466fb229a565bcd508eab56c5323dfdf209865b22ddb6aa80c0600f4",
+      "id": "1URwnFY_6yqL5Vhw39YhktI94RQB71Eed",
+      "url": "https://drive.google.com/file/d/1URwnFY_6yqL5Vhw39YhktI94RQB71Eed/view?usp=drivesdk",
+      "size_and_parent_verified": true
+    },
+    {
+      "name": "best.pth.part0002",
+      "bytes": 94371840,
+      "sha256": "fde39791106c997e9d92581916079665de54e9bcc99fb8b20a8e993526593788",
+      "id": "15ET7NtX0kscjg8u1cAoLkSMDgEjxxDPz",
+      "url": "https://drive.google.com/file/d/15ET7NtX0kscjg8u1cAoLkSMDgEjxxDPz/view?usp=drivesdk",
+      "size_and_parent_verified": true
+    },
+    {
+      "name": "best.pth.part0003",
+      "bytes": 61676340,
+      "sha256": "5f6f298986352ebd724f9b03286ca17194ac93126e8e86228c69839d6fd8807e",
+      "id": "1XaxRgcLmbZlwILeA-Or1-dw1b6g8l3NX",
+      "url": "https://drive.google.com/file/d/1XaxRgcLmbZlwILeA-Or1-dw1b6g8l3NX/view?usp=drivesdk",
+      "size_and_parent_verified": true
+    }
+  ]
+}

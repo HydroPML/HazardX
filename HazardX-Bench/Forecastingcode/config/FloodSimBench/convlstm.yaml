@@ -1,0 +1,410 @@
+# Verified formal experiment; numeric settings match the selected checkpoint.
+dataset: FloodSimBench
+model_id: '02'
+model: ConvLSTM-Scratch
+seed: 1
+backend: floodsim_seven
+distributed:
+  world_size: 1
+paths:
+  data_root: data/FloodSimBench
+  dem_root: data/FloodCastBench/DEM
+  pretrained_root: pretrained
+  source_root: src/models/third_party
+  output_dir: outputs/FloodSimBench/convlstm
+checkpoint: checkpoints/FloodSimBench/convlstm/best.pth
+native_args:
+  mode: all
+  model_type: ConvLSTM-Scratch
+  data_root: ${data_root}
+  output_dir: ${output_dir}
+  checkpoint: ''
+  resume: ''
+  statistics_cache: ''
+  epochs: 100
+  validate_every: 5
+  batch_size: 1
+  accum_steps: 8
+  num_workers: 2
+  seed: 1
+  deterministic: true
+  amp: true
+  amp_initial_scale: 128.0
+  grad_clip: 0.0
+  learning_rate: 0.0001
+  weight_decay: 0.0
+  log_every_updates: 10
+  eval_log_every: 10
+  ddp_timeout_hours: 72.0
+  smoke_rollout_steps: 2
+  unet_init_features: 32
+  unet_grid_type: cartesian
+  fno_modes_height: 12
+  fno_modes_width: 12
+  fno_width: 20
+  fno_grid_type: cartesian
+  official_root: ''
+  pretrained_checkpoint: ''
+  pretrained_report_dir: ${output_dir}/pretrained_reports
+  activation_checkpointing: true
+  _attempted_optimizer_updates: 12870
+  _successful_optimizer_updates: 12870
+  _amp_skipped_updates: 0
+model_config:
+  model_type: ConvLSTM-Scratch
+  runtime_height: 1024
+  runtime_width: 1024
+  input_channels: 12
+  output_channels: 1
+  official_root: ''
+  checkpoint_path: ''
+  report_dir: ${output_dir}/pretrained_reports
+  activation_checkpointing: true
+  prediction: direct_normalized_h_t
+normalization:
+  mode: train_standard
+  mean:
+  - 0.04753688469542661
+  - 14.47321634726391
+  - 0.0
+  std:
+  - 0.20698808939452976
+  - 36.96536111920035
+  - 1.0
+  provenance:
+    dataset: FloodSimBench
+    allowed_roles:
+    - train
+    cities:
+    - HOU
+    - DAL
+    - OKC
+    - NYC
+    - ATL
+    - ORL
+    statistics:
+      format_version: 2
+      fingerprint: a878023ac99d50435d1585e9e31c19e2cf8a2a069cda604b4dce1219b5003187
+      root: ${data_root}/FloodSimBench
+      allowed_split: train
+      cities:
+      - HOU
+      - DAL
+      - OKC
+      - NYC
+      - ATL
+      - ORL
+      domains:
+      - ATL001
+      - ATL002
+      - DAL001
+      - DAL002
+      - HOU001
+      - HOU002
+      - HOU003
+      - HOU004
+      - HOU005
+      - HOU006
+      - HOU007
+      - NYC001
+      - NYC002
+      - OKC001
+      - OKC002
+      - ORL001
+      - ORL002
+      scenario_count: 122
+      state_policy: each_of_72_observed_frames_once; no_synthetic_h0
+      rainfall_policy: scalar_over_all_71_markov_transitions_per_scenario
+      water_depth:
+        unit: m
+        count: 90840981024
+        mean: 0.04753688469542661
+        std: 0.20698808939452976
+      rainfall:
+        unit: mm/h
+        count: 8662
+        mean: 14.47321634726391
+        std: 36.96536111920035
+    terrain:
+      kind: terrain_centered_global_scaled
+      dem_root: ${dem_root}
+      static_feature_names:
+      - terrain_centered_global_scaled
+      static_channels: 1
+      source_domains_for_shared_scale:
+      - HOU001
+      - HOU002
+      - HOU003
+      - HOU004
+      - HOU005
+      - HOU006
+      - HOU007
+      - DAL001
+      - DAL002
+      - OKC001
+      - OKC002
+      - NYC001
+      - NYC002
+      - ATL001
+      - ATL002
+      - ORL001
+      - ORL002
+      source_domain_weights:
+      - 0.058823529411764705
+      - 0.058823529411764705
+      - 0.058823529411764705
+      - 0.058823529411764705
+      - 0.058823529411764705
+      - 0.058823529411764705
+      - 0.058823529411764705
+      - 0.058823529411764705
+      - 0.058823529411764705
+      - 0.058823529411764705
+      - 0.058823529411764705
+      - 0.058823529411764705
+      - 0.058823529411764705
+      - 0.058823529411764705
+      - 0.058823529411764705
+      - 0.058823529411764705
+      - 0.058823529411764705
+      shared_scale_pixel_weighting: equal_train_domains_then_equal_valid_cells
+      terrain_global_train_scale: 18.059064029696696
+      region_stats:
+        ATL001:
+          dem_path: ${data_root}/ATL001_DEM.tif
+          shape:
+          - 2688
+          - 3963
+          valid_pixels: 10639246
+          terrain_mean_m: 315.0132091208399
+          terrain_population_std_m: 21.646730737707085
+          role_for_shared_scale: train
+        ATL002:
+          dem_path: ${data_root}/ATL002_DEM.tif
+          shape:
+          - 2691
+          - 3968
+          valid_pixels: 10664574
+          terrain_mean_m: 304.66565184991464
+          terrain_population_std_m: 10.482627207536304
+          role_for_shared_scale: train
+        AUS001:
+          dem_path: ${data_root}/AUS001_DEM.tif
+          shape:
+          - 2258
+          - 3590
+          valid_pixels: 8094528
+          terrain_mean_m: 173.66662378311233
+          terrain_population_std_m: 15.376736203591202
+          role_for_shared_scale: held_out
+        AUS002:
+          dem_path: ${data_root}/AUS002_DEM.tif
+          shape:
+          - 2366
+          - 2866
+          valid_pixels: 6770496
+          terrain_mean_m: 153.3947941447775
+          terrain_population_std_m: 18.166804336053268
+          role_for_shared_scale: held_out
+        DAL001:
+          dem_path: ${data_root}/DAL001_DEM.tif
+          shape:
+          - 3258
+          - 4000
+          valid_pixels: 13017488
+          terrain_mean_m: 135.99386721732657
+          terrain_population_std_m: 21.76475608763009
+          role_for_shared_scale: train
+        DAL002:
+          dem_path: ${data_root}/DAL002_DEM.tif
+          shape:
+          - 3258
+          - 4000
+          valid_pixels: 13017488
+          terrain_mean_m: 160.6902430210269
+          terrain_population_std_m: 10.49986262891873
+          role_for_shared_scale: train
+        HOU001:
+          dem_path: ${data_root}/HOU001_DEM.tif
+          shape:
+          - 2645
+          - 3734
+          valid_pixels: 9863676
+          terrain_mean_m: 19.64524213059419
+          terrain_population_std_m: 21.80519433481109
+          role_for_shared_scale: train
+        HOU002:
+          dem_path: ${data_root}/HOU002_DEM.tif
+          shape:
+          - 2654
+          - 3746
+          valid_pixels: 9929088
+          terrain_mean_m: 18.59786802995937
+          terrain_population_std_m: 8.503159631395052
+          role_for_shared_scale: train
+        HOU003:
+          dem_path: ${data_root}/HOU003_DEM.tif
+          shape:
+          - 2651
+          - 3742
+          valid_pixels: 9907260
+          terrain_mean_m: 17.476122524468607
+          terrain_population_std_m: 7.268159946021168
+          role_for_shared_scale: train
+        HOU004:
+          dem_path: ${data_root}/HOU004_DEM.tif
+          shape:
+          - 2657
+          - 3751
+          valid_pixels: 9953595
+          terrain_mean_m: 16.95147604982086
+          terrain_population_std_m: 7.631571508958042
+          role_for_shared_scale: train
+        HOU005:
+          dem_path: ${data_root}/HOU005_DEM.tif
+          shape:
+          - 2660
+          - 3755
+          valid_pixels: 9975474
+          terrain_mean_m: 15.863661825470217
+          terrain_population_std_m: 7.201398011932172
+          role_for_shared_scale: train
+        HOU006:
+          dem_path: ${data_root}/HOU006_DEM.tif
+          shape:
+          - 2663
+          - 3759
+          valid_pixels: 9997377
+          terrain_mean_m: 13.797941205343914
+          terrain_population_std_m: 5.666457407722013
+          role_for_shared_scale: train
+        HOU007:
+          dem_path: ${data_root}/HOU007_DEM.tif
+          shape:
+          - 2666
+          - 3763
+          valid_pixels: 10019304
+          terrain_mean_m: 14.06262775671359
+          terrain_population_std_m: 8.644974239067363
+          role_for_shared_scale: train
+        LA001:
+          dem_path: ${data_root}/LA001_DEM.tif
+          shape:
+          - 2510
+          - 3942
+          valid_pixels: 9881520
+          terrain_mean_m: 90.11040357863534
+          terrain_population_std_m: 25.20331810834966
+          role_for_shared_scale: held_out
+        LA002:
+          dem_path: ${data_root}/LA002_DEM.tif
+          shape:
+          - 2510
+          - 3942
+          valid_pixels: 9881520
+          terrain_mean_m: 70.22014746956684
+          terrain_population_std_m: 5.559387041117856
+          role_for_shared_scale: held_out
+        MIA001:
+          dem_path: ${data_root}/MIA001_DEM.tif
+          shape:
+          - 3226
+          - 3987
+          valid_pixels: 12847640
+          terrain_mean_m: 5.278417680701546
+          terrain_population_std_m: 5.797652569417305
+          role_for_shared_scale: held_out
+        MIA002:
+          dem_path: ${data_root}/MIA002_DEM.tif
+          shape:
+          - 3226
+          - 3987
+          valid_pixels: 12847640
+          terrain_mean_m: 5.266412092158384
+          terrain_population_std_m: 7.117531375539807
+          role_for_shared_scale: held_out
+        NYC001:
+          dem_path: ${data_root}/NYC001_DEM.tif
+          shape:
+          - 2147
+          - 3264
+          valid_pixels: 6996990
+          terrain_mean_m: 18.807069680546107
+          terrain_population_std_m: 16.866911622761418
+          role_for_shared_scale: train
+        NYC002:
+          dem_path: ${data_root}/NYC002_DEM.tif
+          shape:
+          - 2147
+          - 3264
+          valid_pixels: 6996990
+          terrain_mean_m: 48.84445074171305
+          terrain_population_std_m: 55.29253327990925
+          role_for_shared_scale: train
+        OKC001:
+          dem_path: ${data_root}/OKC001_DEM.tif
+          shape:
+          - 3406
+          - 3602
+          valid_pixels: 12254400
+          terrain_mean_m: 375.2778196457114
+          terrain_population_std_m: 9.194708596809033
+          role_for_shared_scale: train
+        OKC002:
+          dem_path: ${data_root}/OKC002_DEM.tif
+          shape:
+          - 3406
+          - 3602
+          valid_pixels: 12254400
+          terrain_mean_m: 373.1755526017551
+          terrain_population_std_m: 6.9169147637025565
+          role_for_shared_scale: train
+        ORL001:
+          dem_path: ${data_root}/ORL001_DEM.tif
+          shape:
+          - 2980
+          - 3949
+          valid_pixels: 11754166
+          terrain_mean_m: 32.97836174924728
+          terrain_population_std_m: 8.356966990729576
+          role_for_shared_scale: train
+        ORL002:
+          dem_path: ${data_root}/ORL002_DEM.tif
+          shape:
+          - 2980
+          - 3949
+          valid_pixels: 11754166
+          terrain_mean_m: 34.26268225823146
+          terrain_population_std_m: 4.501601684376282
+          role_for_shared_scale: train
+        SF001:
+          dem_path: ${data_root}/SF001_DEM.tif
+          shape:
+          - 2285
+          - 3607
+          valid_pixels: 8230215
+          terrain_mean_m: 36.995695651674886
+          terrain_population_std_m: 21.70395230886886
+          role_for_shared_scale: held_out
+        SF002:
+          dem_path: ${data_root}/SF002_DEM.tif
+          shape:
+          - 2285
+          - 3607
+          valid_pixels: 8230215
+          terrain_mean_m: 58.53468735057319
+          terrain_population_std_m: 27.53427365932539
+          role_for_shared_scale: held_out
+    channel_policy:
+      water_depth: train-only population standardization; metres
+      rainfall: train-only scalar transition standardization; mm/h
+      terrain: per-domain centered, train-domain equal-weight RMS scaled
+    dataset_variant: FloodSimBench_context6_crop1024_domain_balanced
+    preprocessing_version: floodsimbench_1m_context6_domain_balanced_random_train_fixed_eval_crop1024_v1
+    normalization_reuse: exact reference statistics from all 122 Train scenarios;
+      never recomputed from the 17 sampled scenarios
+evaluation:
+  threshold: null
+  selected_checkpoint_epoch: 89
+  reference_metrics: results/FloodSimBench/convlstm
+  preserve_native_metric_implementation: true

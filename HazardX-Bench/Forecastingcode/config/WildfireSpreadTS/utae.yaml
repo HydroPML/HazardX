@@ -1,0 +1,49 @@
+# Verified formal experiment; numeric settings match the selected checkpoint.
+dataset: WildfireSpreadTS
+model_id: '03'
+model: UTAE-Scratch
+seed: 0
+backend: wildfire
+distributed:
+  world_size: 1
+paths:
+  data_root: data/WildfireSpreadTS
+  dem_root: data/FloodCastBench/DEM
+  pretrained_root: pretrained
+  source_root: src/models/third_party
+  output_dir: outputs/WildfireSpreadTS/utae
+checkpoint: checkpoints/WildfireSpreadTS/utae/best.pth
+native_args:
+  model_type: UTAE-Scratch
+  fold_id: 0
+  data_dir: ${data_root}/Data
+  data_backend: hdf5
+  hdf5_dir: ${data_root}/HDF5
+  wildfire_official_root: ${source_root}/WildfireSpreadTS
+  earthformer_official_root: ${source_root}/earthformer
+  pdet_official_root: ${source_root}/pde-transformer
+  dpot_official_root: ${source_root}/DPOT
+  pdet_checkpoint: ${pretrained_root}/pde_sc_s.safetensors
+  dpot_checkpoint: ${pretrained_root}/dpot_s.pth
+  videomae_checkpoint: ${pretrained_root}/vit_b_k710_dl_from_giant.pth
+  videomae_official_root: ${source_root}/VideoMAEv2
+  prithvi_checkpoint: ${pretrained_root}/Prithvi_EO_V2_300M.pt
+  output_dir: ${output_dir}
+  mode: train
+  epochs: 100
+  validation_every: 5
+  batch_size: 8
+  accum_steps: 1
+  num_workers: 2
+  overfit_steps: 75
+  seed: 0
+  resume: ''
+  max_train_batches: 0
+  max_eval_batches: 0
+model_config: null
+normalization: null
+evaluation:
+  threshold: 0.99
+  selected_checkpoint_epoch: 90
+  reference_metrics: results/WildfireSpreadTS/utae
+  preserve_native_metric_implementation: true

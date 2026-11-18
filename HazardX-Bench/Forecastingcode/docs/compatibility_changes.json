@@ -1,0 +1,9 @@
+[
+  {
+    "file": "src/models/third_party/pde-transformer/pdetransformer/metric/channel_wise_metric.py",
+    "original_sha256": "17e819cf15cb60b743e8bc5e0357ac249a799b76de1547830a18d318e4f90a55",
+    "release_sha256": "f7d796773d48e257b8aed10d6308f61a4fee52e49a26b719dcf64b68e7028361",
+    "scope": "Python3.11 compatibility in optional upstream metric __repr__ only",
+    "change": "Move newline join outside f-string; representation output unchanged. No model, loss, benchmark metric, or optimizer calculation changed."
+  }
+]

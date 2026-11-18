@@ -1,0 +1,42 @@
+{
+  "dataset": "LandslideCast",
+  "model": "Poseidon-T-PT-FT",
+  "model_slug": "poseidon",
+  "seed": 0,
+  "filename": "best.pth",
+  "original_filename": "best_validation.pt",
+  "checkpoint": "checkpoints/LandslideCast/poseidon/best.pth",
+  "format": "byte_parts",
+  "bytes": 250408500,
+  "sha256": "3200612fa42f7a63c4dddeedc2e3ef98fb6deac0fa5afb823b60436e222e8708",
+  "config": "config/LandslideCast/poseidon.yaml",
+  "config_url": "https://drive.google.com/file/d/1AAke5v0-ZvwtR81nDvnNbveYlRDnq6hW/view?usp=drivesdk",
+  "metrics_url": "https://drive.google.com/file/d/1_9h0AQhl9W3EXuRfGupdFt9L_WsZCzMt/view?usp=drivesdk",
+  "drive_folder_url": "https://drive.google.com/drive/folders/1bMVpKNxMa5ZCQvoDNseaJp5I_3JfekOu",
+  "parts": [
+    {
+      "name": "best.pth.part0001",
+      "bytes": 94371840,
+      "sha256": "eba07e67880f4799a6f6d5377fefd055daabe4a63ca25d989a28178e021cfd83",
+      "id": "1T2kYka6ciaT9xQjYjJyEJ39wPSAfBojY",
+      "url": "https://drive.google.com/file/d/1T2kYka6ciaT9xQjYjJyEJ39wPSAfBojY/view?usp=drivesdk",
+      "size_and_parent_verified": true
+    },
+    {
+      "name": "best.pth.part0002",
+      "bytes": 94371840,
+      "sha256": "0a54767b02eba547400e35a628d98679bf895bf19cd60e52a517c42d4c8a86bf",
+      "id": "1Tcgb7BkohzxrLpy4cv749DHL_44HsSe9",
+      "url": "https://drive.google.com/file/d/1Tcgb7BkohzxrLpy4cv749DHL_44HsSe9/view?usp=drivesdk",
+      "size_and_parent_verified": true
+    },
+    {
+      "name": "best.pth.part0003",
+      "bytes": 61664820,
+      "sha256": "8d1defe849e98a8192dcbffdb083dd168d88f88afc2918c749c2b602b64ebe61",
+      "id": "1I6QXKI2lerj6mEgLjmAMrTcNrFXqYzul",
+      "url": "https://drive.google.com/file/d/1I6QXKI2lerj6mEgLjmAMrTcNrFXqYzul/view?usp=drivesdk",
+      "size_and_parent_verified": true
+    }
+  ]
+}

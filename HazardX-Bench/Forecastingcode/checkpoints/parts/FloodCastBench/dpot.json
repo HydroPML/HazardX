@@ -1,0 +1,42 @@
+{
+  "dataset": "FloodCastBench",
+  "model": "DPOT-S-PT-FT",
+  "model_slug": "dpot",
+  "seed": 42,
+  "filename": "best.pth",
+  "original_filename": "best_validation.pt",
+  "checkpoint": "checkpoints/FloodCastBench/dpot/best.pth",
+  "format": "byte_parts",
+  "bytes": 231142116,
+  "sha256": "fc253f470ff0a6a19973363c713e5839bb8e011f69496c3bde05de3009ac82e0",
+  "config": "config/FloodCastBench/dpot.yaml",
+  "config_url": "https://drive.google.com/file/d/1kuaTmRGYNiACyRbs_URdhVzQW0No4jnO/view?usp=drivesdk",
+  "metrics_url": "https://drive.google.com/file/d/11wf0Tg50T2GbhvLy6EY5E_Oib239k22i/view?usp=drivesdk",
+  "drive_folder_url": "https://drive.google.com/drive/folders/1SfMHaez6foueaIWHVFlcsScKeiMeWuLK",
+  "parts": [
+    {
+      "name": "best.pth.part0001",
+      "bytes": 94371840,
+      "sha256": "c9d1484981b7fc5d0e13899d524401d878254267dc311e6c6c0e78b5b2add2a9",
+      "id": "1_uHtzo8yDiex3Jg0hgZebwpmRC1sFua0",
+      "url": "https://drive.google.com/file/d/1_uHtzo8yDiex3Jg0hgZebwpmRC1sFua0/view?usp=drivesdk",
+      "size_and_parent_verified": true
+    },
+    {
+      "name": "best.pth.part0002",
+      "bytes": 94371840,
+      "sha256": "9f609604e71ef4955472eb203f1d148d9e0dc3ef9e3ee741f5cb989aeb83560b",
+      "id": "1yo6NxyTWgqYlv-xVTMaG5T6jNkGOtGgv",
+      "url": "https://drive.google.com/file/d/1yo6NxyTWgqYlv-xVTMaG5T6jNkGOtGgv/view?usp=drivesdk",
+      "size_and_parent_verified": true
+    },
+    {
+      "name": "best.pth.part0003",
+      "bytes": 42398436,
+      "sha256": "5e888546856c20fe80cba19af57570771773bd18c39401bf7d946e1ac4eb0778",
+      "id": "1yl6pXylH1dm1jO8wMPejQOGaSpzBCf4X",
+      "url": "https://drive.google.com/file/d/1yl6pXylH1dm1jO8wMPejQOGaSpzBCf4X/view?usp=drivesdk",
+      "size_and_parent_verified": true
+    }
+  ]
+}
