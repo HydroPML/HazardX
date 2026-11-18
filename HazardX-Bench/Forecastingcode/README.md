@@ -1,21 +1,15 @@
-# HazardX-Bench: Forecasting
+<div align="center">
+<h1 align="center">🌍 # HazardX-Bench: Forecasting</h1>
 
-Training and independent evaluation for **FloodCastBench, FloodSimBench,
-LandslideCast, and WildfireSpreadTS**. This release contains 36 selected
-dataset–model experiments with their original numerical implementations,
-configuration, seeds, and saved evaluation results.
+<h3>Multimodal Foundation Models for Natural Hazard Monitoring and Forecasting:<br>Methods, Benchmarks, and Perspectives</h3>
 
-The public interface is shared; dataset-specific preprocessing, architectures,
-losses, precision, optimizers, and evaluation protocols remain those of the
-original experiments. The audited native implementations are retained under
-`src/core/native/` and `src/models/` so that a change in directory structure does
-not silently change a published experiment.
+## 🔭Overview
+
+This repository brings together **FloodCastBench, FloodSimBench, LandslideCast, and WildfireSpreadTS**, along with representative deep learning models for **flood, landslide, and wildfire forecasting**. It provides a unified training and evaluation interface for 36 selected experiments while preserving the original model implementations, configurations, and evaluation protocols.
 
 ## Installation
 
-Use Linux, Python 3.11, and a CUDA GPU. Validation used PyTorch 2.5.0 with CUDA
-12.4 on an NVIDIA RTX A6000 (48 GiB). Two environments preserve the original
-PDE-Transformer and other-model dependencies:
+Requires Linux, Python 3.11, and a CUDA GPU. Validated with PyTorch 2.5.0, CUDA 12.4, and an RTX A6000.
 
 ```bash
 python3.11 -m venv .venv
@@ -24,15 +18,11 @@ pip install torch==2.5.0 torchvision==0.20.0 --index-url https://download.pytorc
 pip install -r requirements.txt
 ```
 
-For model **06 PDE-Transformer**, create a separate environment and install
-`requirements-pde.txt` after the same PyTorch command. See
-[environment details](docs/environments.md) for the measured versions. Do not
-install the unrelated training dependencies from every vendored repository.
+For PDE-Transformer, use a separate environment with the same PyTorch version and `requirements-pde.txt`. See [environment details](docs/environments.md).
 
 ## Dataset Preparation
 
-Only official dataset addresses are provided. Dataset archives are not included
-in the code ZIP or benchmark checkpoint folder.
+Download datasets from their official sources:
 
 | Dataset | Official source | Expected local input |
 | --- | --- | --- |
@@ -41,12 +31,7 @@ in the code ZIP or benchmark checkpoint folder.
 | LandslideCast | [Official project](https://github.com/HydroPML/Landslidecast), [paper](https://doi.org/10.1029/2023EA003417) | Canonical `2d_t10.h5` with scenarios `x1` through `x12000` |
 | WildfireSpreadTS | [Official dataset](https://zenodo.org/records/8006177), [official code](https://github.com/SebastianGer/WildfireSpreadTS) | Official daily TIFFs or the original lossless HDF5 conversion |
 
-[Preparation instructions](scripts/data_prep/README.md) describe layouts,
-channel definitions, fixed splits, and conversion commands. In particular,
-LandslideCast's canonical HDF5 download and FloodCastBench's historical raw-to-
-trajectory conversion could not be independently located in the public sources;
-these dependencies are explicitly documented rather than replaced with a new
-preprocessing or random split.
+See the [preparation guide](scripts/data_prep/README.md) for layouts, channels, splits, and conversion commands. Public access to the canonical LandslideCast HDF5 and FloodCastBench raw-to-trajectory conversion remains unverified; the guide documents these dependencies.
 
 | Dataset | Physical model input (excluding batch and positional encodings) | Prediction protocol |
 | --- | --- | --- |
