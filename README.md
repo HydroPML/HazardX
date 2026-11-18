@@ -7,6 +7,28 @@
 
 
 
+## 📑 Contents
+
+- [Overview](#hazardx-overview)
+- [HazardX-Bench: Monitoring](#hazardx-monitoring)
+  - [Installation](#hazardx-monitoring-installation)
+  - [Dataset Preparation](#hazardx-monitoring-dataset-preparation)
+  - [Pretrained Weights](#hazardx-monitoring-pretrained-weights)
+  - [Quick Start](#hazardx-monitoring-quick-start)
+  - [Repository Layout](#hazardx-monitoring-repository-layout)
+  - [Architecture and Extension](#hazardx-monitoring-architecture-and-extension)
+- [HazardX-Bench: Forecasting](#hazardx-forecasting)
+  - [Installation](#hazardx-forecasting-installation)
+  - [Dataset Preparation](#hazardx-forecasting-dataset-preparation)
+  - [Pretrained Weights](#hazardx-forecasting-pretrained-weights)
+  - [Quick Start](#hazardx-forecasting-quick-start)
+  - [Repository Layout](#hazardx-forecasting-repository-layout)
+  - [Reproducibility](#hazardx-forecasting-reproducibility)
+- [HazardX-Agent](#hazardx-agent-overview)
+- [License](#hazardx-license)
+
+<a id="hazardx-overview"></a>
+
 # Overview
 <p align="center">
   <img src="Figs/fig11_GRSM.png"
@@ -19,6 +41,8 @@ HazardX focuses on floods, landslides, and wildfires, while the other hazards il
 
 
 
+<a id="hazardx-monitoring"></a>
+
 # HazardX-Bench for natural hazard monitoring
 
 <p align="center">
@@ -26,6 +50,8 @@ HazardX focuses on floods, landslides, and wildfires, while the other hazards il
 </p>
 
 The currently released monitoring implementation is located in [`HazardX-Bench/Monitoringcode/`](HazardX-Bench/Monitoringcode/).
+
+<a id="hazardx-monitoring-installation"></a>
 
 ## 🛠️ Installation
 
@@ -48,6 +74,8 @@ cd ../../../..
 
 Some models also require local upstream weights in `pretrained_weight/` (details below).
 
+<a id="hazardx-monitoring-dataset-preparation"></a>
+
 ## 🧪 Dataset Preparation
 
 Dataset preparation guides are organized by disaster domain:
@@ -55,6 +83,8 @@ Dataset preparation guides are organized by disaster domain:
 - Flood: [scripts/data_prep/flood/README.md](HazardX-Bench/Monitoringcode/scripts/data_prep/flood/README.md)
 - Landslide: [scripts/data_prep/landslide/README.md](HazardX-Bench/Monitoringcode/scripts/data_prep/landslide/README.md)
 - Wildfire: [scripts/data_prep/wildfire/README.md](HazardX-Bench/Monitoringcode/scripts/data_prep/wildfire/README.md)
+
+<a id="hazardx-monitoring-pretrained-weights"></a>
 
 ## 📦 Pretrained Weights
 
@@ -130,6 +160,8 @@ pretrained_weight/
 
 For upstream checkpoints not directly linked above, consult the corresponding model's official repository or documentation. Comply with the license for each model and dataset.
 
+<a id="hazardx-monitoring-quick-start"></a>
+
 ## 🚀 Quick Start
 
 From `HazardX-Bench/Monitoringcode/`, after preparing the dataset and any required weights:
@@ -145,6 +177,8 @@ python train.py --config config/flood/cau/seg_unet.yaml
 ```bash
 python test.py --exp_path results/flood/cau/seg_unet
 ```
+
+<a id="hazardx-monitoring-repository-layout"></a>
 
 ## 🗂️ Repository Layout
 
@@ -175,10 +209,14 @@ Within `Monitoringcode/`:
 - `scripts/data_prep/`: dataset preparation instructions and utilities
 - `docs/`: architecture and extension guidance
 
+<a id="hazardx-monitoring-architecture-and-extension"></a>
+
 ## 🏗️ Architecture and Extension
 
 - [Architecture overview](HazardX-Bench/Monitoringcode/docs/ARCHITECTURE.md)
 - [Extension guide](HazardX-Bench/Monitoringcode/docs/EXTENSION_GUIDE.md)
+
+<a id="hazardx-forecasting"></a>
 
 # HazardX-Bench for natural hazard forecasting
 <p align="center">
@@ -188,6 +226,8 @@ Within `Monitoringcode/`:
 The forecasting implementation is located in [`HazardX-Bench/Forecastingcode/`](HazardX-Bench/Forecastingcode/).
 
 This repository brings together **FloodCastBench, FloodSimBench, LandslideCast, and WildfireSpreadTS**, along with representative deep learning models for **flood, landslide, and wildfire forecasting**. It provides a unified training and evaluation interface for 36 selected experiments while preserving the original model implementations, configurations, and evaluation protocols.
+
+<a id="hazardx-forecasting-installation"></a>
 
 ## 🛠️ Installation
 
@@ -204,6 +244,8 @@ pip install -r requirements.txt
 ```
 
 For PDE-Transformer, use a separate environment with the same PyTorch version and `requirements-pde.txt`. See [environment details](HazardX-Bench/Forecastingcode/docs/environments.md).
+
+<a id="hazardx-forecasting-dataset-preparation"></a>
 
 ## 🧪 Dataset Preparation
 
@@ -226,6 +268,8 @@ Download datasets from their official sources:
 
 See the [preparation guide](HazardX-Bench/Forecastingcode/scripts/data_prep/README.md) for layouts, channels, splits, and conversion commands.
 
+<a id="hazardx-forecasting-pretrained-weights"></a>
+
 ## 📦 Pretrained Weights
 
 Place the required initialization weights in `HazardX-Bench/Forecastingcode/pretrained/`. These files are needed for both training and evaluation of the corresponding pretrained models.
@@ -247,6 +291,8 @@ Alternatively, use the download helper, which verifies the file hash. Prithvi al
 python scripts/download_pretrained.py --model prithvi
 python scripts/setup_prithvi.py --pretrained-root pretrained
 ```
+
+<a id="hazardx-forecasting-quick-start"></a>
 
 ## 🚀 Quick Start
 
@@ -303,6 +349,8 @@ CUDA_VISIBLE_DEVICES=0 python scripts/smoke_test.py \
 
 Modified weights are discarded. See the [validation report](HazardX-Bench/Forecastingcode/docs/validation_report.md) for coverage and limitations.
 
+<a id="hazardx-forecasting-repository-layout"></a>
+
 ## 🗂️ Repository Layout
 
 ```text
@@ -325,9 +373,13 @@ HazardX-Bench/Forecastingcode/
 └── requirements-pde.txt
 ```
 
+<a id="hazardx-forecasting-reproducibility"></a>
+
 ## 🔁 Reproducibility
 
 See the [selected experiments](HazardX-Bench/Forecastingcode/docs/selected_experiments.md) for seeds, checkpoint epochs, and metrics; the [experiment catalog](HazardX-Bench/Forecastingcode/results/catalog.json) for saved configurations; and [third-party provenance](HazardX-Bench/Forecastingcode/docs/third_party.md) for source revisions and weight hashes. Protocol details are in the [reproducibility guide](HazardX-Bench/Forecastingcode/docs/reproducibility.md).
+
+<a id="hazardx-agent-overview"></a>
 
 # HazardX-Agent
 <p align="center">
@@ -337,6 +389,8 @@ See the [selected experiments](HazardX-Bench/Forecastingcode/docs/selected_exper
 </p>
 
 **HazardX-Agent** presents a conceptual architecture for coordinating multimodal foundation models and scientific tools as reusable skills. It outlines how these components could support integrated workflows for natural hazard monitoring, forecasting, and decision support.
+
+<a id="hazardx-license"></a>
 
 # License
 Original code in this repository is licensed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0). Third-party code, datasets, and pretrained weights remain subject to their respective licenses.
