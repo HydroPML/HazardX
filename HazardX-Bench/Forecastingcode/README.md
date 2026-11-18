@@ -1,7 +1,5 @@
-<div align="center">
-<h1 align="center">🌍 # HazardX-Bench: Forecasting</h1>
 
-<h3>Multimodal Foundation Models for Natural Hazard Monitoring and Forecasting:<br>Methods, Benchmarks, and Perspectives</h3>
+<h1 align="center">🌍 HazardX-Bench: Forecasting</h1>
 
 ## 🔭Overview
 
