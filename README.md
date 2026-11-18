@@ -7,12 +7,13 @@
 
 
 
-# HazardX
+# Overview
 <p align="center">
   <img src="Figs/fig11_GRSM.png"
        alt="HazardX Framework Overview"
        width="100%">
 </p>
+
 HazardX focuses on floods, landslides, and wildfires, while the other hazards illustrate potential future extensions.
 
 
@@ -263,12 +264,6 @@ python scripts/download_checkpoints.py --dataset FloodSimBench --model unet
 # Or download all 36 selected checkpoints:
 python scripts/download_checkpoints.py --all
 ```
-
-The connected upload service accepts at most 100 MiB per file. Larger
-checkpoints are therefore stored as ordered 90 MiB **byte parts**, with
-`parts.json`; the helper verifies every part and restores the exact original
-`best.pth`. These are not separately trained shards. Files are never silently
-overwritten. For manually downloaded parts, use `--offline --parts-dir PATH`.
 
 ### 📊 Independent evaluation
 
