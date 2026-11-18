@@ -1,6 +1,7 @@
-<h1 align="center">🌍 HazardX-Bench: Monitoring</h1>
+<div align="center">
 
-  
+<h1>🌍 HazardX-Bench: Monitoring</h1>
+
 [**Installation**](#installation) | [**Dataset Preparation**](#dataset-preparation) | [**Pretrained Weights**](#pretrained-weights) | [**Quick Start**](#quick-start) | [**Repo Layout**](#repository-layout)
 
 </div>
