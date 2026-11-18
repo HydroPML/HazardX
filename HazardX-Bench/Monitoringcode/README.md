@@ -3,7 +3,7 @@
 
 <h3>Multimodal Foundation Models for Natural Hazard Monitoring and Forecasting:<br>Methods, Benchmarks, and Perspectives</h3>
 
-[**Installation**](#installation) | [**Dataset Preparation**](#dataset-preparation) | [**Pretrained Weights**](#pretrained-weights) | [**Quick Start**](#quick-start) | [**Repo Layout**](#repository-layout)
+[**Installation**](#installation) | [**Dataset Preparation**](#dataset-preparation) | [**Pretrained Weights**](#pretrained-weights) | [**Released Assets**](#released-assets) | [**Quick Start**](#quick-start) | [**Repo Layout**](#repository-layout)
 
 </div>
 
@@ -65,7 +65,7 @@ Dataset preparation guides are organized by disaster domain:
 
 ## 📦Pretrained Weights
 
-All pretrained checkpoints used by this project are stored in:
+For a local checkout, pretrained checkpoints used by this project are expected under:
 
 ```text
 /root/workcsc/HazardX_Monitoring/pretrained_weight
@@ -82,6 +82,18 @@ If the directory has not been created yet:
 ```bash
 mkdir -p /root/workcsc/HazardX_Monitoring/pretrained_weight
 ```
+
+### Released Assets
+
+The Hugging Face repository contains the following experiment assets:
+
+- **Pretrained weights** for the model backbones and components required by the released configurations.
+- **Datasets** used by the HazardX Monitoring experiments.
+- **Experiment outputs**, including model checkpoints, test metrics, logs, and summary tables where available.
+
+Download or synchronize the required files from the Hugging Face repository before running an experiment. Keep the local directory layout consistent with the paths referenced by the configuration files, especially `pretrained_weight/`, dataset roots, and `output/`.
+
+The Hugging Face repository is the canonical distribution location for these released assets. The repository source code and the asset repository are maintained separately.
 
 ### Direct Downloads
 
@@ -117,6 +129,12 @@ The current checkpoint directory contains:
 ```
 
 ## 🚀 Quick Start
+
+The pretrained weights, datasets, and experiment outputs for HazardX Monitoring are released on Hugging Face:
+
+<https://huggingface.co/liyao0719/HazardX_Monitoring>
+
+You can use this repository to reproduce the experiments and download the released assets from the Hugging Face repository above.
 
 The runnable batch scripts are stored in:
 
