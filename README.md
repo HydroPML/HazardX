@@ -336,6 +336,6 @@ See the [selected experiments](HazardX-Bench/Forecastingcode/docs/selected_exper
        width="100%">
 </p>
 **HazardX-Agent** presents a conceptual architecture for coordinating multimodal foundation models and scientific tools as reusable skills. It outlines how these components could support integrated workflows for natural hazard monitoring, forecasting, and decision support.
-# ⚖️ License
 
+# License
 Original code in this repository is licensed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0). Third-party code, datasets, and pretrained weights remain subject to their respective licenses.
