@@ -1,0 +1,23 @@
+{
+  "dataset": "FloodSimBench",
+  "model_id": "11",
+  "model": "Prithvi-EO2-300M-PT-FT",
+  "seed": 1,
+  "checkpoint": "best.pth",
+  "checkpoint_sha256": "704fcd09cf98375014a881005e1c7bb858473207a4377d939f63c8c11a04efb5",
+  "checkpoint_epoch": 34,
+  "selection_rule": "first formal experimental seed, verified in checkpoint config",
+  "original_final_evaluation": {
+    "city_macro.json": {
+      "rmse": 0.0717897877706428,
+      "mae": 0.022488206475700913,
+      "relative_l2": 1.1575859237499353,
+      "nse": -0.6980990349723066,
+      "corr": 0.3614078310094727,
+      "csi_0.01": 0.1365529657298101,
+      "csi_0.05": 0.18126436243348043,
+      "csi_0.1": 0.15433599947577004,
+      "csi_0.5": 0.06422982039295665
+    }
+  }
+}

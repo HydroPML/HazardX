@@ -1,0 +1,8 @@
+paths:
+  PBDL_index:
+    2D_APE_xxl: ./datasets/
+    2D_WELL: ./datasets/
+machine:
+  devices: 1
+  accelerator: gpu
+  strategy: ddp

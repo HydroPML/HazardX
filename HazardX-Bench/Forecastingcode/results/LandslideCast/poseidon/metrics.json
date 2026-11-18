@@ -1,0 +1,142 @@
+{
+  "dataset": "LandslideCast",
+  "model_id": "08",
+  "model": "Poseidon-T-PT-FT",
+  "seed": 0,
+  "checkpoint": "best.pth",
+  "checkpoint_sha256": "3200612fa42f7a63c4dddeedc2e3ef98fb6deac0fa5afb823b60436e222e8708",
+  "checkpoint_epoch": 79,
+  "selection_rule": "first formal experimental seed, verified in checkpoint config",
+  "original_final_evaluation": {
+    "run_summary.json": {
+      "model": "Poseidon-T-PT-FT",
+      "mode": "train",
+      "run_id": "formal_accelerated_v2_strict",
+      "global_update": 124963,
+      "updates_this_run": 34990,
+      "amp_skipped_updates": 37,
+      "precision": "AMP FP16",
+      "gradient_nonzero_verified": true,
+      "validation": {
+        "objective": 2.516323948409654,
+        "official_RelL2_h": 0.2867046558606347,
+        "official_RelL2_u": 0.5093913573852117,
+        "RMSE_h": 2.425713126360108,
+        "MAE_h": 0.3949148426800506,
+        "RelL2_h": 0.2867046558606347,
+        "RMSE_h@t80": 3.8735465085489977,
+        "MAE_h@t80": 0.4683255530474499,
+        "RelL2_h@t80": 0.33343683744972696,
+        "RMSE_u": 13.582146339497722,
+        "MAE_u": 0.9178243956568125,
+        "RelL2_u": 0.5093913573852117,
+        "RMSE_u@t80": 23.949876305002544,
+        "MAE_u@t80": 1.1410113752606705,
+        "RelL2_u@t80": 0.6299940370678929
+      },
+      "test": {
+        "objective": 2.4127328892217306,
+        "official_RelL2_h": 0.2730702179718718,
+        "official_RelL2_u": 0.5012413634186275,
+        "RMSE_h": 7.982118984589424,
+        "MAE_h": 0.47134651822279616,
+        "RelL2_h": 0.2730702179718718,
+        "RMSE_h@t80": 15.824862706216791,
+        "MAE_h@t80": 0.7492767209453359,
+        "RelL2_h@t80": 0.32063372870982887,
+        "RMSE_u": 44.49756935235456,
+        "MAE_u": 0.8535848442625783,
+        "RelL2_u": 0.5012413634186275,
+        "RMSE_u@t80": 122.86901286680903,
+        "MAE_u@t80": 1.3656189893961102,
+        "RelL2_u@t80": 0.6117733295425062
+      },
+      "output_equivalence": {
+        "equivalent": true,
+        "elementwise_allclose": false,
+        "max_abs": 0.0003285408020019531,
+        "mean_abs": 2.1950195332465228e-06,
+        "relative_l2_delta": 2.6274550691596232e-05,
+        "relative_l2_tolerance": 0.001,
+        "reference_loss": 8.038614273071289,
+        "candidate_loss": 8.038614273071289,
+        "loss_abs_delta": 0.0,
+        "loss_abs_tolerance": 0.001,
+        "audit_precision": "FP32",
+        "rtol": 1e-05,
+        "atol": 1e-06
+      },
+      "performance": {
+        "steady_updates": 34988,
+        "samples_per_second_median": 7.0181679291299215,
+        "forward_seconds_median": 0.3648887472227216,
+        "backward_seconds_median": 0.6830863421782851,
+        "optimizer_seconds_median": 0.07676898501813412,
+        "peak_allocated": 36596871680,
+        "peak_reserved": 37587255296,
+        "loss_all_finite": true
+      },
+      "reload_consistent": true,
+      "parameters_total": 20771838,
+      "parameters_trainable": 20771838
+    },
+    "posthoc_cap200_pooled.json": {
+      "model": "Poseidon-T-PT-FT",
+      "checkpoint": "/home/yuezeng/EarthDynamics/Landslide/Flood08/results/LandslideCast_accelerated/formal_accelerated_v2_strict/Poseidon-T-PT-FT/best_validation.pt",
+      "checkpoint_epoch": 79,
+      "best_validation": 2.5014204653877097,
+      "test_samples": 1000,
+      "cap": 200.0,
+      "valid_cells": {
+        "h": 319942827,
+        "u": 319931818
+      },
+      "total_cells": 320000000,
+      "finite_predictions": true,
+      "parameters_total": 20771838,
+      "metrics": {
+        "RMSE_h": 2.2360773422917384,
+        "MAE_h": 0.38117912565366713,
+        "RelL2_h": 0.273063591590452,
+        "RMSE_u": 3.840400831175964,
+        "MAE_u": 0.6880179990225015,
+        "RelL2_u": 0.49792317460956337,
+        "CSI_0.5": 0.8028219548925538,
+        "CSI_5": 0.8020358497858009
+      },
+      "contingency": {
+        "CSI_0.5": {
+          "hits": 34616916,
+          "misses": 2952165,
+          "false_alarms": 5549964,
+          "denominator": 43119045
+        },
+        "CSI_5": {
+          "hits": 17675007,
+          "misses": 2212704,
+          "false_alarms": 2149966,
+          "denominator": 22037677
+        }
+      },
+      "official_uncapped_recomputed": {
+        "RMSE_h": 7.982118984589424,
+        "MAE_h": 0.47134651822279616,
+        "RelL2_h": 0.2730702179718718,
+        "RMSE_u": 44.49756935235456,
+        "MAE_u": 0.8535848442625783,
+        "RelL2_u": 0.5012413634186275
+      },
+      "audit_metrics": {
+        "RMSE_h": 2.2360773422917384,
+        "MAE_h": 0.38117912565366713,
+        "RelL2_h": 0.273063591590452,
+        "RMSE_u": 3.840400831175964,
+        "MAE_u": 0.6880179990225015,
+        "RelL2_u": 0.49792317460956337,
+        "CSI_0.5": 0.8028219548925538,
+        "CSI_5": 0.8020358497858009
+      },
+      "max_audit_delta": 0.0
+    }
+  }
+}

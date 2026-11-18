@@ -1,0 +1,52 @@
+{
+  "CSI_event": "threshold < h <= 200 for prediction and ground truth",
+  "aggregation": {
+    "CSI": "per-scenario CSI, then mean over scenarios",
+    "RMSE_MAE": "global over elements whose corresponding ground truth <= 200",
+    "RelL2": "per-scenario masked L2 ratio, then mean over scenarios"
+  },
+  "checkpoint": "/mnt/HDD2/qingsong/qinqsong/EarthDynamics/Landslides/Flood08/results/LandslideCast_GPhyT_Euler_dt1_4gpu/Data2_t10_gphyt_euler_dt1_4gpu_v1/GPhyT-S-PT-FT-Euler/best_validation.pt",
+  "checkpoint_best_validation": 3.3596137314131407,
+  "checkpoint_epoch": 99,
+  "checkpoint_next_epoch": 100,
+  "contingency_audit": {
+    "0.5": {
+      "false_alarms": 14019546,
+      "hits": 32984839,
+      "misses": 4584242,
+      "pooled_CSI": 0.639381990142905
+    },
+    "5": {
+      "false_alarms": 4421840,
+      "hits": 17044362,
+      "misses": 2843349,
+      "pooled_CSI": 0.7011384949067961
+    }
+  },
+  "data_path": "/mnt/HDD2/qingsong/qinqsong/EarthDynamics/Landslides/Data2/2d_t10.h5",
+  "dt": 1.0,
+  "excluded_ground_truth_gt_200": {
+    "h": 57173,
+    "u": 68182
+  },
+  "first_scenario": "x11001",
+  "last_scenario": "x12000",
+  "metrics": {
+    "CSI_0.5_h_range": 0.6300544624195333,
+    "CSI_5_h_range": 0.6740073404483873,
+    "MAE_h_target_le_200": 0.6504449315826757,
+    "MAE_u_target_le_200": 1.1388205324189151,
+    "RMSE_h_target_le_200": 2.758959654288384,
+    "RMSE_u_target_le_200": 4.723945592513398,
+    "RelL2_h_target_le_200": 0.3744876965377011,
+    "RelL2_u_target_le_200": 0.6551641347871078
+  },
+  "model": "GPhyT-S-PT-FT-Euler",
+  "precision": "AMP FP16 inference; FP64 metric accumulation",
+  "samples": 1000,
+  "selected_elements": {
+    "h": 319942827,
+    "u": 319931818
+  },
+  "split": "test"
+}

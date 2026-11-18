@@ -1,0 +1,22 @@
+{
+  "dataset": "WildfireSpreadTS",
+  "model_id": "02",
+  "model": "ConvLSTM-Scratch",
+  "seed": 0,
+  "checkpoint": "best.pth",
+  "checkpoint_sha256": "f3ac5ff149f92a0296c3a84f9d8ab9e4e2873bb56e939d83c40fc35aead8e4b6",
+  "checkpoint_epoch": 60,
+  "selection_rule": "first formal experimental seed, verified in checkpoint config",
+  "original_final_evaluation": {
+    "test_metrics.json": {
+      "validation_threshold": 0.01,
+      "loss": 0.3713060515992185,
+      "AP": 0.5091063380241394,
+      "F1": 0.5710883597544663,
+      "IoU": 0.3996666719408448,
+      "precision": 0.5124194674497194,
+      "recall": 0.6449287542580422,
+      "Brier": 0.007412087172269821
+    }
+  }
+}

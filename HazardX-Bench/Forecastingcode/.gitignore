@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv*/
+data/
+pretrained/
+outputs/
+checkpoint_parts/
+checkpoints/**/*.pth
+checkpoints/**/*.pt
+*.log

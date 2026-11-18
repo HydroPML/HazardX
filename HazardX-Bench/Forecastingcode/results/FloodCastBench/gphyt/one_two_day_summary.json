@@ -1,0 +1,43 @@
+{
+  "source_key": "mozambique_576",
+  "source_path": "/mnt/HDD2/qingsong/qinqsong/Datasets/FM/Test/Mozambique/576",
+  "excluded_source_key": "mozambique_1728",
+  "aggregation": "equal_mean_over_contiguous_trajectories",
+  "debug_max_steps": 0,
+  "protocols": {
+    "1day": {
+      "domain": "mozambique_1day",
+      "states_per_trajectory": 288,
+      "prediction_steps_per_trajectory": 287,
+      "trajectory_count": 6,
+      "overall_equal_trajectory_mean": {
+        "rmse": 0.09390853454290121,
+        "mae": 0.03891562030511524,
+        "relative_l2": 0.3834271667200399,
+        "nse": 0.6346876316585176,
+        "corr": 0.8171915249048833,
+        "csi_0.01": 0.609859414460357,
+        "csi_0.05": 0.645158535645706,
+        "csi_0.1": 0.6806881843065927,
+        "csi_0.5": 0.6130529294757477
+      }
+    },
+    "2day": {
+      "domain": "mozambique_2day",
+      "states_per_trajectory": 576,
+      "prediction_steps_per_trajectory": 575,
+      "trajectory_count": 3,
+      "overall_equal_trajectory_mean": {
+        "rmse": 0.1690507288119398,
+        "mae": 0.07233329172320711,
+        "relative_l2": 0.5493574307192846,
+        "nse": 0.455297428707582,
+        "corr": 0.6545879280178443,
+        "csi_0.01": 0.5665024426091981,
+        "csi_0.05": 0.5076797219067992,
+        "csi_0.1": 0.5137749903898706,
+        "csi_0.5": 0.45944521736407623
+      }
+    }
+  }
+}
