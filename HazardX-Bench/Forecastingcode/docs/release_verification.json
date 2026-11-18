@@ -1,0 +1,22 @@
+{
+  "validated_models": 36,
+  "validation_status": {
+    "passed": 35,
+    "passed_with_warning": 1
+  },
+  "max_prediction_difference": 0.0,
+  "max_metric_difference": 0.0,
+  "native_source_files_unchanged": 141,
+  "exact_numeric_config_cases": 36,
+  "python_files_parsed": 527,
+  "syntax_errors": [],
+  "entry_help_checks": 7,
+  "public_binary_sha256_checks": 250,
+  "public_config_result_sha256_checks": 72,
+  "public_parts_manifest_sha256_checks": 23,
+  "model_folders_audited": 36,
+  "all_folders_exact": true,
+  "local_parts_stream_checks": 23,
+  "actual_offline_restore_and_reload": true,
+  "official_initialization_hash_checks": 6
+}

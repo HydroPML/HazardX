@@ -1,0 +1,3294 @@
+[
+  {
+    "case": "FloodCastBench/unet",
+    "reference": false,
+    "seed": 42,
+    "checkpoint": "checkpoints/FloodCastBench/unet/best.pth",
+    "status": "passed",
+    "gpu_physical": 4,
+    "output_shape": [
+      1,
+      1,
+      128,
+      128
+    ],
+    "test_input_shapes": {
+      "x": [
+        1,
+        2,
+        128,
+        128
+      ],
+      "y": [
+        1,
+        1,
+        128,
+        128
+      ],
+      "static": [
+        1,
+        1,
+        128,
+        128
+      ],
+      "mask": [
+        1,
+        1,
+        128,
+        128
+      ]
+    },
+    "test_metrics": {
+      "rmse": 0.12153936922550201,
+      "mae": 0.03306587412953377,
+      "relative_l2": 0.16046278178691864,
+      "nse": 0.9706949591636658,
+      "corr": 0.9929231405258179,
+      "csi_0.01": 0.6565448045730591,
+      "csi_0.05": 0.9009159207344055,
+      "csi_0.1": 0.9377749562263489,
+      "csi_0.5": 0.9626630544662476
+    },
+    "finite_predictions": true,
+    "strict_state_load": true,
+    "data_read": true,
+    "input_max_abs_diff": {
+      "x": 0.0,
+      "y": 0.0,
+      "static": 0.0,
+      "mask": 0.0
+    },
+    "prediction_max_abs_diff": 0.0,
+    "predictions_match": true,
+    "metric_abs_diff": {
+      "rmse": 0.0,
+      "mae": 0.0,
+      "relative_l2": 0.0,
+      "nse": 0.0,
+      "corr": 0.0,
+      "csi_0.01": 0.0,
+      "csi_0.05": 0.0,
+      "csi_0.1": 0.0,
+      "csi_0.5": 0.0
+    },
+    "training_step": {
+      "loss": 0.0002291131386300549,
+      "finite_gradients": true,
+      "gradient_tensors": 64,
+      "optimizer_step_executed": true,
+      "parameters_changed": true,
+      "gradient_max": 0.0141448974609375
+    },
+    "elapsed_seconds": 4.994208720003371,
+    "model_id": "01",
+    "model": "UNet",
+    "evaluation_precision": "FP32"
+  },
+  {
+    "case": "FloodCastBench/convlstm",
+    "reference": false,
+    "seed": 42,
+    "checkpoint": "checkpoints/FloodCastBench/convlstm/best.pth",
+    "status": "passed",
+    "gpu_physical": 4,
+    "output_shape": [
+      1,
+      1,
+      128,
+      128
+    ],
+    "test_input_shapes": {
+      "x": [
+        1,
+        2,
+        128,
+        128
+      ],
+      "y": [
+        1,
+        1,
+        128,
+        128
+      ],
+      "static": [
+        1,
+        1,
+        128,
+        128
+      ],
+      "mask": [
+        1,
+        1,
+        128,
+        128
+      ]
+    },
+    "test_metrics": {
+      "rmse": 0.05837560445070267,
+      "mae": 0.020411251112818718,
+      "relative_l2": 0.07707060128450394,
+      "nse": 0.9932396411895752,
+      "corr": 0.9981573820114136,
+      "csi_0.01": 0.7938179969787598,
+      "csi_0.05": 0.9164019227027893,
+      "csi_0.1": 0.948196291923523,
+      "csi_0.5": 0.951373279094696
+    },
+    "finite_predictions": true,
+    "strict_state_load": true,
+    "data_read": true,
+    "input_max_abs_diff": {
+      "x": 0.0,
+      "y": 0.0,
+      "static": 0.0,
+      "mask": 0.0
+    },
+    "prediction_max_abs_diff": 0.0,
+    "predictions_match": true,
+    "metric_abs_diff": {
+      "rmse": 0.0,
+      "mae": 0.0,
+      "relative_l2": 0.0,
+      "nse": 0.0,
+      "corr": 0.0,
+      "csi_0.01": 0.0,
+      "csi_0.05": 0.0,
+      "csi_0.1": 0.0,
+      "csi_0.5": 0.0
+    },
+    "training_step": {
+      "loss": 0.00014907607692293823,
+      "finite_gradients": true,
+      "gradient_tensors": 10,
+      "optimizer_step_executed": true,
+      "parameters_changed": true,
+      "gradient_max": 0.00975799560546875
+    },
+    "elapsed_seconds": 4.247365905001061,
+    "model_id": "02",
+    "model": "ConvLSTM-Scratch",
+    "evaluation_precision": "FP32"
+  },
+  {
+    "case": "FloodCastBench/fno",
+    "reference": false,
+    "seed": 42,
+    "checkpoint": "checkpoints/FloodCastBench/fno/best.pth",
+    "status": "passed",
+    "gpu_physical": 4,
+    "output_shape": [
+      1,
+      1,
+      128,
+      128
+    ],
+    "test_input_shapes": {
+      "x": [
+        1,
+        2,
+        128,
+        128
+      ],
+      "y": [
+        1,
+        1,
+        128,
+        128
+      ],
+      "static": [
+        1,
+        1,
+        128,
+        128
+      ],
+      "mask": [
+        1,
+        1,
+        128,
+        128
+      ]
+    },
+    "test_metrics": {
+      "rmse": 0.0008727798704057932,
+      "mae": 0.000724831479601562,
+      "relative_l2": 0.0011522907298058271,
+      "nse": 0.9999985098838806,
+      "corr": 0.9999993443489075,
+      "csi_0.01": 0.997898280620575,
+      "csi_0.05": 0.9963008761405945,
+      "csi_0.1": 0.9965613484382629,
+      "csi_0.5": 0.9990966320037842
+    },
+    "finite_predictions": true,
+    "strict_state_load": true,
+    "data_read": true,
+    "input_max_abs_diff": {
+      "x": 0.0,
+      "y": 0.0,
+      "static": 0.0,
+      "mask": 0.0
+    },
+    "prediction_max_abs_diff": 0.0,
+    "predictions_match": true,
+    "metric_abs_diff": {
+      "rmse": 0.0,
+      "mae": 0.0,
+      "relative_l2": 0.0,
+      "nse": 0.0,
+      "corr": 0.0,
+      "csi_0.01": 0.0,
+      "csi_0.05": 0.0,
+      "csi_0.1": 0.0,
+      "csi_0.5": 0.0
+    },
+    "training_step": {
+      "loss": 1.3254999657874578e-06,
+      "finite_gradients": true,
+      "gradient_tensors": 46,
+      "optimizer_step_executed": true,
+      "parameters_changed": true,
+      "gradient_max": 0.0022261792328208685
+    },
+    "elapsed_seconds": 4.654294949999894,
+    "model_id": "04",
+    "model": "FNO",
+    "evaluation_precision": "FP32"
+  },
+  {
+    "case": "FloodCastBench/earthformer",
+    "reference": false,
+    "seed": 42,
+    "checkpoint": "checkpoints/FloodCastBench/earthformer/best.pth",
+    "status": "passed",
+    "gpu_physical": 4,
+    "output_shape": [
+      1,
+      1,
+      128,
+      128
+    ],
+    "test_input_shapes": {
+      "x": [
+        1,
+        2,
+        128,
+        128
+      ],
+      "y": [
+        1,
+        1,
+        128,
+        128
+      ],
+      "static": [
+        1,
+        1,
+        128,
+        128
+      ],
+      "mask": [
+        1,
+        1,
+        128,
+        128
+      ]
+    },
+    "test_metrics": {
+      "rmse": 0.3295031189918518,
+      "mae": 0.13007532060146332,
+      "relative_l2": 0.4350276589393616,
+      "nse": 0.7846088409423828,
+      "corr": 0.8938164710998535,
+      "csi_0.01": 0.5903930068016052,
+      "csi_0.05": 0.6162465214729309,
+      "csi_0.1": 0.6128929853439331,
+      "csi_0.5": 0.691428542137146
+    },
+    "finite_predictions": true,
+    "strict_state_load": true,
+    "data_read": true,
+    "input_max_abs_diff": {
+      "x": 0.0,
+      "y": 0.0,
+      "static": 0.0,
+      "mask": 0.0
+    },
+    "prediction_max_abs_diff": 0.0,
+    "predictions_match": true,
+    "metric_abs_diff": {
+      "rmse": 0.0,
+      "mae": 0.0,
+      "relative_l2": 0.0,
+      "nse": 0.0,
+      "corr": 0.0,
+      "csi_0.01": 0.0,
+      "csi_0.05": 0.0,
+      "csi_0.1": 0.0,
+      "csi_0.5": 0.0
+    },
+    "training_step": {
+      "loss": 2.9539776733145118e-05,
+      "finite_gradients": true,
+      "gradient_tensors": 269,
+      "optimizer_step_executed": true,
+      "parameters_changed": true,
+      "gradient_max": 0.0025655864737927914
+    },
+    "elapsed_seconds": 5.81156153199845,
+    "model_id": "05",
+    "model": "EarthFormer-Scratch-fp32-lr3e-4",
+    "evaluation_precision": "FP32"
+  },
+  {
+    "case": "FloodCastBench/pde_transformer",
+    "reference": false,
+    "seed": 42,
+    "checkpoint": "checkpoints/FloodCastBench/pde_transformer/best.pth",
+    "status": "passed",
+    "gpu_physical": 4,
+    "output_shape": [
+      1,
+      1,
+      128,
+      128
+    ],
+    "test_input_shapes": {
+      "x": [
+        1,
+        2,
+        128,
+        128
+      ],
+      "y": [
+        1,
+        1,
+        128,
+        128
+      ],
+      "static": [
+        1,
+        1,
+        128,
+        128
+      ],
+      "mask": [
+        1,
+        1,
+        128,
+        128
+      ]
+    },
+    "test_metrics": {
+      "rmse": 0.05855874717235565,
+      "mae": 0.023373037576675415,
+      "relative_l2": 0.07731238752603531,
+      "nse": 0.9931971430778503,
+      "corr": 0.9967405200004578,
+      "csi_0.01": 0.7615902423858643,
+      "csi_0.05": 0.8498929142951965,
+      "csi_0.1": 0.8967424631118774,
+      "csi_0.5": 0.9529516100883484
+    },
+    "finite_predictions": true,
+    "strict_state_load": true,
+    "data_read": true,
+    "input_max_abs_diff": {
+      "x": 0.0,
+      "y": 0.0,
+      "static": 0.0,
+      "mask": 0.0
+    },
+    "prediction_max_abs_diff": 0.0,
+    "predictions_match": true,
+    "metric_abs_diff": {
+      "rmse": 0.0,
+      "mae": 0.0,
+      "relative_l2": 0.0,
+      "nse": 0.0,
+      "corr": 0.0,
+      "csi_0.01": 0.0,
+      "csi_0.05": 0.0,
+      "csi_0.1": 0.0,
+      "csi_0.5": 0.0
+    },
+    "training_step": {
+      "loss": 4.862235073233023e-05,
+      "finite_gradients": true,
+      "gradient_tensors": 506,
+      "optimizer_step_executed": true,
+      "parameters_changed": true,
+      "gradient_max": 0.00862884521484375
+    },
+    "elapsed_seconds": 16.527839065995067,
+    "model_id": "06",
+    "model": "PDE-T-SC-S-PT-FT",
+    "evaluation_precision": "FP32"
+  },
+  {
+    "case": "FloodCastBench/dpot",
+    "reference": false,
+    "seed": 42,
+    "checkpoint": "checkpoints/FloodCastBench/dpot/best.pth",
+    "status": "passed",
+    "gpu_physical": 4,
+    "output_shape": [
+      1,
+      1,
+      128,
+      128
+    ],
+    "test_input_shapes": {
+      "x": [
+        1,
+        2,
+        128,
+        128
+      ],
+      "y": [
+        1,
+        1,
+        128,
+        128
+      ],
+      "static": [
+        1,
+        1,
+        128,
+        128
+      ],
+      "mask": [
+        1,
+        1,
+        128,
+        128
+      ]
+    },
+    "test_metrics": {
+      "rmse": 0.06997741758823395,
+      "mae": 0.03750840574502945,
+      "relative_l2": 0.09238792955875397,
+      "nse": 0.9902853965759277,
+      "corr": 0.9951640367507935,
+      "csi_0.01": 0.641018271446228,
+      "csi_0.05": 0.7336413860321045,
+      "csi_0.1": 0.780066728591919,
+      "csi_0.5": 0.9059903621673584
+    },
+    "finite_predictions": true,
+    "strict_state_load": true,
+    "data_read": true,
+    "input_max_abs_diff": {
+      "x": 0.0,
+      "y": 0.0,
+      "static": 0.0,
+      "mask": 0.0
+    },
+    "prediction_max_abs_diff": 0.0,
+    "predictions_match": true,
+    "metric_abs_diff": {
+      "rmse": 0.0,
+      "mae": 0.0,
+      "relative_l2": 0.0,
+      "nse": 0.0,
+      "corr": 0.0,
+      "csi_0.01": 0.0,
+      "csi_0.05": 0.0,
+      "csi_0.1": 0.0,
+      "csi_0.5": 0.0
+    },
+    "training_step": {
+      "loss": 0.00034686908475123346,
+      "finite_gradients": true,
+      "gradient_tensors": 85,
+      "optimizer_step_executed": true,
+      "parameters_changed": true,
+      "gradient_max": 0.21597227454185486
+    },
+    "elapsed_seconds": 5.581803555003717,
+    "model_id": "07",
+    "model": "DPOT-S-PT-FT",
+    "evaluation_precision": "FP32"
+  },
+  {
+    "case": "FloodCastBench/poseidon",
+    "reference": false,
+    "seed": 42,
+    "checkpoint": "checkpoints/FloodCastBench/poseidon/best.pth",
+    "status": "passed",
+    "gpu_physical": 4,
+    "output_shape": [
+      1,
+      1,
+      128,
+      128
+    ],
+    "test_input_shapes": {
+      "x": [
+        1,
+        2,
+        128,
+        128
+      ],
+      "y": [
+        1,
+        1,
+        128,
+        128
+      ],
+      "static": [
+        1,
+        1,
+        128,
+        128
+      ],
+      "mask": [
+        1,
+        1,
+        128,
+        128
+      ]
+    },
+    "test_metrics": {
+      "rmse": 0.003392616054043174,
+      "mae": 0.0015851064817979932,
+      "relative_l2": 0.0044791135005652905,
+      "nse": 0.999977171421051,
+      "corr": 0.9999886155128479,
+      "csi_0.01": 0.9812317490577698,
+      "csi_0.05": 0.9924495220184326,
+      "csi_0.1": 0.994425356388092,
+      "csi_0.5": 0.9959368109703064
+    },
+    "finite_predictions": true,
+    "strict_state_load": true,
+    "data_read": true,
+    "input_max_abs_diff": {
+      "x": 0.0,
+      "y": 0.0,
+      "static": 0.0,
+      "mask": 0.0
+    },
+    "prediction_max_abs_diff": 0.0,
+    "predictions_match": true,
+    "metric_abs_diff": {
+      "rmse": 0.0,
+      "mae": 0.0,
+      "relative_l2": 0.0,
+      "nse": 0.0,
+      "corr": 0.0,
+      "csi_0.01": 0.0,
+      "csi_0.05": 0.0,
+      "csi_0.1": 0.0,
+      "csi_0.5": 0.0
+    },
+    "training_step": {
+      "loss": 5.359963779483223e-07,
+      "finite_gradients": true,
+      "gradient_tensors": 844,
+      "optimizer_step_executed": true,
+      "parameters_changed": true,
+      "gradient_max": 0.0015802383422851562
+    },
+    "elapsed_seconds": 7.822095205003279,
+    "model_id": "08",
+    "model": "Poseidon-T-PT-FT",
+    "evaluation_precision": "FP32"
+  },
+  {
+    "case": "FloodCastBench/gphyt",
+    "reference": false,
+    "seed": 42,
+    "checkpoint": "checkpoints/FloodCastBench/gphyt/best.pth",
+    "status": "passed",
+    "gpu_physical": 4,
+    "output_shape": [
+      1,
+      1,
+      128,
+      128
+    ],
+    "test_input_shapes": {
+      "x": [
+        1,
+        2,
+        128,
+        128
+      ],
+      "y": [
+        1,
+        1,
+        128,
+        128
+      ],
+      "static": [
+        1,
+        1,
+        128,
+        128
+      ],
+      "mask": [
+        1,
+        1,
+        128,
+        128
+      ]
+    },
+    "test_metrics": {
+      "rmse": 0.0006180881755426526,
+      "mae": 0.00041719668661244214,
+      "relative_l2": 0.0008160330471582711,
+      "nse": 0.9999992251396179,
+      "corr": 0.9999996423721313,
+      "csi_0.01": 0.997474730014801,
+      "csi_0.05": 0.998064398765564,
+      "csi_0.1": 0.9987116456031799,
+      "csi_0.5": 0.9990966320037842
+    },
+    "finite_predictions": true,
+    "strict_state_load": true,
+    "data_read": true,
+    "input_max_abs_diff": {
+      "x": 0.0,
+      "y": 0.0,
+      "static": 0.0,
+      "mask": 0.0
+    },
+    "prediction_max_abs_diff": 0.0,
+    "predictions_match": true,
+    "metric_abs_diff": {
+      "rmse": 0.0,
+      "mae": 0.0,
+      "relative_l2": 0.0,
+      "nse": 0.0,
+      "corr": 0.0,
+      "csi_0.01": 0.0,
+      "csi_0.05": 0.0,
+      "csi_0.1": 0.0,
+      "csi_0.5": 0.0
+    },
+    "training_step": {
+      "loss": 1.943310934393594e-08,
+      "finite_gradients": true,
+      "gradient_tensors": 161,
+      "optimizer_step_executed": true,
+      "parameters_changed": true,
+      "gradient_max": 2.7999281883239746e-05
+    },
+    "elapsed_seconds": 5.385893027007114,
+    "model_id": "09",
+    "model": "GPhyT-S-PT-FT",
+    "evaluation_precision": "FP32"
+  },
+  {
+    "case": "FloodCastBench/prithvi",
+    "reference": false,
+    "seed": 42,
+    "checkpoint": "checkpoints/FloodCastBench/prithvi/best.pth",
+    "status": "passed",
+    "gpu_physical": 4,
+    "output_shape": [
+      1,
+      1,
+      128,
+      128
+    ],
+    "test_input_shapes": {
+      "x": [
+        1,
+        2,
+        128,
+        128
+      ],
+      "y": [
+        1,
+        1,
+        128,
+        128
+      ],
+      "static": [
+        1,
+        1,
+        128,
+        128
+      ],
+      "mask": [
+        1,
+        1,
+        128,
+        128
+      ]
+    },
+    "test_metrics": {
+      "rmse": 0.11301737278699875,
+      "mae": 0.050192300230264664,
+      "relative_l2": 0.149211585521698,
+      "nse": 0.9746604561805725,
+      "corr": 0.9884424209594727,
+      "csi_0.01": 0.6319130659103394,
+      "csi_0.05": 0.7253395318984985,
+      "csi_0.1": 0.7828783988952637,
+      "csi_0.5": 0.8947590589523315
+    },
+    "finite_predictions": true,
+    "strict_state_load": true,
+    "data_read": true,
+    "input_max_abs_diff": {
+      "x": 0.0,
+      "y": 0.0,
+      "static": 0.0,
+      "mask": 0.0
+    },
+    "prediction_max_abs_diff": 0.0,
+    "predictions_match": true,
+    "metric_abs_diff": {
+      "rmse": 0.0,
+      "mae": 0.0,
+      "relative_l2": 0.0,
+      "nse": 0.0,
+      "corr": 0.0,
+      "csi_0.01": 0.0,
+      "csi_0.05": 0.0,
+      "csi_0.1": 0.0,
+      "csi_0.5": 0.0
+    },
+    "training_step": {
+      "loss": 9.212204167852178e-05,
+      "finite_gradients": true,
+      "gradient_tensors": 295,
+      "optimizer_step_executed": true,
+      "parameters_changed": true,
+      "gradient_max": 0.0032329559326171875
+    },
+    "elapsed_seconds": 17.56564640000579,
+    "model_id": "11",
+    "model": "Prithvi-EO2-300M-PT-FT",
+    "evaluation_precision": "FP32"
+  },
+  {
+    "case": "FloodSimBench/unet",
+    "reference": false,
+    "seed": 1,
+    "checkpoint": "checkpoints/FloodSimBench/unet/best.pth",
+    "status": "passed",
+    "gpu_physical": 4,
+    "data_source": "genuine lossless raw1024 HDF5; original GeoTIFFs currently unavailable; native normalization/context/cleanup preserved",
+    "output_shape": [
+      1,
+      1,
+      1024,
+      1024
+    ],
+    "test_input_shapes": {
+      "x": [
+        1,
+        12,
+        1024,
+        1024
+      ],
+      "y": [
+        1,
+        1,
+        1024,
+        1024
+      ],
+      "mask": [
+        1,
+        1,
+        1024,
+        1024
+      ]
+    },
+    "test_metrics": {
+      "rmse": 0.03778945654630661,
+      "mae": 0.023192765191197395,
+      "relative_l2": 1.4530885219573975,
+      "nse": -1.339945912361145,
+      "corr": 0.2952656149864197,
+      "csi_0.01": 0.2391301840543747,
+      "csi_0.05": 0.1135234460234642,
+      "csi_0.1": 0.07435764372348785,
+      "csi_0.5": 0.17241379618644714
+    },
+    "finite_predictions": true,
+    "strict_state_load": true,
+    "data_read": true,
+    "input_max_abs_diff": {
+      "x": 0.0,
+      "y": 0.0,
+      "mask": 0.0
+    },
+    "prediction_max_abs_diff": 0.0,
+    "predictions_match": true,
+    "metric_abs_diff": {
+      "rmse": 0.0,
+      "mae": 0.0,
+      "relative_l2": 0.0,
+      "nse": 0.0,
+      "corr": 0.0,
+      "csi_0.01": 0.0,
+      "csi_0.05": 0.0,
+      "csi_0.1": 0.0,
+      "csi_0.5": 0.0
+    },
+    "training_step": {
+      "loss": 0.12713919579982758,
+      "finite_gradients": true,
+      "gradient_tensors": 64,
+      "optimizer_step": true,
+      "optimizer_step_executed": true,
+      "parameters_changed": true
+    },
+    "elapsed_seconds": 3.5238807189889485,
+    "model_id": "01",
+    "model": "UNet",
+    "evaluation_precision": "FP32"
+  },
+  {
+    "case": "FloodSimBench/fno",
+    "reference": false,
+    "seed": 1,
+    "checkpoint": "checkpoints/FloodSimBench/fno/best.pth",
+    "status": "passed",
+    "gpu_physical": 4,
+    "data_source": "genuine lossless raw1024 HDF5; original GeoTIFFs currently unavailable; native normalization/context/cleanup preserved",
+    "output_shape": [
+      1,
+      1,
+      1024,
+      1024
+    ],
+    "test_input_shapes": {
+      "x": [
+        1,
+        12,
+        1024,
+        1024
+      ],
+      "y": [
+        1,
+        1,
+        1024,
+        1024
+      ],
+      "mask": [
+        1,
+        1,
+        1024,
+        1024
+      ]
+    },
+    "test_metrics": {
+      "rmse": 0.013703767210245132,
+      "mae": 0.005572752095758915,
+      "relative_l2": 0.5269402861595154,
+      "nse": 0.6922879815101624,
+      "corr": 0.8477896451950073,
+      "csi_0.01": 0.5984158515930176,
+      "csi_0.05": 0.3703060448169708,
+      "csi_0.1": 0.2959079444408417,
+      "csi_0.5": 0.5517241358757019
+    },
+    "finite_predictions": true,
+    "strict_state_load": true,
+    "data_read": true,
+    "input_max_abs_diff": {
+      "x": 0.0,
+      "y": 0.0,
+      "mask": 0.0
+    },
+    "prediction_max_abs_diff": 0.0,
+    "predictions_match": true,
+    "metric_abs_diff": {
+      "rmse": 0.0,
+      "mae": 0.0,
+      "relative_l2": 0.0,
+      "nse": 0.0,
+      "corr": 0.0,
+      "csi_0.01": 0.0,
+      "csi_0.05": 0.0,
+      "csi_0.1": 0.0,
+      "csi_0.5": 0.0
+    },
+    "training_step": {
+      "loss": 0.04385296255350113,
+      "finite_gradients": true,
+      "gradient_tensors": 46,
+      "optimizer_step": true,
+      "optimizer_step_executed": true,
+      "parameters_changed": true
+    },
+    "elapsed_seconds": 3.25916808200418,
+    "model_id": "04",
+    "model": "FNO",
+    "evaluation_precision": "FP32"
+  },
+  {
+    "case": "FloodSimBench/convlstm",
+    "reference": false,
+    "seed": 1,
+    "checkpoint": "checkpoints/FloodSimBench/convlstm/best.pth",
+    "status": "passed",
+    "gpu_physical": 4,
+    "data_source": "genuine lossless raw1024 HDF5; original GeoTIFFs currently unavailable; native normalization/context/cleanup preserved",
+    "output_shape": [
+      1,
+      1,
+      1024,
+      1024
+    ],
+    "test_input_shapes": {
+      "x": [
+        1,
+        12,
+        1024,
+        1024
+      ],
+      "y": [
+        1,
+        1,
+        1024,
+        1024
+      ],
+      "mask": [
+        1,
+        1,
+        1024,
+        1024
+      ]
+    },
+    "test_metrics": {
+      "rmse": 0.016007695347070694,
+      "mae": 0.005229541100561619,
+      "relative_l2": 0.6155313849449158,
+      "nse": 0.5801229476928711,
+      "corr": 0.7774122357368469,
+      "csi_0.01": 0.4662725031375885,
+      "csi_0.05": 0.349348247051239,
+      "csi_0.1": 0.3222447633743286,
+      "csi_0.5": 0.13513512909412384
+    },
+    "finite_predictions": true,
+    "strict_state_load": true,
+    "data_read": true,
+    "input_max_abs_diff": {
+      "x": 0.0,
+      "y": 0.0,
+      "mask": 0.0
+    },
+    "prediction_max_abs_diff": 0.0,
+    "predictions_match": true,
+    "metric_abs_diff": {
+      "rmse": 0.0,
+      "mae": 0.0,
+      "relative_l2": 0.0,
+      "nse": 0.0,
+      "corr": 0.0,
+      "csi_0.01": 0.0,
+      "csi_0.05": 0.0,
+      "csi_0.1": 0.0,
+      "csi_0.5": 0.0
+    },
+    "training_step": {
+      "loss": 0.04161233827471733,
+      "finite_gradients": true,
+      "gradient_tensors": 10,
+      "optimizer_step": true,
+      "optimizer_step_executed": true,
+      "parameters_changed": true
+    },
+    "elapsed_seconds": 3.5993412120005814,
+    "model_id": "02",
+    "model": "ConvLSTM-Scratch",
+    "evaluation_precision": "FP32"
+  },
+  {
+    "case": "FloodSimBench/earthformer",
+    "reference": false,
+    "seed": 1,
+    "checkpoint": "checkpoints/FloodSimBench/earthformer/best.pth",
+    "status": "passed",
+    "gpu_physical": 4,
+    "data_source": "genuine lossless raw1024 HDF5; original GeoTIFFs currently unavailable; native normalization/context/cleanup preserved",
+    "output_shape": [
+      1,
+      1,
+      1024,
+      1024
+    ],
+    "test_input_shapes": {
+      "x": [
+        1,
+        12,
+        1024,
+        1024
+      ],
+      "y": [
+        1,
+        1,
+        1024,
+        1024
+      ],
+      "mask": [
+        1,
+        1,
+        1024,
+        1024
+      ]
+    },
+    "test_metrics": {
+      "rmse": 0.01646747812628746,
+      "mae": 0.008896805346012115,
+      "relative_l2": 0.633211076259613,
+      "nse": 0.5556566119194031,
+      "corr": 0.7692760229110718,
+      "csi_0.01": 0.43667274713516235,
+      "csi_0.05": 0.43232062458992004,
+      "csi_0.1": 0.377546101808548,
+      "csi_0.5": 0.0
+    },
+    "finite_predictions": true,
+    "strict_state_load": true,
+    "data_read": true,
+    "input_max_abs_diff": {
+      "x": 0.0,
+      "y": 0.0,
+      "mask": 0.0
+    },
+    "prediction_max_abs_diff": 0.0,
+    "predictions_match": true,
+    "metric_abs_diff": {
+      "rmse": 0.0,
+      "mae": 0.0,
+      "relative_l2": 0.0,
+      "nse": 0.0,
+      "corr": 0.0,
+      "csi_0.01": 0.0,
+      "csi_0.05": 0.0,
+      "csi_0.1": 0.0,
+      "csi_0.5": 0.0
+    },
+    "training_step": {
+      "loss": 0.06197061762213707,
+      "finite_gradients": true,
+      "gradient_tensors": 269,
+      "optimizer_step": true,
+      "optimizer_step_executed": true,
+      "parameters_changed": true
+    },
+    "elapsed_seconds": 3.733335925004212,
+    "model_id": "05",
+    "model": "EarthFormer-Scratch",
+    "evaluation_precision": "FP32"
+  },
+  {
+    "case": "FloodSimBench/pde_transformer",
+    "reference": false,
+    "seed": 1,
+    "checkpoint": "checkpoints/FloodSimBench/pde_transformer/best.pth",
+    "status": "passed",
+    "gpu_physical": 4,
+    "data_source": "genuine lossless raw1024 HDF5; original GeoTIFFs currently unavailable; native normalization/context/cleanup preserved",
+    "output_shape": [
+      1,
+      1,
+      1024,
+      1024
+    ],
+    "test_input_shapes": {
+      "x": [
+        1,
+        12,
+        1024,
+        1024
+      ],
+      "y": [
+        1,
+        1,
+        1024,
+        1024
+      ],
+      "mask": [
+        1,
+        1,
+        1024,
+        1024
+      ]
+    },
+    "test_metrics": {
+      "rmse": 0.012385941110551357,
+      "mae": 0.0049527049995958805,
+      "relative_l2": 0.47626692056655884,
+      "nse": 0.7486247420310974,
+      "corr": 0.8694272637367249,
+      "csi_0.01": 0.6177484393119812,
+      "csi_0.05": 0.499100923538208,
+      "csi_0.1": 0.4478698968887329,
+      "csi_0.5": 0.13793103396892548
+    },
+    "finite_predictions": true,
+    "strict_state_load": true,
+    "data_read": true,
+    "input_max_abs_diff": {
+      "x": 0.0,
+      "y": 0.0,
+      "mask": 0.0
+    },
+    "prediction_max_abs_diff": 0.0,
+    "predictions_match": true,
+    "metric_abs_diff": {
+      "rmse": 0.0,
+      "mae": 0.0,
+      "relative_l2": 0.0,
+      "nse": 0.0,
+      "corr": 0.0,
+      "csi_0.01": 0.0,
+      "csi_0.05": 0.0,
+      "csi_0.1": 0.0,
+      "csi_0.5": 0.0
+    },
+    "training_step": {
+      "loss": 0.027579396963119507,
+      "finite_gradients": true,
+      "gradient_tensors": 506,
+      "optimizer_step": true,
+      "optimizer_step_executed": true,
+      "parameters_changed": true
+    },
+    "elapsed_seconds": 20.276943830001983,
+    "model_id": "06",
+    "model": "PDE-T-SC-S-PT-FT",
+    "evaluation_precision": "FP32"
+  },
+  {
+    "case": "FloodSimBench/dpot",
+    "reference": false,
+    "seed": 1,
+    "checkpoint": "checkpoints/FloodSimBench/dpot/best.pth",
+    "status": "passed",
+    "gpu_physical": 4,
+    "data_source": "genuine lossless raw1024 HDF5; original GeoTIFFs currently unavailable; native normalization/context/cleanup preserved",
+    "output_shape": [
+      1,
+      1,
+      1024,
+      1024
+    ],
+    "test_input_shapes": {
+      "x": [
+        1,
+        12,
+        1024,
+        1024
+      ],
+      "y": [
+        1,
+        1,
+        1024,
+        1024
+      ],
+      "mask": [
+        1,
+        1,
+        1024,
+        1024
+      ]
+    },
+    "test_metrics": {
+      "rmse": 0.019637834280729294,
+      "mae": 0.008162785321474075,
+      "relative_l2": 0.7551183104515076,
+      "nse": 0.36809515953063965,
+      "corr": 0.6304428577423096,
+      "csi_0.01": 0.29185864329338074,
+      "csi_0.05": 0.2275530844926834,
+      "csi_0.1": 0.1713370680809021,
+      "csi_0.5": 0.0
+    },
+    "finite_predictions": true,
+    "strict_state_load": true,
+    "data_read": true,
+    "input_max_abs_diff": {
+      "x": 0.0,
+      "y": 0.0,
+      "mask": 0.0
+    },
+    "prediction_max_abs_diff": 0.0,
+    "predictions_match": true,
+    "metric_abs_diff": {
+      "rmse": 0.0,
+      "mae": 0.0,
+      "relative_l2": 0.0,
+      "nse": 0.0,
+      "corr": 0.0,
+      "csi_0.01": 0.0,
+      "csi_0.05": 0.0,
+      "csi_0.1": 0.0,
+      "csi_0.5": 0.0
+    },
+    "training_step": {
+      "loss": 0.06270904093980789,
+      "finite_gradients": true,
+      "gradient_tensors": 85,
+      "optimizer_step": true,
+      "optimizer_step_executed": true,
+      "parameters_changed": true
+    },
+    "elapsed_seconds": 4.477413318003528,
+    "model_id": "07",
+    "model": "DPOT-S-PT-FT",
+    "evaluation_precision": "FP32"
+  },
+  {
+    "case": "FloodSimBench/poseidon",
+    "reference": false,
+    "seed": 1,
+    "checkpoint": "checkpoints/FloodSimBench/poseidon/best.pth",
+    "status": "passed",
+    "gpu_physical": 4,
+    "data_source": "genuine lossless raw1024 HDF5; original GeoTIFFs currently unavailable; native normalization/context/cleanup preserved",
+    "output_shape": [
+      1,
+      1,
+      1024,
+      1024
+    ],
+    "test_input_shapes": {
+      "x": [
+        1,
+        12,
+        1024,
+        1024
+      ],
+      "y": [
+        1,
+        1,
+        1024,
+        1024
+      ],
+      "mask": [
+        1,
+        1,
+        1024,
+        1024
+      ]
+    },
+    "test_metrics": {
+      "rmse": 0.023535260930657387,
+      "mae": 0.006979602389037609,
+      "relative_l2": 0.9049829840660095,
+      "nse": 0.09238315373659134,
+      "corr": 0.7148380875587463,
+      "csi_0.01": 0.3255603313446045,
+      "csi_0.05": 0.3766428232192993,
+      "csi_0.1": 0.4163568913936615,
+      "csi_0.5": 0.011029412038624287
+    },
+    "finite_predictions": true,
+    "strict_state_load": true,
+    "data_read": true,
+    "input_max_abs_diff": {
+      "x": 0.0,
+      "y": 0.0,
+      "mask": 0.0
+    },
+    "prediction_max_abs_diff": 0.0,
+    "predictions_match": true,
+    "metric_abs_diff": {
+      "rmse": 0.0,
+      "mae": 0.0,
+      "relative_l2": 0.0,
+      "nse": 0.0,
+      "corr": 0.0,
+      "csi_0.01": 0.0,
+      "csi_0.05": 0.0,
+      "csi_0.1": 0.0,
+      "csi_0.5": 0.0
+    },
+    "training_step": {
+      "loss": 0.09118451178073883,
+      "finite_gradients": true,
+      "gradient_tensors": 844,
+      "optimizer_step": true,
+      "optimizer_step_executed": true,
+      "parameters_changed": true
+    },
+    "elapsed_seconds": 6.350861936996807,
+    "model_id": "08",
+    "model": "Poseidon-T-PT-FT",
+    "evaluation_precision": "FP32"
+  },
+  {
+    "case": "FloodSimBench/gphyt",
+    "reference": false,
+    "seed": 1,
+    "checkpoint": "checkpoints/FloodSimBench/gphyt/best.pth",
+    "status": "passed",
+    "gpu_physical": 4,
+    "data_source": "genuine lossless raw1024 HDF5; original GeoTIFFs currently unavailable; native normalization/context/cleanup preserved",
+    "output_shape": [
+      1,
+      1,
+      1024,
+      1024
+    ],
+    "test_input_shapes": {
+      "x": [
+        1,
+        12,
+        1024,
+        1024
+      ],
+      "y": [
+        1,
+        1,
+        1024,
+        1024
+      ],
+      "mask": [
+        1,
+        1,
+        1024,
+        1024
+      ]
+    },
+    "test_metrics": {
+      "rmse": 0.01333310641348362,
+      "mae": 0.004984032362699509,
+      "relative_l2": 0.5126875638961792,
+      "nse": 0.7087088823318481,
+      "corr": 0.8421141505241394,
+      "csi_0.01": 0.6441892981529236,
+      "csi_0.05": 0.45563608407974243,
+      "csi_0.1": 0.4126654267311096,
+      "csi_0.5": 0.6206896305084229
+    },
+    "finite_predictions": true,
+    "strict_state_load": true,
+    "data_read": true,
+    "input_max_abs_diff": {
+      "x": 0.0,
+      "y": 0.0,
+      "mask": 0.0
+    },
+    "prediction_max_abs_diff": 0.0,
+    "predictions_match": true,
+    "metric_abs_diff": {
+      "rmse": 0.0,
+      "mae": 0.0,
+      "relative_l2": 0.0,
+      "nse": 0.0,
+      "corr": 0.0,
+      "csi_0.01": 0.0,
+      "csi_0.05": 0.0,
+      "csi_0.1": 0.0,
+      "csi_0.5": 0.0
+    },
+    "training_step": {
+      "loss": 0.038538187742233276,
+      "finite_gradients": true,
+      "gradient_tensors": 161,
+      "optimizer_step": true,
+      "optimizer_step_executed": true,
+      "parameters_changed": true
+    },
+    "elapsed_seconds": 4.620798528994783,
+    "model_id": "09",
+    "model": "GPhyT-S-PT-FT",
+    "evaluation_precision": "FP32"
+  },
+  {
+    "case": "FloodSimBench/prithvi",
+    "reference": false,
+    "seed": 1,
+    "checkpoint": "checkpoints/FloodSimBench/prithvi/best.pth",
+    "status": "passed",
+    "gpu_physical": 4,
+    "data_source": "genuine lossless raw1024 HDF5; original GeoTIFFs currently unavailable; native normalization/context/cleanup preserved",
+    "output_shape": [
+      1,
+      1,
+      1024,
+      1024
+    ],
+    "test_input_shapes": {
+      "x": [
+        1,
+        12,
+        1024,
+        1024
+      ],
+      "y": [
+        1,
+        1,
+        1024,
+        1024
+      ],
+      "mask": [
+        1,
+        1,
+        1024,
+        1024
+      ]
+    },
+    "test_metrics": {
+      "rmse": 0.01472584530711174,
+      "mae": 0.00828494131565094,
+      "relative_l2": 0.566241443157196,
+      "nse": 0.644675612449646,
+      "corr": 0.8166330456733704,
+      "csi_0.01": 0.43744996190071106,
+      "csi_0.05": 0.45536094903945923,
+      "csi_0.1": 0.4182929992675781,
+      "csi_0.5": 0.0
+    },
+    "finite_predictions": true,
+    "strict_state_load": true,
+    "data_read": true,
+    "input_max_abs_diff": {
+      "x": 0.0,
+      "y": 0.0,
+      "mask": 0.0
+    },
+    "prediction_max_abs_diff": 0.0,
+    "predictions_match": true,
+    "metric_abs_diff": {
+      "rmse": 0.0,
+      "mae": 0.0,
+      "relative_l2": 0.0,
+      "nse": 0.0,
+      "corr": 0.0,
+      "csi_0.01": 0.0,
+      "csi_0.05": 0.0,
+      "csi_0.1": 0.0,
+      "csi_0.5": 0.0
+    },
+    "training_step": {
+      "loss": 0.04501527547836304,
+      "finite_gradients": true,
+      "gradient_tensors": 295,
+      "optimizer_step": true,
+      "optimizer_step_executed": true,
+      "parameters_changed": true
+    },
+    "elapsed_seconds": 14.977701344003435,
+    "model_id": "11",
+    "model": "Prithvi-EO2-300M-PT-FT",
+    "evaluation_precision": "FP32"
+  },
+  {
+    "case": "LandslideCast/convlstm",
+    "reference": false,
+    "seed": 0,
+    "checkpoint": "checkpoints/LandslideCast/convlstm/best.pth",
+    "status": "passed",
+    "gpu_physical": 4,
+    "output_shape": [
+      1,
+      8,
+      2,
+      200,
+      200
+    ],
+    "test_input_shapes": {
+      "phi": [
+        1,
+        200,
+        200
+      ],
+      "z": [
+        1,
+        200,
+        200
+      ],
+      "h0": [
+        1,
+        200,
+        200
+      ],
+      "z_norm": [
+        1,
+        200,
+        200
+      ],
+      "h0_norm": [
+        1,
+        200,
+        200
+      ],
+      "x_grid": [
+        1,
+        200,
+        200
+      ],
+      "y_grid": [
+        1,
+        200,
+        200
+      ],
+      "t_grid": [
+        1,
+        9
+      ],
+      "target": [
+        1,
+        8,
+        2,
+        200,
+        200
+      ]
+    },
+    "test_metrics": {
+      "objective": 5.109567820112838,
+      "official_RelL2_h": 0.636890531139114,
+      "official_RelL2_u": 0.6513341021390407,
+      "RMSE_h": 1.547038300887158,
+      "MAE_h": 0.3070479479521513,
+      "RelL2_h": 0.636890531139114,
+      "RMSE_h@t80": 1.4516357204088521,
+      "MAE_h@t80": 0.3007683111190796,
+      "RelL2_h@t80": 0.6248010466253193,
+      "RMSE_u": 1.3546925616758094,
+      "MAE_u": 0.2581829615801573,
+      "RelL2_u": 0.6513341021390407,
+      "RMSE_u@t80": 0.875350983305404,
+      "MAE_u@t80": 0.16892501592636108,
+      "RelL2_u@t80": 0.7815919399032771
+    },
+    "finite_predictions": true,
+    "strict_state_load": true,
+    "data_read": true,
+    "input_max_abs_diff": {
+      "phi": 0.0,
+      "z": 0.0,
+      "h0": 0.0,
+      "z_norm": 0.0,
+      "h0_norm": 0.0,
+      "x_grid": 0.0,
+      "y_grid": 0.0,
+      "t_grid": 0.0,
+      "target": 0.0
+    },
+    "prediction_max_abs_diff": 0.0,
+    "predictions_match": true,
+    "metric_abs_diff": {
+      "objective": 0.0,
+      "official_RelL2_h": 0.0,
+      "official_RelL2_u": 0.0,
+      "RMSE_h": 0.0,
+      "MAE_h": 0.0,
+      "RelL2_h": 0.0,
+      "RMSE_h@t80": 0.0,
+      "MAE_h@t80": 0.0,
+      "RelL2_h@t80": 0.0,
+      "RMSE_u": 0.0,
+      "MAE_u": 0.0,
+      "RelL2_u": 0.0,
+      "RMSE_u@t80": 0.0,
+      "MAE_u@t80": 0.0,
+      "RelL2_u@t80": 0.0
+    },
+    "training_step": {
+      "loss": 6.130613803863525,
+      "finite_gradients": true,
+      "gradient_tensors": 10,
+      "optimizer_step_executed": true,
+      "parameters_changed": true,
+      "gradient_max": 1.1083984375
+    },
+    "elapsed_seconds": 2.950397801992949,
+    "model_id": "02",
+    "model": "ConvLSTM-Scratch",
+    "evaluation_precision": "FP16"
+  },
+  {
+    "case": "LandslideCast/fno",
+    "reference": false,
+    "seed": 0,
+    "checkpoint": "checkpoints/LandslideCast/fno/best.pth",
+    "status": "passed",
+    "gpu_physical": 4,
+    "output_shape": [
+      1,
+      8,
+      2,
+      200,
+      200
+    ],
+    "test_input_shapes": {
+      "phi": [
+        1,
+        200,
+        200
+      ],
+      "z": [
+        1,
+        200,
+        200
+      ],
+      "h0": [
+        1,
+        200,
+        200
+      ],
+      "z_norm": [
+        1,
+        200,
+        200
+      ],
+      "h0_norm": [
+        1,
+        200,
+        200
+      ],
+      "x_grid": [
+        1,
+        200,
+        200
+      ],
+      "y_grid": [
+        1,
+        200,
+        200
+      ],
+      "t_grid": [
+        1,
+        9
+      ],
+      "target": [
+        1,
+        8,
+        2,
+        200,
+        200
+      ]
+    },
+    "test_metrics": {
+      "objective": 5.239340060436697,
+      "official_RelL2_h": 0.6489782768486715,
+      "official_RelL2_u": 0.6964921224959963,
+      "RMSE_h": 1.5764000273845256,
+      "MAE_h": 0.34119734079752234,
+      "RelL2_h": 0.6489782768486715,
+      "RMSE_h@t80": 1.5242803421362667,
+      "MAE_h@t80": 0.35317320115882905,
+      "RelL2_h@t80": 0.6560681441821398,
+      "RMSE_u": 1.4486155331226713,
+      "MAE_u": 0.26758178852084674,
+      "RelL2_u": 0.6964921224959963,
+      "RMSE_u@t80": 0.885853229087729,
+      "MAE_u@t80": 0.17214705455494114,
+      "RelL2_u@t80": 0.7909692877453423
+    },
+    "finite_predictions": true,
+    "strict_state_load": true,
+    "data_read": true,
+    "input_max_abs_diff": {
+      "phi": 0.0,
+      "z": 0.0,
+      "h0": 0.0,
+      "z_norm": 0.0,
+      "h0_norm": 0.0,
+      "x_grid": 0.0,
+      "y_grid": 0.0,
+      "t_grid": 0.0,
+      "target": 0.0
+    },
+    "prediction_max_abs_diff": 0.0,
+    "predictions_match": true,
+    "metric_abs_diff": {
+      "objective": 0.0,
+      "official_RelL2_h": 0.0,
+      "official_RelL2_u": 0.0,
+      "RMSE_h": 0.0,
+      "MAE_h": 0.0,
+      "RelL2_h": 0.0,
+      "RMSE_h@t80": 0.0,
+      "MAE_h@t80": 0.0,
+      "RelL2_h@t80": 0.0,
+      "RMSE_u": 0.0,
+      "MAE_u": 0.0,
+      "RelL2_u": 0.0,
+      "RMSE_u@t80": 0.0,
+      "MAE_u@t80": 0.0,
+      "RelL2_u@t80": 0.0
+    },
+    "training_step": {
+      "loss": 3.994335651397705,
+      "finite_gradients": true,
+      "gradient_tensors": 30,
+      "optimizer_step_executed": true,
+      "parameters_changed": true,
+      "gradient_max": 0.08740741014480591
+    },
+    "elapsed_seconds": 4.11263654299546,
+    "model_id": "04",
+    "model": "FNO3D-Scratch",
+    "evaluation_precision": "FP32"
+  },
+  {
+    "case": "LandslideCast/pde_transformer",
+    "reference": false,
+    "seed": 0,
+    "checkpoint": "checkpoints/LandslideCast/pde_transformer/best.pth",
+    "status": "passed",
+    "gpu_physical": 4,
+    "output_shape": [
+      1,
+      8,
+      2,
+      200,
+      200
+    ],
+    "test_input_shapes": {
+      "phi": [
+        1,
+        200,
+        200
+      ],
+      "z": [
+        1,
+        200,
+        200
+      ],
+      "h0": [
+        1,
+        200,
+        200
+      ],
+      "z_norm": [
+        1,
+        200,
+        200
+      ],
+      "h0_norm": [
+        1,
+        200,
+        200
+      ],
+      "x_grid": [
+        1,
+        200,
+        200
+      ],
+      "y_grid": [
+        1,
+        200,
+        200
+      ],
+      "t_grid": [
+        1,
+        9
+      ],
+      "target": [
+        1,
+        8,
+        2,
+        200,
+        200
+      ]
+    },
+    "test_metrics": {
+      "objective": 2.4487804350401845,
+      "official_RelL2_h": 0.2919057994429561,
+      "official_RelL2_u": 0.40543983893949215,
+      "RMSE_h": 0.7090534870751579,
+      "MAE_h": 0.22569724909365177,
+      "RelL2_h": 0.2919057994429561,
+      "RMSE_h@t80": 0.590763144352081,
+      "MAE_h@t80": 0.2110281063079834,
+      "RelL2_h@t80": 0.2542713889645023,
+      "RMSE_u": 0.8432635911655678,
+      "MAE_u": 0.17479756728708745,
+      "RelL2_u": 0.40543983893949215,
+      "RMSE_u@t80": 0.6591204432003692,
+      "MAE_u@t80": 0.14155486259460448,
+      "RelL2_u@t80": 0.5885219022495203
+    },
+    "finite_predictions": true,
+    "strict_state_load": true,
+    "data_read": true,
+    "input_max_abs_diff": {
+      "phi": 0.0,
+      "z": 0.0,
+      "h0": 0.0,
+      "z_norm": 0.0,
+      "h0_norm": 0.0,
+      "x_grid": 0.0,
+      "y_grid": 0.0,
+      "t_grid": 0.0,
+      "target": 0.0
+    },
+    "prediction_max_abs_diff": 0.0,
+    "predictions_match": true,
+    "metric_abs_diff": {
+      "objective": 0.0,
+      "official_RelL2_h": 0.0,
+      "official_RelL2_u": 0.0,
+      "RMSE_h": 0.0,
+      "MAE_h": 0.0,
+      "RelL2_h": 0.0,
+      "RMSE_h@t80": 0.0,
+      "MAE_h@t80": 0.0,
+      "RelL2_h@t80": 0.0,
+      "RMSE_u": 0.0,
+      "MAE_u": 0.0,
+      "RelL2_u": 0.0,
+      "RMSE_u@t80": 0.0,
+      "MAE_u@t80": 0.0,
+      "RelL2_u@t80": 0.0
+    },
+    "training_step": {
+      "loss": 1.3490625619888306,
+      "finite_gradients": true,
+      "gradient_tensors": 508,
+      "optimizer_step_executed": true,
+      "parameters_changed": true,
+      "gradient_max": 5.625
+    },
+    "elapsed_seconds": 16.303725131991087,
+    "model_id": "06",
+    "model": "PDE-T-SC-S-PT-FT",
+    "evaluation_precision": "BF16"
+  },
+  {
+    "case": "LandslideCast/poseidon",
+    "reference": false,
+    "seed": 0,
+    "checkpoint": "checkpoints/LandslideCast/poseidon/best.pth",
+    "status": "passed",
+    "gpu_physical": 4,
+    "output_shape": [
+      1,
+      8,
+      2,
+      200,
+      200
+    ],
+    "test_input_shapes": {
+      "phi": [
+        1,
+        200,
+        200
+      ],
+      "z": [
+        1,
+        200,
+        200
+      ],
+      "h0": [
+        1,
+        200,
+        200
+      ],
+      "z_norm": [
+        1,
+        200,
+        200
+      ],
+      "h0_norm": [
+        1,
+        200,
+        200
+      ],
+      "x_grid": [
+        1,
+        200,
+        200
+      ],
+      "y_grid": [
+        1,
+        200,
+        200
+      ],
+      "t_grid": [
+        1,
+        9
+      ],
+      "target": [
+        1,
+        8,
+        2,
+        200,
+        200
+      ]
+    },
+    "test_metrics": {
+      "objective": 2.6167305725582635,
+      "official_RelL2_h": 0.31128030230152526,
+      "official_RelL2_u": 0.4377684564475864,
+      "RMSE_h": 0.7561151036597942,
+      "MAE_h": 0.1507040237762034,
+      "RelL2_h": 0.31128030230152526,
+      "RMSE_h@t80": 0.6535444820699798,
+      "MAE_h@t80": 0.13718739844411612,
+      "RelL2_h@t80": 0.2812932133541866,
+      "RMSE_u": 0.9105030271534116,
+      "MAE_u": 0.17301955935657023,
+      "RelL2_u": 0.4377684564475864,
+      "RMSE_u@t80": 0.6534922845789749,
+      "MAE_u@t80": 0.13510003911703825,
+      "RelL2_u@t80": 0.5834965769812853
+    },
+    "finite_predictions": true,
+    "strict_state_load": true,
+    "data_read": true,
+    "input_max_abs_diff": {
+      "phi": 0.0,
+      "z": 0.0,
+      "h0": 0.0,
+      "z_norm": 0.0,
+      "h0_norm": 0.0,
+      "x_grid": 0.0,
+      "y_grid": 0.0,
+      "t_grid": 0.0,
+      "target": 0.0
+    },
+    "prediction_max_abs_diff": 0.0,
+    "predictions_match": true,
+    "metric_abs_diff": {
+      "objective": 0.0,
+      "official_RelL2_h": 0.0,
+      "official_RelL2_u": 0.0,
+      "RMSE_h": 0.0,
+      "MAE_h": 0.0,
+      "RelL2_h": 0.0,
+      "RMSE_h@t80": 0.0,
+      "MAE_h@t80": 0.0,
+      "RelL2_h@t80": 0.0,
+      "RMSE_u": 0.0,
+      "MAE_u": 0.0,
+      "RelL2_u": 0.0,
+      "RMSE_u@t80": 0.0,
+      "MAE_u@t80": 0.0,
+      "RelL2_u@t80": 0.0
+    },
+    "training_step": {
+      "loss": 1.1876060962677002,
+      "finite_gradients": true,
+      "gradient_tensors": 844,
+      "optimizer_step_executed": true,
+      "parameters_changed": true,
+      "gradient_max": 0.7419125437736511
+    },
+    "elapsed_seconds": 5.733866690978175,
+    "model_id": "08",
+    "model": "Poseidon-T-PT-FT",
+    "evaluation_precision": "FP16"
+  },
+  {
+    "case": "LandslideCast/unet",
+    "reference": false,
+    "seed": 0,
+    "checkpoint": "checkpoints/LandslideCast/unet/best.pth",
+    "status": "passed",
+    "gpu_physical": 4,
+    "output_shape": [
+      1,
+      8,
+      2,
+      200,
+      200
+    ],
+    "test_input_shapes": {
+      "phi": [
+        1,
+        200,
+        200
+      ],
+      "z": [
+        1,
+        200,
+        200
+      ],
+      "h0": [
+        1,
+        200,
+        200
+      ],
+      "z_norm": [
+        1,
+        200,
+        200
+      ],
+      "h0_norm": [
+        1,
+        200,
+        200
+      ],
+      "x_grid": [
+        1,
+        200,
+        200
+      ],
+      "y_grid": [
+        1,
+        200,
+        200
+      ],
+      "t_grid": [
+        1,
+        9
+      ],
+      "target": [
+        1,
+        8,
+        2,
+        200,
+        200
+      ]
+    },
+    "test_metrics": {
+      "objective": 5.862563060665877,
+      "official_RelL2_h": 0.7486917401086838,
+      "official_RelL2_u": 0.621720879905091,
+      "RMSE_h": 1.8186089145247375,
+      "MAE_h": 0.35949072109162805,
+      "RelL2_h": 0.7486917401086838,
+      "RMSE_h@t80": 1.9481069014540549,
+      "MAE_h@t80": 0.4178741827011108,
+      "RelL2_h@t80": 0.838488068221195,
+      "RMSE_u": 1.2931008044565313,
+      "MAE_u": 0.220701107147336,
+      "RelL2_u": 0.621720879905091,
+      "RMSE_u@t80": 0.9092441025704626,
+      "MAE_u@t80": 0.16461663737297058,
+      "RelL2_u@t80": 0.811854759436214
+    },
+    "finite_predictions": true,
+    "strict_state_load": true,
+    "data_read": true,
+    "input_max_abs_diff": {
+      "phi": 0.0,
+      "z": 0.0,
+      "h0": 0.0,
+      "z_norm": 0.0,
+      "h0_norm": 0.0,
+      "x_grid": 0.0,
+      "y_grid": 0.0,
+      "t_grid": 0.0,
+      "target": 0.0
+    },
+    "prediction_max_abs_diff": 0.0,
+    "predictions_match": true,
+    "metric_abs_diff": {
+      "objective": 0.0,
+      "official_RelL2_h": 0.0,
+      "official_RelL2_u": 0.0,
+      "RMSE_h": 0.0,
+      "MAE_h": 0.0,
+      "RelL2_h": 0.0,
+      "RMSE_h@t80": 0.0,
+      "MAE_h@t80": 0.0,
+      "RelL2_h@t80": 0.0,
+      "RMSE_u": 0.0,
+      "MAE_u": 0.0,
+      "RelL2_u": 0.0,
+      "RMSE_u@t80": 0.0,
+      "MAE_u@t80": 0.0,
+      "RelL2_u@t80": 0.0
+    },
+    "training_step": {
+      "loss": 2.82187819480896,
+      "finite_gradients": true,
+      "gradient_tensors": 64,
+      "optimizer_step_executed": true,
+      "parameters_changed": true,
+      "gradient_max": 0.04536711424589157
+    },
+    "elapsed_seconds": 2.7229717310110573,
+    "model_id": "01",
+    "model": "UNet3D-Scratch",
+    "evaluation_precision": "FP16"
+  },
+  {
+    "case": "LandslideCast/earthformer",
+    "reference": false,
+    "seed": 0,
+    "checkpoint": "checkpoints/LandslideCast/earthformer/best.pth",
+    "status": "passed",
+    "gpu_physical": 4,
+    "output_shape": [
+      1,
+      8,
+      2,
+      200,
+      200
+    ],
+    "test_input_shapes": {
+      "phi": [
+        1,
+        200,
+        200
+      ],
+      "z": [
+        1,
+        200,
+        200
+      ],
+      "h0": [
+        1,
+        200,
+        200
+      ],
+      "z_norm": [
+        1,
+        200,
+        200
+      ],
+      "h0_norm": [
+        1,
+        200,
+        200
+      ],
+      "x_grid": [
+        1,
+        200,
+        200
+      ],
+      "y_grid": [
+        1,
+        200,
+        200
+      ],
+      "t_grid": [
+        1,
+        9
+      ],
+      "target": [
+        1,
+        8,
+        2,
+        200,
+        200
+      ]
+    },
+    "test_metrics": {
+      "objective": 3.002124521501971,
+      "official_RelL2_h": 0.359638934325415,
+      "official_RelL2_u": 0.4846519812240662,
+      "RMSE_h": 0.8735805898959595,
+      "MAE_h": 0.17399613897094968,
+      "RelL2_h": 0.359638934325415,
+      "RMSE_h@t80": 0.7575425817297,
+      "MAE_h@t80": 0.15731485221739858,
+      "RelL2_h@t80": 0.32605521569464735,
+      "RMSE_u": 1.0080148295774807,
+      "MAE_u": 0.17685094516854732,
+      "RelL2_u": 0.4846519812240662,
+      "RMSE_u@t80": 0.672422623787662,
+      "MAE_u@t80": 0.12673829634711145,
+      "RelL2_u@t80": 0.600399283241207
+    },
+    "finite_predictions": true,
+    "strict_state_load": true,
+    "data_read": true,
+    "input_max_abs_diff": {
+      "phi": 0.0,
+      "z": 0.0,
+      "h0": 0.0,
+      "z_norm": 0.0,
+      "h0_norm": 0.0,
+      "x_grid": 0.0,
+      "y_grid": 0.0,
+      "t_grid": 0.0,
+      "target": 0.0
+    },
+    "prediction_max_abs_diff": 0.0,
+    "predictions_match": true,
+    "metric_abs_diff": {
+      "objective": 0.0,
+      "official_RelL2_h": 0.0,
+      "official_RelL2_u": 0.0,
+      "RMSE_h": 0.0,
+      "MAE_h": 0.0,
+      "RelL2_h": 0.0,
+      "RMSE_h@t80": 0.0,
+      "MAE_h@t80": 0.0,
+      "RelL2_h@t80": 0.0,
+      "RMSE_u": 0.0,
+      "MAE_u": 0.0,
+      "RelL2_u": 0.0,
+      "RMSE_u@t80": 0.0,
+      "MAE_u@t80": 0.0,
+      "RelL2_u@t80": 0.0
+    },
+    "training_step": {
+      "loss": 1.7889385223388672,
+      "finite_gradients": true,
+      "gradient_tensors": 269,
+      "optimizer_step_executed": true,
+      "parameters_changed": true,
+      "gradient_max": 0.1537860631942749
+    },
+    "elapsed_seconds": 3.375653433991829,
+    "model_id": "05",
+    "model": "EarthFormer-Scratch",
+    "evaluation_precision": "FP32"
+  },
+  {
+    "case": "LandslideCast/dpot",
+    "reference": false,
+    "seed": 0,
+    "checkpoint": "checkpoints/LandslideCast/dpot/best.pth",
+    "status": "passed",
+    "gpu_physical": 4,
+    "output_shape": [
+      1,
+      8,
+      2,
+      200,
+      200
+    ],
+    "test_input_shapes": {
+      "phi": [
+        1,
+        200,
+        200
+      ],
+      "z": [
+        1,
+        200,
+        200
+      ],
+      "h0": [
+        1,
+        200,
+        200
+      ],
+      "z_norm": [
+        1,
+        200,
+        200
+      ],
+      "h0_norm": [
+        1,
+        200,
+        200
+      ],
+      "x_grid": [
+        1,
+        200,
+        200
+      ],
+      "y_grid": [
+        1,
+        200,
+        200
+      ],
+      "t_grid": [
+        1,
+        9
+      ],
+      "target": [
+        1,
+        8,
+        2,
+        200,
+        200
+      ]
+    },
+    "test_metrics": {
+      "objective": 3.843731896302555,
+      "official_RelL2_h": 0.4617619074954113,
+      "official_RelL2_u": 0.611398543834676,
+      "RMSE_h": 1.1216422946474578,
+      "MAE_h": 0.22898046647507653,
+      "RelL2_h": 0.4617619074954113,
+      "RMSE_h@t80": 1.220562368096514,
+      "MAE_h@t80": 0.25809140205776787,
+      "RelL2_h@t80": 0.5253443645237609,
+      "RMSE_u": 1.271631650841227,
+      "MAE_u": 0.23787245865941806,
+      "RelL2_u": 0.611398543834676,
+      "RMSE_u@t80": 0.9242158593712511,
+      "MAE_u@t80": 0.17088110914602875,
+      "RelL2_u@t80": 0.825222887952505
+    },
+    "finite_predictions": true,
+    "strict_state_load": true,
+    "data_read": true,
+    "input_max_abs_diff": {
+      "phi": 0.0,
+      "z": 0.0,
+      "h0": 0.0,
+      "z_norm": 0.0,
+      "h0_norm": 0.0,
+      "x_grid": 0.0,
+      "y_grid": 0.0,
+      "t_grid": 0.0,
+      "target": 0.0
+    },
+    "prediction_max_abs_diff": 0.0,
+    "predictions_match": true,
+    "metric_abs_diff": {
+      "objective": 0.0,
+      "official_RelL2_h": 0.0,
+      "official_RelL2_u": 0.0,
+      "RMSE_h": 0.0,
+      "MAE_h": 0.0,
+      "RelL2_h": 0.0,
+      "RMSE_h@t80": 0.0,
+      "MAE_h@t80": 0.0,
+      "RelL2_h@t80": 0.0,
+      "RMSE_u": 0.0,
+      "MAE_u": 0.0,
+      "RelL2_u": 0.0,
+      "RMSE_u@t80": 0.0,
+      "MAE_u@t80": 0.0,
+      "RelL2_u@t80": 0.0
+    },
+    "training_step": {
+      "loss": 2.511927843093872,
+      "finite_gradients": true,
+      "gradient_tensors": 85,
+      "optimizer_step_executed": true,
+      "parameters_changed": true,
+      "gradient_max": 0.12879815697669983
+    },
+    "elapsed_seconds": 3.376071958016837,
+    "model_id": "07",
+    "model": "DPOT-S-PT-FT",
+    "evaluation_precision": "FP32"
+  },
+  {
+    "case": "LandslideCast/prithvi",
+    "reference": false,
+    "seed": 0,
+    "checkpoint": "checkpoints/LandslideCast/prithvi/best.pth",
+    "status": "passed",
+    "gpu_physical": 4,
+    "output_shape": [
+      1,
+      8,
+      2,
+      200,
+      200
+    ],
+    "test_input_shapes": {
+      "phi": [
+        1,
+        200,
+        200
+      ],
+      "z": [
+        1,
+        200,
+        200
+      ],
+      "h0": [
+        1,
+        200,
+        200
+      ],
+      "z_norm": [
+        1,
+        200,
+        200
+      ],
+      "h0_norm": [
+        1,
+        200,
+        200
+      ],
+      "x_grid": [
+        1,
+        200,
+        200
+      ],
+      "y_grid": [
+        1,
+        200,
+        200
+      ],
+      "t_grid": [
+        1,
+        9
+      ],
+      "target": [
+        1,
+        8,
+        2,
+        200,
+        200
+      ]
+    },
+    "test_metrics": {
+      "objective": 3.4185503676891678,
+      "official_RelL2_h": 0.4068803464930006,
+      "official_RelL2_u": 0.5703879422381635,
+      "RMSE_h": 0.988332294369468,
+      "MAE_h": 0.21330657216608526,
+      "RelL2_h": 0.4068803464930006,
+      "RMSE_h@t80": 1.1581135660802795,
+      "MAE_h@t80": 0.24092035675048828,
+      "RelL2_h@t80": 0.49846566740183335,
+      "RMSE_u": 1.1863347859140077,
+      "MAE_u": 0.25080530951917174,
+      "RelL2_u": 0.5703879422381635,
+      "RMSE_u@t80": 0.8198802214536073,
+      "MAE_u@t80": 0.1785271059036255,
+      "RelL2_u@t80": 0.7320626640007766
+    },
+    "finite_predictions": true,
+    "strict_state_load": true,
+    "data_read": true,
+    "input_max_abs_diff": {
+      "phi": 0.0,
+      "z": 0.0,
+      "h0": 0.0,
+      "z_norm": 0.0,
+      "h0_norm": 0.0,
+      "x_grid": 0.0,
+      "y_grid": 0.0,
+      "t_grid": 0.0,
+      "target": 0.0
+    },
+    "prediction_max_abs_diff": 0.0,
+    "predictions_match": true,
+    "metric_abs_diff": {
+      "objective": 0.0,
+      "official_RelL2_h": 0.0,
+      "official_RelL2_u": 0.0,
+      "RMSE_h": 0.0,
+      "MAE_h": 0.0,
+      "RelL2_h": 0.0,
+      "RMSE_h@t80": 0.0,
+      "MAE_h@t80": 0.0,
+      "RelL2_h@t80": 0.0,
+      "RMSE_u": 0.0,
+      "MAE_u": 0.0,
+      "RelL2_u": 0.0,
+      "RMSE_u@t80": 0.0,
+      "MAE_u@t80": 0.0,
+      "RelL2_u@t80": 0.0
+    },
+    "training_step": {
+      "loss": 1.3483262062072754,
+      "finite_gradients": true,
+      "gradient_tensors": 295,
+      "optimizer_step_executed": true,
+      "parameters_changed": true,
+      "gradient_max": 0.050834815949201584
+    },
+    "elapsed_seconds": 16.207622361020185,
+    "model_id": "11",
+    "model": "Prithvi-EO2-300M-PT-FT",
+    "evaluation_precision": "FP16"
+  },
+  {
+    "case": "LandslideCast/gphyt",
+    "reference": false,
+    "seed": 0,
+    "checkpoint": "checkpoints/LandslideCast/gphyt/best.pth",
+    "status": "passed",
+    "gpu_physical": 4,
+    "output_shape": [
+      1,
+      8,
+      2,
+      200,
+      200
+    ],
+    "test_input_shapes": {
+      "phi": [
+        1,
+        200,
+        200
+      ],
+      "z": [
+        1,
+        200,
+        200
+      ],
+      "h0": [
+        1,
+        200,
+        200
+      ],
+      "u0": [
+        1,
+        200,
+        200
+      ],
+      "z_norm": [
+        1,
+        200,
+        200
+      ],
+      "h0_norm": [
+        1,
+        200,
+        200
+      ],
+      "x_grid": [
+        1,
+        200,
+        200
+      ],
+      "y_grid": [
+        1,
+        200,
+        200
+      ],
+      "t_grid": [
+        1,
+        9
+      ],
+      "target": [
+        1,
+        8,
+        2,
+        200,
+        200
+      ]
+    },
+    "test_metrics": {
+      "objective": 3.720121955362163,
+      "official_RelL2_h": 0.4429273792027582,
+      "official_RelL2_u": 0.6196303009428553,
+      "RMSE_h": 1.0758923027363476,
+      "MAE_h": 0.27046557957828044,
+      "RelL2_h": 0.4429273792027582,
+      "RMSE_h@t80": 1.2187812796065611,
+      "MAE_h@t80": 0.31892148413658145,
+      "RelL2_h@t80": 0.5245777631395365,
+      "RMSE_u": 1.2887526645995273,
+      "MAE_u": 0.31638092112243177,
+      "RelL2_u": 0.6196303009428553,
+      "RMSE_u@t80": 0.9177192412753999,
+      "MAE_u@t80": 0.26672860012054445,
+      "RelL2_u@t80": 0.8194221241021313
+    },
+    "finite_predictions": true,
+    "strict_state_load": true,
+    "data_read": true,
+    "input_max_abs_diff": {
+      "phi": 0.0,
+      "z": 0.0,
+      "h0": 0.0,
+      "u0": 0.0,
+      "z_norm": 0.0,
+      "h0_norm": 0.0,
+      "x_grid": 0.0,
+      "y_grid": 0.0,
+      "t_grid": 0.0,
+      "target": 0.0
+    },
+    "prediction_max_abs_diff": 0.0,
+    "predictions_match": true,
+    "metric_abs_diff": {
+      "objective": 0.0,
+      "official_RelL2_h": 0.0,
+      "official_RelL2_u": 0.0,
+      "RMSE_h": 0.0,
+      "MAE_h": 0.0,
+      "RelL2_h": 0.0,
+      "RMSE_h@t80": 0.0,
+      "MAE_h@t80": 0.0,
+      "RelL2_h@t80": 0.0,
+      "RMSE_u": 0.0,
+      "MAE_u": 0.0,
+      "RelL2_u": 0.0,
+      "RMSE_u@t80": 0.0,
+      "MAE_u@t80": 0.0,
+      "RelL2_u@t80": 0.0
+    },
+    "training_step": {
+      "loss": 2.589224100112915,
+      "finite_gradients": true,
+      "gradient_tensors": 161,
+      "optimizer_step_executed": true,
+      "parameters_changed": true,
+      "gradient_max": 0.1555328071117401
+    },
+    "elapsed_seconds": 3.040622407977935,
+    "model_id": "09",
+    "model": "GPhyT-S-PT-FT-Euler",
+    "evaluation_precision": "FP16"
+  },
+  {
+    "case": "WildfireSpreadTS/unet",
+    "reference": false,
+    "seed": 0,
+    "checkpoint": "checkpoints/WildfireSpreadTS/unet/best.pth",
+    "status": "passed",
+    "gpu_physical": 4,
+    "training_target_positive_pixels": 20.0,
+    "output_shape": [
+      1,
+      1,
+      128,
+      128
+    ],
+    "test_input_shapes": {
+      "input": [
+        1,
+        5,
+        40,
+        128,
+        128
+      ],
+      "target": [
+        1,
+        1,
+        128,
+        128
+      ],
+      "year": [
+        1
+      ],
+      "day_of_year": [
+        1,
+        5
+      ]
+    },
+    "test_metrics": {
+      "AP": 0.0004985440755262971,
+      "F1": 0.0004908878934773271,
+      "IoU": 0.00024550420425949795,
+      "precision": 0.00024550420425949795,
+      "recall": 1.0,
+      "Brier": 0.9927711486816406
+    },
+    "finite_predictions": true,
+    "strict_state_load": true,
+    "data_read": true,
+    "input_max_abs_diff": {
+      "input": 0.0,
+      "target": 0.0,
+      "year": 0.0,
+      "day_of_year": 0.0
+    },
+    "prediction_max_abs_diff": 0.0,
+    "predictions_match": true,
+    "metric_abs_diff": {
+      "AP": 0.0,
+      "F1": 0.0,
+      "IoU": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "Brier": 0.0
+    },
+    "training_step": {
+      "loss": 0.9999997615814209,
+      "finite_gradients": true,
+      "gradient_tensors": 64,
+      "optimizer_step_executed": true,
+      "parameters_changed": true,
+      "gradient_max": 2.3692846298217773e-06
+    },
+    "elapsed_seconds": 2.8227460850030184,
+    "model_id": "01",
+    "model": "UNet2D-Scratch",
+    "evaluation_precision": "FP32"
+  },
+  {
+    "case": "WildfireSpreadTS/utae",
+    "reference": false,
+    "seed": 0,
+    "checkpoint": "checkpoints/WildfireSpreadTS/utae/best.pth",
+    "status": "passed",
+    "gpu_physical": 4,
+    "training_target_positive_pixels": 20.0,
+    "output_shape": [
+      1,
+      1,
+      128,
+      128
+    ],
+    "test_input_shapes": {
+      "input": [
+        1,
+        5,
+        40,
+        128,
+        128
+      ],
+      "target": [
+        1,
+        1,
+        128,
+        128
+      ],
+      "year": [
+        1
+      ],
+      "day_of_year": [
+        1,
+        5
+      ]
+    },
+    "test_metrics": {
+      "AP": 0.0011652437970042229,
+      "F1": 0.0007081526068867841,
+      "IoU": 0.0003542017178783317,
+      "precision": 0.0003542017178783317,
+      "recall": 1.0,
+      "Brier": 0.8718319535255432
+    },
+    "finite_predictions": true,
+    "strict_state_load": true,
+    "data_read": true,
+    "input_max_abs_diff": {
+      "input": 0.0,
+      "target": 0.0,
+      "year": 0.0,
+      "day_of_year": 0.0
+    },
+    "prediction_max_abs_diff": 0.0,
+    "predictions_match": true,
+    "metric_abs_diff": {
+      "AP": 0.0,
+      "F1": 0.0,
+      "IoU": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "Brier": 0.0
+    },
+    "training_step": {
+      "loss": 0.9978376030921936,
+      "finite_gradients": true,
+      "gradient_tensors": 113,
+      "optimizer_step_executed": true,
+      "parameters_changed": true,
+      "gradient_max": 0.0017547607421875
+    },
+    "elapsed_seconds": 3.5494959729840048,
+    "model_id": "03",
+    "model": "UTAE-Scratch",
+    "evaluation_precision": "FP32"
+  },
+  {
+    "case": "WildfireSpreadTS/convlstm",
+    "reference": false,
+    "seed": 0,
+    "checkpoint": "checkpoints/WildfireSpreadTS/convlstm/best.pth",
+    "status": "passed",
+    "gpu_physical": 4,
+    "training_target_positive_pixels": 20.0,
+    "output_shape": [
+      1,
+      1,
+      128,
+      128
+    ],
+    "test_input_shapes": {
+      "input": [
+        1,
+        5,
+        40,
+        128,
+        128
+      ],
+      "target": [
+        1,
+        1,
+        128,
+        128
+      ],
+      "year": [
+        1
+      ],
+      "day_of_year": [
+        1,
+        5
+      ]
+    },
+    "test_metrics": {
+      "AP": 0.0013160643866285682,
+      "F1": 0.0,
+      "IoU": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "Brier": 0.015423474833369255
+    },
+    "finite_predictions": true,
+    "strict_state_load": true,
+    "data_read": true,
+    "input_max_abs_diff": {
+      "input": 0.0,
+      "target": 0.0,
+      "year": 0.0,
+      "day_of_year": 0.0
+    },
+    "prediction_max_abs_diff": 0.0,
+    "predictions_match": true,
+    "metric_abs_diff": {
+      "AP": 0.0,
+      "F1": 0.0,
+      "IoU": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "Brier": 0.0
+    },
+    "training_step": {
+      "loss": 0.9999998211860657,
+      "finite_gradients": true,
+      "gradient_tensors": 10,
+      "optimizer_step_executed": true,
+      "parameters_changed": true,
+      "gradient_max": 2.805609256029129e-08
+    },
+    "elapsed_seconds": 2.8160439119965304,
+    "model_id": "02",
+    "model": "ConvLSTM-Scratch",
+    "evaluation_precision": "FP32"
+  },
+  {
+    "case": "WildfireSpreadTS/fno",
+    "reference": false,
+    "seed": 0,
+    "checkpoint": "checkpoints/WildfireSpreadTS/fno/best.pth",
+    "status": "passed",
+    "gpu_physical": 4,
+    "training_target_positive_pixels": 20.0,
+    "output_shape": [
+      1,
+      1,
+      128,
+      128
+    ],
+    "test_input_shapes": {
+      "input": [
+        1,
+        5,
+        40,
+        128,
+        128
+      ],
+      "target": [
+        1,
+        1,
+        128,
+        128
+      ],
+      "year": [
+        1
+      ],
+      "day_of_year": [
+        1,
+        5
+      ]
+    },
+    "test_metrics": {
+      "AP": 0.0017443977994844317,
+      "F1": 0.0014417012074247613,
+      "IoU": 0.000721370604147881,
+      "precision": 0.000721370604147881,
+      "recall": 1.0,
+      "Brier": 0.10587122291326523
+    },
+    "finite_predictions": true,
+    "strict_state_load": true,
+    "data_read": true,
+    "input_max_abs_diff": {
+      "input": 0.0,
+      "target": 0.0,
+      "year": 0.0,
+      "day_of_year": 0.0
+    },
+    "prediction_max_abs_diff": 0.0,
+    "predictions_match": true,
+    "metric_abs_diff": {
+      "AP": 0.0,
+      "F1": 0.0,
+      "IoU": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "Brier": 0.0
+    },
+    "training_step": {
+      "loss": 1.0000001192092896,
+      "finite_gradients": true,
+      "gradient_tensors": 46,
+      "optimizer_step_executed": true,
+      "parameters_changed": true,
+      "gradient_max": 7.288125214444108e-09
+    },
+    "elapsed_seconds": 2.5119739969959483,
+    "model_id": "04",
+    "model": "FNO2D-Scratch",
+    "evaluation_precision": "FP32"
+  },
+  {
+    "case": "WildfireSpreadTS/earthformer",
+    "reference": false,
+    "seed": 0,
+    "checkpoint": "checkpoints/WildfireSpreadTS/earthformer/best.pth",
+    "status": "passed",
+    "gpu_physical": 4,
+    "training_target_positive_pixels": 20.0,
+    "output_shape": [
+      1,
+      1,
+      128,
+      128
+    ],
+    "test_input_shapes": {
+      "input": [
+        1,
+        5,
+        40,
+        128,
+        128
+      ],
+      "target": [
+        1,
+        1,
+        128,
+        128
+      ],
+      "year": [
+        1
+      ],
+      "day_of_year": [
+        1,
+        5
+      ]
+    },
+    "test_metrics": {
+      "AP": 0.00044169294415041804,
+      "F1": 0.0,
+      "IoU": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "Brier": 0.000244129856582731
+    },
+    "finite_predictions": true,
+    "strict_state_load": true,
+    "data_read": true,
+    "input_max_abs_diff": {
+      "input": 0.0,
+      "target": 0.0,
+      "year": 0.0,
+      "day_of_year": 0.0
+    },
+    "prediction_max_abs_diff": 0.0,
+    "predictions_match": true,
+    "metric_abs_diff": {
+      "AP": 0.0,
+      "F1": 0.0,
+      "IoU": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "Brier": 0.0
+    },
+    "training_step": {
+      "loss": 0.9999514818191528,
+      "finite_gradients": true,
+      "gradient_tensors": 268,
+      "optimizer_step_executed": true,
+      "parameters_changed": true,
+      "gradient_max": 0.00016880035400390625
+    },
+    "elapsed_seconds": 5.835285731009208,
+    "model_id": "05",
+    "model": "EarthFormer-Scratch",
+    "evaluation_precision": "FP32"
+  },
+  {
+    "case": "WildfireSpreadTS/pde_transformer",
+    "reference": false,
+    "seed": 0,
+    "checkpoint": "checkpoints/WildfireSpreadTS/pde_transformer/best.pth",
+    "status": "passed_with_warning",
+    "gpu_physical": 4,
+    "training_target_positive_pixels": 20.0,
+    "output_shape": [
+      1,
+      1,
+      128,
+      128
+    ],
+    "test_input_shapes": {
+      "input": [
+        1,
+        5,
+        40,
+        128,
+        128
+      ],
+      "target": [
+        1,
+        1,
+        128,
+        128
+      ],
+      "year": [
+        1
+      ],
+      "day_of_year": [
+        1,
+        5
+      ]
+    },
+    "test_metrics": {
+      "AP": 0.0007124275434762239,
+      "F1": 0.0,
+      "IoU": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "Brier": 0.0003827757609542459
+    },
+    "finite_predictions": true,
+    "strict_state_load": true,
+    "data_read": true,
+    "input_max_abs_diff": {
+      "input": 0.0,
+      "target": 0.0,
+      "year": 0.0,
+      "day_of_year": 0.0
+    },
+    "prediction_max_abs_diff": 0.0,
+    "predictions_match": true,
+    "metric_abs_diff": {
+      "AP": 0.0,
+      "F1": 0.0,
+      "IoU": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "Brier": 0.0
+    },
+    "training_step": {
+      "loss": 1.0,
+      "finite_gradients": true,
+      "gradient_tensors": 459,
+      "optimizer_step_executed": true,
+      "parameters_changed": false,
+      "gradient_max": 9.794496999224083e-27,
+      "warning": "Native finite gradients are below parameter update precision on this batch; optimizer executed without a detectable parameter change."
+    },
+    "elapsed_seconds": 16.342772979987785,
+    "model_id": "06",
+    "model": "PDE-T-SC-S-PT-FT",
+    "evaluation_precision": "FP32"
+  },
+  {
+    "case": "WildfireSpreadTS/dpot",
+    "reference": false,
+    "seed": 0,
+    "checkpoint": "checkpoints/WildfireSpreadTS/dpot/best.pth",
+    "status": "passed",
+    "gpu_physical": 4,
+    "training_target_positive_pixels": 20.0,
+    "output_shape": [
+      1,
+      1,
+      128,
+      128
+    ],
+    "test_input_shapes": {
+      "input": [
+        1,
+        5,
+        40,
+        128,
+        128
+      ],
+      "target": [
+        1,
+        1,
+        128,
+        128
+      ],
+      "year": [
+        1
+      ],
+      "day_of_year": [
+        1,
+        5
+      ]
+    },
+    "test_metrics": {
+      "AP": 0.0007470555719919503,
+      "F1": 0.0,
+      "IoU": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "Brier": 0.00035106111317873
+    },
+    "finite_predictions": true,
+    "strict_state_load": true,
+    "data_read": true,
+    "input_max_abs_diff": {
+      "input": 0.0,
+      "target": 0.0,
+      "year": 0.0,
+      "day_of_year": 0.0
+    },
+    "prediction_max_abs_diff": 0.0,
+    "predictions_match": true,
+    "metric_abs_diff": {
+      "AP": 0.0,
+      "F1": 0.0,
+      "IoU": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "Brier": 0.0
+    },
+    "training_step": {
+      "loss": 1.0000001192092896,
+      "finite_gradients": true,
+      "gradient_tensors": 87,
+      "optimizer_step_executed": true,
+      "parameters_changed": true,
+      "gradient_max": 2.8638169169425964e-08
+    },
+    "elapsed_seconds": 4.574602131004212,
+    "model_id": "07",
+    "model": "DPOT-S-PT-FT",
+    "evaluation_precision": "FP32"
+  },
+  {
+    "case": "WildfireSpreadTS/videomaev2",
+    "reference": false,
+    "seed": 0,
+    "checkpoint": "checkpoints/WildfireSpreadTS/videomaev2/best.pth",
+    "status": "passed",
+    "gpu_physical": 4,
+    "training_target_positive_pixels": 20.0,
+    "output_shape": [
+      1,
+      1,
+      128,
+      128
+    ],
+    "test_input_shapes": {
+      "input": [
+        1,
+        5,
+        40,
+        128,
+        128
+      ],
+      "target": [
+        1,
+        1,
+        128,
+        128
+      ],
+      "year": [
+        1
+      ],
+      "day_of_year": [
+        1,
+        5
+      ]
+    },
+    "test_metrics": {
+      "AP": 0.00019984350365120918,
+      "F1": 0.0,
+      "IoU": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "Brier": 0.012129567563533783
+    },
+    "finite_predictions": true,
+    "strict_state_load": true,
+    "data_read": true,
+    "input_max_abs_diff": {
+      "input": 0.0,
+      "target": 0.0,
+      "year": 0.0,
+      "day_of_year": 0.0
+    },
+    "prediction_max_abs_diff": 0.0,
+    "predictions_match": true,
+    "metric_abs_diff": {
+      "AP": 0.0,
+      "F1": 0.0,
+      "IoU": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "Brier": 0.0
+    },
+    "training_step": {
+      "loss": 1.0,
+      "finite_gradients": true,
+      "gradient_tensors": 178,
+      "optimizer_step_executed": true,
+      "parameters_changed": true,
+      "gradient_max": 0.0
+    },
+    "elapsed_seconds": 7.9662432549812365,
+    "model_id": "10",
+    "model": "VideoMAEv2-PT-FT",
+    "evaluation_precision": "FP32"
+  },
+  {
+    "case": "WildfireSpreadTS/prithvi",
+    "reference": false,
+    "seed": 1,
+    "checkpoint": "checkpoints/WildfireSpreadTS/prithvi/best.pth",
+    "status": "passed",
+    "gpu_physical": 4,
+    "training_target_positive_pixels": 20.0,
+    "output_shape": [
+      1,
+      1,
+      128,
+      128
+    ],
+    "test_input_shapes": {
+      "input": [
+        1,
+        5,
+        40,
+        128,
+        128
+      ],
+      "target": [
+        1,
+        1,
+        128,
+        128
+      ],
+      "year": [
+        1
+      ],
+      "day_of_year": [
+        1,
+        5
+      ]
+    },
+    "test_metrics": {
+      "AP": 0.0008898777305148542,
+      "F1": 0.0012974375608173854,
+      "IoU": 0.0006491398896462187,
+      "precision": 0.0006495615459564793,
+      "recall": 0.5,
+      "Brier": 0.11385409533977509
+    },
+    "finite_predictions": true,
+    "strict_state_load": true,
+    "data_read": true,
+    "input_max_abs_diff": {
+      "input": 0.0,
+      "target": 0.0,
+      "year": 0.0,
+      "day_of_year": 0.0
+    },
+    "prediction_max_abs_diff": 0.0,
+    "predictions_match": true,
+    "metric_abs_diff": {
+      "AP": 0.0,
+      "F1": 0.0,
+      "IoU": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "Brier": 0.0
+    },
+    "training_step": {
+      "loss": 0.9999998807907104,
+      "finite_gradients": true,
+      "gradient_tensors": 297,
+      "optimizer_step_executed": true,
+      "parameters_changed": true,
+      "gradient_max": 2.4156179279088974e-09
+    },
+    "elapsed_seconds": 20.417933338001603,
+    "model_id": "11",
+    "model": "Prithvi-EO2-300M-PT-FT",
+    "evaluation_precision": "FP32"
+  }
+]

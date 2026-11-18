@@ -1,0 +1,23 @@
+{
+  "dataset": "FloodSimBench",
+  "model_id": "05",
+  "model": "EarthFormer-Scratch",
+  "seed": 1,
+  "checkpoint": "best.pth",
+  "checkpoint_sha256": "be7eadca5868fd7620787e026f7f28d50181bda5cff9c993c79abdd8e446f4f4",
+  "checkpoint_epoch": 74,
+  "selection_rule": "first formal experimental seed, verified in checkpoint config",
+  "original_final_evaluation": {
+    "city_macro.json": {
+      "rmse": 0.08869776063290569,
+      "mae": 0.027766737224393993,
+      "relative_l2": 1.4159519626754358,
+      "nse": -1.7715072961790563,
+      "corr": 0.2878203312181101,
+      "csi_0.01": 0.1662103213181323,
+      "csi_0.05": 0.1493227994169366,
+      "csi_0.1": 0.12433686469790445,
+      "csi_0.5": 0.05819006086688282
+    }
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "dataset": "LandslideCast",
+  "model_id": "02",
+  "model": "ConvLSTM-Scratch",
+  "seed": 0,
+  "checkpoint": "best.pth",
+  "checkpoint_sha256": "0dbaa32464fcda41b099d175a8d076d39d0951c85dcb151af272bf96efb8ec09",
+  "checkpoint_epoch": 59,
+  "selection_rule": "first formal experimental seed, verified in checkpoint config",
+  "original_final_evaluation": {
+    "run_summary.json": {
+      "model": "ConvLSTM-Scratch",
+      "mode": "train",
+      "run_id": "formal_accelerated_v2_strict",
+      "global_update": 124962,
+      "updates_this_run": 79969,
+      "amp_skipped_updates": 38,
+      "precision": "AMP FP16",
+      "gradient_nonzero_verified": true,
+      "validation": {
+        "objective": 5.947297920970521,
+        "official_RelL2_h": 0.7323411930172055,
+        "official_RelL2_u": 0.8209095698500845,
+        "RMSE_h": 5.611376599218334,
+        "MAE_h": 1.0840401393529593,
+        "RelL2_h": 0.7323411930172055,
+        "RMSE_h@t80": 6.53281519495261,
+        "MAE_h@t80": 1.1219717323071718,
+        "RelL2_h@t80": 0.8190862634514486,
+        "RMSE_u": 14.422076791215055,
+        "MAE_u": 1.379632059668094,
+        "RelL2_u": 0.8209095698500845,
+        "RMSE_u@t80": 24.116930666178003,
+        "MAE_u@t80": 1.2917041239522218,
+        "RelL2_u@t80": 0.8350382255848441
+      },
+      "test": {
+        "objective": 5.653058394627706,
+        "official_RelL2_h": 0.6913478407804247,
+        "official_RelL2_u": 0.8136235091647382,
+        "RMSE_h": 9.644636299131387,
+        "MAE_h": 1.202303551711437,
+        "RelL2_h": 0.6913478407804247,
+        "RMSE_h@t80": 16.915499394108004,
+        "MAE_h@t80": 1.4612983493776321,
+        "RelL2_h@t80": 0.7371632447576322,
+        "RMSE_u": 44.7713959844899,
+        "MAE_u": 1.3226894850754798,
+        "RelL2_u": 0.8136235091647382,
+        "RMSE_u@t80": 122.91406120690924,
+        "MAE_u@t80": 1.5324326422450543,
+        "RelL2_u@t80": 0.8227745111714072
+      },
+      "output_equivalence": {
+        "equivalent": true,
+        "elementwise_allclose": true,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "relative_l2_delta": 0.0,
+        "relative_l2_tolerance": 0.001,
+        "reference_loss": 8.012238502502441,
+        "candidate_loss": 8.012238502502441,
+        "loss_abs_delta": 0.0,
+        "loss_abs_tolerance": 0.001,
+        "audit_precision": "AMP FP16",
+        "rtol": 0.001,
+        "atol": 0.01
+      },
+      "performance": {
+        "steady_updates": 79967,
+        "samples_per_second_median": 3.3390925714931905,
+        "forward_seconds_median": 0.8309678193181753,
+        "backward_seconds_median": 1.5603002794086933,
+        "optimizer_seconds_median": 0.0020658113062381744,
+        "peak_allocated": 32022250496,
+        "peak_reserved": 32384221184,
+        "loss_all_finite": true
+      },
+      "reload_consistent": true,
+      "parameters_total": 11545858,
+      "parameters_trainable": 11545858
+    },
+    "posthoc_cap200_pooled.json": {
+      "model": "ConvLSTM-Scratch",
+      "checkpoint": "/home/yuezeng/EarthDynamics/Landslide/Flood08/results/LandslideCast_accelerated/formal_accelerated_v2_strict/ConvLSTM-Scratch/best_validation.pt",
+      "checkpoint_epoch": 59,
+      "best_validation": 5.777043394778765,
+      "test_samples": 1000,
+      "cap": 200.0,
+      "valid_cells": {
+        "h": 319942827,
+        "u": 319931818
+      },
+      "total_cells": 320000000,
+      "finite_predictions": true,
+      "parameters_total": 11545858,
+      "metrics": {
+        "RMSE_h": 5.631324787883736,
+        "MAE_h": 1.1088510956305402,
+        "RelL2_h": 0.691305785529134,
+        "RMSE_u": 6.197206898189447,
+        "MAE_u": 1.1565106075262361,
+        "RelL2_u": 0.812647884173272,
+        "CSI_0.5": 0.5603862072971203,
+        "CSI_5": 0.4384698170362763
+      },
+      "contingency": {
+        "CSI_0.5": {
+          "hits": 29021537,
+          "misses": 8547544,
+          "false_alarms": 14219376,
+          "denominator": 51788457
+        },
+        "CSI_5": {
+          "hits": 9714080,
+          "misses": 10173631,
+          "false_alarms": 2266790,
+          "denominator": 22154501
+        }
+      },
+      "official_uncapped_recomputed": {
+        "RMSE_h": 9.644636299131387,
+        "MAE_h": 1.202303551711437,
+        "RelL2_h": 0.6913478407804247,
+        "RMSE_u": 44.7713959844899,
+        "MAE_u": 1.3226894850754798,
+        "RelL2_u": 0.8136235091647382
+      },
+      "audit_metrics": {
+        "RMSE_h": 5.631324787883736,
+        "MAE_h": 1.1088510956305402,
+        "RelL2_h": 0.691305785529134,
+        "RMSE_u": 6.197206898189447,
+        "MAE_u": 1.1565106075262361,
+        "RelL2_u": 0.812647884173272,
+        "CSI_0.5": 0.5603862072971203,
+        "CSI_5": 0.4384698170362763
+      },
+      "max_audit_delta": 0.0
+    }
+  }
+}

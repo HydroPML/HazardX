@@ -1,0 +1,22 @@
+{
+  "dataset": "WildfireSpreadTS",
+  "model_id": "05",
+  "model": "EarthFormer-Scratch",
+  "seed": 0,
+  "checkpoint": "best.pth",
+  "checkpoint_sha256": "ccfa576fc20047f025716fa5d3cd706e6160fef09891fd4c3d941478b041ba9e",
+  "checkpoint_epoch": 15,
+  "selection_rule": "first formal experimental seed, verified in checkpoint config",
+  "original_final_evaluation": {
+    "test_metrics.json": {
+      "validation_threshold": 0.05,
+      "loss": 0.42281704433742384,
+      "AP": 0.36050620675086975,
+      "F1": 0.5073669819051025,
+      "IoU": 0.3399140818636544,
+      "precision": 0.44160564383682555,
+      "recall": 0.5961407935862875,
+      "Brier": 0.009385371580719948
+    }
+  }
+}

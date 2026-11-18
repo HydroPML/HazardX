@@ -1,7 +1,6 @@
 <div align="center">
-<h1 align="center">🌍 HazardX</h1>
 
-<h3>Multimodal Foundation Models for Natural Hazard Monitoring and Forecasting:<br>Methods, Benchmarks, and Perspectives</h3>
+<h1>🌍 HazardX-Bench: Monitoring</h1>
 
 [**Installation**](#installation) | [**Dataset Preparation**](#dataset-preparation) | [**Pretrained Weights**](#pretrained-weights) | [**Released Assets**](#released-assets) | [**Quick Start**](#quick-start) | [**Repo Layout**](#repository-layout)
 
@@ -19,7 +18,7 @@
 - [Architecture And Extension](#architecture-and-extension) -->
 
 ## 🔭Overview
-*HazardX* is the official repository for our review paper, *Multimodal Foundation Models for Natural Hazard Monitoring and Forecasting: Methods, Benchmarks, and Perspectives*.
+*HazardX* is the official repository for our paper, *Multimodal Foundation Models for Natural Hazard Monitoring and Forecasting: Methods, Benchmarks, and Perspectives*.
 
 One of our key motivations is that current disaster mapping research is highly fragmented: benchmarks, tasks, and model implementations are often inconsistent across papers, making fair evaluation, reproduction, and further development unnecessarily difficult.
 

@@ -1,0 +1,52 @@
+# Verified formal experiment; numeric settings match the selected checkpoint.
+dataset: LandslideCast
+model_id: '07'
+model: DPOT-S-PT-FT
+seed: 0
+backend: landslide
+distributed:
+  world_size: 1
+paths:
+  data_root: data/LandslideCast
+  dem_root: data/FloodCastBench/DEM
+  pretrained_root: pretrained
+  source_root: src/models/third_party
+  output_dir: outputs/LandslideCast/dpot
+checkpoint: checkpoints/LandslideCast/dpot/best.pth
+native_args:
+  model_type: DPOT-S-PT-FT
+  data_path: ${data_root}/2d_t10.h5
+  output_dir: ${output_dir}
+  run_id: selected_seed0
+  mode: train
+  epochs: 100
+  validate_every: 10
+  batch_size: 1
+  eval_batch_size: 0
+  accum_steps: 8
+  num_workers: 2
+  seed: 0
+  max_train_updates: 0
+  smoke_steps: 20
+  eval_max_batches: 1
+  amp: false
+  resume: ''
+  checkpoint_every_updates: 0
+  keep_epoch_checkpoints: false
+  lead_chunk: 8
+  channels_last: false
+  compile_model: false
+  prithvi_activation_checkpointing: false
+  fused_optimizer: false
+  grad_scaler_init_scale: 1.0
+  check_output_equivalence: false
+  official_root: ${source_root}/DPOT
+  pretrained_checkpoint: ${pretrained_root}/dpot_s.pth
+  amp_dtype: fp16
+model_config: null
+normalization: null
+evaluation:
+  threshold: null
+  selected_checkpoint_epoch: 89
+  reference_metrics: results/LandslideCast/dpot
+  preserve_native_metric_implementation: true

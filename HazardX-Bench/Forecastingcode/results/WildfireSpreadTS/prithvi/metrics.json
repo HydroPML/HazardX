@@ -1,0 +1,22 @@
+{
+  "dataset": "WildfireSpreadTS",
+  "model_id": "11",
+  "model": "Prithvi-EO2-300M-PT-FT",
+  "seed": 1,
+  "checkpoint": "best.pth",
+  "checkpoint_sha256": "46758480e68a0dd98cbfc0437ef72fb1b99dfd4130be42bac330c7b2d2c56dd9",
+  "checkpoint_epoch": 95,
+  "selection_rule": "second experimental seed, as requested",
+  "original_final_evaluation": {
+    "test_metrics.json": {
+      "validation_threshold": 0.31,
+      "loss": 0.4155202097688423,
+      "AP": 0.44702884554862976,
+      "F1": 0.5191564198296118,
+      "IoU": 0.3505815379703215,
+      "precision": 0.4733986245381827,
+      "recall": 0.5747064317979204,
+      "Brier": 0.007269816007465124
+    }
+  }
+}

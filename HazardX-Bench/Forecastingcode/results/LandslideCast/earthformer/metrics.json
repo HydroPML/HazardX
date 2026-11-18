@@ -1,0 +1,70 @@
+{
+  "dataset": "LandslideCast",
+  "model_id": "05",
+  "model": "EarthFormer-Scratch",
+  "seed": 0,
+  "checkpoint": "best.pth",
+  "checkpoint_sha256": "3b82cc344613e98ae69e9756c7c92fa13e66e18cbcb75d8198159a2653397098",
+  "checkpoint_epoch": 99,
+  "selection_rule": "first formal experimental seed, verified in checkpoint config",
+  "original_final_evaluation": {
+    "run_summary.json": {
+      "model": "EarthFormer-Scratch",
+      "mode": "train",
+      "run_id": "Data2_t10_5gpu_v3",
+      "global_update": 125000,
+      "updates_this_run": 125000,
+      "amp_skipped_updates": 0,
+      "precision": "FP32",
+      "gradient_nonzero_verified": true,
+      "validation": {
+        "objective": 2.558448882508544,
+        "official_RelL2_h": 0.29092359646681343,
+        "official_RelL2_u": 0.5219837072408507,
+        "RMSE_h": 2.438850764798172,
+        "MAE_h": 0.41287577657936503,
+        "RelL2_h": 0.29092359646681343,
+        "RMSE_h@t80": 3.895806750423953,
+        "MAE_h@t80": 0.48013542223692257,
+        "RelL2_h@t80": 0.3355227155036122,
+        "RMSE_u": 13.604811802536233,
+        "MAE_u": 0.9649839687591009,
+        "RelL2_u": 0.5219837072408507,
+        "RMSE_u@t80": 23.94762769495393,
+        "MAE_u@t80": 1.1541537424612474,
+        "RelL2_u@t80": 0.642710001882806
+      },
+      "test": {
+        "objective": 2.456325346216358,
+        "official_RelL2_h": 0.27699192484646057,
+        "official_RelL2_u": 0.5173818722911364,
+        "RMSE_h": 8.043865356900069,
+        "MAE_h": 0.49315538011368654,
+        "RelL2_h": 0.27699192484646057,
+        "RMSE_h@t80": 15.947923230250796,
+        "MAE_h@t80": 0.7635726195071092,
+        "RelL2_h@t80": 0.31387455910931333,
+        "RMSE_u": 44.50181038735393,
+        "MAE_u": 0.8993039629177636,
+        "RelL2_u": 0.5173818722911364,
+        "RMSE_u@t80": 122.86977277510904,
+        "MAE_u@t80": 1.3835732870130022,
+        "RelL2_u@t80": 0.6349252883156876
+      },
+      "output_equivalence": null,
+      "performance": {
+        "steady_updates": 124998,
+        "samples_per_second_median": 11.608473955368845,
+        "forward_seconds_median": 0.0363064972916618,
+        "backward_seconds_median": 0.04639987961854786,
+        "optimizer_seconds_median": 0.02052180841565132,
+        "peak_allocated": 1481170432,
+        "peak_reserved": 1788870656,
+        "loss_all_finite": true
+      },
+      "reload_consistent": true,
+      "parameters_total": 8650766,
+      "parameters_trainable": 8650766
+    }
+  }
+}

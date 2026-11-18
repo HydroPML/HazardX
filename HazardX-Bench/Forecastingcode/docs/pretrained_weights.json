@@ -1,0 +1,86 @@
+[
+  {
+    "model_slug": "pde_transformer",
+    "repository": "thuerey-group/pde-transformer",
+    "revision": "d5889aab16b1fe82e82940b612d54a8f0773e542",
+    "file": "sc-s/diffusion_pytorch_model.safetensors",
+    "local_filename": "pde_sc_s.safetensors",
+    "url": "https://huggingface.co/thuerey-group/pde-transformer/blob/main/sc-s/diffusion_pytorch_model.safetensors",
+    "license": "mit",
+    "lfs": {
+      "sha256": "90555b8277687939571163e6fcd9725039d994a95c1dc3ad367849c995cebcde",
+      "size": 186732992,
+      "pointerSize": 134
+    }
+  },
+  {
+    "model_slug": "dpot",
+    "repository": "hzk17/DPOT",
+    "revision": "2adec1cf9a55942f1456aa7463cd7ade908398d0",
+    "file": "model_S.pth",
+    "local_filename": "dpot_s.pth",
+    "url": "https://huggingface.co/hzk17/DPOT/blob/main/model_S.pth",
+    "license": "apache-2.0",
+    "lfs": {
+      "sha256": "26078da23181a6e8c4c87a0fae71b1bd91ee02b9bef748e1b29569ed052770f4",
+      "size": 369697951,
+      "pointerSize": 134
+    }
+  },
+  {
+    "model_slug": "poseidon",
+    "repository": "camlab-ethz/Poseidon-T",
+    "revision": "ec976ed5d25883ec9db4e486ebbeeefa9e08303b",
+    "file": "pytorch_model.bin",
+    "local_filename": "poseidon_t.bin",
+    "url": "https://huggingface.co/camlab-ethz/Poseidon-T/blob/main/pytorch_model.bin",
+    "license": "cc-by-nc-4.0",
+    "lfs": {
+      "sha256": "a363f7317fbc3a900a318fc63cc53197705d95fce0e0ce28dd3c8844a89112e2",
+      "size": 83390397,
+      "pointerSize": 133
+    }
+  },
+  {
+    "model_slug": "gphyt",
+    "repository": "flwi/Physics-Foundation-Model",
+    "revision": "d3d3d177884d1607dc9c51dde4c501f65fcdd474",
+    "file": "gphyt-S.pth",
+    "local_filename": "gphyt_s.pth",
+    "url": "https://huggingface.co/flwi/Physics-Foundation-Model/blob/main/gphyt-S.pth",
+    "license": "mit",
+    "lfs": {
+      "sha256": "a7beab39e6e9527d44a7a43a7f2e95a5a22aaa69f5932cc9809f9dabb0b2e6c0",
+      "size": 32039435,
+      "pointerSize": 133
+    }
+  },
+  {
+    "model_slug": "videomaev2",
+    "repository": "OpenGVLab/VideoMAE2",
+    "revision": "706cc172d65ebd4dedbee3f9c0183a93df9fa125",
+    "file": "distill/vit_b_k710_dl_from_giant.pth",
+    "local_filename": "vit_b_k710_dl_from_giant.pth",
+    "url": "https://huggingface.co/OpenGVLab/VideoMAE2/blob/main/distill/vit_b_k710_dl_from_giant.pth",
+    "license": "apache-2.0",
+    "lfs": {
+      "sha256": "8141a6955e0700d11bf15928fe6d61e5cfe482606fed8cfdddb1b922c0fd88ec",
+      "size": 173574417,
+      "pointerSize": 134
+    }
+  },
+  {
+    "model_slug": "prithvi",
+    "repository": "ibm-nasa-geospatial/Prithvi-EO-2.0-300M",
+    "revision": "9eb1b1102806593963daa333bcc491b1c6f8562f",
+    "file": "Prithvi_EO_V2_300M.pt",
+    "local_filename": "Prithvi_EO_V2_300M.pt",
+    "url": "https://huggingface.co/ibm-nasa-geospatial/Prithvi-EO-2.0-300M/blob/main/Prithvi_EO_V2_300M.pt",
+    "license": "apache-2.0",
+    "lfs": {
+      "sha256": "faab2c8b776f0723f93431747603a7ec586a54fc45473613b4322c29752486e7",
+      "size": 1326658396,
+      "pointerSize": 135
+    }
+  }
+]

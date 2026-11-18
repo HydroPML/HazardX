@@ -1,0 +1,34 @@
+{
+  "dataset": "LandslideCast",
+  "model": "ConvLSTM-Scratch",
+  "model_slug": "convlstm",
+  "seed": 0,
+  "filename": "best.pth",
+  "original_filename": "best_validation.pt",
+  "checkpoint": "checkpoints/LandslideCast/convlstm/best.pth",
+  "format": "byte_parts",
+  "bytes": 138580570,
+  "sha256": "0dbaa32464fcda41b099d175a8d076d39d0951c85dcb151af272bf96efb8ec09",
+  "config": "config/LandslideCast/convlstm.yaml",
+  "config_url": "https://drive.google.com/file/d/1DvwfqIx1ygzy4K028BykKfJe9k9bk0Ck/view?usp=drivesdk",
+  "metrics_url": "https://drive.google.com/file/d/12vAhZnmPXry56PJhATJwTJThZ1ryxuG_/view?usp=drivesdk",
+  "drive_folder_url": "https://drive.google.com/drive/folders/1BEykI4alJ0-E41ozuAHw4PALIEkF-v93",
+  "parts": [
+    {
+      "name": "best.pth.part0001",
+      "bytes": 94371840,
+      "sha256": "3cdd52a67e3e24d049720daa2fd8f0d1c11f4da521be2153266e426936d92a41",
+      "id": "1ZPncRA1rrQu838y17xl29QBEdloB-SHK",
+      "url": "https://drive.google.com/file/d/1ZPncRA1rrQu838y17xl29QBEdloB-SHK/view?usp=drivesdk",
+      "size_and_parent_verified": true
+    },
+    {
+      "name": "best.pth.part0002",
+      "bytes": 44208730,
+      "sha256": "f39e83495305a85b0bd27831688313bb42f6fcf6c951e1598d9b1105fc7b0a62",
+      "id": "1_PAC4KuNTtbJdL8_fcD52unp8zmd9eZs",
+      "url": "https://drive.google.com/file/d/1_PAC4KuNTtbJdL8_fcD52unp8zmd9eZs/view?usp=drivesdk",
+      "size_and_parent_verified": true
+    }
+  ]
+}

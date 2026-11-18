@@ -1,0 +1,42 @@
+{
+  "dataset": "FloodSimBench",
+  "model": "DPOT-S-PT-FT",
+  "model_slug": "dpot",
+  "seed": 1,
+  "filename": "best.pth",
+  "original_filename": "best_validation.pt",
+  "checkpoint": "checkpoints/FloodSimBench/dpot/best.pth",
+  "format": "byte_parts",
+  "bytes": 231379940,
+  "sha256": "4b2e7f11755798f1246750a7f83cfa4c6661dc0eba9abc6c8bb5a9ba52099e64",
+  "config": "config/FloodSimBench/dpot.yaml",
+  "config_url": "https://drive.google.com/file/d/1hvM6E5KyKibiB7ddbbb2NRaz5nsr-Gi1/view?usp=drivesdk",
+  "metrics_url": "https://drive.google.com/file/d/1cGe5DfgoIbZQ9JyBXMBwQn3_Td5_IlaA/view?usp=drivesdk",
+  "drive_folder_url": "https://drive.google.com/drive/folders/1tW5UZ9S8di9u_DHYkmHQpsl-4VFziHv2",
+  "parts": [
+    {
+      "name": "best.pth.part0001",
+      "bytes": 94371840,
+      "sha256": "abfb41b2e5e346eea392fc7b4ef4b1befdda5f2642abcfae5a30df5f2c551025",
+      "id": "1kzfuyKkIBeig5VBSzWU8iwtvhSbfwjsI",
+      "url": "https://drive.google.com/file/d/1kzfuyKkIBeig5VBSzWU8iwtvhSbfwjsI/view?usp=drivesdk",
+      "size_and_parent_verified": true
+    },
+    {
+      "name": "best.pth.part0002",
+      "bytes": 94371840,
+      "sha256": "17577e555c0a44376fd5e345c0ce188ccad5205efad2704d76143057aafc5c48",
+      "id": "1-I149b-DDOb7uabLKQj8Y6Tf1nroC9DC",
+      "url": "https://drive.google.com/file/d/1-I149b-DDOb7uabLKQj8Y6Tf1nroC9DC/view?usp=drivesdk",
+      "size_and_parent_verified": true
+    },
+    {
+      "name": "best.pth.part0003",
+      "bytes": 42636260,
+      "sha256": "53f70a7f076b2ae1bf7360ffe212ceb71efcdd056270fa189bad22729565ab82",
+      "id": "1QbHvDn_TIp4UxuQGh3iDN8hOPoaFN4uI",
+      "url": "https://drive.google.com/file/d/1QbHvDn_TIp4UxuQGh3iDN8hOPoaFN4uI/view?usp=drivesdk",
+      "size_and_parent_verified": true
+    }
+  ]
+}

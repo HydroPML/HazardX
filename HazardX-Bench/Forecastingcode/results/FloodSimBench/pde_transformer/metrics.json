@@ -1,0 +1,23 @@
+{
+  "dataset": "FloodSimBench",
+  "model_id": "06",
+  "model": "PDE-T-SC-S-PT-FT",
+  "seed": 1,
+  "checkpoint": "best.pth",
+  "checkpoint_sha256": "f6f68f97d96ce1b76aed10e428c21435b33c2d07cd867d84f8329f37f8aa3e9c",
+  "checkpoint_epoch": 69,
+  "selection_rule": "first formal experimental seed, verified in checkpoint config",
+  "original_final_evaluation": {
+    "city_macro.json": {
+      "rmse": 0.06385618882599536,
+      "mae": 0.011378273682141607,
+      "relative_l2": 0.9165337065892729,
+      "nse": 0.11885951538053526,
+      "corr": 0.38157865496429444,
+      "csi_0.01": 0.12361828187725343,
+      "csi_0.05": 0.08648815021896285,
+      "csi_0.1": 0.06682165346428993,
+      "csi_0.5": 0.04439186877705785
+    }
+  }
+}

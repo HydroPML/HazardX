@@ -1,0 +1,122 @@
+{
+  "dataset": "LandslideCast",
+  "model_id": "09",
+  "model": "GPhyT-S-PT-FT-Euler",
+  "seed": 0,
+  "checkpoint": "best.pth",
+  "checkpoint_sha256": "2d06144da6e51d37ad0d5dfa695b8ac610d93358cd7572bb866eeb7b5c004726",
+  "checkpoint_epoch": 99,
+  "selection_rule": "first formal experimental seed, verified in checkpoint config",
+  "original_final_evaluation": {
+    "run_summary.json": {
+      "model": "GPhyT-S-PT-FT-Euler",
+      "mode": "train",
+      "run_id": "Data2_t10_gphyt_euler_dt1_4gpu_v1",
+      "global_update": 124963,
+      "updates_this_run": 124963,
+      "amp_skipped_updates": 37,
+      "precision": "AMP FP16",
+      "gradient_nonzero_verified": true,
+      "validation": {
+        "objective": 3.3596137314131407,
+        "official_RelL2_h": 0.38548922732928226,
+        "official_RelL2_u": 0.6611891401081635,
+        "RMSE_h": 2.8769785584544088,
+        "MAE_h": 0.659528678314656,
+        "RelL2_h": 0.38548922732928226,
+        "RMSE_h@t80": 4.218984050759798,
+        "MAE_h@t80": 0.7574373966553449,
+        "RelL2_h@t80": 0.46219829268864954,
+        "RMSE_u": 13.871193656110218,
+        "MAE_u": 1.3774879012537777,
+        "RelL2_u": 0.6611891401081635,
+        "RMSE_u@t80": 24.034578763662292,
+        "MAE_u@t80": 1.5585528290211916,
+        "RelL2_u@t80": 0.8786278166591734
+      },
+      "test": {
+        "objective": 3.279213527172604,
+        "official_RelL2_h": 0.3745134756113504,
+        "official_RelL2_u": 0.6576191978931525,
+        "RMSE_h": 8.188513838334252,
+        "MAE_h": 0.7412953494556159,
+        "RelL2_h": 0.3745134756113504,
+        "RMSE_h@t80": 16.00577057090027,
+        "MAE_h@t80": 1.049597905109787,
+        "RelL2_h@t80": 0.45737981047516396,
+        "RMSE_u": 44.58347788533567,
+        "MAE_u": 1.3044832727374136,
+        "RelL2_u": 0.6576191978931525,
+        "RMSE_u@t80": 122.89118516473758,
+        "MAE_u@t80": 1.783552563397789,
+        "RelL2_u@t80": 0.8686826115794326
+      },
+      "output_equivalence": null,
+      "performance": {
+        "steady_updates": 124961,
+        "samples_per_second_median": 38.68105771478406,
+        "forward_seconds_median": 0.06222999095916748,
+        "backward_seconds_median": 0.032733526080846786,
+        "optimizer_seconds_median": 0.011356150731444359,
+        "peak_allocated": 887349760,
+        "peak_reserved": 945815552,
+        "loss_all_finite": true
+      },
+      "reload_consistent": true,
+      "parameters_total": 7009730,
+      "parameters_trainable": 7009730
+    },
+    "test_metrics_bounded_200_csi_0p5_5.json": {
+      "CSI_event": "threshold < h <= 200 for prediction and ground truth",
+      "aggregation": {
+        "CSI": "per-scenario CSI, then mean over scenarios",
+        "RMSE_MAE": "global over elements whose corresponding ground truth <= 200",
+        "RelL2": "per-scenario masked L2 ratio, then mean over scenarios"
+      },
+      "checkpoint": "/mnt/HDD2/qingsong/qinqsong/EarthDynamics/Landslides/Flood08/results/LandslideCast_GPhyT_Euler_dt1_4gpu/Data2_t10_gphyt_euler_dt1_4gpu_v1/GPhyT-S-PT-FT-Euler/best_validation.pt",
+      "checkpoint_best_validation": 3.3596137314131407,
+      "checkpoint_epoch": 99,
+      "checkpoint_next_epoch": 100,
+      "contingency_audit": {
+        "0.5": {
+          "false_alarms": 14019546,
+          "hits": 32984839,
+          "misses": 4584242,
+          "pooled_CSI": 0.639381990142905
+        },
+        "5": {
+          "false_alarms": 4421840,
+          "hits": 17044362,
+          "misses": 2843349,
+          "pooled_CSI": 0.7011384949067961
+        }
+      },
+      "data_path": "/mnt/HDD2/qingsong/qinqsong/EarthDynamics/Landslides/Data2/2d_t10.h5",
+      "dt": 1.0,
+      "excluded_ground_truth_gt_200": {
+        "h": 57173,
+        "u": 68182
+      },
+      "first_scenario": "x11001",
+      "last_scenario": "x12000",
+      "metrics": {
+        "CSI_0.5_h_range": 0.6300544624195333,
+        "CSI_5_h_range": 0.6740073404483873,
+        "MAE_h_target_le_200": 0.6504449315826757,
+        "MAE_u_target_le_200": 1.1388205324189151,
+        "RMSE_h_target_le_200": 2.758959654288384,
+        "RMSE_u_target_le_200": 4.723945592513398,
+        "RelL2_h_target_le_200": 0.3744876965377011,
+        "RelL2_u_target_le_200": 0.6551641347871078
+      },
+      "model": "GPhyT-S-PT-FT-Euler",
+      "precision": "AMP FP16 inference; FP64 metric accumulation",
+      "samples": 1000,
+      "selected_elements": {
+        "h": 319942827,
+        "u": 319931818
+      },
+      "split": "test"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "model": "Poseidon-T-PT-FT",
+  "checkpoint": "/home/yuezeng/EarthDynamics/Landslide/Flood08/results/LandslideCast_accelerated/formal_accelerated_v2_strict/Poseidon-T-PT-FT/best_validation.pt",
+  "checkpoint_epoch": 79,
+  "best_validation": 2.5014204653877097,
+  "test_samples": 1000,
+  "cap": 200.0,
+  "valid_cells": {
+    "h": 319942827,
+    "u": 319931818
+  },
+  "total_cells": 320000000,
+  "finite_predictions": true,
+  "parameters_total": 20771838,
+  "metrics": {
+    "RMSE_h": 2.2360773422917384,
+    "MAE_h": 0.38117912565366713,
+    "RelL2_h": 0.273063591590452,
+    "RMSE_u": 3.840400831175964,
+    "MAE_u": 0.6880179990225015,
+    "RelL2_u": 0.49792317460956337,
+    "CSI_0.5": 0.8028219548925538,
+    "CSI_5": 0.8020358497858009
+  },
+  "contingency": {
+    "CSI_0.5": {
+      "hits": 34616916,
+      "misses": 2952165,
+      "false_alarms": 5549964,
+      "denominator": 43119045
+    },
+    "CSI_5": {
+      "hits": 17675007,
+      "misses": 2212704,
+      "false_alarms": 2149966,
+      "denominator": 22037677
+    }
+  },
+  "official_uncapped_recomputed": {
+    "RMSE_h": 7.982118984589424,
+    "MAE_h": 0.47134651822279616,
+    "RelL2_h": 0.2730702179718718,
+    "RMSE_u": 44.49756935235456,
+    "MAE_u": 0.8535848442625783,
+    "RelL2_u": 0.5012413634186275
+  },
+  "audit_metrics": {
+    "RMSE_h": 2.2360773422917384,
+    "MAE_h": 0.38117912565366713,
+    "RelL2_h": 0.273063591590452,
+    "RMSE_u": 3.840400831175964,
+    "MAE_u": 0.6880179990225015,
+    "RelL2_u": 0.49792317460956337,
+    "CSI_0.5": 0.8028219548925538,
+    "CSI_5": 0.8020358497858009
+  },
+  "max_audit_delta": 0.0
+}

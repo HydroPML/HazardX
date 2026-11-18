@@ -1,0 +1,50 @@
+{
+  "dataset": "LandslideCast",
+  "model": "DPOT-S-PT-FT",
+  "model_slug": "dpot",
+  "seed": 0,
+  "filename": "best.pth",
+  "original_filename": "best_validation.pt",
+  "checkpoint": "checkpoints/LandslideCast/dpot/best.pth",
+  "format": "byte_parts",
+  "bytes": 331800557,
+  "sha256": "53f636ed759a8fde326a30262b868ef3d5e559521dfc682cb903a1f43fecf0b0",
+  "config": "config/LandslideCast/dpot.yaml",
+  "config_url": "https://drive.google.com/file/d/1hMcTliN-1A1DXJsRTP6DUNqf8XIDHdBy/view?usp=drivesdk",
+  "metrics_url": "https://drive.google.com/file/d/1G8Y3HQ2uJ5NF3pSNDiTJaPwJJM5zZyJC/view?usp=drivesdk",
+  "drive_folder_url": "https://drive.google.com/drive/folders/1a5bk56oXODF_W2-tARNLkSCXmBYKqTZR",
+  "parts": [
+    {
+      "name": "best.pth.part0001",
+      "bytes": 94371840,
+      "sha256": "9d29902dae217b441f8d1a0c7a3937202ff737011cd3d030c622abc877a3f718",
+      "id": "1uRXZdfNM7-u42xzbxMoaw1oAfvi2w8M6",
+      "url": "https://drive.google.com/file/d/1uRXZdfNM7-u42xzbxMoaw1oAfvi2w8M6/view?usp=drivesdk",
+      "size_and_parent_verified": true
+    },
+    {
+      "name": "best.pth.part0002",
+      "bytes": 94371840,
+      "sha256": "cba02e6b8b23eaca10630185a90fa1959d96ccb9b04f68ccf9ad7d91ac5ac661",
+      "id": "1IrRUKLidgI0n84iQkg_a2jv6bvt9bkWj",
+      "url": "https://drive.google.com/file/d/1IrRUKLidgI0n84iQkg_a2jv6bvt9bkWj/view?usp=drivesdk",
+      "size_and_parent_verified": true
+    },
+    {
+      "name": "best.pth.part0003",
+      "bytes": 94371840,
+      "sha256": "97e2e67113a099f4a2ab04c2ff9eb98517fd445567ae52b82b0e977eaae0f607",
+      "id": "12FkPdrmyQEQvm3WwmcJWgDChhNKQcBBk",
+      "url": "https://drive.google.com/file/d/12FkPdrmyQEQvm3WwmcJWgDChhNKQcBBk/view?usp=drivesdk",
+      "size_and_parent_verified": true
+    },
+    {
+      "name": "best.pth.part0004",
+      "bytes": 48685037,
+      "sha256": "b5047a3a89756e437e6490b3ed35ecfdb858cc6fdbe704f55931964940cbc566",
+      "id": "1dLRMxJKEyGJ1fMCq36gJwCm0p9EApZI-",
+      "url": "https://drive.google.com/file/d/1dLRMxJKEyGJ1fMCq36gJwCm0p9EApZI-/view?usp=drivesdk",
+      "size_and_parent_verified": true
+    }
+  ]
+}

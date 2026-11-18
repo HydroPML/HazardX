@@ -1,0 +1,2209 @@
+[
+  {
+    "dataset": "FloodCastBench",
+    "model_id": "01",
+    "model": "UNet",
+    "model_slug": "unet",
+    "seed": 42,
+    "world_size": 2,
+    "config": "config/FloodCastBench/unet.yaml",
+    "checkpoint": "checkpoints/FloodCastBench/unet/best.pth",
+    "checkpoint_epoch": 24,
+    "checkpoint_bytes": 93315807,
+    "selection_rule": "first formal experimental seed, verified in checkpoint config",
+    "metrics": {
+      "source_macro.json": {
+        "rmse": 1.428248771975784,
+        "mae": 0.7478594400332624,
+        "relative_l2": 1.7249526251951162,
+        "nse": -3.1630263300466543,
+        "corr": 0.29115650718480035,
+        "csi_0.01": 0.4419215177202058,
+        "csi_0.05": 0.4101927075340357,
+        "csi_0.1": 0.3917192831531634,
+        "csi_0.5": 0.30650274260845745
+      },
+      "one_two_day_summary.json": {
+        "source_key": "mozambique_576",
+        "source_path": "/mnt/HDD2/qingsong/qinqsong/Datasets/FM/Test/Mozambique/576",
+        "excluded_source_key": "mozambique_1728",
+        "aggregation": "equal_mean_over_contiguous_trajectories",
+        "debug_max_steps": 0,
+        "protocols": {
+          "1day": {
+            "domain": "mozambique_1day",
+            "states_per_trajectory": 288,
+            "prediction_steps_per_trajectory": 287,
+            "trajectory_count": 6,
+            "overall_equal_trajectory_mean": {
+              "rmse": 0.9816642792016035,
+              "mae": 0.42527103964585494,
+              "relative_l2": 18.966027033436312,
+              "nse": -4721.384938424654,
+              "corr": 0.19127666499440113,
+              "csi_0.01": 0.2830542618792566,
+              "csi_0.05": 0.22494753769602757,
+              "csi_0.1": 0.19329761927467115,
+              "csi_0.5": 0.11994020914479009
+            }
+          },
+          "2day": {
+            "domain": "mozambique_2day",
+            "states_per_trajectory": 576,
+            "prediction_steps_per_trajectory": 575,
+            "trajectory_count": 3,
+            "overall_equal_trajectory_mean": {
+              "rmse": 1.1314354352626033,
+              "mae": 0.49555217343558006,
+              "relative_l2": 19.400653685072193,
+              "nse": -4717.633157053584,
+              "corr": 0.12359237895876109,
+              "csi_0.01": 0.2638909838325723,
+              "csi_0.05": 0.2046211867674382,
+              "csi_0.1": 0.17249270466030153,
+              "csi_0.5": 0.09752930625331085
+            }
+          }
+        }
+      }
+    },
+    "drive_url": "https://drive.google.com/file/d/109912MklQP-v5cP-Vp1DO35fikW8Ddxn/view?usp=drivesdk",
+    "checkpoint_download_format": "single_file",
+    "checkpoint_sha256": "4ae10441158c498b2506260c600355e57895ae66fcf0ca69e25c7136be461d4f",
+    "remote_sha256_verified": true
+  },
+  {
+    "dataset": "FloodCastBench",
+    "model_id": "02",
+    "model": "ConvLSTM-Scratch",
+    "model_slug": "convlstm",
+    "seed": 42,
+    "world_size": 1,
+    "config": "config/FloodCastBench/convlstm.yaml",
+    "checkpoint": "checkpoints/FloodCastBench/convlstm/best.pth",
+    "checkpoint_epoch": 19,
+    "checkpoint_bytes": 139516818,
+    "selection_rule": "first formal experimental seed, verified in checkpoint config",
+    "metrics": {
+      "source_macro.json": {
+        "rmse": 0.9873933152454655,
+        "mae": 0.49657727170813476,
+        "relative_l2": 1.178887363769867,
+        "nse": -0.977031010484164,
+        "corr": 0.1633064033975665,
+        "csi_0.01": 0.5133235843183687,
+        "csi_0.05": 0.3929005668138378,
+        "csi_0.1": 0.3126063284298684,
+        "csi_0.5": 0.14332948101989484
+      },
+      "one_two_day_summary.json": {
+        "source_key": "mozambique_576",
+        "source_path": "/mnt/HDD2/qingsong/qinqsong/Datasets/FM/Test/Mozambique/576",
+        "excluded_source_key": "mozambique_1728",
+        "aggregation": "equal_mean_over_contiguous_trajectories",
+        "debug_max_steps": 0,
+        "protocols": {
+          "1day": {
+            "domain": "mozambique_1day",
+            "states_per_trajectory": 288,
+            "prediction_steps_per_trajectory": 287,
+            "trajectory_count": 6,
+            "overall_equal_trajectory_mean": {
+              "rmse": 0.7150631955406724,
+              "mae": 0.25917254367807574,
+              "relative_l2": 7.20437177078978,
+              "nse": -444.17324041021493,
+              "corr": 0.2371713288061312,
+              "csi_0.01": 0.32109665637584034,
+              "csi_0.05": 0.2764555144110685,
+              "csi_0.1": 0.22679669460619292,
+              "csi_0.5": 0.1254751662111965
+            }
+          },
+          "2day": {
+            "domain": "mozambique_2day",
+            "states_per_trajectory": 576,
+            "prediction_steps_per_trajectory": 575,
+            "trajectory_count": 3,
+            "overall_equal_trajectory_mean": {
+              "rmse": 0.8973722810290106,
+              "mae": 0.33956162721593525,
+              "relative_l2": 7.715801601250103,
+              "nse": -446.80260132149823,
+              "corr": 0.13375372342441394,
+              "csi_0.01": 0.30557314029764854,
+              "csi_0.05": 0.25741393697336723,
+              "csi_0.1": 0.20536576175233356,
+              "csi_0.5": 0.08429842298380728
+            }
+          }
+        }
+      }
+    },
+    "drive_url": "https://drive.google.com/drive/folders/1tzrXWYkSCEmelmHrBafZpibkCUroOYhA",
+    "checkpoint_download_format": "byte_parts",
+    "checkpoint_sha256": "f588337d86dcd67d3889b79ad6d7e627e48e3b869842681ddd162dc5fdb5b482",
+    "remote_sha256_verified": true
+  },
+  {
+    "dataset": "FloodCastBench",
+    "model_id": "04",
+    "model": "FNO",
+    "model_slug": "fno",
+    "seed": 42,
+    "world_size": 2,
+    "config": "config/FloodCastBench/fno.yaml",
+    "checkpoint": "checkpoints/FloodCastBench/fno/best.pth",
+    "checkpoint_epoch": 89,
+    "checkpoint_bytes": 11227377,
+    "selection_rule": "first formal experimental seed, verified in checkpoint config",
+    "metrics": {
+      "source_macro.json": {
+        "rmse": 0.11119337676568378,
+        "mae": 0.0638253682521468,
+        "relative_l2": 0.13251154917800956,
+        "nse": 0.971405775133741,
+        "corr": 0.9862260885977995,
+        "csi_0.01": 0.6779316878692614,
+        "csi_0.05": 0.837267788289316,
+        "csi_0.1": 0.8658658193898119,
+        "csi_0.5": 0.8111574230812983
+      },
+      "one_two_day_summary.json": {
+        "source_key": "mozambique_576",
+        "source_path": "/mnt/HDD2/qingsong/qinqsong/Datasets/FM/Test/Mozambique/576",
+        "excluded_source_key": "mozambique_1728",
+        "aggregation": "equal_mean_over_contiguous_trajectories",
+        "debug_max_steps": 0,
+        "protocols": {
+          "1day": {
+            "domain": "mozambique_1day",
+            "states_per_trajectory": 288,
+            "prediction_steps_per_trajectory": 287,
+            "trajectory_count": 6,
+            "overall_equal_trajectory_mean": {
+              "rmse": 0.10871366363921409,
+              "mae": 0.052601216965617016,
+              "relative_l2": 0.9332859324686565,
+              "nse": -8.370315990207112,
+              "corr": 0.7593312510085931,
+              "csi_0.01": 0.5082493762145575,
+              "csi_0.05": 0.4854336729045557,
+              "csi_0.1": 0.4804555859922947,
+              "csi_0.5": 0.5819159141297124
+            }
+          },
+          "2day": {
+            "domain": "mozambique_2day",
+            "states_per_trajectory": 576,
+            "prediction_steps_per_trajectory": 575,
+            "trajectory_count": 3,
+            "overall_equal_trajectory_mean": {
+              "rmse": 0.1839980381520708,
+              "mae": 0.07674600858808212,
+              "relative_l2": 1.095129061717999,
+              "nse": -8.540828122970359,
+              "corr": 0.6018710327382787,
+              "csi_0.01": 0.49977142941659464,
+              "csi_0.05": 0.3370639885978471,
+              "csi_0.1": 0.3507274385811627,
+              "csi_0.5": 0.4470960507876631
+            }
+          }
+        }
+      }
+    },
+    "drive_url": "https://drive.google.com/file/d/1IdElZmniW002Jayaq8xaAxN0k9JXKXPY/view?usp=drivesdk",
+    "checkpoint_download_format": "single_file",
+    "checkpoint_sha256": "db807e51065318ec5627516a572fe2d98b509d0b8ee37a32c25ede488ee06a22",
+    "remote_sha256_verified": true
+  },
+  {
+    "dataset": "FloodCastBench",
+    "model_id": "05",
+    "model": "EarthFormer-Scratch-fp32-lr3e-4",
+    "model_slug": "earthformer",
+    "seed": 42,
+    "world_size": 1,
+    "config": "config/FloodCastBench/earthformer.yaml",
+    "checkpoint": "checkpoints/FloodCastBench/earthformer/best.pth",
+    "checkpoint_epoch": 49,
+    "checkpoint_bytes": 100447548,
+    "selection_rule": "first formal experimental seed, verified in checkpoint config",
+    "metrics": {
+      "source_macro.json": {
+        "rmse": 0.8574259332559666,
+        "mae": 0.4640767429452325,
+        "relative_l2": 1.0262379391891199,
+        "nse": -0.42400377077510487,
+        "corr": 0.05948033142139858,
+        "csi_0.01": 0.596584652618664,
+        "csi_0.05": 0.31778757014548736,
+        "csi_0.1": 0.24829800451622192,
+        "csi_0.5": 0.0824204956015851
+      },
+      "one_two_day_summary.json": {
+        "source_key": "mozambique_576",
+        "source_path": "/mnt/HDD2/qingsong/qinqsong/Datasets/FM/Test/Mozambique/576",
+        "excluded_source_key": "mozambique_1728",
+        "aggregation": "equal_mean_over_contiguous_trajectories",
+        "debug_max_steps": 0,
+        "protocols": {
+          "1day": {
+            "domain": "mozambique_1day",
+            "states_per_trajectory": 288,
+            "prediction_steps_per_trajectory": 287,
+            "trajectory_count": 6,
+            "overall_equal_trajectory_mean": {
+              "rmse": 0.5589304759160916,
+              "mae": 0.2737064070136445,
+              "relative_l2": 1.5554310661782786,
+              "nse": -4.232678459197365,
+              "corr": 0.038433222433630086,
+              "csi_0.01": 0.44203111699153047,
+              "csi_0.05": 0.31131714068431054,
+              "csi_0.1": 0.2431006497713228,
+              "csi_0.5": 0.052279177159000656
+            }
+          },
+          "2day": {
+            "domain": "mozambique_2day",
+            "states_per_trajectory": 576,
+            "prediction_steps_per_trajectory": 575,
+            "trajectory_count": 3,
+            "overall_equal_trajectory_mean": {
+              "rmse": 0.49639539161251617,
+              "mae": 0.22307242615823294,
+              "relative_l2": 1.294457893026048,
+              "nse": -3.0143583649639853,
+              "corr": 0.038160823581778115,
+              "csi_0.01": 0.3581772197691886,
+              "csi_0.05": 0.24829089211380997,
+              "csi_0.1": 0.19112682000882383,
+              "csi_0.5": 0.034212366975304005
+            }
+          }
+        }
+      }
+    },
+    "drive_url": "https://drive.google.com/file/d/1vk6WEiLmMPEO81v9JYIlpZoUHC0oCUfF/view?usp=drivesdk",
+    "checkpoint_download_format": "single_file",
+    "checkpoint_sha256": "cd30946712e8d7b7fcea700c6a620fc355cf1b3b245fb6312687c4b2efcc2df5",
+    "remote_sha256_verified": true
+  },
+  {
+    "dataset": "FloodCastBench",
+    "model_id": "06",
+    "model": "PDE-T-SC-S-PT-FT",
+    "model_slug": "pde_transformer",
+    "seed": 42,
+    "world_size": 1,
+    "config": "config/FloodCastBench/pde_transformer.yaml",
+    "checkpoint": "checkpoints/FloodCastBench/pde_transformer/best.pth",
+    "checkpoint_epoch": 4,
+    "checkpoint_bytes": 559922514,
+    "selection_rule": "first formal experimental seed, verified in checkpoint config",
+    "metrics": {
+      "source_macro.json": {
+        "rmse": 1.4337883485993856,
+        "mae": 0.9002652791838197,
+        "relative_l2": 1.7419622032692208,
+        "nse": -3.4318411781645066,
+        "corr": 0.11162884971161899,
+        "csi_0.01": 0.46520182890136064,
+        "csi_0.05": 0.41557992761143403,
+        "csi_0.1": 0.3892784915890428,
+        "csi_0.5": 0.2561523820490995
+      },
+      "one_two_day_summary.json": {
+        "source_key": "mozambique_576",
+        "source_path": "/mnt/HDD2/qingsong/qinqsong/Datasets/FM/Test/Mozambique/576",
+        "excluded_source_key": "mozambique_1728",
+        "aggregation": "equal_mean_over_contiguous_trajectories",
+        "debug_max_steps": 0,
+        "protocols": {
+          "1day": {
+            "domain": "mozambique_1day",
+            "states_per_trajectory": 288,
+            "prediction_steps_per_trajectory": 287,
+            "trajectory_count": 6,
+            "overall_equal_trajectory_mean": {
+              "rmse": 1.028585367712612,
+              "mae": 0.48100849895530823,
+              "relative_l2": 8.795984909241279,
+              "nse": -617.04516091893,
+              "corr": 0.14019818583025703,
+              "csi_0.01": 0.2741145330867119,
+              "csi_0.05": 0.2357393400387134,
+              "csi_0.1": 0.2144897781470104,
+              "csi_0.5": 0.11566045890787187
+            }
+          },
+          "2day": {
+            "domain": "mozambique_2day",
+            "states_per_trajectory": 576,
+            "prediction_steps_per_trajectory": 575,
+            "trajectory_count": 3,
+            "overall_equal_trajectory_mean": {
+              "rmse": 1.3202257581064611,
+              "mae": 0.680383579551109,
+              "relative_l2": 9.664236257395881,
+              "nse": -625.3263391362162,
+              "corr": 0.06291332533078263,
+              "csi_0.01": 0.2954325735227515,
+              "csi_0.05": 0.23571485866021602,
+              "csi_0.1": 0.2053469535707451,
+              "csi_0.5": 0.08796089096890392
+            }
+          }
+        }
+      }
+    },
+    "drive_url": "https://drive.google.com/drive/folders/1m4Yt5rmPTpQ_SwD9QDlcrht7M4Lk2JDx",
+    "checkpoint_download_format": "byte_parts",
+    "checkpoint_sha256": "c60b7924e12be2d9916aada51f84c27b60c9fbcf4f65f525ed3bf71dc49ea174",
+    "remote_sha256_verified": true
+  },
+  {
+    "dataset": "FloodCastBench",
+    "model_id": "07",
+    "model": "DPOT-S-PT-FT",
+    "model_slug": "dpot",
+    "seed": 42,
+    "world_size": 1,
+    "config": "config/FloodCastBench/dpot.yaml",
+    "checkpoint": "checkpoints/FloodCastBench/dpot/best.pth",
+    "checkpoint_epoch": 34,
+    "checkpoint_bytes": 231142116,
+    "selection_rule": "first formal experimental seed, verified in checkpoint config",
+    "metrics": {
+      "source_macro.json": {
+        "rmse": 1.000175619218823,
+        "mae": 0.4891240497992637,
+        "relative_l2": 1.1994723483972018,
+        "nse": -0.9648380008018502,
+        "corr": 0.09107823002408502,
+        "csi_0.01": 0.377641849089998,
+        "csi_0.05": 0.2375857659748622,
+        "csi_0.1": 0.1959509122792229,
+        "csi_0.5": 0.1169631234353947
+      },
+      "one_two_day_summary.json": {
+        "source_key": "mozambique_576",
+        "source_path": "/mnt/HDD2/qingsong/qinqsong/Datasets/FM/Test/Mozambique/576",
+        "excluded_source_key": "mozambique_1728",
+        "aggregation": "equal_mean_over_contiguous_trajectories",
+        "debug_max_steps": 0,
+        "protocols": {
+          "1day": {
+            "domain": "mozambique_1day",
+            "states_per_trajectory": 288,
+            "prediction_steps_per_trajectory": 287,
+            "trajectory_count": 6,
+            "overall_equal_trajectory_mean": {
+              "rmse": 0.6803744125139924,
+              "mae": 0.20837037117151777,
+              "relative_l2": 9.605276629830625,
+              "nse": -1054.1503831702285,
+              "corr": 0.05538524129288124,
+              "csi_0.01": 0.24069676929337117,
+              "csi_0.05": 0.12343037058038175,
+              "csi_0.1": 0.09964531473443615,
+              "csi_0.5": 0.03424401230158688
+            }
+          },
+          "2day": {
+            "domain": "mozambique_2day",
+            "states_per_trajectory": 576,
+            "prediction_steps_per_trajectory": 575,
+            "trajectory_count": 3,
+            "overall_equal_trajectory_mean": {
+              "rmse": 0.6968724340124838,
+              "mae": 0.20704586190846408,
+              "relative_l2": 9.620370401541393,
+              "nse": -1052.516948229916,
+              "corr": 0.02088802920346559,
+              "csi_0.01": 0.22485617078213102,
+              "csi_0.05": 0.0952639456515106,
+              "csi_0.1": 0.07472236617812482,
+              "csi_0.5": 0.017292398338167078
+            }
+          }
+        }
+      }
+    },
+    "drive_url": "https://drive.google.com/drive/folders/1SfMHaez6foueaIWHVFlcsScKeiMeWuLK",
+    "checkpoint_download_format": "byte_parts",
+    "checkpoint_sha256": "fc253f470ff0a6a19973363c713e5839bb8e011f69496c3bde05de3009ac82e0",
+    "remote_sha256_verified": true
+  },
+  {
+    "dataset": "FloodCastBench",
+    "model_id": "08",
+    "model": "Poseidon-T-PT-FT",
+    "model_slug": "poseidon",
+    "seed": 42,
+    "world_size": 2,
+    "config": "config/FloodCastBench/poseidon.yaml",
+    "checkpoint": "checkpoints/FloodCastBench/poseidon/best.pth",
+    "checkpoint_epoch": 94,
+    "checkpoint_bytes": 250420020,
+    "selection_rule": "first formal experimental seed, verified in checkpoint config",
+    "metrics": {
+      "source_macro.json": {
+        "rmse": 0.45853521932526536,
+        "mae": 0.21791730996526337,
+        "relative_l2": 0.5409401383783137,
+        "nse": 0.5626813755062399,
+        "corr": 0.7592253274826223,
+        "csi_0.01": 0.6417830644065079,
+        "csi_0.05": 0.6320058398649667,
+        "csi_0.1": 0.6388658401961942,
+        "csi_0.5": 0.702584542983085
+      },
+      "one_two_day_summary.json": {
+        "source_key": "mozambique_576",
+        "source_path": "/mnt/HDD2/qingsong/qinqsong/Datasets/FM/Test/Mozambique/576",
+        "excluded_source_key": "mozambique_1728",
+        "aggregation": "equal_mean_over_contiguous_trajectories",
+        "debug_max_steps": 0,
+        "protocols": {
+          "1day": {
+            "domain": "mozambique_1day",
+            "states_per_trajectory": 288,
+            "prediction_steps_per_trajectory": 287,
+            "trajectory_count": 6,
+            "overall_equal_trajectory_mean": {
+              "rmse": 0.25269636194932604,
+              "mae": 0.08790914816271632,
+              "relative_l2": 0.7355818589781514,
+              "nse": -0.08949246996544241,
+              "corr": 0.6915458982959649,
+              "csi_0.01": 0.49892499146932406,
+              "csi_0.05": 0.47650355231842934,
+              "csi_0.1": 0.47797037218190735,
+              "csi_0.5": 0.4598162685294877
+            }
+          },
+          "2day": {
+            "domain": "mozambique_2day",
+            "states_per_trajectory": 576,
+            "prediction_steps_per_trajectory": 575,
+            "trajectory_count": 3,
+            "overall_equal_trajectory_mean": {
+              "rmse": 0.31086476095607907,
+              "mae": 0.11968231349981868,
+              "relative_l2": 0.868974791776011,
+              "nse": -0.3049821697283482,
+              "corr": 0.4907726459313129,
+              "csi_0.01": 0.4508689656939415,
+              "csi_0.05": 0.381241767881973,
+              "csi_0.1": 0.3509799903971104,
+              "csi_0.5": 0.30829846117187537
+            }
+          }
+        }
+      }
+    },
+    "drive_url": "https://drive.google.com/drive/folders/1QkCDI-2oMp2wWpExiK3kv83O_FDgnlqw",
+    "checkpoint_download_format": "byte_parts",
+    "checkpoint_sha256": "dc3b84c343fa3eaaf4026096541348dbc67ec993832ad9b5d45512d074428d19",
+    "remote_sha256_verified": true
+  },
+  {
+    "dataset": "FloodCastBench",
+    "model_id": "09",
+    "model": "GPhyT-S-PT-FT",
+    "model_slug": "gphyt",
+    "seed": 42,
+    "world_size": 1,
+    "config": "config/FloodCastBench/gphyt.yaml",
+    "checkpoint": "checkpoints/FloodCastBench/gphyt/best.pth",
+    "checkpoint_epoch": 74,
+    "checkpoint_bytes": 90254712,
+    "selection_rule": "first formal experimental seed, verified in checkpoint config",
+    "metrics": {
+      "source_macro.json": {
+        "rmse": 0.06679425180274329,
+        "mae": 0.026766501970464228,
+        "relative_l2": 0.07755881767301781,
+        "nse": 0.9901015676480137,
+        "corr": 0.9952702592370402,
+        "csi_0.01": 0.796904394902834,
+        "csi_0.05": 0.8922204837877992,
+        "csi_0.1": 0.9383492389830147,
+        "csi_0.5": 0.9643760423730889
+      },
+      "one_two_day_summary.json": {
+        "source_key": "mozambique_576",
+        "source_path": "/mnt/HDD2/qingsong/qinqsong/Datasets/FM/Test/Mozambique/576",
+        "excluded_source_key": "mozambique_1728",
+        "aggregation": "equal_mean_over_contiguous_trajectories",
+        "debug_max_steps": 0,
+        "protocols": {
+          "1day": {
+            "domain": "mozambique_1day",
+            "states_per_trajectory": 288,
+            "prediction_steps_per_trajectory": 287,
+            "trajectory_count": 6,
+            "overall_equal_trajectory_mean": {
+              "rmse": 0.09390853454290121,
+              "mae": 0.03891562030511524,
+              "relative_l2": 0.3834271667200399,
+              "nse": 0.6346876316585176,
+              "corr": 0.8171915249048833,
+              "csi_0.01": 0.609859414460357,
+              "csi_0.05": 0.645158535645706,
+              "csi_0.1": 0.6806881843065927,
+              "csi_0.5": 0.6130529294757477
+            }
+          },
+          "2day": {
+            "domain": "mozambique_2day",
+            "states_per_trajectory": 576,
+            "prediction_steps_per_trajectory": 575,
+            "trajectory_count": 3,
+            "overall_equal_trajectory_mean": {
+              "rmse": 0.1690507288119398,
+              "mae": 0.07233329172320711,
+              "relative_l2": 0.5493574307192846,
+              "nse": 0.455297428707582,
+              "corr": 0.6545879280178443,
+              "csi_0.01": 0.5665024426091981,
+              "csi_0.05": 0.5076797219067992,
+              "csi_0.1": 0.5137749903898706,
+              "csi_0.5": 0.45944521736407623
+            }
+          }
+        }
+      }
+    },
+    "drive_url": "https://drive.google.com/file/d/1GR0ZrSuSjCzi6sqeHcOTYalH0HXN3Jx6/view?usp=drivesdk",
+    "checkpoint_download_format": "single_file",
+    "checkpoint_sha256": "8cbdcb278dee63d0eeaee5fc38de6341deee2d6f097421eab5862562f680d11e",
+    "remote_sha256_verified": true
+  },
+  {
+    "dataset": "FloodCastBench",
+    "model_id": "11",
+    "model": "Prithvi-EO2-300M-PT-FT",
+    "model_slug": "prithvi",
+    "seed": 42,
+    "world_size": 1,
+    "config": "config/FloodCastBench/prithvi.yaml",
+    "checkpoint": "checkpoints/FloodCastBench/prithvi/best.pth",
+    "checkpoint_epoch": 14,
+    "checkpoint_bytes": 3641028588,
+    "selection_rule": "first formal experimental seed, verified in checkpoint config",
+    "metrics": {
+      "source_macro.json": {
+        "rmse": 1.2313929232233285,
+        "mae": 0.699762456560384,
+        "relative_l2": 1.4969575875519876,
+        "nse": -2.2596388681546724,
+        "corr": 0.27096226599833273,
+        "csi_0.01": 0.4961329605105862,
+        "csi_0.05": 0.4324522122792666,
+        "csi_0.1": 0.3981332764652548,
+        "csi_0.5": 0.2961973750165531
+      },
+      "one_two_day_summary.json": {
+        "source_key": "mozambique_576",
+        "source_path": "/mnt/HDD2/qingsong/qinqsong/Datasets/FM/Test/Mozambique/576",
+        "excluded_source_key": "mozambique_1728",
+        "aggregation": "equal_mean_over_contiguous_trajectories",
+        "debug_max_steps": 0,
+        "protocols": {
+          "1day": {
+            "domain": "mozambique_1day",
+            "states_per_trajectory": 288,
+            "prediction_steps_per_trajectory": 287,
+            "trajectory_count": 6,
+            "overall_equal_trajectory_mean": {
+              "rmse": 0.5874810229607509,
+              "mae": 0.26568099655296556,
+              "relative_l2": 5.160631322279209,
+              "nse": -235.18744575426362,
+              "corr": 0.1237948015695703,
+              "csi_0.01": 0.3443477116079996,
+              "csi_0.05": 0.2457429353636713,
+              "csi_0.1": 0.19740995082691995,
+              "csi_0.5": 0.09423500350232804
+            }
+          },
+          "2day": {
+            "domain": "mozambique_2day",
+            "states_per_trajectory": 576,
+            "prediction_steps_per_trajectory": 575,
+            "trajectory_count": 3,
+            "overall_equal_trajectory_mean": {
+              "rmse": 0.7042406732385196,
+              "mae": 0.3331666440106726,
+              "relative_l2": 5.475859530680421,
+              "nse": -236.31314333689693,
+              "corr": 0.07552528802496533,
+              "csi_0.01": 0.3518007446229931,
+              "csi_0.05": 0.25146493191391306,
+              "csi_0.1": 0.20484900502927172,
+              "csi_0.5": 0.09348971050712655
+            }
+          }
+        }
+      }
+    },
+    "drive_url": "https://drive.google.com/drive/folders/1lbd0gkFeJT6qmEl8kyukJG_YSG5tuqhO",
+    "checkpoint_download_format": "byte_parts",
+    "checkpoint_sha256": "371305e7b494bc2fb7621b6359f8065cdea5906f79a8f03db4f8ee9e4ff31e21",
+    "remote_sha256_verified": true
+  },
+  {
+    "dataset": "FloodSimBench",
+    "model_id": "01",
+    "model": "UNet",
+    "model_slug": "unet",
+    "seed": 1,
+    "world_size": 2,
+    "config": "config/FloodSimBench/unet.yaml",
+    "checkpoint": "checkpoints/FloodSimBench/unet/best.pth",
+    "checkpoint_epoch": 14,
+    "checkpoint_bytes": 93342680,
+    "selection_rule": "first formal experimental seed, verified in checkpoint config",
+    "metrics": {
+      "city_macro.json": {
+        "rmse": 0.12378674693578223,
+        "mae": 0.06681010309038904,
+        "relative_l2": 2.139340648631477,
+        "nse": -5.916956712386494,
+        "corr": 0.05456765301541805,
+        "csi_0.01": 0.06817929546692783,
+        "csi_0.05": 0.04566312417240562,
+        "csi_0.1": 0.0402773753902788,
+        "csi_0.5": 0.010665911706728343
+      }
+    },
+    "drive_url": "https://drive.google.com/file/d/1wSOU-lxn5t7CsIGqIHN2DO3_CD8U1d9v/view?usp=drivesdk",
+    "checkpoint_download_format": "single_file",
+    "checkpoint_sha256": "a7917a8077c975e866591fc8cb2f69a51245cadb4d258b81bc86aec81c97e237",
+    "remote_sha256_verified": true
+  },
+  {
+    "dataset": "FloodSimBench",
+    "model_id": "04",
+    "model": "FNO",
+    "model_slug": "fno",
+    "seed": 1,
+    "world_size": 2,
+    "config": "config/FloodSimBench/fno.yaml",
+    "checkpoint": "checkpoints/FloodSimBench/fno/best.pth",
+    "checkpoint_epoch": 34,
+    "checkpoint_bytes": 11226922,
+    "selection_rule": "first formal experimental seed, verified in checkpoint config",
+    "metrics": {
+      "city_macro.json": {
+        "rmse": 0.10836734882262258,
+        "mae": 0.03094599041607798,
+        "relative_l2": 1.8341859856398022,
+        "nse": -3.9521165544246815,
+        "corr": 0.32826161109705365,
+        "csi_0.01": 0.14490113108371389,
+        "csi_0.05": 0.14912386476545855,
+        "csi_0.1": 0.13396929019401244,
+        "csi_0.5": 0.10079381859322151
+      }
+    },
+    "drive_url": "https://drive.google.com/file/d/1tg0PFZGm7TntNf7pnuuKqughkd8sMeGV/view?usp=drivesdk",
+    "checkpoint_download_format": "single_file",
+    "checkpoint_sha256": "498c0f0bdfef0ed179b4813fb118c5b21830375212f9878e2c69e35760ae7ca2",
+    "remote_sha256_verified": true
+  },
+  {
+    "dataset": "FloodSimBench",
+    "model_id": "02",
+    "model": "ConvLSTM-Scratch",
+    "model_slug": "convlstm",
+    "seed": 1,
+    "world_size": 1,
+    "config": "config/FloodSimBench/convlstm.yaml",
+    "checkpoint": "checkpoints/FloodSimBench/convlstm/best.pth",
+    "checkpoint_epoch": 89,
+    "checkpoint_bytes": 145043218,
+    "selection_rule": "first formal experimental seed, verified in checkpoint config",
+    "metrics": {
+      "city_macro.json": {
+        "rmse": 0.16248581835734238,
+        "mae": 0.05443188908561095,
+        "relative_l2": 2.706047457587252,
+        "nse": -24.210241182868586,
+        "corr": 0.41239571124927443,
+        "csi_0.01": 0.2320064222457499,
+        "csi_0.05": 0.21337359204491024,
+        "csi_0.1": 0.19468053633871887,
+        "csi_0.5": 0.15700177960359868
+      }
+    },
+    "drive_url": "https://drive.google.com/drive/folders/1JptJWidn32k-evvYNRtc5o2fPSoFIR8S",
+    "checkpoint_download_format": "byte_parts",
+    "checkpoint_sha256": "bed0cabcaad5c4775e29040a5e55ff55c9c2f87724d0961379c9f9d80bfd748a",
+    "remote_sha256_verified": true
+  },
+  {
+    "dataset": "FloodSimBench",
+    "model_id": "05",
+    "model": "EarthFormer-Scratch",
+    "model_slug": "earthformer",
+    "seed": 1,
+    "world_size": 1,
+    "config": "config/FloodSimBench/earthformer.yaml",
+    "checkpoint": "checkpoints/FloodSimBench/earthformer/best.pth",
+    "checkpoint_epoch": 74,
+    "checkpoint_bytes": 101208252,
+    "selection_rule": "first formal experimental seed, verified in checkpoint config",
+    "metrics": {
+      "city_macro.json": {
+        "rmse": 0.08869776063290569,
+        "mae": 0.027766737224393993,
+        "relative_l2": 1.4159519626754358,
+        "nse": -1.7715072961790563,
+        "corr": 0.2878203312181101,
+        "csi_0.01": 0.1662103213181323,
+        "csi_0.05": 0.1493227994169366,
+        "csi_0.1": 0.12433686469790445,
+        "csi_0.5": 0.05819006086688282
+      }
+    },
+    "drive_url": "https://drive.google.com/file/d/1Ru4jqeHXsvTuVVvOZlNiABBCOoYai3Rn/view?usp=drivesdk",
+    "checkpoint_download_format": "single_file",
+    "checkpoint_sha256": "be7eadca5868fd7620787e026f7f28d50181bda5cff9c993c79abdd8e446f4f4",
+    "remote_sha256_verified": true
+  },
+  {
+    "dataset": "FloodSimBench",
+    "model_id": "06",
+    "model": "PDE-T-SC-S-PT-FT",
+    "model_slug": "pde_transformer",
+    "seed": 1,
+    "world_size": 4,
+    "config": "config/FloodSimBench/pde_transformer.yaml",
+    "checkpoint": "checkpoints/FloodSimBench/pde_transformer/best.pth",
+    "checkpoint_epoch": 69,
+    "checkpoint_bytes": 559920624,
+    "selection_rule": "first formal experimental seed, verified in checkpoint config",
+    "metrics": {
+      "city_macro.json": {
+        "rmse": 0.06385618882599536,
+        "mae": 0.011378273682141607,
+        "relative_l2": 0.9165337065892729,
+        "nse": 0.11885951538053526,
+        "corr": 0.38157865496429444,
+        "csi_0.01": 0.12361828187725343,
+        "csi_0.05": 0.08648815021896285,
+        "csi_0.1": 0.06682165346428993,
+        "csi_0.5": 0.04439186877705785
+      }
+    },
+    "drive_url": "https://drive.google.com/drive/folders/1aSh3xdmf_J9GUTp6FyttCzM1Q_sjBxUz",
+    "checkpoint_download_format": "byte_parts",
+    "checkpoint_sha256": "f6f68f97d96ce1b76aed10e428c21435b33c2d07cd867d84f8329f37f8aa3e9c",
+    "remote_sha256_verified": true
+  },
+  {
+    "dataset": "FloodSimBench",
+    "model_id": "07",
+    "model": "DPOT-S-PT-FT",
+    "model_slug": "dpot",
+    "seed": 1,
+    "world_size": 1,
+    "config": "config/FloodSimBench/dpot.yaml",
+    "checkpoint": "checkpoints/FloodSimBench/dpot/best.pth",
+    "checkpoint_epoch": 24,
+    "checkpoint_bytes": 231379940,
+    "selection_rule": "first formal experimental seed, verified in checkpoint config",
+    "metrics": {
+      "city_macro.json": {
+        "rmse": 0.08143230257133041,
+        "mae": 0.012353057470213188,
+        "relative_l2": 1.3025897003673206,
+        "nse": -1.1867729117807662,
+        "corr": 0.31927963854169905,
+        "csi_0.01": 0.06256669918549046,
+        "csi_0.05": 0.06026511895990678,
+        "csi_0.1": 0.06147947722790527,
+        "csi_0.5": 0.09502130877700043
+      }
+    },
+    "drive_url": "https://drive.google.com/drive/folders/1tW5UZ9S8di9u_DHYkmHQpsl-4VFziHv2",
+    "checkpoint_download_format": "byte_parts",
+    "checkpoint_sha256": "4b2e7f11755798f1246750a7f83cfa4c6661dc0eba9abc6c8bb5a9ba52099e64",
+    "remote_sha256_verified": true
+  },
+  {
+    "dataset": "FloodSimBench",
+    "model_id": "08",
+    "model": "Poseidon-T-PT-FT",
+    "model_slug": "poseidon",
+    "seed": 1,
+    "world_size": 2,
+    "config": "config/FloodSimBench/poseidon.yaml",
+    "checkpoint": "checkpoints/FloodSimBench/poseidon/best.pth",
+    "checkpoint_epoch": 44,
+    "checkpoint_bytes": 250480756,
+    "selection_rule": "first formal experimental seed, verified in checkpoint config",
+    "metrics": {
+      "city_macro.json": {
+        "rmse": 0.19845008759108368,
+        "mae": 0.05708990937338641,
+        "relative_l2": 3.4081847108807883,
+        "nse": -14.145746470597057,
+        "corr": 0.39804105191672245,
+        "csi_0.01": 0.15585187159013,
+        "csi_0.05": 0.20847332415191816,
+        "csi_0.1": 0.19300225273264687,
+        "csi_0.5": 0.059860135847741996
+      }
+    },
+    "drive_url": "https://drive.google.com/drive/folders/1xbR6qFx1u6V8Ud9AhBrSwSa95_G6p0CV",
+    "checkpoint_download_format": "byte_parts",
+    "checkpoint_sha256": "280281b780040b0260525c8ce176e37cc8e8bb1113d33c134b03bb2bf6079cac",
+    "remote_sha256_verified": true
+  },
+  {
+    "dataset": "FloodSimBench",
+    "model_id": "09",
+    "model": "GPhyT-S-PT-FT",
+    "model_slug": "gphyt",
+    "seed": 1,
+    "world_size": 1,
+    "config": "config/FloodSimBench/gphyt.yaml",
+    "checkpoint": "checkpoints/FloodSimBench/gphyt/best.pth",
+    "checkpoint_epoch": 79,
+    "checkpoint_bytes": 116792248,
+    "selection_rule": "first formal experimental seed, verified in checkpoint config",
+    "metrics": {
+      "city_macro.json": {
+        "rmse": 0.05929141092813221,
+        "mae": 0.02117290524386848,
+        "relative_l2": 0.9313130161136536,
+        "nse": -0.1383440396524775,
+        "corr": 0.544762843044067,
+        "csi_0.01": 0.14124581191471003,
+        "csi_0.05": 0.2139556448374103,
+        "csi_0.1": 0.23977368545547056,
+        "csi_0.5": 0.18865567266758546
+      }
+    },
+    "drive_url": "https://drive.google.com/drive/folders/1V9HN59L4JxXz_xbTK39nMlzt32QkskwQ",
+    "checkpoint_download_format": "byte_parts",
+    "checkpoint_sha256": "52bd026f0ce653029e37364ed79aa811b77275417ac65702cebc9975b40cc5ab",
+    "remote_sha256_verified": true
+  },
+  {
+    "dataset": "FloodSimBench",
+    "model_id": "11",
+    "model": "Prithvi-EO2-300M-PT-FT",
+    "model_slug": "prithvi",
+    "seed": 1,
+    "world_size": 1,
+    "config": "config/FloodSimBench/prithvi.yaml",
+    "checkpoint": "checkpoints/FloodSimBench/prithvi/best.pth",
+    "checkpoint_epoch": 34,
+    "checkpoint_bytes": 3685849324,
+    "selection_rule": "first formal experimental seed, verified in checkpoint config",
+    "metrics": {
+      "city_macro.json": {
+        "rmse": 0.0717897877706428,
+        "mae": 0.022488206475700913,
+        "relative_l2": 1.1575859237499353,
+        "nse": -0.6980990349723066,
+        "corr": 0.3614078310094727,
+        "csi_0.01": 0.1365529657298101,
+        "csi_0.05": 0.18126436243348043,
+        "csi_0.1": 0.15433599947577004,
+        "csi_0.5": 0.06422982039295665
+      }
+    },
+    "drive_url": "https://drive.google.com/drive/folders/1BpP7euh-x9e4rQ_dimmOz7_qWsACX75k",
+    "checkpoint_download_format": "byte_parts",
+    "checkpoint_sha256": "704fcd09cf98375014a881005e1c7bb858473207a4377d939f63c8c11a04efb5",
+    "remote_sha256_verified": true
+  },
+  {
+    "dataset": "LandslideCast",
+    "model_id": "02",
+    "model": "ConvLSTM-Scratch",
+    "model_slug": "convlstm",
+    "seed": 0,
+    "world_size": 1,
+    "config": "config/LandslideCast/convlstm.yaml",
+    "checkpoint": "checkpoints/LandslideCast/convlstm/best.pth",
+    "checkpoint_epoch": 59,
+    "checkpoint_bytes": 138580570,
+    "selection_rule": "first formal experimental seed, verified in checkpoint config",
+    "metrics": {
+      "run_summary.json": {
+        "model": "ConvLSTM-Scratch",
+        "mode": "train",
+        "run_id": "formal_accelerated_v2_strict",
+        "global_update": 124962,
+        "updates_this_run": 79969,
+        "amp_skipped_updates": 38,
+        "precision": "AMP FP16",
+        "gradient_nonzero_verified": true,
+        "validation": {
+          "objective": 5.947297920970521,
+          "official_RelL2_h": 0.7323411930172055,
+          "official_RelL2_u": 0.8209095698500845,
+          "RMSE_h": 5.611376599218334,
+          "MAE_h": 1.0840401393529593,
+          "RelL2_h": 0.7323411930172055,
+          "RMSE_h@t80": 6.53281519495261,
+          "MAE_h@t80": 1.1219717323071718,
+          "RelL2_h@t80": 0.8190862634514486,
+          "RMSE_u": 14.422076791215055,
+          "MAE_u": 1.379632059668094,
+          "RelL2_u": 0.8209095698500845,
+          "RMSE_u@t80": 24.116930666178003,
+          "MAE_u@t80": 1.2917041239522218,
+          "RelL2_u@t80": 0.8350382255848441
+        },
+        "test": {
+          "objective": 5.653058394627706,
+          "official_RelL2_h": 0.6913478407804247,
+          "official_RelL2_u": 0.8136235091647382,
+          "RMSE_h": 9.644636299131387,
+          "MAE_h": 1.202303551711437,
+          "RelL2_h": 0.6913478407804247,
+          "RMSE_h@t80": 16.915499394108004,
+          "MAE_h@t80": 1.4612983493776321,
+          "RelL2_h@t80": 0.7371632447576322,
+          "RMSE_u": 44.7713959844899,
+          "MAE_u": 1.3226894850754798,
+          "RelL2_u": 0.8136235091647382,
+          "RMSE_u@t80": 122.91406120690924,
+          "MAE_u@t80": 1.5324326422450543,
+          "RelL2_u@t80": 0.8227745111714072
+        },
+        "output_equivalence": {
+          "equivalent": true,
+          "elementwise_allclose": true,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2_delta": 0.0,
+          "relative_l2_tolerance": 0.001,
+          "reference_loss": 8.012238502502441,
+          "candidate_loss": 8.012238502502441,
+          "loss_abs_delta": 0.0,
+          "loss_abs_tolerance": 0.001,
+          "audit_precision": "AMP FP16",
+          "rtol": 0.001,
+          "atol": 0.01
+        },
+        "performance": {
+          "steady_updates": 79967,
+          "samples_per_second_median": 3.3390925714931905,
+          "forward_seconds_median": 0.8309678193181753,
+          "backward_seconds_median": 1.5603002794086933,
+          "optimizer_seconds_median": 0.0020658113062381744,
+          "peak_allocated": 32022250496,
+          "peak_reserved": 32384221184,
+          "loss_all_finite": true
+        },
+        "reload_consistent": true,
+        "parameters_total": 11545858,
+        "parameters_trainable": 11545858
+      },
+      "posthoc_cap200_pooled.json": {
+        "model": "ConvLSTM-Scratch",
+        "checkpoint": "/home/yuezeng/EarthDynamics/Landslide/Flood08/results/LandslideCast_accelerated/formal_accelerated_v2_strict/ConvLSTM-Scratch/best_validation.pt",
+        "checkpoint_epoch": 59,
+        "best_validation": 5.777043394778765,
+        "test_samples": 1000,
+        "cap": 200.0,
+        "valid_cells": {
+          "h": 319942827,
+          "u": 319931818
+        },
+        "total_cells": 320000000,
+        "finite_predictions": true,
+        "parameters_total": 11545858,
+        "metrics": {
+          "RMSE_h": 5.631324787883736,
+          "MAE_h": 1.1088510956305402,
+          "RelL2_h": 0.691305785529134,
+          "RMSE_u": 6.197206898189447,
+          "MAE_u": 1.1565106075262361,
+          "RelL2_u": 0.812647884173272,
+          "CSI_0.5": 0.5603862072971203,
+          "CSI_5": 0.4384698170362763
+        },
+        "contingency": {
+          "CSI_0.5": {
+            "hits": 29021537,
+            "misses": 8547544,
+            "false_alarms": 14219376,
+            "denominator": 51788457
+          },
+          "CSI_5": {
+            "hits": 9714080,
+            "misses": 10173631,
+            "false_alarms": 2266790,
+            "denominator": 22154501
+          }
+        },
+        "official_uncapped_recomputed": {
+          "RMSE_h": 9.644636299131387,
+          "MAE_h": 1.202303551711437,
+          "RelL2_h": 0.6913478407804247,
+          "RMSE_u": 44.7713959844899,
+          "MAE_u": 1.3226894850754798,
+          "RelL2_u": 0.8136235091647382
+        },
+        "audit_metrics": {
+          "RMSE_h": 5.631324787883736,
+          "MAE_h": 1.1088510956305402,
+          "RelL2_h": 0.691305785529134,
+          "RMSE_u": 6.197206898189447,
+          "MAE_u": 1.1565106075262361,
+          "RelL2_u": 0.812647884173272,
+          "CSI_0.5": 0.5603862072971203,
+          "CSI_5": 0.4384698170362763
+        },
+        "max_audit_delta": 0.0
+      }
+    },
+    "drive_url": "https://drive.google.com/drive/folders/1BEykI4alJ0-E41ozuAHw4PALIEkF-v93",
+    "checkpoint_download_format": "byte_parts",
+    "checkpoint_sha256": "0dbaa32464fcda41b099d175a8d076d39d0951c85dcb151af272bf96efb8ec09",
+    "remote_sha256_verified": true
+  },
+  {
+    "dataset": "LandslideCast",
+    "model_id": "04",
+    "model": "FNO3D-Scratch",
+    "model_slug": "fno",
+    "seed": 0,
+    "world_size": 1,
+    "config": "config/LandslideCast/fno.yaml",
+    "checkpoint": "checkpoints/LandslideCast/fno/best.pth",
+    "checkpoint_epoch": 99,
+    "checkpoint_bytes": 629507761,
+    "selection_rule": "first formal experimental seed, verified in checkpoint config",
+    "metrics": {
+      "run_summary.json": {
+        "model": "FNO3D-Scratch",
+        "mode": "train",
+        "run_id": "formal_accelerated_v2_strict",
+        "global_update": 125000,
+        "updates_this_run": 11250,
+        "amp_skipped_updates": 0,
+        "precision": "FP32",
+        "gradient_nonzero_verified": true,
+        "validation": {
+          "objective": 4.500343728105149,
+          "official_RelL2_h": 0.5289193743197458,
+          "official_RelL2_u": 0.7979081078669219,
+          "RMSE_h": 3.7854759519874848,
+          "MAE_h": 0.8768382434195243,
+          "RelL2_h": 0.5289193743197458,
+          "RMSE_h@t80": 5.007959082496201,
+          "MAE_h@t80": 0.9199409604195733,
+          "RelL2_h@t80": 0.6194822358144942,
+          "RMSE_u": 14.285483704479525,
+          "MAE_u": 1.5668962191624887,
+          "RelL2_u": 0.7979081078669219,
+          "RMSE_u@t80": 24.124091881930557,
+          "MAE_u@t80": 1.5073725238916322,
+          "RelL2_u@t80": 0.883963834567499
+        },
+        "test": {
+          "objective": 4.434642094395548,
+          "official_RelL2_h": 0.52096752962002,
+          "official_RelL2_u": 0.7878693870553946,
+          "RMSE_h": 8.568664835649,
+          "MAE_h": 0.9504691709035763,
+          "RelL2_h": 0.52096752962002,
+          "RMSE_h@t80": 16.266511282242167,
+          "MAE_h@t80": 1.2004669363657994,
+          "RelL2_h@t80": 0.6188497887812688,
+          "RMSE_u": 44.70559311139617,
+          "MAE_u": 1.4910816141355845,
+          "RelL2_u": 0.7878693870553946,
+          "RMSE_u@t80": 122.90697902585451,
+          "MAE_u@t80": 1.7319152239100613,
+          "RelL2_u@t80": 0.8710139891596794
+        },
+        "output_equivalence": null,
+        "performance": {
+          "steady_updates": 11248,
+          "samples_per_second_median": 3.2557266589095106,
+          "forward_seconds_median": 0.08857690368313342,
+          "backward_seconds_median": 0.214940570644103,
+          "optimizer_seconds_median": 0.022055966779589653,
+          "peak_allocated": 2403887616,
+          "peak_reserved": 2990538752,
+          "loss_all_finite": true
+        },
+        "reload_consistent": true,
+        "parameters_total": 26240066,
+        "parameters_trainable": 26240066
+      },
+      "posthoc_cap200_pooled.json": {
+        "model": "FNO3D-Scratch",
+        "checkpoint": "/home/yuezeng/EarthDynamics/Landslide/Flood08/results/LandslideCast_accelerated/formal_accelerated_v2_strict/FNO3D-Scratch/best_validation.pt",
+        "checkpoint_epoch": 99,
+        "best_validation": 4.500343728105149,
+        "test_samples": 1000,
+        "cap": 200.0,
+        "valid_cells": {
+          "h": 319942827,
+          "u": 319931818
+        },
+        "total_cells": 320000000,
+        "finite_predictions": true,
+        "parameters_total": 26240066,
+        "metrics": {
+          "RMSE_h": 3.600547607074747,
+          "MAE_h": 0.8582443298460917,
+          "RelL2_h": 0.5208843319297823,
+          "RMSE_u": 5.7558142747246945,
+          "MAE_u": 1.32538294193228,
+          "RelL2_u": 0.7863880087857932,
+          "CSI_0.5": 0.558400557282005,
+          "CSI_5": 0.5987411688153138
+        },
+        "contingency": {
+          "CSI_0.5": {
+            "hits": 33686679,
+            "misses": 3882402,
+            "false_alarms": 22758006,
+            "denominator": 60327087
+          },
+          "CSI_5": {
+            "hits": 15340769,
+            "misses": 4546942,
+            "false_alarms": 5733993,
+            "denominator": 25621704
+          }
+        },
+        "official_uncapped_recomputed": {
+          "RMSE_h": 8.568664821387626,
+          "MAE_h": 0.9504691584491003,
+          "RelL2_h": 0.5209675391345804,
+          "RMSE_u": 44.70559310238368,
+          "MAE_u": 1.4910815911319197,
+          "RelL2_u": 0.7878693814744044
+        },
+        "audit_metrics": {
+          "RMSE_h": 3.600547607074747,
+          "MAE_h": 0.8582443298460917,
+          "RelL2_h": 0.5208843319297823,
+          "RMSE_u": 5.7558142747246945,
+          "MAE_u": 1.32538294193228,
+          "RelL2_u": 0.7863880087857932,
+          "CSI_0.5": 0.558400557282005,
+          "CSI_5": 0.5987411688153138
+        },
+        "max_audit_delta": 0.0
+      }
+    },
+    "drive_url": "https://drive.google.com/drive/folders/1081qAoFyyZOJB5ncf4K0jLbkUhdC1gRD",
+    "checkpoint_download_format": "byte_parts",
+    "checkpoint_sha256": "b26b374b5d3b879b1db6502635f5702278a33350b5b64dca067bd122bb828afc",
+    "remote_sha256_verified": true
+  },
+  {
+    "dataset": "LandslideCast",
+    "model_id": "06",
+    "model": "PDE-T-SC-S-PT-FT",
+    "model_slug": "pde_transformer",
+    "seed": 0,
+    "world_size": 2,
+    "config": "config/LandslideCast/pde_transformer.yaml",
+    "checkpoint": "checkpoints/LandslideCast/pde_transformer/best.pth",
+    "checkpoint_epoch": 89,
+    "checkpoint_bytes": 559929182,
+    "selection_rule": "first formal experimental seed, verified in checkpoint config",
+    "metrics": {
+      "run_summary.json": {
+        "model": "PDE-T-SC-S-PT-FT",
+        "mode": "train",
+        "run_id": "formal_accelerated_v2_strict",
+        "global_update": 125000,
+        "updates_this_run": 87500,
+        "amp_skipped_updates": 0,
+        "precision": "AMP BF16",
+        "gradient_nonzero_verified": true,
+        "validation": {
+          "objective": 2.661588524690376,
+          "official_RelL2_h": 0.3063498295239258,
+          "official_RelL2_u": 0.5171397180228949,
+          "RMSE_h": 2.5347530566167267,
+          "MAE_h": 0.48065291834415197,
+          "RelL2_h": 0.3063498295239258,
+          "RMSE_h@t80": 3.985656045363347,
+          "MAE_h@t80": 0.5311805991998434,
+          "RelL2_h@t80": 0.35476017453489794,
+          "RMSE_u": 13.603060745643527,
+          "MAE_u": 0.9650489794970989,
+          "RelL2_u": 0.5171397180228949,
+          "RMSE_u@t80": 23.940823274985423,
+          "MAE_u@t80": 1.1508105145202876,
+          "RelL2_u@t80": 0.6296641280906285
+        },
+        "test": {
+          "objective": 2.5650522747213715,
+          "official_RelL2_h": 0.29349991542363013,
+          "official_RelL2_u": 0.5105528667559615,
+          "RMSE_h": 8.06415158615772,
+          "MAE_h": 0.5763787284140497,
+          "RelL2_h": 0.29349991542363013,
+          "RMSE_h@t80": 15.94009322589429,
+          "MAE_h@t80": 0.8588210088826179,
+          "RelL2_h@t80": 0.3391933685249969,
+          "RMSE_u": 44.50421943317799,
+          "MAE_u": 0.8889008680161298,
+          "RelL2_u": 0.5105528667559615,
+          "RMSE_u@t80": 122.87105696077157,
+          "MAE_u@t80": 1.3850632983341693,
+          "RelL2_u@t80": 0.6188664466386201
+        },
+        "output_equivalence": {
+          "equivalent": true,
+          "elementwise_allclose": true,
+          "max_abs": 0.00390625,
+          "mean_abs": 0.00019764251192100346,
+          "relative_l2_delta": 0.0015941157471388578,
+          "relative_l2_tolerance": 0.005,
+          "reference_loss": 8.039020538330078,
+          "candidate_loss": 8.039024353027344,
+          "loss_abs_delta": 3.814697265625e-06,
+          "loss_abs_tolerance": 0.001,
+          "audit_precision": "AMP BF16",
+          "rtol": 0.001,
+          "atol": 0.01
+        },
+        "performance": {
+          "steady_updates": 87498,
+          "samples_per_second_median": 3.7074277633069963,
+          "forward_seconds_median": 0.3049757210537791,
+          "backward_seconds_median": 0.7469829120673239,
+          "optimizer_seconds_median": 0.04677675012499094,
+          "peak_allocated": 31565544448,
+          "peak_reserved": 32684113920,
+          "loss_all_finite": true
+        },
+        "reload_consistent": true,
+        "parameters_total": 46566776,
+        "parameters_trainable": 46566776
+      },
+      "posthoc_cap200_pooled.json": {
+        "model": "PDE-T-SC-S-PT-FT",
+        "checkpoint": "/home/yuezeng/EarthDynamics/Landslide/Flood08/results/LandslideCast_accelerated/formal_accelerated_v2_strict/PDE-T-SC-S-PT-FT/best_validation.pt",
+        "checkpoint_epoch": 89,
+        "best_validation": 2.6547763802353765,
+        "test_samples": 1000,
+        "cap": 200.0,
+        "valid_cells": {
+          "h": 319942827,
+          "u": 319931818
+        },
+        "total_cells": 320000000,
+        "finite_predictions": true,
+        "parameters_total": 46566776,
+        "metrics": {
+          "RMSE_h": 2.3719609573460954,
+          "MAE_h": 0.48545983996691305,
+          "RelL2_h": 0.29349490280503954,
+          "RMSE_u": 3.9115819681914883,
+          "MAE_u": 0.7232365446334889,
+          "RelL2_u": 0.5071610752207153,
+          "CSI_0.5": 0.7849508944536929,
+          "CSI_5": 0.7886248745922356
+        },
+        "contingency": {
+          "CSI_0.5": {
+            "hits": 34501409,
+            "misses": 3067672,
+            "false_alarms": 6384508,
+            "denominator": 43953589
+          },
+          "CSI_5": {
+            "hits": 17327135,
+            "misses": 2560576,
+            "false_alarms": 2083616,
+            "denominator": 21971327
+          }
+        },
+        "official_uncapped_recomputed": {
+          "RMSE_h": 8.06415158615772,
+          "MAE_h": 0.5763787284140497,
+          "RelL2_h": 0.2934999154236301,
+          "RMSE_u": 44.504219433177965,
+          "MAE_u": 0.8889008680161298,
+          "RelL2_u": 0.5105528667559616
+        },
+        "audit_metrics": {
+          "RMSE_h": 2.3719609573460954,
+          "MAE_h": 0.48545983996691305,
+          "RelL2_h": 0.29349490280503954,
+          "RMSE_u": 3.9115819681914883,
+          "MAE_u": 0.7232365446334889,
+          "RelL2_u": 0.5071610752207153,
+          "CSI_0.5": 0.7849508944536929,
+          "CSI_5": 0.7886248745922356
+        },
+        "max_audit_delta": 0.0
+      }
+    },
+    "drive_url": "https://drive.google.com/drive/folders/1nAdxrOxHzs1YCC6cbmjbjmbSfFoYhwBf",
+    "checkpoint_download_format": "byte_parts",
+    "checkpoint_sha256": "4f0d6e59b912458bbd5cc014feffe0aa62e831c447b2f514abfd9c9fe24f8ea0",
+    "remote_sha256_verified": true
+  },
+  {
+    "dataset": "LandslideCast",
+    "model_id": "08",
+    "model": "Poseidon-T-PT-FT",
+    "model_slug": "poseidon",
+    "seed": 0,
+    "world_size": 1,
+    "config": "config/LandslideCast/poseidon.yaml",
+    "checkpoint": "checkpoints/LandslideCast/poseidon/best.pth",
+    "checkpoint_epoch": 79,
+    "checkpoint_bytes": 250408500,
+    "selection_rule": "first formal experimental seed, verified in checkpoint config",
+    "metrics": {
+      "run_summary.json": {
+        "model": "Poseidon-T-PT-FT",
+        "mode": "train",
+        "run_id": "formal_accelerated_v2_strict",
+        "global_update": 124963,
+        "updates_this_run": 34990,
+        "amp_skipped_updates": 37,
+        "precision": "AMP FP16",
+        "gradient_nonzero_verified": true,
+        "validation": {
+          "objective": 2.516323948409654,
+          "official_RelL2_h": 0.2867046558606347,
+          "official_RelL2_u": 0.5093913573852117,
+          "RMSE_h": 2.425713126360108,
+          "MAE_h": 0.3949148426800506,
+          "RelL2_h": 0.2867046558606347,
+          "RMSE_h@t80": 3.8735465085489977,
+          "MAE_h@t80": 0.4683255530474499,
+          "RelL2_h@t80": 0.33343683744972696,
+          "RMSE_u": 13.582146339497722,
+          "MAE_u": 0.9178243956568125,
+          "RelL2_u": 0.5093913573852117,
+          "RMSE_u@t80": 23.949876305002544,
+          "MAE_u@t80": 1.1410113752606705,
+          "RelL2_u@t80": 0.6299940370678929
+        },
+        "test": {
+          "objective": 2.4127328892217306,
+          "official_RelL2_h": 0.2730702179718718,
+          "official_RelL2_u": 0.5012413634186275,
+          "RMSE_h": 7.982118984589424,
+          "MAE_h": 0.47134651822279616,
+          "RelL2_h": 0.2730702179718718,
+          "RMSE_h@t80": 15.824862706216791,
+          "MAE_h@t80": 0.7492767209453359,
+          "RelL2_h@t80": 0.32063372870982887,
+          "RMSE_u": 44.49756935235456,
+          "MAE_u": 0.8535848442625783,
+          "RelL2_u": 0.5012413634186275,
+          "RMSE_u@t80": 122.86901286680903,
+          "MAE_u@t80": 1.3656189893961102,
+          "RelL2_u@t80": 0.6117733295425062
+        },
+        "output_equivalence": {
+          "equivalent": true,
+          "elementwise_allclose": false,
+          "max_abs": 0.0003285408020019531,
+          "mean_abs": 2.1950195332465228e-06,
+          "relative_l2_delta": 2.6274550691596232e-05,
+          "relative_l2_tolerance": 0.001,
+          "reference_loss": 8.038614273071289,
+          "candidate_loss": 8.038614273071289,
+          "loss_abs_delta": 0.0,
+          "loss_abs_tolerance": 0.001,
+          "audit_precision": "FP32",
+          "rtol": 1e-05,
+          "atol": 1e-06
+        },
+        "performance": {
+          "steady_updates": 34988,
+          "samples_per_second_median": 7.0181679291299215,
+          "forward_seconds_median": 0.3648887472227216,
+          "backward_seconds_median": 0.6830863421782851,
+          "optimizer_seconds_median": 0.07676898501813412,
+          "peak_allocated": 36596871680,
+          "peak_reserved": 37587255296,
+          "loss_all_finite": true
+        },
+        "reload_consistent": true,
+        "parameters_total": 20771838,
+        "parameters_trainable": 20771838
+      },
+      "posthoc_cap200_pooled.json": {
+        "model": "Poseidon-T-PT-FT",
+        "checkpoint": "/home/yuezeng/EarthDynamics/Landslide/Flood08/results/LandslideCast_accelerated/formal_accelerated_v2_strict/Poseidon-T-PT-FT/best_validation.pt",
+        "checkpoint_epoch": 79,
+        "best_validation": 2.5014204653877097,
+        "test_samples": 1000,
+        "cap": 200.0,
+        "valid_cells": {
+          "h": 319942827,
+          "u": 319931818
+        },
+        "total_cells": 320000000,
+        "finite_predictions": true,
+        "parameters_total": 20771838,
+        "metrics": {
+          "RMSE_h": 2.2360773422917384,
+          "MAE_h": 0.38117912565366713,
+          "RelL2_h": 0.273063591590452,
+          "RMSE_u": 3.840400831175964,
+          "MAE_u": 0.6880179990225015,
+          "RelL2_u": 0.49792317460956337,
+          "CSI_0.5": 0.8028219548925538,
+          "CSI_5": 0.8020358497858009
+        },
+        "contingency": {
+          "CSI_0.5": {
+            "hits": 34616916,
+            "misses": 2952165,
+            "false_alarms": 5549964,
+            "denominator": 43119045
+          },
+          "CSI_5": {
+            "hits": 17675007,
+            "misses": 2212704,
+            "false_alarms": 2149966,
+            "denominator": 22037677
+          }
+        },
+        "official_uncapped_recomputed": {
+          "RMSE_h": 7.982118984589424,
+          "MAE_h": 0.47134651822279616,
+          "RelL2_h": 0.2730702179718718,
+          "RMSE_u": 44.49756935235456,
+          "MAE_u": 0.8535848442625783,
+          "RelL2_u": 0.5012413634186275
+        },
+        "audit_metrics": {
+          "RMSE_h": 2.2360773422917384,
+          "MAE_h": 0.38117912565366713,
+          "RelL2_h": 0.273063591590452,
+          "RMSE_u": 3.840400831175964,
+          "MAE_u": 0.6880179990225015,
+          "RelL2_u": 0.49792317460956337,
+          "CSI_0.5": 0.8028219548925538,
+          "CSI_5": 0.8020358497858009
+        },
+        "max_audit_delta": 0.0
+      }
+    },
+    "drive_url": "https://drive.google.com/drive/folders/1bMVpKNxMa5ZCQvoDNseaJp5I_3JfekOu",
+    "checkpoint_download_format": "byte_parts",
+    "checkpoint_sha256": "3200612fa42f7a63c4dddeedc2e3ef98fb6deac0fa5afb823b60436e222e8708",
+    "remote_sha256_verified": true
+  },
+  {
+    "dataset": "LandslideCast",
+    "model_id": "01",
+    "model": "UNet3D-Scratch",
+    "model_slug": "unet",
+    "seed": 0,
+    "world_size": 1,
+    "config": "config/LandslideCast/unet.yaml",
+    "checkpoint": "checkpoints/LandslideCast/unet/best.pth",
+    "checkpoint_epoch": 99,
+    "checkpoint_bytes": 262772063,
+    "selection_rule": "first formal experimental seed, verified in checkpoint config",
+    "metrics": {
+      "run_summary.json": {
+        "model": "UNet3D-Scratch",
+        "mode": "train",
+        "run_id": "Data2_t10_5gpu_v3",
+        "global_update": 124964,
+        "updates_this_run": 124964,
+        "amp_skipped_updates": 36,
+        "precision": "AMP FP16",
+        "gradient_nonzero_verified": true,
+        "validation": {
+          "objective": 8.004760597955398,
+          "official_RelL2_h": 0.9970001270760279,
+          "official_RelL2_u": 1.0257597084232004,
+          "RMSE_h": 6.572237196011787,
+          "MAE_h": 1.4061253740341306,
+          "RelL2_h": 0.9970001270760279,
+          "RMSE_h@t80": 7.526576981825109,
+          "MAE_h@t80": 1.5045986219374896,
+          "RelL2_h@t80": 1.073649297812756,
+          "RMSE_u": 14.68658992876157,
+          "MAE_u": 1.4839905243451654,
+          "RelL2_u": 1.0257597084232004,
+          "RMSE_u@t80": 24.22916273874735,
+          "MAE_u@t80": 1.362993560545373,
+          "RelL2_u@t80": 0.9602065401098016
+        },
+        "test": {
+          "objective": 7.9779271206635975,
+          "official_RelL2_h": 0.9915742985393374,
+          "official_RelL2_u": 1.0369070308882455,
+          "RMSE_h": 10.142342499458781,
+          "MAE_h": 1.4876859780588358,
+          "RelL2_h": 0.9915742985393374,
+          "RMSE_h@t80": 17.24841673996315,
+          "MAE_h@t80": 1.7975495186296464,
+          "RelL2_h@t80": 1.0493715959862349,
+          "RMSE_u": 44.84550853416885,
+          "MAE_u": 1.4218392740417303,
+          "RelL2_u": 1.0369070308882455,
+          "RMSE_u@t80": 122.9367662219313,
+          "MAE_u@t80": 1.5988708322633742,
+          "RelL2_u@t80": 0.9596261813203736
+        },
+        "output_equivalence": null,
+        "performance": {
+          "steady_updates": 124962,
+          "samples_per_second_median": 31.27266408749831,
+          "forward_seconds_median": 0.010530279949307442,
+          "backward_seconds_median": 0.020099649438634515,
+          "optimizer_seconds_median": 0.0051132626831531525,
+          "peak_allocated": 1003928576,
+          "peak_reserved": 1136656384,
+          "loss_all_finite": true
+        },
+        "reload_consistent": true,
+        "parameters_total": 21886306,
+        "parameters_trainable": 21886306
+      }
+    },
+    "drive_url": "https://drive.google.com/drive/folders/12EI_f-JSot5nS9arCPstzuPKQlYFBIq9",
+    "checkpoint_download_format": "byte_parts",
+    "checkpoint_sha256": "3ffe05cec7f4b00df33c2c0b57de61035f5073fc8b500cfa0ffc3c47c4d6de72",
+    "remote_sha256_verified": true
+  },
+  {
+    "dataset": "LandslideCast",
+    "model_id": "05",
+    "model": "EarthFormer-Scratch",
+    "model_slug": "earthformer",
+    "seed": 0,
+    "world_size": 1,
+    "config": "config/LandslideCast/earthformer.yaml",
+    "checkpoint": "checkpoints/LandslideCast/earthformer/best.pth",
+    "checkpoint_epoch": 99,
+    "checkpoint_bytes": 100528454,
+    "selection_rule": "first formal experimental seed, verified in checkpoint config",
+    "metrics": {
+      "run_summary.json": {
+        "model": "EarthFormer-Scratch",
+        "mode": "train",
+        "run_id": "Data2_t10_5gpu_v3",
+        "global_update": 125000,
+        "updates_this_run": 125000,
+        "amp_skipped_updates": 0,
+        "precision": "FP32",
+        "gradient_nonzero_verified": true,
+        "validation": {
+          "objective": 2.558448882508544,
+          "official_RelL2_h": 0.29092359646681343,
+          "official_RelL2_u": 0.5219837072408507,
+          "RMSE_h": 2.438850764798172,
+          "MAE_h": 0.41287577657936503,
+          "RelL2_h": 0.29092359646681343,
+          "RMSE_h@t80": 3.895806750423953,
+          "MAE_h@t80": 0.48013542223692257,
+          "RelL2_h@t80": 0.3355227155036122,
+          "RMSE_u": 13.604811802536233,
+          "MAE_u": 0.9649839687591009,
+          "RelL2_u": 0.5219837072408507,
+          "RMSE_u@t80": 23.94762769495393,
+          "MAE_u@t80": 1.1541537424612474,
+          "RelL2_u@t80": 0.642710001882806
+        },
+        "test": {
+          "objective": 2.456325346216358,
+          "official_RelL2_h": 0.27699192484646057,
+          "official_RelL2_u": 0.5173818722911364,
+          "RMSE_h": 8.043865356900069,
+          "MAE_h": 0.49315538011368654,
+          "RelL2_h": 0.27699192484646057,
+          "RMSE_h@t80": 15.947923230250796,
+          "MAE_h@t80": 0.7635726195071092,
+          "RelL2_h@t80": 0.31387455910931333,
+          "RMSE_u": 44.50181038735393,
+          "MAE_u": 0.8993039629177636,
+          "RelL2_u": 0.5173818722911364,
+          "RMSE_u@t80": 122.86977277510904,
+          "MAE_u@t80": 1.3835732870130022,
+          "RelL2_u@t80": 0.6349252883156876
+        },
+        "output_equivalence": null,
+        "performance": {
+          "steady_updates": 124998,
+          "samples_per_second_median": 11.608473955368845,
+          "forward_seconds_median": 0.0363064972916618,
+          "backward_seconds_median": 0.04639987961854786,
+          "optimizer_seconds_median": 0.02052180841565132,
+          "peak_allocated": 1481170432,
+          "peak_reserved": 1788870656,
+          "loss_all_finite": true
+        },
+        "reload_consistent": true,
+        "parameters_total": 8650766,
+        "parameters_trainable": 8650766
+      }
+    },
+    "drive_url": "https://drive.google.com/file/d/1hbTLg3poOiEV0YE3xA0VpIze9YcMnP7w/view?usp=drivesdk",
+    "checkpoint_download_format": "single_file",
+    "checkpoint_sha256": "3b82cc344613e98ae69e9756c7c92fa13e66e18cbcb75d8198159a2653397098",
+    "remote_sha256_verified": true
+  },
+  {
+    "dataset": "LandslideCast",
+    "model_id": "07",
+    "model": "DPOT-S-PT-FT",
+    "model_slug": "dpot",
+    "seed": 0,
+    "world_size": 1,
+    "config": "config/LandslideCast/dpot.yaml",
+    "checkpoint": "checkpoints/LandslideCast/dpot/best.pth",
+    "checkpoint_epoch": 89,
+    "checkpoint_bytes": 331800557,
+    "selection_rule": "first formal experimental seed, verified in checkpoint config",
+    "metrics": {
+      "run_summary.json": {
+        "model": "DPOT-S-PT-FT",
+        "mode": "train",
+        "run_id": "Data2_t10_5gpu_v3",
+        "global_update": 125000,
+        "updates_this_run": 125000,
+        "amp_skipped_updates": 0,
+        "precision": "FP32",
+        "gradient_nonzero_verified": true,
+        "validation": {
+          "objective": 3.3083810566072955,
+          "official_RelL2_h": 0.3790135182457632,
+          "official_RelL2_u": 0.6552864288869508,
+          "RMSE_h": 2.926650793736896,
+          "MAE_h": 0.5663058259327496,
+          "RelL2_h": 0.3790135182457632,
+          "RMSE_h@t80": 4.323750007834303,
+          "MAE_h@t80": 0.6250175168140291,
+          "RelL2_h@t80": 0.42842612971426625,
+          "RMSE_u": 13.909938999888514,
+          "MAE_u": 1.2766962036160643,
+          "RelL2_u": 0.6552864288869508,
+          "RMSE_u@t80": 24.033386835990726,
+          "MAE_u@t80": 1.3801874936782914,
+          "RelL2_u@t80": 0.803918501767361
+        },
+        "test": {
+          "objective": 3.2701375332503297,
+          "official_RelL2_h": 0.3741541240117772,
+          "official_RelL2_u": 0.6510586651678953,
+          "RMSE_h": 8.21583612059465,
+          "MAE_h": 0.6472487864054873,
+          "RelL2_h": 0.3741541240117772,
+          "RMSE_h@t80": 16.051831560043468,
+          "MAE_h@t80": 0.9099824820804937,
+          "RelL2_h@t80": 0.4362114559800997,
+          "RMSE_u": 44.593614495252794,
+          "MAE_u": 1.2035331362007284,
+          "RelL2_u": 0.6510586651678953,
+          "RMSE_u@t80": 122.89191699534473,
+          "MAE_u@t80": 1.6061479880097367,
+          "RelL2_u@t80": 0.79503266832
+        },
+        "output_equivalence": null,
+        "performance": {
+          "steady_updates": 124998,
+          "samples_per_second_median": 20.964500884467128,
+          "forward_seconds_median": 0.01746280991937965,
+          "backward_seconds_median": 0.027651119278743863,
+          "optimizer_seconds_median": 0.007364566437900066,
+          "peak_allocated": 746547200,
+          "peak_reserved": 830472192,
+          "loss_all_finite": true
+        },
+        "reload_consistent": true,
+        "parameters_total": 27639605,
+        "parameters_trainable": 27639605
+      }
+    },
+    "drive_url": "https://drive.google.com/drive/folders/1a5bk56oXODF_W2-tARNLkSCXmBYKqTZR",
+    "checkpoint_download_format": "byte_parts",
+    "checkpoint_sha256": "53f636ed759a8fde326a30262b868ef3d5e559521dfc682cb903a1f43fecf0b0",
+    "remote_sha256_verified": true
+  },
+  {
+    "dataset": "LandslideCast",
+    "model_id": "11",
+    "model": "Prithvi-EO2-300M-PT-FT",
+    "model_slug": "prithvi",
+    "seed": 0,
+    "world_size": 1,
+    "config": "config/LandslideCast/prithvi.yaml",
+    "checkpoint": "checkpoints/LandslideCast/prithvi/best.pth",
+    "checkpoint_epoch": 59,
+    "checkpoint_bytes": 3650132214,
+    "selection_rule": "first formal experimental seed, verified in checkpoint config",
+    "metrics": {
+      "run_summary.json": {
+        "model": "Prithvi-EO2-300M-PT-FT",
+        "mode": "train",
+        "run_id": "Data2_t10_5gpu_v3",
+        "global_update": 124969,
+        "updates_this_run": 124969,
+        "amp_skipped_updates": 31,
+        "precision": "AMP FP16",
+        "gradient_nonzero_verified": true,
+        "validation": {
+          "objective": 2.7970659632340316,
+          "official_RelL2_h": 0.31804356366338654,
+          "official_RelL2_u": 0.5707610175903305,
+          "RMSE_h": 2.5705285899066386,
+          "MAE_h": 0.4427721012296081,
+          "RelL2_h": 0.31804356366338654,
+          "RMSE_h@t80": 4.018406276351972,
+          "MAE_h@t80": 0.5077166645654917,
+          "RelL2_h@t80": 0.3598239675716499,
+          "RMSE_u": 13.624198320753882,
+          "MAE_u": 1.042430525601226,
+          "RelL2_u": 0.5707610175903305,
+          "RMSE_u@t80": 23.898432386419778,
+          "MAE_u@t80": 1.2195801252972842,
+          "RelL2_u@t80": 0.6971678755228307
+        },
+        "test": {
+          "objective": 2.701875714923335,
+          "official_RelL2_h": 0.3059749997517594,
+          "official_RelL2_u": 0.5600507166610161,
+          "RMSE_h": 8.09897539651956,
+          "MAE_h": 0.5307687957318157,
+          "RelL2_h": 0.3059749997517594,
+          "RMSE_h@t80": 15.971035197324124,
+          "MAE_h@t80": 0.8008141094674587,
+          "RelL2_h@t80": 0.35358233387248206,
+          "RMSE_u": 44.516346828532726,
+          "MAE_u": 0.9848759720624686,
+          "RelL2_u": 0.5600507166610161,
+          "RMSE_u@t80": 122.87487184009532,
+          "MAE_u@t80": 1.4611785941631794,
+          "RelL2_u@t80": 0.6892240892467518
+        },
+        "output_equivalence": null,
+        "performance": {
+          "steady_updates": 124967,
+          "samples_per_second_median": 2.8592123465465193,
+          "forward_seconds_median": 0.29402640415355563,
+          "backward_seconds_median": 0.05025304574519396,
+          "optimizer_seconds_median": 0.0250739473849535,
+          "peak_allocated": 7037168640,
+          "peak_reserved": 7195328512,
+          "loss_all_finite": true
+        },
+        "reload_consistent": true,
+        "parameters_total": 303624194,
+        "parameters_trainable": 303624194
+      }
+    },
+    "drive_url": "https://drive.google.com/drive/folders/1jTZZR2GAlOBFMXFek2kiULxnlvAYrkI3",
+    "checkpoint_download_format": "byte_parts",
+    "checkpoint_sha256": "0dadbdc7297f7320b8f7038390dbf237cf9a558a3554303b6d42e08d7014f57d",
+    "remote_sha256_verified": true
+  },
+  {
+    "dataset": "LandslideCast",
+    "model_id": "09",
+    "model": "GPhyT-S-PT-FT-Euler",
+    "model_slug": "gphyt",
+    "seed": 0,
+    "world_size": 4,
+    "config": "config/LandslideCast/gphyt.yaml",
+    "checkpoint": "checkpoints/LandslideCast/gphyt/best.pth",
+    "checkpoint_epoch": 99,
+    "checkpoint_bytes": 84391459,
+    "selection_rule": "first formal experimental seed, verified in checkpoint config",
+    "metrics": {
+      "run_summary.json": {
+        "model": "GPhyT-S-PT-FT-Euler",
+        "mode": "train",
+        "run_id": "Data2_t10_gphyt_euler_dt1_4gpu_v1",
+        "global_update": 124963,
+        "updates_this_run": 124963,
+        "amp_skipped_updates": 37,
+        "precision": "AMP FP16",
+        "gradient_nonzero_verified": true,
+        "validation": {
+          "objective": 3.3596137314131407,
+          "official_RelL2_h": 0.38548922732928226,
+          "official_RelL2_u": 0.6611891401081635,
+          "RMSE_h": 2.8769785584544088,
+          "MAE_h": 0.659528678314656,
+          "RelL2_h": 0.38548922732928226,
+          "RMSE_h@t80": 4.218984050759798,
+          "MAE_h@t80": 0.7574373966553449,
+          "RelL2_h@t80": 0.46219829268864954,
+          "RMSE_u": 13.871193656110218,
+          "MAE_u": 1.3774879012537777,
+          "RelL2_u": 0.6611891401081635,
+          "RMSE_u@t80": 24.034578763662292,
+          "MAE_u@t80": 1.5585528290211916,
+          "RelL2_u@t80": 0.8786278166591734
+        },
+        "test": {
+          "objective": 3.279213527172604,
+          "official_RelL2_h": 0.3745134756113504,
+          "official_RelL2_u": 0.6576191978931525,
+          "RMSE_h": 8.188513838334252,
+          "MAE_h": 0.7412953494556159,
+          "RelL2_h": 0.3745134756113504,
+          "RMSE_h@t80": 16.00577057090027,
+          "MAE_h@t80": 1.049597905109787,
+          "RelL2_h@t80": 0.45737981047516396,
+          "RMSE_u": 44.58347788533567,
+          "MAE_u": 1.3044832727374136,
+          "RelL2_u": 0.6576191978931525,
+          "RMSE_u@t80": 122.89118516473758,
+          "MAE_u@t80": 1.783552563397789,
+          "RelL2_u@t80": 0.8686826115794326
+        },
+        "output_equivalence": null,
+        "performance": {
+          "steady_updates": 124961,
+          "samples_per_second_median": 38.68105771478406,
+          "forward_seconds_median": 0.06222999095916748,
+          "backward_seconds_median": 0.032733526080846786,
+          "optimizer_seconds_median": 0.011356150731444359,
+          "peak_allocated": 887349760,
+          "peak_reserved": 945815552,
+          "loss_all_finite": true
+        },
+        "reload_consistent": true,
+        "parameters_total": 7009730,
+        "parameters_trainable": 7009730
+      },
+      "test_metrics_bounded_200_csi_0p5_5.json": {
+        "CSI_event": "threshold < h <= 200 for prediction and ground truth",
+        "aggregation": {
+          "CSI": "per-scenario CSI, then mean over scenarios",
+          "RMSE_MAE": "global over elements whose corresponding ground truth <= 200",
+          "RelL2": "per-scenario masked L2 ratio, then mean over scenarios"
+        },
+        "checkpoint": "/mnt/HDD2/qingsong/qinqsong/EarthDynamics/Landslides/Flood08/results/LandslideCast_GPhyT_Euler_dt1_4gpu/Data2_t10_gphyt_euler_dt1_4gpu_v1/GPhyT-S-PT-FT-Euler/best_validation.pt",
+        "checkpoint_best_validation": 3.3596137314131407,
+        "checkpoint_epoch": 99,
+        "checkpoint_next_epoch": 100,
+        "contingency_audit": {
+          "0.5": {
+            "false_alarms": 14019546,
+            "hits": 32984839,
+            "misses": 4584242,
+            "pooled_CSI": 0.639381990142905
+          },
+          "5": {
+            "false_alarms": 4421840,
+            "hits": 17044362,
+            "misses": 2843349,
+            "pooled_CSI": 0.7011384949067961
+          }
+        },
+        "data_path": "/mnt/HDD2/qingsong/qinqsong/EarthDynamics/Landslides/Data2/2d_t10.h5",
+        "dt": 1.0,
+        "excluded_ground_truth_gt_200": {
+          "h": 57173,
+          "u": 68182
+        },
+        "first_scenario": "x11001",
+        "last_scenario": "x12000",
+        "metrics": {
+          "CSI_0.5_h_range": 0.6300544624195333,
+          "CSI_5_h_range": 0.6740073404483873,
+          "MAE_h_target_le_200": 0.6504449315826757,
+          "MAE_u_target_le_200": 1.1388205324189151,
+          "RMSE_h_target_le_200": 2.758959654288384,
+          "RMSE_u_target_le_200": 4.723945592513398,
+          "RelL2_h_target_le_200": 0.3744876965377011,
+          "RelL2_u_target_le_200": 0.6551641347871078
+        },
+        "model": "GPhyT-S-PT-FT-Euler",
+        "precision": "AMP FP16 inference; FP64 metric accumulation",
+        "samples": 1000,
+        "selected_elements": {
+          "h": 319942827,
+          "u": 319931818
+        },
+        "split": "test"
+      }
+    },
+    "drive_url": "https://drive.google.com/file/d/1MLVutnbODgm7K05RvNL4ksgFGNg-qi8J/view?usp=drivesdk",
+    "checkpoint_download_format": "single_file",
+    "checkpoint_sha256": "2d06144da6e51d37ad0d5dfa695b8ac610d93358cd7572bb866eeb7b5c004726",
+    "remote_sha256_verified": true
+  },
+  {
+    "dataset": "WildfireSpreadTS",
+    "model_id": "01",
+    "model": "UNet2D-Scratch",
+    "model_slug": "unet",
+    "seed": 0,
+    "world_size": 1,
+    "config": "config/WildfireSpreadTS/unet.yaml",
+    "checkpoint": "checkpoints/WildfireSpreadTS/unet/best.pth",
+    "checkpoint_epoch": 100,
+    "checkpoint_bytes": 93982952,
+    "selection_rule": "first formal experimental seed, verified in checkpoint config",
+    "metrics": {
+      "test_metrics.json": {
+        "validation_threshold": 0.04,
+        "loss": 0.3670181583457983,
+        "AP": 0.47693440318107605,
+        "F1": 0.5879200248267133,
+        "IoU": 0.41635037332397934,
+        "precision": 0.5600272693658717,
+        "recall": 0.6187368748045183,
+        "Brier": 0.006901768036186695
+      }
+    },
+    "drive_url": "https://drive.google.com/file/d/1iPTkVF5hJ9n_-3qtrfoYpaD1Pl6K4jdb/view?usp=drivesdk",
+    "checkpoint_download_format": "single_file",
+    "checkpoint_sha256": "f39f6c6c24b48b71577c87abb2e2ef8507ad5135a12ab71c10d1759162826e68",
+    "remote_sha256_verified": true
+  },
+  {
+    "dataset": "WildfireSpreadTS",
+    "model_id": "03",
+    "model": "UTAE-Scratch",
+    "model_slug": "utae",
+    "seed": 0,
+    "world_size": 1,
+    "config": "config/WildfireSpreadTS/utae.yaml",
+    "checkpoint": "checkpoints/WildfireSpreadTS/utae/best.pth",
+    "checkpoint_epoch": 90,
+    "checkpoint_bytes": 13370107,
+    "selection_rule": "first formal experimental seed, verified in checkpoint config",
+    "metrics": {
+      "test_metrics.json": {
+        "validation_threshold": 0.99,
+        "loss": 0.6219912366235474,
+        "AP": 0.3316255211830139,
+        "F1": 0.27576763806030286,
+        "IoU": 0.15993647036648503,
+        "precision": 0.16346671982914318,
+        "recall": 0.8810343983846568,
+        "Brier": 0.2917284071445465
+      }
+    },
+    "drive_url": "https://drive.google.com/file/d/1kwtM8lPw9NafNiAWGATRRmdUfiDUmxsG/view?usp=drivesdk",
+    "checkpoint_download_format": "single_file",
+    "checkpoint_sha256": "57d6c2bbb71eac71d906028973197107f99c761954cd2c6209629461e3587ca4",
+    "remote_sha256_verified": true
+  },
+  {
+    "dataset": "WildfireSpreadTS",
+    "model_id": "02",
+    "model": "ConvLSTM-Scratch",
+    "model_slug": "convlstm",
+    "seed": 0,
+    "world_size": 1,
+    "config": "config/WildfireSpreadTS/convlstm.yaml",
+    "checkpoint": "checkpoints/WildfireSpreadTS/convlstm/best.pth",
+    "checkpoint_epoch": 60,
+    "checkpoint_bytes": 162236194,
+    "selection_rule": "first formal experimental seed, verified in checkpoint config",
+    "metrics": {
+      "test_metrics.json": {
+        "validation_threshold": 0.01,
+        "loss": 0.3713060515992185,
+        "AP": 0.5091063380241394,
+        "F1": 0.5710883597544663,
+        "IoU": 0.3996666719408448,
+        "precision": 0.5124194674497194,
+        "recall": 0.6449287542580422,
+        "Brier": 0.007412087172269821
+      }
+    },
+    "drive_url": "https://drive.google.com/drive/folders/1oXgCkuk6heteziHtJ6eRQI_zXyKfNRR-",
+    "checkpoint_download_format": "byte_parts",
+    "checkpoint_sha256": "f3ac5ff149f92a0296c3a84f9d8ab9e4e2873bb56e939d83c40fc35aead8e4b6",
+    "remote_sha256_verified": true
+  },
+  {
+    "dataset": "WildfireSpreadTS",
+    "model_id": "04",
+    "model": "FNO2D-Scratch",
+    "model_slug": "fno",
+    "seed": 0,
+    "world_size": 1,
+    "config": "config/WildfireSpreadTS/fno.yaml",
+    "checkpoint": "checkpoints/WildfireSpreadTS/fno/best.pth",
+    "checkpoint_epoch": 65,
+    "checkpoint_bytes": 11261306,
+    "selection_rule": "first formal experimental seed, verified in checkpoint config",
+    "metrics": {
+      "test_metrics.json": {
+        "validation_threshold": 0.02,
+        "loss": 0.37554803112862817,
+        "AP": 0.47465500235557556,
+        "F1": 0.5736514362691273,
+        "IoU": 0.4021818024400978,
+        "precision": 0.5555103781745415,
+        "recall": 0.5930173428114887,
+        "Brier": 0.00689795333892107
+      }
+    },
+    "drive_url": "https://drive.google.com/file/d/1YQsc_HQRuwcdnf6eEYjPd_d2IU3v56-Z/view?usp=drivesdk",
+    "checkpoint_download_format": "single_file",
+    "checkpoint_sha256": "393779e3f643090731764a55ed7722a1e7b9b34fb4ab93b287725663b56ea012",
+    "remote_sha256_verified": true
+  },
+  {
+    "dataset": "WildfireSpreadTS",
+    "model_id": "05",
+    "model": "EarthFormer-Scratch",
+    "model_slug": "earthformer",
+    "seed": 0,
+    "world_size": 1,
+    "config": "config/WildfireSpreadTS/earthformer.yaml",
+    "checkpoint": "checkpoints/WildfireSpreadTS/earthformer/best.pth",
+    "checkpoint_epoch": 15,
+    "checkpoint_bytes": 100499540,
+    "selection_rule": "first formal experimental seed, verified in checkpoint config",
+    "metrics": {
+      "test_metrics.json": {
+        "validation_threshold": 0.05,
+        "loss": 0.42281704433742384,
+        "AP": 0.36050620675086975,
+        "F1": 0.5073669819051025,
+        "IoU": 0.3399140818636544,
+        "precision": 0.44160564383682555,
+        "recall": 0.5961407935862875,
+        "Brier": 0.009385371580719948
+      }
+    },
+    "drive_url": "https://drive.google.com/file/d/1CuZum-HJiRR1ljxQL1kSbRL93Dly8-Io/view?usp=drivesdk",
+    "checkpoint_download_format": "single_file",
+    "checkpoint_sha256": "ccfa576fc20047f025716fa5d3cd706e6160fef09891fd4c3d941478b041ba9e",
+    "remote_sha256_verified": true
+  },
+  {
+    "dataset": "WildfireSpreadTS",
+    "model_id": "06",
+    "model": "PDE-T-SC-S-PT-FT",
+    "model_slug": "pde_transformer",
+    "seed": 0,
+    "world_size": 1,
+    "config": "config/WildfireSpreadTS/pde_transformer.yaml",
+    "checkpoint": "checkpoints/WildfireSpreadTS/pde_transformer/best.pth",
+    "checkpoint_epoch": 85,
+    "checkpoint_bytes": 542586700,
+    "selection_rule": "first formal experimental seed, verified in checkpoint config",
+    "metrics": {
+      "test_metrics.json": {
+        "validation_threshold": 0.01,
+        "loss": 0.37250922613598325,
+        "AP": 0.47923916578292847,
+        "F1": 0.5673542892639557,
+        "IoU": 0.3960185585398281,
+        "precision": 0.5258133938706016,
+        "recall": 0.6160219407523091,
+        "Brier": 0.007338757161051035
+      }
+    },
+    "drive_url": "https://drive.google.com/drive/folders/1mCRQZRALKnvpn-ZYswG62PmatJob_Bbm",
+    "checkpoint_download_format": "byte_parts",
+    "checkpoint_sha256": "ecb53d16baa3673fc964af8e329c6f1b832d74db70cde533dc3baf9672deb699",
+    "remote_sha256_verified": true
+  },
+  {
+    "dataset": "WildfireSpreadTS",
+    "model_id": "07",
+    "model": "DPOT-S-PT-FT",
+    "model_slug": "dpot",
+    "seed": 0,
+    "world_size": 1,
+    "config": "config/WildfireSpreadTS/dpot.yaml",
+    "checkpoint": "checkpoints/WildfireSpreadTS/dpot/best.pth",
+    "checkpoint_epoch": 90,
+    "checkpoint_bytes": 281464958,
+    "selection_rule": "first formal experimental seed, verified in checkpoint config",
+    "metrics": {
+      "test_metrics.json": {
+        "validation_threshold": 0.01,
+        "loss": 0.3818329349941646,
+        "AP": 0.44481778144836426,
+        "F1": 0.5689411475103924,
+        "IoU": 0.3975665616551043,
+        "precision": 0.533224801153542,
+        "recall": 0.6097856776590289,
+        "Brier": 0.007183365523815155
+      }
+    },
+    "drive_url": "https://drive.google.com/drive/folders/1PMqA_kXXeqUA8BVMcIpKUldgzoycHsTW",
+    "checkpoint_download_format": "byte_parts",
+    "checkpoint_sha256": "dc017a79f37787a810d4cc26a5c2ea0bb82f377aa1f5c7d8e1d8e503538515f7",
+    "remote_sha256_verified": true
+  },
+  {
+    "dataset": "WildfireSpreadTS",
+    "model_id": "10",
+    "model": "VideoMAEv2-PT-FT",
+    "model_slug": "videomaev2",
+    "seed": 0,
+    "world_size": 1,
+    "config": "config/WildfireSpreadTS/videomaev2.yaml",
+    "checkpoint": "checkpoints/WildfireSpreadTS/videomaev2/best.pth",
+    "checkpoint_epoch": 85,
+    "checkpoint_bytes": 1285129910,
+    "selection_rule": "first formal experimental seed, verified in checkpoint config",
+    "metrics": {
+      "test_metrics.json": {
+        "validation_threshold": 0.01,
+        "loss": 0.4203310856606241,
+        "AP": 0.3507496118545532,
+        "F1": 0.5173400866572774,
+        "IoU": 0.3489270074692389,
+        "precision": 0.4948232926578167,
+        "recall": 0.5420038170781267,
+        "Brier": 0.008410530164837837
+      }
+    },
+    "drive_url": "https://drive.google.com/drive/folders/1DB2YMFB0uTWfqBYO_SUmbMb4v47t2lQ1",
+    "checkpoint_download_format": "byte_parts",
+    "checkpoint_sha256": "db89a964e9f059a6bbc9f5a6d76fb675ff591e12492a365b75df20ce140a3074",
+    "remote_sha256_verified": true
+  },
+  {
+    "dataset": "WildfireSpreadTS",
+    "model_id": "11",
+    "model": "Prithvi-EO2-300M-PT-FT",
+    "model_slug": "prithvi",
+    "seed": 1,
+    "world_size": 1,
+    "config": "config/WildfireSpreadTS/prithvi.yaml",
+    "checkpoint": "checkpoints/WildfireSpreadTS/prithvi/best.pth",
+    "checkpoint_epoch": 95,
+    "checkpoint_bytes": 3651507472,
+    "selection_rule": "second experimental seed, as requested",
+    "metrics": {
+      "test_metrics.json": {
+        "validation_threshold": 0.31,
+        "loss": 0.4155202097688423,
+        "AP": 0.44702884554862976,
+        "F1": 0.5191564198296118,
+        "IoU": 0.3505815379703215,
+        "precision": 0.4733986245381827,
+        "recall": 0.5747064317979204,
+        "Brier": 0.007269816007465124
+      }
+    },
+    "drive_url": "https://drive.google.com/drive/folders/1AHcEVcjMtNj623lXJen_Qi8s6uHK3oBc",
+    "checkpoint_download_format": "byte_parts",
+    "checkpoint_sha256": "46758480e68a0dd98cbfc0437ef72fb1b99dfd4130be42bac330c7b2d2c56dd9",
+    "remote_sha256_verified": true
+  }
+]

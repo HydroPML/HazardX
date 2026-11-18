@@ -1,0 +1,254 @@
+[
+  {
+    "dataset": "FloodCastBench",
+    "model_slug": "unet",
+    "seed": 42,
+    "numeric_argument_checks": 67,
+    "exact_numeric_settings": true
+  },
+  {
+    "dataset": "FloodCastBench",
+    "model_slug": "convlstm",
+    "seed": 42,
+    "numeric_argument_checks": 67,
+    "exact_numeric_settings": true
+  },
+  {
+    "dataset": "FloodCastBench",
+    "model_slug": "fno",
+    "seed": 42,
+    "numeric_argument_checks": 67,
+    "exact_numeric_settings": true
+  },
+  {
+    "dataset": "FloodCastBench",
+    "model_slug": "earthformer",
+    "seed": 42,
+    "numeric_argument_checks": 68,
+    "exact_numeric_settings": true
+  },
+  {
+    "dataset": "FloodCastBench",
+    "model_slug": "pde_transformer",
+    "seed": 42,
+    "numeric_argument_checks": 67,
+    "exact_numeric_settings": true
+  },
+  {
+    "dataset": "FloodCastBench",
+    "model_slug": "dpot",
+    "seed": 42,
+    "numeric_argument_checks": 67,
+    "exact_numeric_settings": true
+  },
+  {
+    "dataset": "FloodCastBench",
+    "model_slug": "poseidon",
+    "seed": 42,
+    "numeric_argument_checks": 68,
+    "exact_numeric_settings": true
+  },
+  {
+    "dataset": "FloodCastBench",
+    "model_slug": "gphyt",
+    "seed": 42,
+    "numeric_argument_checks": 67,
+    "exact_numeric_settings": true
+  },
+  {
+    "dataset": "FloodCastBench",
+    "model_slug": "prithvi",
+    "seed": 42,
+    "numeric_argument_checks": 67,
+    "exact_numeric_settings": true
+  },
+  {
+    "dataset": "FloodSimBench",
+    "model_slug": "unet",
+    "seed": 1,
+    "numeric_argument_checks": 20,
+    "exact_numeric_settings": true
+  },
+  {
+    "dataset": "FloodSimBench",
+    "model_slug": "fno",
+    "seed": 1,
+    "numeric_argument_checks": 20,
+    "exact_numeric_settings": true
+  },
+  {
+    "dataset": "FloodSimBench",
+    "model_slug": "convlstm",
+    "seed": 1,
+    "numeric_argument_checks": 24,
+    "exact_numeric_settings": true
+  },
+  {
+    "dataset": "FloodSimBench",
+    "model_slug": "earthformer",
+    "seed": 1,
+    "numeric_argument_checks": 24,
+    "exact_numeric_settings": true
+  },
+  {
+    "dataset": "FloodSimBench",
+    "model_slug": "pde_transformer",
+    "seed": 1,
+    "numeric_argument_checks": 24,
+    "exact_numeric_settings": true
+  },
+  {
+    "dataset": "FloodSimBench",
+    "model_slug": "dpot",
+    "seed": 1,
+    "numeric_argument_checks": 24,
+    "exact_numeric_settings": true
+  },
+  {
+    "dataset": "FloodSimBench",
+    "model_slug": "poseidon",
+    "seed": 1,
+    "numeric_argument_checks": 24,
+    "exact_numeric_settings": true
+  },
+  {
+    "dataset": "FloodSimBench",
+    "model_slug": "gphyt",
+    "seed": 1,
+    "numeric_argument_checks": 24,
+    "exact_numeric_settings": true
+  },
+  {
+    "dataset": "FloodSimBench",
+    "model_slug": "prithvi",
+    "seed": 1,
+    "numeric_argument_checks": 24,
+    "exact_numeric_settings": true
+  },
+  {
+    "dataset": "LandslideCast",
+    "model_slug": "convlstm",
+    "seed": 0,
+    "numeric_argument_checks": 20,
+    "exact_numeric_settings": true
+  },
+  {
+    "dataset": "LandslideCast",
+    "model_slug": "fno",
+    "seed": 0,
+    "numeric_argument_checks": 20,
+    "exact_numeric_settings": true
+  },
+  {
+    "dataset": "LandslideCast",
+    "model_slug": "pde_transformer",
+    "seed": 0,
+    "numeric_argument_checks": 20,
+    "exact_numeric_settings": true
+  },
+  {
+    "dataset": "LandslideCast",
+    "model_slug": "poseidon",
+    "seed": 0,
+    "numeric_argument_checks": 20,
+    "exact_numeric_settings": true
+  },
+  {
+    "dataset": "LandslideCast",
+    "model_slug": "unet",
+    "seed": 0,
+    "numeric_argument_checks": 20,
+    "exact_numeric_settings": true
+  },
+  {
+    "dataset": "LandslideCast",
+    "model_slug": "earthformer",
+    "seed": 0,
+    "numeric_argument_checks": 20,
+    "exact_numeric_settings": true
+  },
+  {
+    "dataset": "LandslideCast",
+    "model_slug": "dpot",
+    "seed": 0,
+    "numeric_argument_checks": 20,
+    "exact_numeric_settings": true
+  },
+  {
+    "dataset": "LandslideCast",
+    "model_slug": "prithvi",
+    "seed": 0,
+    "numeric_argument_checks": 20,
+    "exact_numeric_settings": true
+  },
+  {
+    "dataset": "LandslideCast",
+    "model_slug": "gphyt",
+    "seed": 0,
+    "numeric_argument_checks": 20,
+    "exact_numeric_settings": true
+  },
+  {
+    "dataset": "WildfireSpreadTS",
+    "model_slug": "unet",
+    "seed": 0,
+    "numeric_argument_checks": 10,
+    "exact_numeric_settings": true
+  },
+  {
+    "dataset": "WildfireSpreadTS",
+    "model_slug": "utae",
+    "seed": 0,
+    "numeric_argument_checks": 10,
+    "exact_numeric_settings": true
+  },
+  {
+    "dataset": "WildfireSpreadTS",
+    "model_slug": "convlstm",
+    "seed": 0,
+    "numeric_argument_checks": 10,
+    "exact_numeric_settings": true
+  },
+  {
+    "dataset": "WildfireSpreadTS",
+    "model_slug": "fno",
+    "seed": 0,
+    "numeric_argument_checks": 10,
+    "exact_numeric_settings": true
+  },
+  {
+    "dataset": "WildfireSpreadTS",
+    "model_slug": "earthformer",
+    "seed": 0,
+    "numeric_argument_checks": 10,
+    "exact_numeric_settings": true
+  },
+  {
+    "dataset": "WildfireSpreadTS",
+    "model_slug": "pde_transformer",
+    "seed": 0,
+    "numeric_argument_checks": 10,
+    "exact_numeric_settings": true
+  },
+  {
+    "dataset": "WildfireSpreadTS",
+    "model_slug": "dpot",
+    "seed": 0,
+    "numeric_argument_checks": 10,
+    "exact_numeric_settings": true
+  },
+  {
+    "dataset": "WildfireSpreadTS",
+    "model_slug": "videomaev2",
+    "seed": 0,
+    "numeric_argument_checks": 10,
+    "exact_numeric_settings": true
+  },
+  {
+    "dataset": "WildfireSpreadTS",
+    "model_slug": "prithvi",
+    "seed": 1,
+    "numeric_argument_checks": 10,
+    "exact_numeric_settings": true
+  }
+]

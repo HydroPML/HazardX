@@ -1,0 +1,22 @@
+{
+  "dataset": "WildfireSpreadTS",
+  "model_id": "03",
+  "model": "UTAE-Scratch",
+  "seed": 0,
+  "checkpoint": "best.pth",
+  "checkpoint_sha256": "57d6c2bbb71eac71d906028973197107f99c761954cd2c6209629461e3587ca4",
+  "checkpoint_epoch": 90,
+  "selection_rule": "first formal experimental seed, verified in checkpoint config",
+  "original_final_evaluation": {
+    "test_metrics.json": {
+      "validation_threshold": 0.99,
+      "loss": 0.6219912366235474,
+      "AP": 0.3316255211830139,
+      "F1": 0.27576763806030286,
+      "IoU": 0.15993647036648503,
+      "precision": 0.16346671982914318,
+      "recall": 0.8810343983846568,
+      "Brier": 0.2917284071445465
+    }
+  }
+}

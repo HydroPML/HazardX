@@ -1,0 +1,70 @@
+{
+  "dataset": "LandslideCast",
+  "model_id": "11",
+  "model": "Prithvi-EO2-300M-PT-FT",
+  "seed": 0,
+  "checkpoint": "best.pth",
+  "checkpoint_sha256": "0dadbdc7297f7320b8f7038390dbf237cf9a558a3554303b6d42e08d7014f57d",
+  "checkpoint_epoch": 59,
+  "selection_rule": "first formal experimental seed, verified in checkpoint config",
+  "original_final_evaluation": {
+    "run_summary.json": {
+      "model": "Prithvi-EO2-300M-PT-FT",
+      "mode": "train",
+      "run_id": "Data2_t10_5gpu_v3",
+      "global_update": 124969,
+      "updates_this_run": 124969,
+      "amp_skipped_updates": 31,
+      "precision": "AMP FP16",
+      "gradient_nonzero_verified": true,
+      "validation": {
+        "objective": 2.7970659632340316,
+        "official_RelL2_h": 0.31804356366338654,
+        "official_RelL2_u": 0.5707610175903305,
+        "RMSE_h": 2.5705285899066386,
+        "MAE_h": 0.4427721012296081,
+        "RelL2_h": 0.31804356366338654,
+        "RMSE_h@t80": 4.018406276351972,
+        "MAE_h@t80": 0.5077166645654917,
+        "RelL2_h@t80": 0.3598239675716499,
+        "RMSE_u": 13.624198320753882,
+        "MAE_u": 1.042430525601226,
+        "RelL2_u": 0.5707610175903305,
+        "RMSE_u@t80": 23.898432386419778,
+        "MAE_u@t80": 1.2195801252972842,
+        "RelL2_u@t80": 0.6971678755228307
+      },
+      "test": {
+        "objective": 2.701875714923335,
+        "official_RelL2_h": 0.3059749997517594,
+        "official_RelL2_u": 0.5600507166610161,
+        "RMSE_h": 8.09897539651956,
+        "MAE_h": 0.5307687957318157,
+        "RelL2_h": 0.3059749997517594,
+        "RMSE_h@t80": 15.971035197324124,
+        "MAE_h@t80": 0.8008141094674587,
+        "RelL2_h@t80": 0.35358233387248206,
+        "RMSE_u": 44.516346828532726,
+        "MAE_u": 0.9848759720624686,
+        "RelL2_u": 0.5600507166610161,
+        "RMSE_u@t80": 122.87487184009532,
+        "MAE_u@t80": 1.4611785941631794,
+        "RelL2_u@t80": 0.6892240892467518
+      },
+      "output_equivalence": null,
+      "performance": {
+        "steady_updates": 124967,
+        "samples_per_second_median": 2.8592123465465193,
+        "forward_seconds_median": 0.29402640415355563,
+        "backward_seconds_median": 0.05025304574519396,
+        "optimizer_seconds_median": 0.0250739473849535,
+        "peak_allocated": 7037168640,
+        "peak_reserved": 7195328512,
+        "loss_all_finite": true
+      },
+      "reload_consistent": true,
+      "parameters_total": 303624194,
+      "parameters_trainable": 303624194
+    }
+  }
+}

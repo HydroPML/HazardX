@@ -1,0 +1,42 @@
+{
+  "dataset": "FloodSimBench",
+  "model": "Poseidon-T-PT-FT",
+  "model_slug": "poseidon",
+  "seed": 1,
+  "filename": "best.pth",
+  "original_filename": "best_validation.pt",
+  "checkpoint": "checkpoints/FloodSimBench/poseidon/best.pth",
+  "format": "byte_parts",
+  "bytes": 250480756,
+  "sha256": "280281b780040b0260525c8ce176e37cc8e8bb1113d33c134b03bb2bf6079cac",
+  "config": "config/FloodSimBench/poseidon.yaml",
+  "config_url": "https://drive.google.com/file/d/1RIbLSA_OvQ_Dpvl7bkZLWrN6zloNSdxY/view?usp=drivesdk",
+  "metrics_url": "https://drive.google.com/file/d/1VgrNQyJMMoq8S_JRn7MixrpI4iuNU4IL/view?usp=drivesdk",
+  "drive_folder_url": "https://drive.google.com/drive/folders/1xbR6qFx1u6V8Ud9AhBrSwSa95_G6p0CV",
+  "parts": [
+    {
+      "name": "best.pth.part0001",
+      "bytes": 94371840,
+      "sha256": "0e11d417b6d5f32be03c41fbdc7508b407daea5c8e0a7a7eb164ce54bf79253f",
+      "id": "1htmzuf0CGkx0FXukf0Zx2PThNDR5xGhu",
+      "url": "https://drive.google.com/file/d/1htmzuf0CGkx0FXukf0Zx2PThNDR5xGhu/view?usp=drivesdk",
+      "size_and_parent_verified": true
+    },
+    {
+      "name": "best.pth.part0002",
+      "bytes": 94371840,
+      "sha256": "4d3226a0d6b9d7d486431ad19f7ad60666761a01b714f840608594d723ace445",
+      "id": "1qydMAOiUhQIOsG4VWrdfU5NmaLZLWfil",
+      "url": "https://drive.google.com/file/d/1qydMAOiUhQIOsG4VWrdfU5NmaLZLWfil/view?usp=drivesdk",
+      "size_and_parent_verified": true
+    },
+    {
+      "name": "best.pth.part0003",
+      "bytes": 61737076,
+      "sha256": "3d9ae989f746c115b9fac5cb6e7d67cff678f32dd05cf48b380dfbe2f3a510c7",
+      "id": "1GMFC2wRc_kZvNKhdjHIn_zD3TDGVWMmd",
+      "url": "https://drive.google.com/file/d/1GMFC2wRc_kZvNKhdjHIn_zD3TDGVWMmd/view?usp=drivesdk",
+      "size_and_parent_verified": true
+    }
+  ]
+}

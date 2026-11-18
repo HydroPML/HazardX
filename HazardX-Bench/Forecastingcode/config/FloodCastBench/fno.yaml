@@ -1,0 +1,312 @@
+# Verified formal experiment; numeric settings match the selected checkpoint.
+dataset: FloodCastBench
+model_id: '04'
+model: FNO
+seed: 42
+backend: floodcast_two
+distributed:
+  world_size: 2
+paths:
+  data_root: data/FloodCastBench
+  dem_root: data/FloodCastBench/DEM
+  pretrained_root: pretrained
+  source_root: src/models/third_party
+  output_dir: outputs/FloodCastBench/fno
+checkpoint: checkpoints/FloodCastBench/fno/best.pth
+native_args:
+  mode: all
+  output_dir: ${output_dir}
+  checkpoint: ''
+  resume: ''
+  australia_train: ${data_root}/Australia/288/train
+  pakistan_train: ${data_root}/Pakistan/288/train
+  uk30_train: ${data_root}/UK_30/288/train
+  uk_train: ${data_root}/UK/288/train
+  australia_valid: ${data_root}/Australia/288/valid
+  pakistan_valid: ${data_root}/Pakistan/288/valid
+  australia_test: ${data_root}/Australia/288/test
+  pakistan_test: ${data_root}/Pakistan/288/test
+  mozambique_576: ${data_root}/Test/Mozambique/576
+  mozambique_1728: ${data_root}/Test/Mozambique/1728
+  mozambique_split: both
+  australia_dx: null
+  australia_dy: null
+  pakistan_dx: null
+  pakistan_dy: null
+  uk30_dx: null
+  uk30_dy: null
+  uk_dx: null
+  uk_dy: null
+  mozambique_dx: null
+  mozambique_dy: null
+  nodata_value: null
+  patch_height: 16
+  patch_width: 16
+  model_size: GPT_S
+  attention_mode: spatial
+  tokenizer_mode: linear
+  detokenizer_mode: linear
+  tokenizer_overlap: 0
+  detokenizer_overlap: 0
+  use_derivatives: false
+  dropout: 0.0
+  stochastic_depth_rate: 0.0
+  epochs: 100
+  micro_batch_size: 1
+  accum_steps: 4
+  domain_batch_sizes: australia=1,pakistan=1,uk_30m=1
+  task_sampling: uniform
+  task_weights: australia=1,pakistan=1,uk_30m=1
+  num_workers: 2
+  seed: 42
+  deterministic: true
+  amp: false
+  amp_initial_scale: 128.0
+  grad_clip: 1.0
+  learning_rate: 0.0001
+  weight_decay: 0.0001
+  noise_std: 0.0
+  loss: masked_huber_mse_matched
+  normalization: train_standard
+  scheduler: cosine
+  scheduler_step_updates: 1000
+  scheduler_gamma: 0.5
+  validate_every: 5
+  validation_max_steps: 0
+  validation_max_sequences: 0
+  early_stopping: 20
+  log_every_updates: 10
+  eval_max_steps: 0
+  eval_max_sequences: 0
+  smoke_rollout_steps: 4
+  model_type: FNO
+  output_method: direct
+  dem_root: ${dem_root}
+  huber_delta_m: 1.0
+  unet_init_features: 32
+  unet_grid_type: cartesian
+  fno_modes_height: 12
+  fno_modes_width: 12
+  fno_width: 20
+  fno_grid_type: cartesian
+  transolver_hidden_dim: 256
+  transolver_num_layers: 8
+  transolver_num_heads: 8
+  transolver_slice_num: 32
+  transolver_mlp_ratio: 1
+  transolver_dropout: 0.0
+  transolver_ref: 8
+  gphyt_model_size: GPT_S
+  gphyt_patch_height: 16
+  gphyt_patch_width: 16
+  gphyt_tokenizer_mode: linear
+  gphyt_detokenizer_mode: linear
+  gphyt_tokenizer_overlap: 0
+  gphyt_detokenizer_overlap: 0
+  gphyt_use_derivatives: true
+  gphyt_dropout: 0.0
+  gphyt_stochastic_depth_rate: 0.0
+  gphyt_max_patches_height: 51
+  gphyt_max_patches_width: 34
+  model_runtime_height: 128
+  model_runtime_width: 128
+  window_size: 128
+  window_stride: 96
+  window_seed: 42
+  train_windows_per_epoch: 0
+  max_optimizer_steps: 0
+  tile_batch_size: 1
+  ood_debug_max_steps: 0
+  window_num_workers: 2
+  tiled_validation: true
+  tiled_rollout: true
+  exclude_train_domain: uk
+  smoke_ood_day_horizons: false
+  optimizer_name: Adam
+  amp_disabled_reason: Native non-power-of-two CUDA FFTs are unsupported in FP16
+  data_split_sha256: e1f4c6aa36d765082c229a1f6d3992ff039234918dc1a7afd110dc60d45da798
+  updates_per_epoch: 754
+  auto_updates_per_epoch: true
+  logical_train_samples_per_epoch: 6027
+  domain_loader_steps_per_rank:
+    unified_trajectory: 3014
+model_config:
+  model_type: FNO
+  direct_derivative_output: true
+  modes_height: 12
+  modes_width: 12
+  width: 20
+  grid_type: cartesian
+  output_method: direct
+normalization:
+  mode: train_standard
+  mean:
+  - 0.23875341377833048
+  - 1.652628217909539
+  - 0.0
+  std:
+  - 0.5524460395271252
+  - 2.9946173359723387
+  - 1.0
+  provenance:
+    allowed_roles:
+    - train
+    domains:
+    - australia
+    - pakistan
+    - uk_30m
+    files:
+      australia:
+      - ${data_root}/Australia/288/train/0.pt
+      - ${data_root}/Australia/288/train/1.pt
+      - ${data_root}/Australia/288/train/2.pt
+      - ${data_root}/Australia/288/train/3.pt
+      - ${data_root}/Australia/288/train/4.pt
+      - ${data_root}/Australia/288/train/5.pt
+      - ${data_root}/Australia/288/train/6.pt
+      - ${data_root}/Australia/288/train/7.pt
+      pakistan:
+      - ${data_root}/Pakistan/288/train/0.pt
+      - ${data_root}/Pakistan/288/train/1.pt
+      - ${data_root}/Pakistan/288/train/2.pt
+      - ${data_root}/Pakistan/288/train/3.pt
+      - ${data_root}/Pakistan/288/train/4.pt
+      - ${data_root}/Pakistan/288/train/5.pt
+      - ${data_root}/Pakistan/288/train/6.pt
+      - ${data_root}/Pakistan/288/train/7.pt
+      - ${data_root}/Pakistan/288/train/8.pt
+      - ${data_root}/Pakistan/288/train/9.pt
+      uk_30m:
+      - ${data_root}/UK_30/288/train/0.pt
+      - ${data_root}/UK_30/288/train/1.pt
+      - ${data_root}/UK_30/288/train/2.pt
+    algorithm: exact_population_mean_std_over_finite_training_pixels
+    transolver_centered_dem:
+      kind: terrain_centered_global_scaled
+      dem_root: ${dem_root}
+      static_feature_names:
+      - terrain_centered_global_scaled
+      static_channels: 1
+      source_domains_for_shared_scale:
+      - australia
+      - pakistan
+      - uk_30m
+      source_domain_weights:
+      - 0.3333333333333333
+      - 0.3333333333333333
+      - 0.3333333333333333
+      shared_scale_pixel_weighting: equal_domains_then_equal_cells_and_xy_components_within_domain
+      slope_reference: null
+      slope_transform_scale: null
+      terrain_global_train_scale: 60.94663343619693
+      region_stats:
+        australia:
+          dem_path: ${data_root}/Australia_DEM.tif
+          crop:
+          - null
+          - null
+          - null
+          - null
+          downsample_factor: 2
+          interpolation: bilinear_endpoint_aligned_align_corners_true
+          shape:
+          - 536
+          - 536
+          dx_m: 60.0
+          dy_m: 60.0
+          nodata_rule: value_below_-2000_to_valid_max_plus_30m
+          filled_output_cells: 0
+          terrain_mean_m: 22.044191279012587
+          terrain_population_std_m: 39.52631270897622
+          processed_dem_sha256: 6a93fa98dfd7954602cdf5e902abe6f17e39b37739c0253d47ec34f8d508cfc7
+          feature_sha256: fcaa93626b0e2a7d19ede47a0d44725e8fc20c2b30d3c1be3d1fbe56f57691b7
+        pakistan:
+          dem_path: ${data_root}/Pakistan_DEM.tif
+          crop:
+          - 37
+          - -33
+          - 170
+          - -57
+          downsample_factor: 16
+          interpolation: bilinear_endpoint_aligned_align_corners_true
+          shape:
+          - 810
+          - 441
+          dx_m: 480.0
+          dy_m: 480.0
+          nodata_rule: value_below_-2000_to_valid_max_plus_30m
+          filled_output_cells: 28
+          terrain_mean_m: 77.45315257293046
+          terrain_population_std_m: 97.56265112699809
+          processed_dem_sha256: bb44c184f4bee1f3faab51e9b6b97b5b11d4bddefaded95de85c84f4468d08e4
+          feature_sha256: a66617c3de033135645e01cb09625cd2a1f68d1e48a89d466fcb2ade905430eb
+        uk:
+          dem_path: ${data_root}/UK_DEM.tif
+          crop:
+          - 5
+          - -5
+          - 5
+          - -5
+          downsample_factor: 2
+          interpolation: bilinear_endpoint_aligned_align_corners_true
+          shape:
+          - 85
+          - 137
+          dx_m: 60.0
+          dy_m: 60.0
+          nodata_rule: value_below_-2000_to_valid_max_plus_30m
+          filled_output_cells: 0
+          terrain_mean_m: 21.824537176571983
+          terrain_population_std_m: 7.9050981304698595
+          processed_dem_sha256: 67d772f9b4212c1102488fb1c7440beaab1bdf6a123fc99d7111741db590a8a6
+          feature_sha256: cdf6e17c151ecfa1bb232e09b0a5a1d39c3b4942c593d912aee14f75e652c6e0
+        uk_30m:
+          dem_path: ${data_root}/UK_DEM.tif
+          crop:
+          - 5
+          - -5
+          - 5
+          - -5
+          downsample_factor: 1
+          interpolation: bilinear_endpoint_aligned_align_corners_true
+          shape:
+          - 170
+          - 275
+          dx_m: 30.0
+          dy_m: 30.0
+          nodata_rule: value_below_-2000_to_valid_max_plus_30m
+          filled_output_cells: 0
+          terrain_mean_m: 21.79349090785266
+          terrain_population_std_m: 7.91681602791034
+          processed_dem_sha256: 60671ac6e805c832f02b186d0749c66dcc93fc81b56adcadb7a6d3d46d813dbe
+          feature_sha256: 7315eaff55d73f8b1df8f6261f1b8c8e24257a6910b638b98ba134ba5f9c2f45
+        mozambique:
+          dem_path: ${data_root}/Mozambique_DEM.tif
+          crop:
+          - 150
+          - -50
+          - 50
+          - -50
+          downsample_factor: 16
+          interpolation: bilinear_endpoint_aligned_align_corners_true
+          shape:
+          - 151
+          - 138
+          dx_m: 480.0
+          dy_m: 480.0
+          nodata_rule: value_below_-2000_to_valid_max_plus_30m
+          filled_output_cells: 0
+          terrain_mean_m: 34.42094564380408
+          terrain_population_std_m: 37.86542913554964
+          processed_dem_sha256: 860777cd3a0b782bc780fed719622c879e55151e5554fafccf301e6e621cc53e
+          feature_sha256: 4d07615a706e3ea88795bc0c3281c240a9c08b081f303a643c978f578d057cb6
+    channel_policy:
+      water_depth: unchanged_baseline_global_train_standard
+      rainfall: unchanged_baseline_global_train_standard
+      terrain_slot: identity_placeholder; published physical DEM is centered per region
+        and divided by a source-only equal-domain RMS
+evaluation:
+  threshold: null
+  selected_checkpoint_epoch: 89
+  reference_metrics: results/FloodCastBench/fno
+  preserve_native_metric_implementation: true

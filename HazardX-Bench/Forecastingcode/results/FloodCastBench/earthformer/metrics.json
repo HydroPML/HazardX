@@ -1,0 +1,66 @@
+{
+  "dataset": "FloodCastBench",
+  "model_id": "05",
+  "model": "EarthFormer-Scratch-fp32-lr3e-4",
+  "seed": 42,
+  "checkpoint": "best.pth",
+  "checkpoint_sha256": "cd30946712e8d7b7fcea700c6a620fc355cf1b3b245fb6312687c4b2efcc2df5",
+  "checkpoint_epoch": 49,
+  "selection_rule": "first formal experimental seed, verified in checkpoint config",
+  "original_final_evaluation": {
+    "source_macro.json": {
+      "rmse": 0.8574259332559666,
+      "mae": 0.4640767429452325,
+      "relative_l2": 1.0262379391891199,
+      "nse": -0.42400377077510487,
+      "corr": 0.05948033142139858,
+      "csi_0.01": 0.596584652618664,
+      "csi_0.05": 0.31778757014548736,
+      "csi_0.1": 0.24829800451622192,
+      "csi_0.5": 0.0824204956015851
+    },
+    "one_two_day_summary.json": {
+      "source_key": "mozambique_576",
+      "source_path": "/mnt/HDD2/qingsong/qinqsong/Datasets/FM/Test/Mozambique/576",
+      "excluded_source_key": "mozambique_1728",
+      "aggregation": "equal_mean_over_contiguous_trajectories",
+      "debug_max_steps": 0,
+      "protocols": {
+        "1day": {
+          "domain": "mozambique_1day",
+          "states_per_trajectory": 288,
+          "prediction_steps_per_trajectory": 287,
+          "trajectory_count": 6,
+          "overall_equal_trajectory_mean": {
+            "rmse": 0.5589304759160916,
+            "mae": 0.2737064070136445,
+            "relative_l2": 1.5554310661782786,
+            "nse": -4.232678459197365,
+            "corr": 0.038433222433630086,
+            "csi_0.01": 0.44203111699153047,
+            "csi_0.05": 0.31131714068431054,
+            "csi_0.1": 0.2431006497713228,
+            "csi_0.5": 0.052279177159000656
+          }
+        },
+        "2day": {
+          "domain": "mozambique_2day",
+          "states_per_trajectory": 576,
+          "prediction_steps_per_trajectory": 575,
+          "trajectory_count": 3,
+          "overall_equal_trajectory_mean": {
+            "rmse": 0.49639539161251617,
+            "mae": 0.22307242615823294,
+            "relative_l2": 1.294457893026048,
+            "nse": -3.0143583649639853,
+            "corr": 0.038160823581778115,
+            "csi_0.01": 0.3581772197691886,
+            "csi_0.05": 0.24829089211380997,
+            "csi_0.1": 0.19112682000882383,
+            "csi_0.5": 0.034212366975304005
+          }
+        }
+      }
+    }
+  }
+}

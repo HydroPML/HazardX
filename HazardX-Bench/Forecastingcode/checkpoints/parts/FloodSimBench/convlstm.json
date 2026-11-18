@@ -1,0 +1,34 @@
+{
+  "dataset": "FloodSimBench",
+  "model": "ConvLSTM-Scratch",
+  "model_slug": "convlstm",
+  "seed": 1,
+  "filename": "best.pth",
+  "original_filename": "best_validation.pt",
+  "checkpoint": "checkpoints/FloodSimBench/convlstm/best.pth",
+  "format": "byte_parts",
+  "bytes": 145043218,
+  "sha256": "bed0cabcaad5c4775e29040a5e55ff55c9c2f87724d0961379c9f9d80bfd748a",
+  "config": "config/FloodSimBench/convlstm.yaml",
+  "config_url": "https://drive.google.com/file/d/1e47X2xbC6afKcd2A8IbAI1k0YfW5ZQHo/view?usp=drivesdk",
+  "metrics_url": "https://drive.google.com/file/d/11IpJOArxQcAuJ8jAA1U00IkrK1nYMShC/view?usp=drivesdk",
+  "drive_folder_url": "https://drive.google.com/drive/folders/1JptJWidn32k-evvYNRtc5o2fPSoFIR8S",
+  "parts": [
+    {
+      "name": "best.pth.part0001",
+      "bytes": 94371840,
+      "sha256": "4ebaa0aa4fb0ee96bf4bf7391a27bbd3b6aeb584361730e82187cd8ba8af35ad",
+      "id": "1-sieFXSa0r-SH_VFCc1frGeQ5WnjX1E5",
+      "url": "https://drive.google.com/file/d/1-sieFXSa0r-SH_VFCc1frGeQ5WnjX1E5/view?usp=drivesdk",
+      "size_and_parent_verified": true
+    },
+    {
+      "name": "best.pth.part0002",
+      "bytes": 50671378,
+      "sha256": "39cc631881192600b85e853de9393c48f4b6a52acb4c241f9942cc8d8a11b99b",
+      "id": "1iNrpC14a8lnmoGnpSclHDEYjvI8quQMb",
+      "url": "https://drive.google.com/file/d/1iNrpC14a8lnmoGnpSclHDEYjvI8quQMb/view?usp=drivesdk",
+      "size_and_parent_verified": true
+    }
+  ]
+}
