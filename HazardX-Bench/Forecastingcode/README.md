@@ -1,10 +1,10 @@
 <h1 align="center">🌍 HazardX-Bench: Forecasting</h1>
 
-## 🔭Overview
+## 🔭 Overview
 
 This repository brings together **FloodCastBench, FloodSimBench, LandslideCast, and WildfireSpreadTS**, along with representative deep learning models for **flood, landslide, and wildfire forecasting**. It provides a unified training and evaluation interface for 36 selected experiments while preserving the original model implementations, configurations, and evaluation protocols.
 
-## 🛠️Installation
+## 🛠️ Installation
 
 Requires Linux, Python 3.11, and a CUDA GPU. Validated with PyTorch 2.5.0, CUDA 12.4, and an RTX A6000.
 
@@ -17,7 +17,7 @@ pip install -r requirements.txt
 
 For PDE-Transformer, use a separate environment with the same PyTorch version and `requirements-pde.txt`. See [environment details](docs/environments.md).
 
-## 🧪Dataset Preparation
+## 🧪 Dataset Preparation
 
 Download datasets from their official sources:
 
@@ -38,7 +38,7 @@ Download datasets from their official sources:
 
 See the [preparation guide](scripts/data_prep/README.md) for layouts, channels, splits, and conversion commands.
 
-## 📦Pretrained Weights
+## 📦 Pretrained Weights
 
 Place the required initialization weights in `pretrained/`. These files are needed for both training and evaluation of the corresponding pretrained models.
 
@@ -60,12 +60,12 @@ python scripts/download_pretrained.py --model prithvi
 python scripts/setup_prithvi.py --pretrained-root pretrained
 ```
 
-## 🚀Quick Start
+## 🚀 Quick Start
 
 Run commands from this directory. Change `--config` and data paths to select another experiment.
 
 
-### Download benchmark checkpoints
+### 📥 Download benchmark checkpoints
 
 The selected trained weights are in the
 [Forecasting checkpoint folder](https://drive.google.com/drive/folders/1pdkteoAp0TyW5NUtx-q_i-Nwi9hT8axo).
@@ -84,7 +84,7 @@ checkpoints are therefore stored as ordered 90 MiB **byte parts**, with
 `best.pth`. These are not separately trained shards. Files are never silently
 overwritten. For manually downloaded parts, use `--offline --parts-dir PATH`.
 
-### Independent evaluation
+### 📊 Independent evaluation
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 python test.py \
@@ -95,7 +95,7 @@ CUDA_VISIBLE_DEVICES=0 python test.py \
 
 For a limited check, add `--max-batches 1` and, for flood datasets, `--max-steps 1`. Limited runs do not reproduce full-test metrics. FloodCastBench uses within-source testing by default; add `--protocol mozambique` for the original Mozambique protocol.
 
-### Training
+### 🏋️ Training
 
 Use the GPU count specified by `distributed.world_size` in the YAML. For example, FloodSimBench U-Net uses two GPUs:
 
@@ -109,7 +109,7 @@ CUDA_VISIBLE_DEVICES=0,1 torchrun \
 
 Resume with `--resume /path/to/last.pt`; `best.pth` is the best-validation snapshot. See [per-model training commands](docs/train_commands.md) for GPU counts and settings. Use different master ports for concurrent runs.
 
-### Small-batch check
+### 🔎 Small-batch check
 
 Check checkpoint inference, native metrics, and one temporary training step:
 
@@ -121,7 +121,7 @@ CUDA_VISIBLE_DEVICES=0 python scripts/smoke_test.py \
 
 Modified weights are discarded. See the [validation report](docs/validation_report.md) for coverage and limitations.
 
-## 🗂️Repository Layout
+## 🗂️ Repository Layout
 
 ```text
 Forecastingcode/
@@ -143,11 +143,11 @@ Forecastingcode/
 └── requirements-pde.txt
 ```
 
-## 🏗️Reproducibility
+## 🔁 Reproducibility
 
 See the [selected experiments](docs/selected_experiments.md) for seeds, checkpoint epochs, and metrics; the [experiment catalog](results/catalog.json) for saved configurations; and [third-party provenance](docs/third_party.md) for source revisions and weight hashes. Protocol details are in the [reproducibility guide](docs/reproducibility.md).
 
-## License
+## ⚖️ License
 
 Original code in this repository is licensed under the [Apache License 2.0](LICENSE). Third-party code, datasets, and pretrained weights remain subject to their respective licenses.
 
