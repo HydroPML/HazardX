@@ -148,6 +148,7 @@ Forecastingcode/
 
 See the [selected experiments](docs/selected_experiments.md) for seeds, checkpoint epochs, and metrics; the [experiment catalog](results/catalog.json) for saved configurations; and [third-party provenance](docs/third_party.md) for source revisions and weight hashes. Protocol details are in the [reproducibility guide](docs/reproducibility.md).
 
-## Licensing
+## License
 
+Original code in this repository is licensed under the [Apache License 2.0](LICENSE). Third-party code, datasets, and pretrained weights remain subject to their respective licenses.
 
