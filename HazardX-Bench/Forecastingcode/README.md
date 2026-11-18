@@ -1,11 +1,11 @@
-
+<img width="1254" height="1254" alt="image" src="https://github.com/user-attachments/assets/622e7244-f8b0-4580-8778-912e7baee124" />
 <h1 align="center">🌍 HazardX-Bench: Forecasting</h1>
 
 ## 🔭Overview
 
 This repository brings together **FloodCastBench, FloodSimBench, LandslideCast, and WildfireSpreadTS**, along with representative deep learning models for **flood, landslide, and wildfire forecasting**. It provides a unified training and evaluation interface for 36 selected experiments while preserving the original model implementations, configurations, and evaluation protocols.
 
-## Installation
+## 🛠️Installation
 
 Requires Linux, Python 3.11, and a CUDA GPU. Validated with PyTorch 2.5.0, CUDA 12.4, and an RTX A6000.
 
@@ -18,7 +18,7 @@ pip install -r requirements.txt
 
 For PDE-Transformer, use a separate environment with the same PyTorch version and `requirements-pde.txt`. See [environment details](docs/environments.md).
 
-## Dataset Preparation
+## 🧪Dataset Preparation
 
 Download datasets from their official sources:
 
@@ -39,7 +39,7 @@ Download datasets from their official sources:
 
 See the [preparation guide](scripts/data_prep/README.md) for layouts, channels, splits, and conversion commands.
 
-## Pretrained Weights
+## 📦Pretrained Weights
 
 Place the required initialization weights in `pretrained/`. These files are needed for both training and evaluation of the corresponding pretrained models.
 
@@ -61,7 +61,7 @@ python scripts/download_pretrained.py --model prithvi
 python scripts/setup_prithvi.py --pretrained-root pretrained
 ```
 
-## Quick Start
+## 🚀Quick Start
 
 Run commands from this directory. Change `--config` and data paths to select another experiment.
 
@@ -122,7 +122,7 @@ CUDA_VISIBLE_DEVICES=0 python scripts/smoke_test.py \
 
 Modified weights are discarded. See the [validation report](docs/validation_report.md) for coverage and limitations.
 
-## Repository Layout
+## 🗂️Repository Layout
 
 ```text
 Forecastingcode/
@@ -144,7 +144,7 @@ Forecastingcode/
 └── requirements-pde.txt
 ```
 
-## Reproducibility
+## 🏗️Reproducibility
 
 See the [selected experiments](docs/selected_experiments.md) for seeds, checkpoint epochs, and metrics; the [experiment catalog](results/catalog.json) for saved configurations; and [third-party provenance](docs/third_party.md) for source revisions and weight hashes. Protocol details are in the [reproducibility guide](docs/reproducibility.md).
 
